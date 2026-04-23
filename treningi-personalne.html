@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO — zgodne z audytem SEO kwiecień 2026 -->
+<title>Trener Personalny Kraków Centrum | SAMtrening – Studio 1:1 pod Wawelem</title>
+<meta name="description" content="Trening personalny w centrum Krakowa z trenerami Mistrzami Polski. Studio 1:1, elastycznie, bez pakietów. Płacisz za odbyte sesje. Sprawdź ofertę.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.samtrening.com/treningi-personalne/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="Trener Personalny Kraków Centrum | SAMtrening – Studio 1:1 pod Wawelem">
+<meta property="og:description" content="Studio 1:1 pod Wawelem. Sesje od 200 zł, płacisz tylko za odbyte treningi.">
+<meta property="og:url" content="https://www.samtrening.com/treningi-personalne/">
+
+<!-- Schema.org: Service + BreadcrumbList + FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.samtrening.com/treningi-personalne/#service",
+      "name": "Trening personalny w Krakowie",
+      "description": "Kameralne studio 1:1 w centrum Krakowa, Plac Na Groblach 23. Trening personalny z byłymi sportowcami wyczynowymi.",
+      "provider": { "@type": "LocalBusiness", "@id": "https://www.samtrening.com/#business", "name": "SAMtrening" },
+      "areaServed": { "@type": "City", "name": "Kraków" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "PLN",
+        "price": "200",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "200", "priceCurrency": "PLN", "unitText": "sesja 60 min" }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://www.samtrening.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Oferta", "item": "https://www.samtrening.com/oferta/" },
+        { "@type": "ListItem", "position": 3, "name": "Treningi personalne", "item": "https://www.samtrening.com/treningi-personalne/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Ile kosztuje trener personalny w Krakowie?",
+          "acceptedAnswer": { "@type": "Answer", "text": "W SAMtrening pojedyncza sesja kosztuje od 200 zł. Nie sprzedajemy pakietów — płacisz tylko za odbyte sesje." } },
+        { "@type": "Question", "name": "Czy muszę być w formie zanim przyjdę?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nie. Połowa naszych klientów zaczyna od zera lub po wieloletniej przerwie. Pierwsza sesja jest dobrana do twojego aktualnego poziomu." } },
+        { "@type": "Question", "name": "Od jakiego wieku prowadzicie treningi dla dzieci?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Od 10. roku życia. Pracujemy z młodzieżą zaczynającą przygodę z siłownią, młodymi sportowcami oraz z dziećmi z wadami postawy." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   DESIGN SYSTEM — identyczny jak homepage
+   ═══════════════════════════════════════════════════════════════════ */
+:root {
+  --bg: #0A0908; --bg-2: #131210; --bg-3: #1C1A17;
+  --ink: #FAFAF7;
+  --ink-2: rgba(250,250,247,0.72);
+  --ink-3: rgba(250,250,247,0.45);
+  --line: rgba(250,250,247,0.12);
+  --line-2: rgba(250,250,247,0.22);
+  --accent: #E8FF3E; --accent-dim: #B8CC30;
+  --font-display: "Big Shoulders Display", Impact, sans-serif;
+  --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 32px;
+  --space-5: 48px; --space-6: 64px; --space-7: 96px; --space-8: 128px;
+  --container: 1400px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body); background: var(--bg); color: var(--ink);
+  line-height: 1.5; -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: 8px; z-index: 999;
+  background: var(--accent); color: var(--bg); padding: 12px 20px;
+  font-weight: 700; text-transform: uppercase;
+}
+.skip-link:focus { left: 16px; }
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 40px; }
+@media (max-width: 700px) { .container { padding: 0 20px; } }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3);
+}
+.eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+.eyebrow--accent { color: var(--accent); }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 18px 28px; font-size: 13px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  transition: all 0.25s ease; border: 1px solid transparent; white-space: nowrap;
+}
+.btn--primary { background: var(--accent); color: var(--bg); }
+.btn--primary:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+.btn--ghost { border-color: var(--line-2); color: var(--ink); }
+.btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn .arrow { transition: transform 0.25s ease; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   ANNOUNCEMENT + HEADER (shared z homepage)
+   ═══════════════════════════════════════════════════════════════════ */
+.announce {
+  background: var(--accent); color: var(--bg);
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 10px 20px; text-align: center;
+}
+.announce strong { font-weight: 800; }
+.announce .sep { margin: 0 12px; opacity: 0.5; }
+
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(10, 9, 8, 0.85);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.header__inner {
+  max-width: var(--container); margin: 0 auto; padding: 20px 40px;
+  display: flex; justify-content: space-between; align-items: center; gap: 40px;
+}
+.logo {
+  font-family: var(--font-display); font-size: 26px; font-weight: 800;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 2px;
+}
+.logo .dot { color: var(--accent); }
+
+.nav { display: flex; gap: 32px; list-style: none; }
+.nav a {
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 8px 0; position: relative; transition: color 0.2s;
+}
+.nav a:hover, .nav a.is-active { color: var(--accent); }
+.nav a.is-active::after { width: 100%; }
+.nav a::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease;
+}
+.nav a:hover::after { width: 100%; }
+
+.header__cta { display: flex; align-items: center; gap: 16px; }
+.header__phone {
+  font-family: var(--font-mono); font-size: 13px; color: var(--ink-2);
+  transition: color 0.2s;
+}
+.header__phone:hover { color: var(--accent); }
+.header__login {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-2);
+  padding: 10px 14px; border: 1px solid var(--line-2);
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.2s;
+}
+.header__login:hover { border-color: var(--accent); color: var(--accent); }
+.header__login .icon { width: 12px; height: 12px; }
+@media (max-width: 1200px) { .header__login { display: none; } }
+.header__btn {
+  background: var(--accent); color: var(--bg);
+  padding: 10px 18px; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s;
+}
+.header__btn:hover { background: var(--ink); }
+
+.burger {
+  display: none; width: 40px; height: 40px;
+  flex-direction: column; justify-content: center; gap: 5px; align-items: center;
+}
+.burger span {
+  width: 22px; height: 2px; background: var(--ink);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.burger[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+.mobile-menu {
+  display: none; position: fixed; inset: 0; background: var(--bg); z-index: 49;
+  padding: 120px 40px 40px; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.mobile-menu.is-open { opacity: 1; pointer-events: auto; }
+.mobile-menu ul { list-style: none; }
+.mobile-menu li { border-bottom: 1px solid var(--line); }
+.mobile-menu a {
+  display: block; padding: 24px 0;
+  font-family: var(--font-display); font-size: 32px; font-weight: 700; text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .nav { display: none; }
+  .header__phone { display: none; }
+  .burger { display: flex; }
+  .mobile-menu { display: block; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BREADCRUMBS (nowy komponent)
+   ═══════════════════════════════════════════════════════════════════ */
+.breadcrumbs {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.breadcrumbs__list {
+  display: flex; flex-wrap: wrap; gap: 8px; list-style: none;
+  max-width: var(--container); margin: 0 auto; padding: 0 40px;
+}
+.breadcrumbs__list a { transition: color 0.2s; }
+.breadcrumbs__list a:hover { color: var(--accent); }
+.breadcrumbs__list li:not(:last-child)::after {
+  content: "/"; margin-left: 8px; color: var(--ink-3); opacity: 0.5;
+}
+.breadcrumbs__list li:last-child { color: var(--ink); }
+
+@media (max-width: 700px) { .breadcrumbs__list { padding: 0 20px; } }
+
+/* ═══════════════════════════════════════════════════════════════════
+   HERO (subpage — nieco mniejszy niż na homepage)
+   ═══════════════════════════════════════════════════════════════════ */
+.page-hero {
+  padding: 80px 0 64px;
+  border-bottom: 1px solid var(--line);
+  position: relative; overflow: hidden;
+}
+.page-hero__inner {
+  max-width: var(--container); margin: 0 auto; padding: 0 40px;
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 80px; align-items: end;
+}
+.page-hero__left { display: flex; flex-direction: column; gap: 32px; }
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 9vw, 140px); line-height: 0.88;
+  font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase;
+}
+.page-hero h1 .accent { color: var(--accent); font-style: italic; }
+.page-hero h1 .outline { -webkit-text-stroke: 2px var(--ink); color: transparent; font-weight: 900; }
+
+.page-hero__sub {
+  font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 52ch;
+}
+.page-hero__cta { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.page-hero__meta {
+  display: flex; flex-direction: column; gap: 16px;
+  padding: 32px; border: 1px solid var(--line); background: var(--bg-2);
+}
+.page-hero__meta-row {
+  display: grid; grid-template-columns: auto 1fr; gap: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+}
+.page-hero__meta-row:last-child { border-bottom: none; }
+.page-hero__meta-row .key {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3);
+}
+.page-hero__meta-row .val {
+  font-family: var(--font-display); font-size: 22px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: -0.01em;
+}
+.page-hero__meta-row .val .accent { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .page-hero__inner { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTIONS
+   ═══════════════════════════════════════════════════════════════════ */
+.section { padding: var(--space-8) 0; }
+.section--alt { background: var(--bg-2); }
+
+.section-head {
+  display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px;
+  margin-bottom: 64px; align-items: end;
+}
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 6vw, 80px); line-height: 0.9;
+  font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase;
+}
+.section-head h2 .accent { color: var(--accent); }
+.section-head p { font-size: 16px; line-height: 1.55; color: var(--ink-2); max-width: 52ch; }
+
+@media (max-width: 900px) {
+  .section-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+  .section { padding: var(--space-7) 0; }
+}
+
+/* Intro block — big statement paragraph */
+.intro-block {
+  max-width: 900px; margin: 0 auto;
+  padding: 80px 0;
+  border-bottom: 1px solid var(--line);
+}
+.intro-block p {
+  font-family: var(--font-body);
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.35; font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.intro-block p strong { color: var(--accent); font-weight: 600; font-style: italic; }
+.intro-block p a { color: var(--accent); border-bottom: 1px dotted; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   DLA KOGO (subpage version — mocne H3 z numerami)
+   ═══════════════════════════════════════════════════════════════════ */
+.audience-list { border-top: 1px solid var(--line); }
+.audience {
+  display: grid; grid-template-columns: 100px 1fr 2fr; gap: 48px;
+  padding: 40px 0; border-bottom: 1px solid var(--line);
+  transition: background 0.3s;
+  position: relative;
+}
+.audience::before {
+  content: ""; position: absolute; left: 0; top: 0; width: 0; height: 100%;
+  background: linear-gradient(90deg, rgba(232, 255, 62, 0.04), transparent 40%);
+  transition: width 0.4s ease;
+}
+.audience:hover::before { width: 100%; }
+.audience > * { position: relative; z-index: 1; }
+.audience__num {
+  font-family: var(--font-display);
+  font-size: 56px; font-weight: 800; line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+.audience h3 {
+  font-family: var(--font-display);
+  font-size: 28px; font-weight: 700; line-height: 1.05;
+  text-transform: uppercase; letter-spacing: -0.01em;
+}
+.audience p { font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+
+@media (max-width: 900px) {
+  .audience { grid-template-columns: 1fr; gap: 16px; padding: 32px 0; }
+  .audience__num { font-size: 40px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PROCESS TIMELINE (dla pierwszej sesji + cyklu 4-tygodniowego)
+   ═══════════════════════════════════════════════════════════════════ */
+.process {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--line);
+}
+.process--four { grid-template-columns: repeat(4, 1fr); }
+.process__step {
+  padding: 40px 32px;
+  border-right: 1px solid var(--line);
+  position: relative;
+  display: flex; flex-direction: column; gap: 20px;
+  min-height: 320px;
+}
+.process__step:last-child { border-right: none; }
+.process__step::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--accent);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.5s ease;
+}
+.process__step.is-visible::before { transform: scaleX(1); }
+.process__num {
+  font-family: var(--font-display);
+  font-size: 72px; line-height: 0.85;
+  font-weight: 800; letter-spacing: -0.03em;
+  -webkit-text-stroke: 2px var(--accent);
+  color: transparent;
+}
+.process__step h3 {
+  font-family: var(--font-display);
+  font-size: 24px; font-weight: 700; line-height: 1.1;
+  text-transform: uppercase; letter-spacing: -0.01em;
+}
+.process__step p { font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+.process__step .meta {
+  margin-top: auto; padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .process, .process--four { grid-template-columns: 1fr; }
+  .process__step { border-right: none; border-bottom: 1px solid var(--line); min-height: auto; }
+  .process__step:last-child { border-bottom: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   EFEKTY (3 / 6 / 12 miesięcy — horizontal timeline)
+   ═══════════════════════════════════════════════════════════════════ */
+.results {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--line); border: 1px solid var(--line);
+}
+.result {
+  background: var(--bg); padding: 48px 32px;
+  display: flex; flex-direction: column; gap: 24px;
+  transition: background 0.3s;
+  position: relative; overflow: hidden;
+}
+.result:hover { background: var(--bg-3); }
+.result__time {
+  font-family: var(--font-display);
+  font-size: clamp(72px, 9vw, 128px);
+  line-height: 0.85; font-weight: 800; letter-spacing: -0.03em;
+  color: var(--accent);
+}
+.result__time small {
+  display: block; font-size: 0.3em;
+  letter-spacing: 0.2em; color: var(--ink-3);
+  margin-top: 8px;
+}
+.result h3 {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700; line-height: 1.1;
+  text-transform: uppercase; letter-spacing: -0.01em;
+}
+.result ul {
+  list-style: none; display: flex; flex-direction: column; gap: 12px;
+}
+.result li {
+  padding-left: 24px; position: relative;
+  font-size: 14px; line-height: 1.55; color: var(--ink-2);
+}
+.result li::before {
+  content: "→"; position: absolute; left: 0; top: 0;
+  color: var(--accent); font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .results { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PRICING
+   ═══════════════════════════════════════════════════════════════════ */
+.pricing {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+}
+.price-list {
+  border: 1px solid var(--line);
+  background: var(--bg-2);
+}
+.price-row {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 24px; align-items: baseline;
+  padding: 28px 32px;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.3s;
+}
+.price-row:last-child { border-bottom: none; }
+.price-row:hover { background: var(--bg-3); }
+.price-row__name {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700; line-height: 1.15;
+  text-transform: uppercase; letter-spacing: -0.01em;
+}
+.price-row__name small {
+  display: block; font-family: var(--font-body);
+  font-size: 12px; font-weight: 400; text-transform: none;
+  letter-spacing: 0; color: var(--ink-3); margin-top: 4px;
+  line-height: 1.4;
+}
+.price-row__price {
+  font-family: var(--font-display);
+  font-size: 40px; font-weight: 800; letter-spacing: -0.02em;
+  color: var(--accent); line-height: 1;
+  text-align: right;
+  white-space: nowrap;
+}
+.price-row__price small {
+  display: block; font-family: var(--font-mono);
+  font-size: 10px; font-weight: 500; letter-spacing: 0.15em;
+  color: var(--ink-3); margin-top: 6px;
+}
+
+.pricing__notes {
+  display: flex; flex-direction: column; gap: 24px;
+  padding-top: 16px;
+}
+.pricing__notes h3 {
+  font-family: var(--font-display);
+  font-size: 28px; font-weight: 700; line-height: 1.1;
+  text-transform: uppercase; letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+.pricing__notes h3 .accent { color: var(--accent); }
+.pricing__notes p { font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+.pricing__notes a { color: var(--accent); border-bottom: 1px dotted; }
+
+.pricing__highlight {
+  background: var(--accent); color: var(--bg);
+  padding: 24px;
+  display: flex; gap: 20px; align-items: center;
+}
+.pricing__highlight svg { flex-shrink: 0; width: 40px; height: 40px; }
+.pricing__highlight strong {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 800; text-transform: uppercase;
+  display: block; margin-bottom: 4px; letter-spacing: -0.01em;
+}
+.pricing__highlight small { font-size: 13px; line-height: 1.45; }
+
+@media (max-width: 900px) {
+  .pricing { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PROSE BLOCK (dla sekcji "Jak wygląda proces pracy")
+   ═══════════════════════════════════════════════════════════════════ */
+.prose {
+  max-width: 780px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.prose p { font-size: 16px; line-height: 1.65; color: var(--ink-2); }
+.prose p strong { color: var(--ink); }
+.prose a { color: var(--accent); border-bottom: 1px dotted; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   FAQ (jak na homepage)
+   ═══════════════════════════════════════════════════════════════════ */
+.faq {
+  max-width: 960px; margin: 0 auto;
+  border-top: 1px solid var(--line);
+}
+.faq__item { border-bottom: 1px solid var(--line); }
+.faq__q {
+  width: 100%; padding: 28px 0;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 24px; text-align: left;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.5vw, 28px); font-weight: 700;
+  line-height: 1.15; letter-spacing: -0.01em; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.faq__q:hover { color: var(--accent); }
+.faq__icon {
+  flex-shrink: 0; width: 36px; height: 36px;
+  border: 1px solid var(--line); display: grid; place-items: center;
+  position: relative; transition: all 0.3s;
+}
+.faq__icon::before, .faq__icon::after {
+  content: ""; position: absolute; background: currentColor; transition: transform 0.3s;
+}
+.faq__icon::before { width: 14px; height: 2px; }
+.faq__icon::after { width: 2px; height: 14px; }
+.faq__item[aria-expanded="true"] .faq__icon::after { transform: scaleY(0); }
+.faq__item[aria-expanded="true"] .faq__icon { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.faq__a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+.faq__item[aria-expanded="true"] .faq__a { max-height: 600px; padding: 0 0 32px 0; }
+.faq__a p { font-size: 16px; line-height: 1.6; color: var(--ink-2); max-width: 72ch; }
+.faq__a p a { color: var(--accent); border-bottom: 1px dotted; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   CTA FINAL
+   ═══════════════════════════════════════════════════════════════════ */
+.cta-final {
+  padding: var(--space-8) 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+.cta-final__inner {
+  max-width: 900px; margin: 0 auto; padding: 0 40px;
+  display: flex; flex-direction: column; gap: 32px; align-items: center;
+}
+.cta-final h2 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 96px); line-height: 0.9;
+  font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase;
+}
+.cta-final h2 .accent { color: var(--accent); }
+.cta-final p { font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 52ch; }
+.cta-final__buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+.cta-final__direct {
+  margin-top: 24px; padding-top: 32px;
+  border-top: 1px solid var(--line); width: 100%;
+  display: flex; gap: 40px; justify-content: center; align-items: center;
+  flex-wrap: wrap;
+}
+.cta-final__direct a {
+  font-family: var(--font-display);
+  font-size: 20px; text-transform: uppercase; letter-spacing: 0.02em;
+  display: inline-flex; align-items: center; gap: 12px;
+  transition: color 0.2s;
+}
+.cta-final__direct a:hover { color: var(--accent); }
+.cta-final__direct .icon { color: var(--accent); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   FOOTER (shared z homepage)
+   ═══════════════════════════════════════════════════════════════════ */
+.footer { background: #000; padding: 80px 0 32px; border-top: 1px solid var(--line); }
+.footer__top { max-width: var(--container); margin: 0 auto; padding: 0 40px; }
+.footer__big {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 16vw, 240px); line-height: 0.85;
+  font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase;
+  margin-bottom: 64px;
+  display: flex; justify-content: space-between; align-items: end;
+  border-bottom: 1px solid var(--line); padding-bottom: 32px; gap: 32px;
+}
+.footer__big .accent { color: var(--accent); font-style: italic; }
+.footer__big .arrow { font-size: clamp(48px, 8vw, 120px); transition: transform 0.3s; }
+.footer__big a:hover .arrow { transform: translate(6px, -6px); }
+
+.footer__grid {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 64px;
+}
+.footer__col h4 {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ink-3); margin-bottom: 20px;
+}
+.footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer__col a { font-size: 14px; color: var(--ink-2); transition: color 0.2s; }
+.footer__col a:hover { color: var(--accent); }
+.footer__col p { font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+
+.socials { display: flex; gap: 12px; margin-top: 16px; }
+.socials a {
+  width: 40px; height: 40px; border: 1px solid var(--line);
+  display: grid; place-items: center; transition: all 0.25s;
+}
+.socials a:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.socials svg { width: 18px; height: 18px; }
+
+.footer__bottom {
+  max-width: var(--container); margin: 0 auto; padding: 24px 40px 0;
+  border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3);
+}
+.footer__bottom a:hover { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer__big { font-size: 72px; flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 500px) {
+  .footer__grid { grid-template-columns: 1fr; }
+}
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Przejdź do treści</a>
+
+<!-- ANNOUNCEMENT -->
+<div class="announce">
+  <strong>Studio otwarte</strong> · Codziennie 5:30 — 23:00
+  <span class="sep">●</span>
+  Plac Na Groblach 23, Kraków
+  <span class="sep">●</span>
+  <strong>+48 728 385 203</strong>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo" aria-label="SAMtrening — strona główna">SAM<span class="dot">·</span>TRENING</a>
+    <nav aria-label="Menu główne">
+      <ul class="nav">
+        <li><a href="treningi-personalne.html" class="is-active">Treningi</a></li>
+        <li><a href="zdrowa-ciaza.html">Ciąża</a></li>
+        <li><a href="e-trening.html">E-trening</a></li>
+        <li><a href="zespol.html">Zespół</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="header__cta">
+      <a href="tel:+48728385203" class="header__phone">+48 728 385 203</a>
+      <a href="https://app.samtrening.com" class="header__login" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+          <polyline points="10 17 15 12 10 7"/>
+          <line x1="15" y1="12" x2="3" y2="12"/>
+        </svg>
+        Zaloguj się
+      </a>
+      <a href="#cta" class="header__btn">Konsultacja →</a>
+      <button class="burger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <nav aria-label="Menu mobilne">
+    <ul>
+      <li><a href="treningi-personalne.html">Treningi personalne</a></li>
+      <li><a href="zdrowa-ciaza.html">Zdrowa ciąża</a></li>
+      <li><a href="e-trening.html">E-trening</a></li>
+      <li><a href="zespol.html">Zespół</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+</div>
+
+<!-- BREADCRUMBS -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol class="breadcrumbs__list">
+    <li><a href="index.html">Strona główna</a></li>
+    <li><a href="index.html#oferta">Oferta</a></li>
+    <li>Treningi personalne</li>
+  </ol>
+</nav>
+
+<!-- MAIN -->
+<main id="main">
+
+  <!-- HERO -->
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="page-hero__inner">
+      <div class="page-hero__left">
+        <div class="eyebrow eyebrow--accent">Oferta · 01</div>
+        <h1 id="page-title">
+          <span class="outline">Trening</span><br>
+          <span class="accent">personalny.</span><br>
+          Kraków Centrum.
+        </h1>
+        <p class="page-hero__sub">
+          Kameralne studio 1:1 na Placu Na Groblach — pięć minut pieszo od Wawelu.
+          Piętnaście lat praktyki, trenerzy po sporcie wyczynowym, pełne 60 minut
+          uwagi, zero pakietów i zobowiązań. Płacisz tylko za sesje, które się odbyły.
+        </p>
+        <div class="page-hero__cta">
+          <a href="#cta" class="btn btn--primary">
+            Umów bezpłatną konsultację <span class="arrow">→</span>
+          </a>
+          <a href="#cennik" class="btn btn--ghost">Sprawdź cennik</a>
+        </div>
+      </div>
+
+      <div class="page-hero__meta">
+        <div class="page-hero__meta-row">
+          <div class="key">Format</div>
+          <div class="val">Studio <span class="accent">1:1</span></div>
+        </div>
+        <div class="page-hero__meta-row">
+          <div class="key">Czas</div>
+          <div class="val">60 minut</div>
+        </div>
+        <div class="page-hero__meta-row">
+          <div class="key">Od</div>
+          <div class="val"><span class="accent">200 zł</span> / sesja</div>
+        </div>
+        <div class="page-hero__meta-row">
+          <div class="key">Godziny</div>
+          <div class="val">5:30 — 23:00</div>
+        </div>
+        <div class="page-hero__meta-row">
+          <div class="key">Wiek</div>
+          <div class="val">Od 10 r.ż.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO BLOCK -->
+  <div class="container">
+    <div class="intro-block reveal">
+      <p>
+        SAMtrening to kameralne studio treningu personalnego w samym sercu Krakowa,
+        na Placu Na Groblach 23 — pięć minut pieszo od Wawelu. Pracujemy w formule 1:1,
+        bez tłumu, bez muzyki dudniącej z głośników, bez czekania na sprzęt. Zamiast tego
+        dostajesz <strong>pełne 60 minut uwagi trenera</strong> z doświadczeniem sportu wyczynowego:
+        <a href="zespol.html#maciek">Maciek</a> startował na Mistrzostwach Świata w sprintach,
+        <a href="zespol.html#kasia">Kasia</a> przez 10 lat reprezentowała Polskę na 400 metrów
+        przez płotki. Łącznie ponad 15 lat pracy z dorosłymi z napiętym kalendarzem
+        oraz z młodymi sportowcami od 10 roku życia. Studio otwarte od 5:30 do 23:00 —
+        także w weekendy.
+      </p>
+    </div>
+  </div>
+
+  <!-- DLA KOGO -->
+  <section class="section" aria-labelledby="audience-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">01 — Dla kogo</div>
+          <h2 id="audience-title">Dla kogo<br>jest trening<br><span class="accent">personalny.</span></h2>
+        </div>
+        <p>
+          Każda z tych grup ma inny problem i inną dynamikę dnia — dlatego żaden
+          z naszych planów treningowych nie jest standardowy. Wybieramy ludzi,
+          z którymi realnie możemy coś zmienić.
+        </p>
+      </div>
+
+      <div class="audience-list reveal">
+        <article class="audience">
+          <div class="audience__num">01</div>
+          <h3>Przedsiębiorcy<br>i managerowie</h3>
+          <p>Pracujesz po 10–12 godzin dziennie, twój kalendarz zmienia się co tydzień, a forma spada od kilku lat. Potrzebujesz trenera, który dopasuje się do twojego grafiku, a nie odwrotnie. Dlatego studio działa od 5:30 — po sesji o 6:00 jesteś za biurkiem o 8:00.</p>
+        </article>
+        <article class="audience">
+          <div class="audience__num">02</div>
+          <h3>Lekarze<br>i pracownicy ochrony zdrowia</h3>
+          <p>12-godzinne dyżury, dyspozycyjność, ciągłe napięcie pleców i karku. Pracujemy z lekarzami z krakowskich szpitali i klinik prywatnych. Trening dopasowany do trybu zmianowego — krótki, intensywny, z naciskiem na regenerację układu nerwowego.</p>
+        </article>
+        <article class="audience">
+          <div class="audience__num">03</div>
+          <h3>Prawnicy<br>i ludzie biznesu</h3>
+          <p>Stres, długie godziny przy biurku, kolacje biznesowe i mało ruchu. Skupiamy się na sile funkcjonalnej, mobilności kręgosłupa i radzeniu sobie z chronicznie podwyższonym kortyzolem. Stare Miasto i Plac Na Groblach — lokalizacja dogodna dla większości kancelarii w centrum Krakowa.</p>
+        </article>
+        <article class="audience">
+          <div class="audience__num">04</div>
+          <h3>Rodzice<br>walczący o swój czas</h3>
+          <p>Dziecko, praca, dom — i 45 minut dla siebie trzy razy w tygodniu. To wystarczy. Wiemy, bo sami jesteśmy rodzicami i wiemy, jak ułożyć trening, który daje efekty bez poświęcania weekendów ani porannego śniadania z rodziną.</p>
+        </article>
+        <article class="audience">
+          <div class="audience__num">05</div>
+          <h3>Dorośli po 40<br>wracający do formy</h3>
+          <p>Po 40-tce ciało reaguje inaczej. Nie chodzi o to, żeby ćwiczyć więcej — tylko mądrzej. Pracujemy tak, żebyś wracał do formy bez kontuzji, bez wypalenia i bez dwutygodniowych przerw na dochodzenie do siebie po jednym treningu.</p>
+        </article>
+        <article class="audience">
+          <div class="audience__num">06</div>
+          <h3>Dzieci<br>i młodzi sportowcy od 10 r.ż.</h3>
+          <p>Pierwsze kroki na siłowni, przygotowanie pod konkretną dyscyplinę sportową, korekta wad postawy nabytych podczas siedzącego trybu nauki. Treningi ogólnorozwojowe, motoryczne, siłowe, biegowe i korekcyjne — dostosowane do etapu rozwoju. Jako byli sportowcy wyczynowi wiemy, jak prowadzić młodego zawodnika tak, żeby budował podstawy bez ryzyka kontuzji i bez wypalenia.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIERWSZA SESJA -->
+  <section class="section section--alt" aria-labelledby="first-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">02 — Pierwsza sesja</div>
+          <h2 id="first-title">Jak<br>wygląda<br><span class="accent">pierwsza sesja.</span></h2>
+        </div>
+        <p>
+          Pierwsza wizyta trwa 75 minut i jest bezpłatna. Składa się z trzech części.
+          Wychodzisz z konkretnym planem na 4 tygodnie, mierzalnym celem
+          i kalendarzem treningów — bez zobowiązań, nawet jeśli ostatecznie
+          nie zdecydujesz się z nami kontynuować.
+        </p>
+      </div>
+
+      <div class="process reveal">
+        <div class="process__step">
+          <div class="process__num">01</div>
+          <h3>Wywiad<br>i rozmowa</h3>
+          <p>Pytamy o twoje cele, historię aktywności, kontuzje, jakość snu, charakter pracy oraz o to, co jeść lubisz, a czego nie. To nie ankieta z internetu — to rozmowa, która kończy się jasnym obrazem twojej sytuacji.</p>
+          <div class="meta">20–25 minut</div>
+        </div>
+        <div class="process__step">
+          <div class="process__num">02</div>
+          <h3>Pomiary<br>i diagnostyka</h3>
+          <p>Skład ciała na profesjonalnej wadze impedancyjnej, obwody, ocena postawy i zakresów ruchu. Dostajesz kartę pomiarową z konkretnymi liczbami — nie ogólnikami.</p>
+          <div class="meta">20 minut</div>
+        </div>
+        <div class="process__step">
+          <div class="process__num">03</div>
+          <h3>Sesja<br>testowa</h3>
+          <p>Lekki trening — nie po to, żeby cię zmęczyć, tylko żeby trener zobaczył, jak się ruszasz, gdzie masz ograniczenia i jak reaguje twoje ciało. Wychodzisz z planem na pierwsze 4 tygodnie.</p>
+          <div class="meta">30 minut</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCES PRACY -->
+  <section class="section" aria-labelledby="process-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">03 — Jak pracujemy</div>
+          <h2 id="process-title">Cykl<br>4-tygodniowy.<br><span class="accent">Partnerstwo,</span><br>nie abonament.</h2>
+        </div>
+        <p>
+          Pracujemy w cyklach 4-tygodniowych. Każdy cykl zaczyna się od podsumowania
+          poprzedniego, kończy mierzalnym progresem. SAMtrening nie jest abonamentem
+          na sesje — to długoterminowe partnerstwo z jasno zdefiniowanymi celami.
+        </p>
+      </div>
+
+      <div class="process process--four reveal">
+        <div class="process__step">
+          <div class="process__num">01</div>
+          <h3>Podsumowanie<br>cyklu</h3>
+          <p>10 minut na początku cyklu — sprawdzamy, co działa, co wymaga korekty, czy energia rośnie czy spada. Konkretne decyzje na kolejne 4 tygodnie.</p>
+          <div class="meta">Co 4 tygodnie</div>
+        </div>
+        <div class="process__step">
+          <div class="process__num">02</div>
+          <h3>Sesje<br>w studio</h3>
+          <p>2–3 sesje personalne tygodniowo po 60 minut. Uzupełnione 1–2 treningami według planu w aplikacji. Łącznie 3–5 jednostek tygodniowo — tyle wystarczy.</p>
+          <div class="meta">Tygodniowo</div>
+        </div>
+        <div class="process__step">
+          <div class="process__num">03</div>
+          <h3>Pomiary<br>kontrolne</h3>
+          <p>Skład ciała, obwody, testy siły i wydolności. Dostajesz PDF z porównaniem — widzisz konkretne liczby, nie subiektywne wrażenia „chyba schudłeś".</p>
+          <div class="meta">Co 4 tygodnie</div>
+        </div>
+        <div class="process__step">
+          <div class="process__num">04</div>
+          <h3>Kontakt<br>między sesjami</h3>
+          <p>Aplikacja z planem, możliwość wysłania nagrań ćwiczeń, pytań o technikę, zgłaszania zmęczenia czy bólu. Trener odpowiada w 2–3 godziny w godzinach pracy studia.</p>
+          <div class="meta">Ciągły</div>
+        </div>
+      </div>
+
+      <div class="prose reveal" style="margin-top: 64px;">
+        <p>
+          <strong>Co kwartał rozmawiamy o większym kontekście</strong> — czy cele się zmieniły,
+          czy chcesz przyspieszyć, czy odpuścić w okresie spiętrzenia obowiązków zawodowych.
+          SAMtrening to nie abonament na sesje, tylko partnerstwo, które naturalnie
+          dostosowuje się do twojego życia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EFEKTY -->
+  <section class="section section--alt" aria-labelledby="results-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow eyebrow--accent">04 — Efekty</div>
+          <h2 id="results-title">Co<br>realnie<br><span class="accent">osiągniesz.</span></h2>
+        </div>
+        <p>
+          Liczby, nie marketing. Wszystkie efekty opierają się na realnych danych
+          z pomiarów kontrolnych naszych klientów z ostatnich trzech lat.
+          Po roku zostaje z nami ok. 80% klientów — bo to po prostu działa.
+        </p>
+      </div>
+
+      <div class="results reveal">
+        <div class="result">
+          <div class="result__time">3<small>miesiące</small></div>
+          <h3>Fundament</h3>
+          <ul>
+            <li>4–8% redukcji tkanki tłuszczowej u osób z nadwagą</li>
+            <li>2–4 kg masy mięśniowej u osób bez nadwagi</li>
+            <li>Lepszy sen (raportowany po 4–6 tygodniach)</li>
+            <li>Stabilna energia w ciągu dnia</li>
+            <li>5 km szybkim spacerem bez zadyszki</li>
+          </ul>
+        </div>
+        <div class="result">
+          <div class="result__time">6<small>miesięcy</small></div>
+          <h3>Siła i pewność</h3>
+          <ul>
+            <li>Martwy ciąg z połową własnej masy ciała</li>
+            <li>Podciąganie bez wspomagania (lub odpowiednik)</li>
+            <li>Koniec bólu lędźwiowego i karku</li>
+            <li>Powrót do jazdy na nartach, biegania, gry w piłkę</li>
+            <li>Widoczna zmiana sylwetki w lustrze</li>
+          </ul>
+        </div>
+        <div class="result">
+          <div class="result__time">12<small>miesięcy</small></div>
+          <h3>Nowa norma</h3>
+          <ul>
+            <li>Trening stał się nawykiem, nie wysiłkiem</li>
+            <li>Utrzymanie 90% szczytu z pierwszego półrocza</li>
+            <li>Bez poświęcania życia rodzinnego ani zawodowego</li>
+            <li>80% naszych klientów zostaje na drugi rok</li>
+            <li>Bo widzą, że to realnie działa</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CENNIK -->
+  <section class="section" id="cennik" aria-labelledby="pricing-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">05 — Cennik</div>
+          <h2 id="pricing-title">Cennik.<br><span class="accent">Bez pakietów.</span><br>Bez zobowiązań.</h2>
+        </div>
+        <p>
+          Płacisz tylko za sesje, które rzeczywiście się odbyły. Bez karnetów,
+          które przepadają, gdy zachorujesz lub wyjedziesz służbowo. Pierwsza
+          75-minutowa konsultacja jest bezpłatna — bez zobowiązań, bez presji.
+        </p>
+      </div>
+
+      <div class="pricing reveal">
+        <div class="price-list">
+          <div class="price-row">
+            <div class="price-row__name">
+              Sesja 1:1
+              <small>60 minut · jeden trener, jedna osoba</small>
+            </div>
+            <div class="price-row__price">
+              od 200 zł
+              <small>za sesję</small>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-row__name">
+              Trening w parach (2:1)
+              <small>60 minut · dwie osoby, jeden trener — 140 zł od osoby</small>
+            </div>
+            <div class="price-row__price">
+              od 280 zł
+              <small>za sesję</small>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-row__name">
+              Dzieci i młodzież
+              <small>Od 10 roku życia · ogólnorozwojowe, siłowe, korekcyjne</small>
+            </div>
+            <div class="price-row__price">
+              od 200 zł
+              <small>za sesję</small>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-row__name">
+              Pierwsza konsultacja
+              <small>75 minut · wywiad, pomiary, sesja testowa</small>
+            </div>
+            <div class="price-row__price">
+              0 zł
+              <small>bezpłatnie</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing__notes">
+          <div>
+            <h3>W cenie <span class="accent">każdej</span> sesji:</h3>
+            <p>
+              Pełna konsultacja, plan treningowy w aplikacji, pomiary co 4 tygodnie,
+              stały kontakt z trenerem między sesjami, dostęp do studia
+              od 5:30 do 23:00.
+            </p>
+          </div>
+
+          <div class="pricing__highlight">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M9 12l2 2 4-4"/>
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+            <div>
+              <strong>Pierwsza sesja — bezpłatna</strong>
+              <small>75 minut, pełne pomiary, plan na 4 tygodnie. Bez presji, bez zobowiązań.</small>
+            </div>
+          </div>
+
+          <p style="font-size: 14px; color: var(--ink-3);">
+            Średnia rynkowa w Krakowie: 120 zł (siłownie sieciowe z trenerem rotacyjnym)
+            — 300 zł (najbardziej znani trenerzy w mieście). Nasza cena odzwierciedla format 1:1,
+            prywatne studio i doświadczenie sportu wyczynowego.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-head reveal" style="grid-template-columns:1fr; text-align:center; max-width:800px; margin-left:auto; margin-right:auto;">
+        <div>
+          <div class="eyebrow" style="justify-content:center;">06 — FAQ</div>
+          <h2 id="faq-title">Najczęstsze<br><span class="accent">pytania.</span></h2>
+        </div>
+      </div>
+
+      <div class="faq reveal">
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="q-1">
+            <span>Ile kosztuje trener personalny w Krakowie?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="q-1">
+            <p>W SAMtrening pojedyncza sesja kosztuje od 200 zł. Średnia rynkowa w Krakowie waha się od 120 zł (siłownie sieciowe z trenerem rotacyjnym) do 300 zł (najbardziej znani trenerzy w mieście). Cena odzwierciedla format pracy: 1:1 w prywatnym studio, brak masówki, doświadczenie sportu wyczynowego, monitorowanie postępów co 4 tygodnie. Nie sprzedajemy pakietów ani karnetów — płacisz wyłącznie za sesje, które rzeczywiście się odbyły.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="q-2">
+            <span>Czy muszę być w formie zanim przyjdę?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="q-2">
+            <p>Nie. Połowa naszych klientów zaczyna od zera lub po wieloletniej przerwie. Pierwsza sesja jest dobrana do twojego aktualnego poziomu — nie ma „za słabego" startu. Jeśli kiedykolwiek miałeś wątpliwość, czy „już wypada zacząć", to znak, że pora zacząć właśnie teraz.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="q-3">
+            <span>Jak często trzeba trenować, żeby zobaczyć efekty?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="q-3">
+            <p>Dwa razy w tygodniu to absolutne minimum. Standardowo polecamy trzy sesje tygodniowo — tyle wystarczy większości klientów do osiągnięcia wymiernych efektów w ciągu 12 tygodni. Jeden trening tygodniowo to za mało, żeby cokolwiek się zmieniło — wtedy warto rozważyć alternatywnie <a href="e-trening.html">e-trening online</a> z częstszym kontaktem przez aplikację.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="q-4">
+            <span>Czy mogę trenować rano przed pracą?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="q-4">
+            <p>Tak. Studio jest otwarte od 5:30 — po sesji o 6:00 jesteś świeży, zregenerowany i gotowy na cały dzień pracy o 8:00. To nasz najpopularniejszy slot wśród przedsiębiorców i lekarzy z centrum Krakowa.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="q-5">
+            <span>Czy oferujecie treningi w parach?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="q-5">
+            <p>Tak. Format 2:1 (dwie osoby z jednym trenerem) kosztuje 40% więcej niż sesja indywidualna — czyli od 280 zł, co daje 140 zł od osoby. Polecamy parom, rodzeństwom, znajomym, a także rodzicom z nastoletnimi dziećmi o zbliżonym poziomie i celach. Wspólne trenowanie zwiększa systematyczność.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="q-6">
+            <span>Co odróżnia SAMtrening od siłowni z trenerem?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="q-6">
+            <p>Trzy rzeczy. Po pierwsze — formuła 1:1 w prywatnym studio, nie na ogólnodostępnej siłowni z muzyką, lustrami i 30 osobami obok. Po drugie — trenerzy to byli sportowcy wyczynowi z medalami Mistrzostw Polski, nie absolwenci weekendowych kursów. Po trzecie — pomiary, plan w aplikacji i stały kontakt między sesjami są wliczone w cenę, nie jako droga „dopłata premium".</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="q-7">
+            <span>Od jakiego wieku prowadzicie treningi dla dzieci?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="q-7">
+            <p>Od 10 roku życia. Pracujemy z młodzieżą zaczynającą przygodę z siłownią, młodymi sportowcami przygotowującymi się pod konkretną dyscyplinę oraz z dziećmi z wadami postawy nabytymi w szkole. Treningi dobieramy do etapu rozwoju — ogólnorozwojowe, motoryczne, biegowe, korekcyjne lub siłowe (z naciskiem na bezpieczeństwo i naukę poprawnej techniki, nie na obciążenia). Pierwsza konsultacja zawsze z udziałem rodzica.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="q-8">
+            <span>Gdzie dokładnie znajduje się studio?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="q-8">
+            <p>Plac Na Groblach 23 w Krakowie — pięć minut pieszo od Wawelu, dziesięć minut od Rynku Głównego, siedem minut pieszo z Dębnik przez most Grunwaldzki. Najbliższy przystanek MPK: „Filharmonia". W pobliżu kilka parkingów (Plac Na Groblach, Powiśle, parking podziemny pod ICE Kraków).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final" id="cta" aria-labelledby="cta-title">
+    <div class="cta-final__inner">
+      <div class="eyebrow eyebrow--accent">Następny krok</div>
+      <h2 id="cta-title">Umów<br>bezpłatną<br><span class="accent">konsultację.</span></h2>
+      <p>
+        75 minut, pełna diagnostyka, plan na pierwsze 4 tygodnie. Bez zobowiązań,
+        nawet jeśli ostatecznie nie zdecydujesz się z nami kontynuować.
+      </p>
+      <div class="cta-final__buttons">
+        <a href="kontakt.html#formularz" class="btn btn--primary">
+          Wypełnij formularz <span class="arrow">→</span>
+        </a>
+        <a href="tel:+48728385203" class="btn btn--ghost">Zadzwoń teraz</a>
+      </div>
+      <div class="cta-final__direct">
+        <a href="tel:+48728385203">
+          <span class="icon" aria-hidden="true">📞</span>
+          +48 728 385 203
+        </a>
+        <a href="mailto:biuro@samtrening.com">
+          <span class="icon" aria-hidden="true">✉</span>
+          biuro@samtrening.com
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__big">
+      <a href="#cta">Zacznijmy <span class="accent">razem.</span></a>
+      <a href="#cta" aria-label="Przejdź do kontaktu"><span class="arrow">↗</span></a>
+    </div>
+
+    <div class="footer__grid">
+      <div class="footer__col">
+        <h4>SAMtrening</h4>
+        <p>Kameralne studio treningu personalnego w centrum Krakowa. Plac Na Groblach 23, 30-101 Kraków.</p>
+        <div class="socials" aria-label="Media społecznościowe">
+          <a href="https://www.facebook.com/samtrening" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.3c0-1 .2-1.3 1.1-1.3H18V0h-3.2C11.2 0 9 1.5 9 4.5V8z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/samtrening" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://g.co/samtrening" target="_blank" rel="noopener" aria-label="Google Business">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 5c1.6 0 3 .5 4.2 1.5L19 3.7C17 1.9 14.6 1 12 1 7.4 1 3.4 3.6 1.4 7.4l3.3 2.6C5.7 7 8.6 5 12 5z M23 12.2c0-.8-.1-1.6-.2-2.4H12v4.5h6.2c-.3 1.4-1.1 2.6-2.3 3.4l3.5 2.7c2.1-1.9 3.6-4.8 3.6-8.2z M5 13c-.3-.9-.5-1.8-.5-2.8 0-1 .2-1.9.5-2.8L1.7 4.8C.6 6.9 0 9.3 0 12s.6 5.1 1.7 7.2l3.3-2.6c-.3-.9-.5-1.8-.5-2.8.2-.2 0-.5.5-.8z M12 23c3 0 5.6-1 7.4-2.7l-3.5-2.7c-1 .7-2.3 1.1-3.9 1.1-3.3 0-6.2-2-7.3-5l-3.3 2.6C3.4 20.4 7.4 23 12 23z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Oferta</h4>
+        <ul>
+          <li><a href="treningi-personalne.html">Treningi personalne</a></li>
+          <li><a href="zdrowa-ciaza.html">Zdrowa ciąża</a></li>
+          <li><a href="e-trening.html">E-trening online</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="zespol.html">Zespół</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="https://app.samtrening.com" target="_blank" rel="noopener">Platforma — zaloguj się</a></li>
+          <li><a href="rodo.html">Polityka prywatności</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+48728385203">+48 728 385 203</a></li>
+          <li><a href="mailto:biuro@samtrening.com">biuro@samtrening.com</a></li>
+          <li><span style="color:var(--ink-2);">Plac Na Groblach 23<br>30-101 Kraków</span></li>
+          <li><span style="color:var(--ink-2);">Pon–Niedz · 5:30–23:00</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div>© <span id="year">2026</span> SAMtrening Sp. z o.o. Wszelkie prawa zastrzeżone.</div>
+    <div>Stworzone z miłością do zdrowia.</div>
+  </div>
+</footer>
+
+<script>
+// Dynamiczny rok
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Mobile menu
+const burger = document.querySelector('.burger');
+const mobileMenu = document.getElementById('mobile-menu');
+burger.addEventListener('click', () => {
+  const open = burger.getAttribute('aria-expanded') === 'true';
+  burger.setAttribute('aria-expanded', !open);
+  mobileMenu.classList.toggle('is-open');
+  document.body.style.overflow = !open ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  burger.setAttribute('aria-expanded', 'false');
+  mobileMenu.classList.remove('is-open');
+  document.body.style.overflow = '';
+}));
+
+// FAQ accordion
+document.querySelectorAll('.faq__item').forEach(item => {
+  const btn = item.querySelector('.faq__q');
+  btn.addEventListener('click', () => {
+    const open = item.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.faq__item').forEach(i => {
+      i.setAttribute('aria-expanded', 'false');
+      i.querySelector('.faq__q').setAttribute('aria-expanded', 'false');
+    });
+    if (!open) {
+      item.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      // Also reveal inner process steps with stagger
+      entry.target.querySelectorAll('.process__step').forEach((step, i) => {
+        setTimeout(() => step.classList.add('is-visible'), i * 150);
+      });
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

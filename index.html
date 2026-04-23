@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═════════════════════════════════════════════════════════════════
+     SEO META TAGS (zgodne z audytem kwiecień 2026)
+     ═════════════════════════════════════════════════════════════════ -->
+<title>Trener Personalny Kraków Centrum | SAMtrening – Studio 1:1 pod Wawelem</title>
+<meta name="description" content="Trener personalny w Krakowie dla przedsiębiorców, lekarzy i prawników. Kameralne studio 1:1 pod Wawelem. Trening od 5:30 do 23:00. Umów sesję.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.samtrening.com/">
+
+<!-- Open Graph (social media preview) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="Trener Personalny Kraków Centrum | SAMtrening – Studio 1:1 pod Wawelem">
+<meta property="og:description" content="Kameralne studio 1:1 pod Wawelem. Trening od 5:30 do 23:00. 15 lat doświadczenia.">
+<meta property="og:url" content="https://www.samtrening.com/">
+<meta property="og:site_name" content="SAMtrening">
+
+<!-- ═════════════════════════════════════════════════════════════════
+     SCHEMA.ORG – LocalBusiness (audit sec. 3.8)
+     ═════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "@id": "https://www.samtrening.com/#business",
+  "name": "SAMtrening",
+  "image": "https://www.samtrening.com/wp-content/themes/sam/img/sam-logo1.png",
+  "url": "https://www.samtrening.com/",
+  "telephone": "+48 728 385 203",
+  "email": "biuro@samtrening.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Plac Na Groblach 23",
+    "addressLocality": "Kraków",
+    "postalCode": "30-101",
+    "addressCountry": "PL"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 50.0589, "longitude": 19.9322 },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "05:30", "closes": "23:00"
+  }],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "44" }
+}
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   DESIGN SYSTEM — Variant B "Motion & Strength"
+   Wszystkie kolory i rozmiary w jednym miejscu (CSS custom properties)
+   ═══════════════════════════════════════════════════════════════════ */
+:root {
+  /* Paleta */
+  --bg: #0A0908;              /* tło główne — głęboka czerń z odcieniem brązu */
+  --bg-2: #131210;            /* tło sekcji alternatywnej */
+  --bg-3: #1C1A17;            /* tło kart */
+  --ink: #FAFAF7;             /* tekst główny — ciepła biel */
+  --ink-2: rgba(250,250,247,0.72);  /* tekst secondary */
+  --ink-3: rgba(250,250,247,0.45);  /* tekst muted */
+  --line: rgba(250,250,247,0.12);   /* linie/bordery */
+  --line-2: rgba(250,250,247,0.22);
+  --accent: #E8FF3E;          /* electric lime — sygnatura marki */
+  --accent-dim: #B8CC30;
+  --danger: #FF5533;
+
+  /* Typografia */
+  --font-display: "Big Shoulders Display", Impact, sans-serif;
+  --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Spacing scale */
+  --space-1: 8px;  --space-2: 16px; --space-3: 24px;
+  --space-4: 32px; --space-5: 48px; --space-6: 64px;
+  --space-7: 96px; --space-8: 128px;
+
+  --container: 1400px;
+  --radius: 0px; /* brak zaokrągleń = industrialny vibe */
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg); color: var(--ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute; left: -9999px; top: 8px; z-index: 999;
+  background: var(--accent); color: var(--bg); padding: 12px 20px;
+  font-weight: 700; text-transform: uppercase;
+}
+.skip-link:focus { left: 16px; }
+
+/* Container */
+.container { max-width: var(--container); margin: 0 auto; padding: 0 40px; }
+@media (max-width: 700px) { .container { padding: 0 20px; } }
+
+/* Utility: section kicker / eyebrow */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.eyebrow::before {
+  content: ""; width: 24px; height: 1px; background: currentColor;
+}
+.eyebrow.eyebrow--accent { color: var(--accent); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 18px 28px;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.btn--primary { background: var(--accent); color: var(--bg); }
+.btn--primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.btn--ghost { border-color: var(--line-2); color: var(--ink); }
+.btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn .arrow { transition: transform 0.25s ease; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   1. ANNOUNCEMENT BAR
+   ═══════════════════════════════════════════════════════════════════ */
+.announce {
+  background: var(--accent); color: var(--bg);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 10px 20px; text-align: center;
+}
+.announce strong { font-weight: 800; }
+.announce .sep { margin: 0 12px; opacity: 0.5; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   2. HEADER / NAVIGATION
+   ═══════════════════════════════════════════════════════════════════ */
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(10, 9, 8, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.header__inner {
+  max-width: var(--container); margin: 0 auto;
+  padding: 20px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 40px;
+}
+.logo {
+  font-family: var(--font-display);
+  font-size: 26px; font-weight: 800; letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 2px;
+}
+.logo .dot { color: var(--accent); }
+
+.nav { display: flex; gap: 32px; list-style: none; }
+.nav a {
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 8px 0; position: relative;
+  transition: color 0.2s;
+}
+.nav a:hover { color: var(--accent); }
+.nav a::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 0; height: 2px; background: var(--accent);
+  transition: width 0.3s ease;
+}
+.nav a:hover::after { width: 100%; }
+
+.header__cta {
+  display: flex; align-items: center; gap: 16px;
+}
+.header__phone {
+  font-family: var(--font-mono); font-size: 13px;
+  color: var(--ink-2);
+  transition: color 0.2s;
+}
+.header__phone:hover { color: var(--accent); }
+.header__login {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-2);
+  padding: 10px 14px; border: 1px solid var(--line-2);
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.2s;
+}
+.header__login:hover { border-color: var(--accent); color: var(--accent); }
+.header__login .icon { width: 12px; height: 12px; }
+@media (max-width: 1200px) { .header__login { display: none; } }
+.header__btn {
+  background: var(--accent); color: var(--bg);
+  padding: 10px 18px; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  transition: all 0.2s;
+}
+.header__btn:hover { background: var(--ink); }
+
+.burger {
+  display: none; width: 40px; height: 40px;
+  flex-direction: column; justify-content: center; gap: 5px;
+  align-items: center;
+}
+.burger span {
+  width: 22px; height: 2px; background: var(--ink);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.burger[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Mobile menu panel */
+.mobile-menu {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--bg); z-index: 49;
+  padding: 120px 40px 40px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.mobile-menu.is-open { opacity: 1; pointer-events: auto; }
+.mobile-menu ul { list-style: none; }
+.mobile-menu li {
+  border-bottom: 1px solid var(--line);
+}
+.mobile-menu a {
+  display: block; padding: 24px 0;
+  font-family: var(--font-display);
+  font-size: 32px; font-weight: 700; text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .nav { display: none; }
+  .header__phone { display: none; }
+  .burger { display: flex; }
+  .mobile-menu { display: block; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   3. HERO
+   ═══════════════════════════════════════════════════════════════════ */
+.hero {
+  padding: 60px 0 40px;
+  position: relative; overflow: hidden;
+}
+.hero__inner { max-width: var(--container); margin: 0 auto; padding: 0 40px; }
+
+.hero__top {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 40px; gap: 32px; flex-wrap: wrap;
+}
+.hero__live {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--ink-2);
+}
+.hero__live .pulse {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232, 255, 62, 0.6); }
+  50% { box-shadow: 0 0 0 10px rgba(232, 255, 62, 0); }
+}
+.hero__location {
+  font-family: var(--font-display);
+  font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--ink-3); text-align: right;
+  line-height: 1.2;
+}
+.hero__location strong { color: var(--ink); display: block; font-weight: 700; }
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(72px, 13vw, 200px);
+  line-height: 0.82;
+  font-weight: 800; letter-spacing: -0.02em;
+  text-transform: uppercase;
+  /* Staggered entrance animation */
+  animation: heroReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.hero h1 .line { display: block; overflow: hidden; }
+.hero h1 .accent { color: var(--accent); font-style: italic; }
+.hero h1 .outline {
+  -webkit-text-stroke: 2px var(--ink);
+  color: transparent;
+  font-weight: 900;
+}
+@keyframes heroReveal {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero__bottom {
+  margin-top: 48px;
+  display: grid; grid-template-columns: 1.4fr repeat(3, 1fr);
+  gap: 40px; align-items: end;
+  padding-bottom: 48px; border-bottom: 1px solid var(--line);
+}
+.hero__sub {
+  font-size: 17px; line-height: 1.5; max-width: 48ch;
+  color: var(--ink-2);
+}
+.hero__stat { border-left: 2px solid var(--accent); padding-left: 20px; }
+.hero__stat .num {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 56px); line-height: 1;
+  font-weight: 700; letter-spacing: -0.02em;
+}
+.hero__stat .lbl {
+  margin-top: 10px; font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+
+.hero__cta {
+  margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .hero__bottom { grid-template-columns: 1fr 1fr; }
+  .hero__sub { grid-column: span 2; }
+}
+@media (max-width: 600px) {
+  .hero__top { flex-direction: column; align-items: flex-start; }
+  .hero__location { text-align: left; }
+  .hero__bottom { grid-template-columns: 1fr; gap: 24px; }
+  .hero__sub { grid-column: auto; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   4. MARQUEE (infinite scroll)
+   ═══════════════════════════════════════════════════════════════════ */
+.marquee {
+  padding: 24px 0; border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 700; letter-spacing: -0.02em;
+  text-transform: uppercase; white-space: nowrap;
+}
+.marquee__track {
+  display: inline-flex; gap: 48px;
+  animation: scroll 40s linear infinite;
+}
+.marquee__track span { display: inline-flex; align-items: center; gap: 48px; }
+.marquee__track .dot { color: var(--accent); font-size: 0.5em; }
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   5. SECTION: Dla kogo (6 target groups)
+   ═══════════════════════════════════════════════════════════════════ */
+.section { padding: var(--space-8) 0; }
+.section--alt { background: var(--bg-2); }
+
+.section-head {
+  display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px;
+  margin-bottom: 64px; align-items: end;
+}
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 96px); line-height: 0.9;
+  font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase;
+}
+.section-head h2 .accent { color: var(--accent); }
+.section-head p { font-size: 16px; line-height: 1.55; color: var(--ink-2); max-width: 52ch; }
+
+@media (max-width: 900px) {
+  .section-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+}
+
+.target-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+.target {
+  padding: 40px 32px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  position: relative; overflow: hidden;
+  transition: background 0.3s ease;
+}
+.target::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--accent);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.target:hover { background: rgba(232, 255, 62, 0.03); }
+.target:hover::before { transform: scaleX(1); }
+.target__num {
+  font-family: var(--font-mono);
+  font-size: 12px; color: var(--accent); letter-spacing: 0.15em;
+  margin-bottom: 32px;
+}
+.target h3 {
+  font-family: var(--font-display);
+  font-size: 28px; font-weight: 700; line-height: 1.05;
+  text-transform: uppercase; letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+.target p { font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+
+@media (max-width: 900px) { .target-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .target-grid { grid-template-columns: 1fr; } }
+
+/* Featured card — młodzież, spans full width in last row */
+.target--featured {
+  grid-column: 1 / -1;  /* span all 3 columns on desktop */
+  background: linear-gradient(90deg, rgba(232, 255, 62, 0.06) 0%, transparent 60%);
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 40px;
+  align-items: center;
+  padding: 48px 32px;
+}
+.target--featured::before {
+  background: var(--accent);
+  transform: scaleX(1);  /* always visible on featured card */
+  height: 4px;
+}
+.target--featured:hover { background: linear-gradient(90deg, rgba(232, 255, 62, 0.12) 0%, transparent 60%); }
+.target--featured .target__head {
+  display: flex; flex-direction: column; gap: 16px;
+}
+.target--featured .target__badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  align-self: flex-start;
+  background: var(--accent); color: var(--bg);
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+}
+.target--featured h3 {
+  font-size: clamp(32px, 4vw, 48px);
+  margin-bottom: 0;
+}
+.target--featured p { font-size: 15px; line-height: 1.6; }
+.target--featured .sports-tags {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 20px;
+}
+.target--featured .sports-tags span {
+  border: 1px solid var(--line-2);
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+@media (max-width: 900px) {
+  .target--featured { grid-column: 1 / -1; grid-template-columns: 1fr; padding: 32px 24px; gap: 20px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   6. OFFER (4 services)
+   ═══════════════════════════════════════════════════════════════════ */
+.offer-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0; border: 1px solid var(--line);
+}
+.offer {
+  padding: 40px 28px;
+  border-right: 1px solid var(--line);
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+  min-height: 420px;
+  transition: background 0.35s ease;
+}
+.offer:last-child { border-right: none; }
+.offer:hover { background: var(--bg-3); }
+.offer__badge {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 80px;
+}
+.offer h3 {
+  font-family: var(--font-display);
+  font-size: 36px; font-weight: 700; line-height: 0.95;
+  text-transform: uppercase; letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+.offer p {
+  font-size: 14px; line-height: 1.55; color: var(--ink-2);
+  margin-bottom: auto; padding-bottom: 32px;
+}
+.offer__link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  transition: color 0.2s;
+}
+.offer:hover .offer__link { color: var(--accent); }
+.offer:hover .offer__link .arrow { transform: translateX(4px); }
+.offer__link .arrow { transition: transform 0.2s; }
+
+@media (max-width: 900px) {
+  .offer-grid { grid-template-columns: 1fr; }
+  .offer { border-right: none; border-bottom: 1px solid var(--line); }
+  .offer:last-child { border-bottom: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   7. WHY US (USP points — big numbers)
+   ═══════════════════════════════════════════════════════════════════ */
+.why-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--line);
+}
+.why {
+  background: var(--bg-2); padding: 48px 32px;
+  transition: background 0.3s;
+}
+.why:hover { background: var(--bg-3); }
+.why .big {
+  font-family: var(--font-display);
+  font-size: clamp(80px, 10vw, 128px); line-height: 0.9;
+  font-weight: 800; letter-spacing: -0.03em;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+.why h3 {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700; line-height: 1.1;
+  text-transform: uppercase; letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+.why p { font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+
+@media (max-width: 900px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .why-grid { grid-template-columns: 1fr; } }
+
+/* ═══════════════════════════════════════════════════════════════════
+   8. TEAM
+   ═══════════════════════════════════════════════════════════════════ */
+.team-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+}
+.trainer {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  transition: border-color 0.3s;
+}
+.trainer:hover { border-color: var(--accent); }
+.trainer__photo {
+  aspect-ratio: 4/5;
+  background: linear-gradient(180deg, var(--bg-3) 0%, var(--bg-2) 100%);
+  position: relative; overflow: hidden;
+  display: grid; place-items: center;
+}
+.trainer__photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(232, 255, 62, 0.08), transparent 60%);
+}
+.trainer__photo .placeholder {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.2em; color: var(--ink-3); text-transform: uppercase;
+}
+.trainer__info {
+  padding: 24px; border-top: 1px solid var(--line);
+  background: var(--bg-2);
+  display: flex; justify-content: space-between; align-items: end;
+}
+.trainer__info h3 {
+  font-family: var(--font-display);
+  font-size: 28px; font-weight: 700; line-height: 1;
+  text-transform: uppercase; letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.trainer__role {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3);
+}
+.trainer__arrow {
+  width: 40px; height: 40px; border: 1px solid var(--line);
+  display: grid; place-items: center;
+  transition: all 0.3s;
+}
+.trainer:hover .trainer__arrow {
+  background: var(--accent); color: var(--bg); border-color: var(--accent);
+  transform: translate(-2px, -2px);
+}
+
+@media (max-width: 900px) { .team-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .team-grid { grid-template-columns: 1fr; } }
+
+/* ═══════════════════════════════════════════════════════════════════
+   9. TESTIMONIALS
+   ═══════════════════════════════════════════════════════════════════ */
+.testimonials {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.testimonial {
+  background: var(--bg); padding: 40px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.testimonial__stars {
+  display: flex; gap: 2px; color: var(--accent); font-size: 18px;
+}
+.testimonial__text {
+  font-family: var(--font-display);
+  font-size: 26px; font-weight: 500; line-height: 1.2;
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+.testimonial__text::before { content: "„"; color: var(--accent); }
+.testimonial__text::after { content: """; color: var(--accent); }
+.testimonial__author {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 20px; border-top: 1px solid var(--line);
+}
+.testimonial__name {
+  font-size: 14px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.testimonial__source {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; color: var(--ink-3); text-transform: uppercase;
+}
+
+.google-badge {
+  margin-top: 48px; padding: 32px;
+  border: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.google-badge__score {
+  display: flex; align-items: center; gap: 24px;
+}
+.google-badge__score .num {
+  font-family: var(--font-display);
+  font-size: 72px; line-height: 1; font-weight: 800;
+  color: var(--accent);
+}
+.google-badge__score .details .stars { color: var(--accent); font-size: 22px; margin-bottom: 6px; }
+.google-badge__score .details .count {
+  font-size: 13px; color: var(--ink-2); text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 800px) {
+  .testimonials { grid-template-columns: 1fr; }
+  .testimonial { padding: 28px; }
+  .testimonial__text { font-size: 22px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   10. LOCATION
+   ═══════════════════════════════════════════════════════════════════ */
+.location {
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 0;
+  border: 1px solid var(--line);
+}
+.location__info {
+  padding: 48px; background: var(--bg-2);
+  display: flex; flex-direction: column; gap: 32px;
+}
+.location__info h3 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 56px); line-height: 0.95;
+  font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em;
+}
+.location__info h3 .accent { color: var(--accent); }
+.nap-block {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+}
+.nap-row {
+  display: grid; grid-template-columns: 120px 1fr;
+  gap: 16px; padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px; align-items: center;
+}
+.nap-row:last-child { border-bottom: none; }
+.nap-row .key {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3);
+}
+.nap-row .val { font-weight: 500; }
+.nap-row .val a { border-bottom: 1px dotted var(--ink-3); }
+.nap-row .val a:hover { color: var(--accent); border-color: var(--accent); }
+
+.location__map {
+  background: var(--bg-3);
+  min-height: 480px;
+  position: relative; overflow: hidden;
+}
+.location__map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.5) contrast(1.1) invert(0.9); }
+
+@media (max-width: 900px) {
+  .location { grid-template-columns: 1fr; }
+  .location__info { padding: 32px; }
+  .location__map { min-height: 360px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   11. BLOG
+   ═══════════════════════════════════════════════════════════════════ */
+.blog-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+}
+.post {
+  display: flex; flex-direction: column;
+  border: 1px solid var(--line);
+  transition: border-color 0.3s, transform 0.3s;
+}
+.post:hover { border-color: var(--accent); transform: translateY(-4px); }
+.post__image {
+  aspect-ratio: 3/2;
+  background: linear-gradient(135deg, var(--bg-3), var(--bg-2));
+  display: grid; place-items: center;
+  position: relative;
+}
+.post__image::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(232, 255, 62, 0.08), transparent 60%);
+}
+.post__image .placeholder {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.2em; color: var(--ink-3);
+}
+.post__body {
+  padding: 24px; flex: 1;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.post__meta {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3);
+}
+.post__meta .tag { color: var(--accent); }
+.post h3 {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700; line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.post p { font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+.post__readtime {
+  margin-top: auto; padding-top: 16px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3);
+}
+
+@media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
+
+/* ═══════════════════════════════════════════════════════════════════
+   12. FAQ (accordion)
+   ═══════════════════════════════════════════════════════════════════ */
+.faq {
+  max-width: 960px; margin: 0 auto;
+  border-top: 1px solid var(--line);
+}
+.faq__item { border-bottom: 1px solid var(--line); }
+.faq__q {
+  width: 100%; padding: 28px 0;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 24px; text-align: left;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.5vw, 28px); font-weight: 700;
+  line-height: 1.15; letter-spacing: -0.01em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.faq__q:hover { color: var(--accent); }
+.faq__icon {
+  flex-shrink: 0; width: 36px; height: 36px;
+  border: 1px solid var(--line); display: grid; place-items: center;
+  position: relative; transition: all 0.3s;
+}
+.faq__icon::before, .faq__icon::after {
+  content: ""; position: absolute; background: currentColor;
+  transition: transform 0.3s;
+}
+.faq__icon::before { width: 14px; height: 2px; }
+.faq__icon::after { width: 2px; height: 14px; }
+.faq__item[aria-expanded="true"] .faq__icon::after { transform: scaleY(0); }
+.faq__item[aria-expanded="true"] .faq__icon { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.faq__a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.faq__item[aria-expanded="true"] .faq__a {
+  max-height: 600px; padding: 0 0 32px 0;
+}
+.faq__a p {
+  font-size: 16px; line-height: 1.6; color: var(--ink-2);
+  max-width: 72ch;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   13. CONTACT FORM
+   ═══════════════════════════════════════════════════════════════════ */
+.contact {
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px;
+}
+.contact__intro h2 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 6vw, 88px); line-height: 0.9;
+  font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.contact__intro h2 .accent { color: var(--accent); }
+.contact__intro p { font-size: 16px; line-height: 1.55; color: var(--ink-2); margin-bottom: 32px; max-width: 42ch; }
+.contact__direct {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.contact__direct a {
+  font-family: var(--font-display); font-size: 22px;
+  text-transform: uppercase; letter-spacing: 0.02em;
+  display: inline-flex; align-items: center; gap: 12px;
+  transition: color 0.2s;
+}
+.contact__direct a:hover { color: var(--accent); }
+.contact__direct .icon { color: var(--accent); }
+
+.form {
+  background: var(--bg-2); padding: 40px;
+  border: 1px solid var(--line);
+}
+.form__row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  margin-bottom: 20px;
+}
+.form__field { display: flex; flex-direction: column; gap: 8px; }
+.form__field--full { grid-column: span 2; }
+.form label {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+.form input, .form textarea, .form select {
+  background: var(--bg); color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 16px; font: inherit;
+  transition: border-color 0.2s;
+}
+.form input:focus, .form textarea:focus, .form select:focus {
+  outline: none; border-color: var(--accent);
+}
+.form textarea { min-height: 120px; resize: vertical; font-family: var(--font-body); }
+.form__consent {
+  font-size: 12px; color: var(--ink-3); line-height: 1.5;
+  display: flex; gap: 12px; margin: 20px 0;
+}
+.form__consent input[type="checkbox"] {
+  flex-shrink: 0; width: 18px; height: 18px;
+  accent-color: var(--accent);
+  margin-top: 2px;
+}
+.form button[type="submit"] {
+  width: 100%;
+  background: var(--accent); color: var(--bg);
+  padding: 20px; font-weight: 700;
+  font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase;
+  transition: all 0.2s;
+}
+.form button[type="submit"]:hover {
+  background: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .contact { grid-template-columns: 1fr; gap: 40px; }
+  .form { padding: 24px; }
+  .form__row { grid-template-columns: 1fr; }
+  .form__field--full { grid-column: auto; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   14. FOOTER
+   ═══════════════════════════════════════════════════════════════════ */
+.footer {
+  background: #000; padding: 80px 0 32px;
+  border-top: 1px solid var(--line);
+}
+.footer__top {
+  max-width: var(--container); margin: 0 auto; padding: 0 40px;
+}
+.footer__big {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 16vw, 240px);
+  line-height: 0.85; font-weight: 800; letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 64px;
+  display: flex; justify-content: space-between; align-items: end;
+  border-bottom: 1px solid var(--line); padding-bottom: 32px;
+  gap: 32px;
+}
+.footer__big .accent { color: var(--accent); font-style: italic; }
+.footer__big .arrow {
+  font-size: clamp(48px, 8vw, 120px);
+  transition: transform 0.3s;
+}
+.footer__big a:hover .arrow { transform: translate(6px, -6px); }
+
+.footer__grid {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 48px; margin-bottom: 64px;
+}
+.footer__col h4 {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ink-3);
+  margin-bottom: 20px;
+}
+.footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer__col a {
+  font-size: 14px; color: var(--ink-2);
+  transition: color 0.2s;
+}
+.footer__col a:hover { color: var(--accent); }
+.footer__col p { font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+
+.socials { display: flex; gap: 12px; margin-top: 16px; }
+.socials a {
+  width: 40px; height: 40px;
+  border: 1px solid var(--line);
+  display: grid; place-items: center;
+  transition: all 0.25s;
+}
+.socials a:hover {
+  background: var(--accent); border-color: var(--accent); color: var(--bg);
+}
+.socials svg { width: 18px; height: 18px; }
+
+.footer__bottom {
+  max-width: var(--container); margin: 0 auto; padding: 24px 40px 0;
+  border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3);
+}
+.footer__bottom a:hover { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer__big { font-size: 72px; flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 500px) {
+  .footer__grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Scroll-triggered reveal
+   ═══════════════════════════════════════════════════════════════════ */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Accessibility: skip to main content -->
+<a href="#main" class="skip-link">Przejdź do treści</a>
+
+<!-- ═════════════════════════════════════════════════════════════════
+     ANNOUNCEMENT BAR
+     ═════════════════════════════════════════════════════════════════ -->
+<div class="announce">
+  <strong>Studio otwarte</strong> · Codziennie 5:30 — 23:00
+  <span class="sep">●</span>
+  Plac Na Groblach 23, Kraków
+  <span class="sep">●</span>
+  <strong>+48 728 385 203</strong>
+</div>
+
+<!-- ═════════════════════════════════════════════════════════════════
+     HEADER
+     ═════════════════════════════════════════════════════════════════ -->
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo" aria-label="SAMtrening — strona główna">
+      SAM<span class="dot">·</span>TRENING
+    </a>
+    <nav aria-label="Menu główne">
+      <ul class="nav">
+        <li><a href="treningi-personalne.html">Treningi</a></li>
+        <li><a href="zdrowa-ciaza.html">Ciąża</a></li>
+        <li><a href="e-trening.html">E-trening</a></li>
+        <li><a href="zespol.html">Zespół</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="header__cta">
+      <a href="tel:+48728385203" class="header__phone">+48 728 385 203</a>
+      <a href="https://app.samtrening.com" class="header__login" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+          <polyline points="10 17 15 12 10 7"/>
+          <line x1="15" y1="12" x2="3" y2="12"/>
+        </svg>
+        Zaloguj się
+      </a>
+      <a href="#kontakt" class="header__btn">Konsultacja →</a>
+      <button class="burger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <nav aria-label="Menu mobilne">
+    <ul>
+      <li><a href="treningi-personalne.html">Treningi personalne</a></li>
+      <li><a href="zdrowa-ciaza.html">Zdrowa ciąża</a></li>
+      <li><a href="e-trening.html">E-trening</a></li>
+      <li><a href="zespol.html">Zespół</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+</div>
+
+<!-- ═════════════════════════════════════════════════════════════════
+     MAIN
+     ═════════════════════════════════════════════════════════════════ -->
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__inner">
+      <div class="hero__top">
+        <div class="hero__live">
+          <span class="pulse" aria-hidden="true"></span>
+          Studio otwarte · następny wolny termin jutro
+        </div>
+        <div class="hero__location">
+          Plac Na Groblach 23<br>
+          <strong>Kraków, PL</strong>
+        </div>
+      </div>
+
+      <h1 id="hero-title">
+        <span class="line">Trener</span>
+        <span class="line"><span class="accent">Personalny.</span></span>
+        <span class="line"><span class="outline">Kraków.</span></span>
+      </h1>
+
+      <div class="hero__bottom">
+        <p class="hero__sub">
+          Kameralne studio 1:1 pod Wawelem. Bez pakietów, bez zobowiązań, bez tłumów.
+          Piętnaście lat praktyki z przedsiębiorcami, lekarzami, prawnikami, rodzicami,
+          młodzieżą od 10 r.ż. i sportowcami po kontuzjach. Płacisz za odbyte sesje — nic więcej.
+        </p>
+        <div class="hero__stat">
+          <div class="num">15+</div>
+          <div class="lbl">Lat praktyki</div>
+        </div>
+        <div class="hero__stat">
+          <div class="num">1:1</div>
+          <div class="lbl">Formuła</div>
+        </div>
+        <div class="hero__stat">
+          <div class="num">4,9</div>
+          <div class="lbl">Google · 44 opinie</div>
+        </div>
+      </div>
+
+      <div class="hero__cta">
+        <a href="#kontakt" class="btn btn--primary">
+          Umów bezpłatną konsultację <span class="arrow">→</span>
+        </a>
+        <a href="#oferta" class="btn btn--ghost">Sprawdź ofertę</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Trening personalny <span class="dot">●</span> Zdrowa ciąża <span class="dot">●</span> E-trening online <span class="dot">●</span> Studio 1:1 <span class="dot">●</span> Plac Na Groblach <span class="dot">●</span> 5:30 — 23:00 <span class="dot">●</span></span>
+      <span>Trening personalny <span class="dot">●</span> Zdrowa ciąża <span class="dot">●</span> E-trening online <span class="dot">●</span> Studio 1:1 <span class="dot">●</span> Plac Na Groblach <span class="dot">●</span> 5:30 — 23:00 <span class="dot">●</span></span>
+    </div>
+  </div>
+
+  <!-- DLA KOGO -->
+  <section class="section" aria-labelledby="target-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">01 — Dla kogo</div>
+          <h2 id="target-title">Trenujemy<br>z <span class="accent">ludźmi,</span><br>nie ze średnią.</h2>
+        </div>
+        <p>
+          Każda z tych grup ma inny problem i inną dynamikę dnia.
+          Dlatego nie pracujemy z „każdym" — pracujemy z konkretnymi ludźmi,
+          którym naprawdę mamy co zaoferować.
+        </p>
+      </div>
+
+      <div class="target-grid reveal">
+        <article class="target">
+          <div class="target__num">01</div>
+          <h3>Przedsiębiorcy<br>i managerowie</h3>
+          <p>Kalendarz zmienia się co tydzień, forma spada od lat. Dopasowujemy grafik do Ciebie, nie odwrotnie. Sesje od 5:30 rano przed pracą.</p>
+        </article>
+        <article class="target">
+          <div class="target__num">02</div>
+          <h3>Lekarze<br>pod presją</h3>
+          <p>Dyżury, ostre zmiany, bóle kręgosłupa po godzinach przy stole operacyjnym. Trening jako regeneracja, nie dodatkowy stresor.</p>
+        </article>
+        <article class="target">
+          <div class="target__num">03</div>
+          <h3>Prawnicy<br>i ludzie biznesu</h3>
+          <p>Spotkania, sądy, podróże. Dyskretna lokalizacja w Starym Mieście, elastyczny grafik, rezerwacja do ostatniej chwili.</p>
+        </article>
+        <article class="target">
+          <div class="target__num">04</div>
+          <h3>Rodzice<br>walczący o czas</h3>
+          <p>Między przedszkolem a pracą. Godzina dla siebie, która realnie coś zmienia — nie „zabij się w 45 minut, bo mamy mało czasu".</p>
+        </article>
+        <article class="target">
+          <div class="target__num">05</div>
+          <h3>Dorośli po 40<br>wracający do formy</h3>
+          <p>Kiedyś trenowałeś/aś, potem praca, dzieci, brak czasu. Bezpieczny restart bez bohaterstwa. Pracujemy z kręgosłupem, stawami, mobilnością.</p>
+        </article>
+        <article class="target">
+          <div class="target__num">06</div>
+          <h3>Kobiety<br>w ciąży i po porodzie</h3>
+          <p>Trenerki z wykształceniem fizjoterapeutycznym. Bezpieczny ruch w każdym trymestrze i praca z dnem miednicy po porodzie.</p>
+        </article>
+        <article class="target target--featured">
+          <div class="target__head">
+            <div class="target__badge">07 · Wyróżniamy się</div>
+            <h3>Młodzież<br>od 10 roku życia</h3>
+          </div>
+          <div>
+            <p>
+              Pracujemy z młodymi sportowcami, którzy trenują wyczynowo w klubach,
+              oraz z dziećmi, dla których trening personalny to fundament ogólnej sprawności,
+              zdrowej postawy i pewności siebie. Sesje zawsze za wyraźną zgodą rodzica,
+              z pełną transparentnością programu i postępów.
+            </p>
+            <div class="sports-tags">
+              <span>Piłka nożna</span>
+              <span>Siatkówka</span>
+              <span>Gimnastyka</span>
+              <span>Koszykówka</span>
+              <span>Postawa i mobilność</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section class="section section--alt" id="oferta" aria-labelledby="offer-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">02 — Oferta</div>
+          <h2 id="offer-title">Trzy<br>programy.<br><span class="accent">Jeden Ty.</span></h2>
+        </div>
+        <p>
+          Każdy program dopasowujemy do Twojego życia, doświadczenia i celów.
+          Wybierz punkt startu — podczas bezpłatnej konsultacji dobierzemy
+          dokładnie to, czego teraz potrzebujesz.
+        </p>
+      </div>
+
+      <div class="offer-grid reveal">
+        <article class="offer">
+          <div class="offer__badge">01 / Studio</div>
+          <h3>Trening<br>personalny</h3>
+          <p>Godzina 1:1 w naszym studio. Dla osób, które chcą konkretnego trenera, realnej kontroli techniki i pełnej uwagi przez 60 minut. Dzieci od 10 r.ż. również.</p>
+          <a href="treningi-personalne.html" class="offer__link">
+            Sprawdź ofertę <span class="arrow">→</span>
+          </a>
+        </article>
+        <article class="offer">
+          <div class="offer__badge">02 / Ciąża</div>
+          <h3>Zdrowa<br>ciąża</h3>
+          <p>Trening dla kobiet w ciąży, po porodzie i w okresie połogu. Kasia Samborska — fizjoterapeutka, 13 lat pracy z mamami. Praca z dnem miednicy.</p>
+          <a href="zdrowa-ciaza.html" class="offer__link">
+            Sprawdź ofertę <span class="arrow">→</span>
+          </a>
+        </article>
+        <article class="offer">
+          <div class="offer__badge">03 / Online</div>
+          <h3>E-<br>trening</h3>
+          <p>Treningi online, konsultacje, plany żywieniowe, wsparcie suplementacyjne. Dla Polaków w Krakowie, w innych miastach i za granicą.</p>
+          <a href="e-trening.html" class="offer__link">
+            Sprawdź ofertę <span class="arrow">→</span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DLACZEGO NAS -->
+  <section class="section" aria-labelledby="why-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">03 — Co nas wyróżnia</div>
+          <h2 id="why-title">Konkret.<br><span class="accent">Nie marketing.</span></h2>
+        </div>
+        <p>
+          Nie mamy pakietów. Nie mamy „oferty wprowadzającej". Nie mamy tłumów.
+          Mamy za to konkretne liczby, które pokazują, dlaczego ludzie wracają do nas latami.
+        </p>
+      </div>
+
+      <div class="why-grid reveal">
+        <div class="why">
+          <div class="big">15+</div>
+          <h3>Lat doświadczenia</h3>
+          <p>Maciek — Mistrzostwa Świata w sprintach. Kasia — 10 lat kadry Polski na 400m przez płotki. Praktyka ze sportu wyczynowego.</p>
+        </div>
+        <div class="why">
+          <div class="big">1:1</div>
+          <h3>Wyłącznie</h3>
+          <p>Żadnych grupówek, żadnego „jestem za chwilę, kończę z panią obok". Pełne 60 minut uwagi, Twoja jedna sesja — nasz jeden klient.</p>
+        </div>
+        <div class="why">
+          <div class="big">17,5</div>
+          <h3>Godzin pracy studia dziennie</h3>
+          <p>Otwarte od 5:30 do 23:00, także w weekendy. Rezerwujesz na ostatnią chwilę, zmieniamy termin w dniu treningu — pracujemy tak, jak Ty żyjesz.</p>
+        </div>
+        <div class="why">
+          <div class="big">0</div>
+          <h3>Pakietów i zobowiązań</h3>
+          <p>Płacisz za odbyte sesje. Nie zmuszamy do kupowania miesiąca z góry. Zmieniasz plany — bez problemu. Relacja przed transakcją.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZESPÓŁ -->
+  <section class="section section--alt" aria-labelledby="team-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">04 — Zespół</div>
+          <h2 id="team-title">Trenerzy<br>nie<br><span class="accent">statyści.</span></h2>
+        </div>
+        <p>
+          Małe studio — tylko trzech trenerów. Każdy z własnym doświadczeniem sportowym,
+          wykształceniem i specjalizacją. Wybierasz osobę, z którą klikasz,
+          i zostajesz z nią na długo.
+        </p>
+      </div>
+
+      <div class="team-grid reveal">
+        <a href="zespol.html#kasia" class="trainer">
+          <div class="trainer__photo">
+            <span class="placeholder">[ zdjęcie Kasi ]</span>
+          </div>
+          <div class="trainer__info">
+            <div>
+              <h3>Kasia<br>Samborska</h3>
+              <div class="trainer__role">Zdrowa ciąża · 1:1</div>
+            </div>
+            <span class="trainer__arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+        <a href="zespol.html#maciek" class="trainer">
+          <div class="trainer__photo">
+            <span class="placeholder">[ zdjęcie Maćka ]</span>
+          </div>
+          <div class="trainer__info">
+            <div>
+              <h3>Maciej<br>Samborski</h3>
+              <div class="trainer__role">Trening personalny · Plany</div>
+            </div>
+            <span class="trainer__arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+        <a href="zespol.html#bartek" class="trainer">
+          <div class="trainer__photo">
+            <span class="placeholder">[ zdjęcie Bartka ]</span>
+          </div>
+          <div class="trainer__info">
+            <div>
+              <h3>Bartosz<br>Świerk</h3>
+              <div class="trainer__role">Sylwetka · Siła · Mobilność</div>
+            </div>
+            <span class="trainer__arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIE -->
+  <section class="section" aria-labelledby="reviews-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow eyebrow--accent">05 — Opinie klientów</div>
+          <h2 id="reviews-title">Co mówią<br>ludzie,<br>którzy <span class="accent">wracają.</span></h2>
+        </div>
+        <p>
+          Opinie pochodzą z Google — ocena 4,9/5 na podstawie 44 recenzji.
+          Każda weryfikowana przez Trustindex. Pełna lista dostępna w naszym
+          profilu Google Business.
+        </p>
+      </div>
+
+      <div class="testimonials reveal">
+        <div class="testimonial">
+          <div class="testimonial__stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
+          <p class="testimonial__text">Długo szukałam trenera personalnego w Krakowie, który podejdzie do mnie indywidualnie. Przyszłam z nadwagą i kompleksami — w ciągu 4 miesięcy schudłam 12 kg i zbudowałam siłę.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__name">Magda W.</div>
+            <div class="testimonial__source">Google Review</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
+          <p class="testimonial__text">Po kontuzji kolana myślałem, że ze sportem skończyłem. Dzięki SAMtrening wróciłem do pełnej sprawności. Po 3 miesiącach biegam znowu bez bólu.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__name">Piotr M.</div>
+            <div class="testimonial__source">Google Review</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
+          <p class="testimonial__text">Byłam w 5. miesiącu ciąży i bałam się, że trening może zaszkodzić. Kasia rozwiała wszystkie moje obawy. Treningi bezpieczne, dostosowane do każdego etapu.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__name">Asia W.</div>
+            <div class="testimonial__source">Google Review</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
+          <p class="testimonial__text">W samtreningu masz 100% uwagi trenera. Pracuję z Bartkiem — zero przypadkowości, zero spiny. Każdy ruch ma sens.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__name">Aleksander G.</div>
+            <div class="testimonial__source">Google Review</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="google-badge reveal">
+        <div class="google-badge__score">
+          <div class="num">4,9</div>
+          <div class="details">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <div class="count">44 opinie w Google</div>
+          </div>
+        </div>
+        <a href="https://g.co/samtrening" class="btn btn--ghost" target="_blank" rel="noopener">
+          Zobacz wszystkie opinie <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOKALIZACJA -->
+  <section class="section section--alt" aria-labelledby="location-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">06 — Lokalizacja</div>
+          <h2 id="location-title">Pięć minut<br>od <span class="accent">Wawelu.</span></h2>
+        </div>
+        <p>
+          Studio mieści się na Placu Na Groblach 23 — w ścisłym centrum Krakowa,
+          między Wawelem a Plantami. Dojazd autem, na piechotę lub MPK.
+          Parking na Placu Na Groblach.
+        </p>
+      </div>
+
+      <div class="location reveal">
+        <div class="location__info">
+          <h3>Plac Na<br>Groblach <span class="accent">23</span></h3>
+
+          <div>
+            <div class="eyebrow" style="margin-bottom:16px;">Jak dojechać</div>
+            <p style="color:var(--ink-2); font-size:15px; line-height:1.6;">
+              <strong>Pieszo z Rynku Głównego:</strong> 10 minut ul. Grodzką, potem wzdłuż Wawelu.<br><br>
+              <strong>Z Dębnik pieszo:</strong> 8 minut od Ronda Grunwaldzkiego przez most.<br><br>
+              <strong>Autem:</strong> parking naziemny na Placu Na Groblach (pierwsza godzina bezpłatna dla klientów studia).<br><br>
+              <strong>MPK:</strong> przystanek Plac Na Groblach (linie 124, 194) lub Filharmonia (tramwaje 2, 13, 18, 20).
+            </p>
+          </div>
+
+          <div class="nap-block">
+            <div class="nap-row">
+              <div class="key">Adres</div>
+              <div class="val">Plac Na Groblach 23, 30-101 Kraków</div>
+            </div>
+            <div class="nap-row">
+              <div class="key">Telefon</div>
+              <div class="val"><a href="tel:+48728385203">+48 728 385 203</a></div>
+            </div>
+            <div class="nap-row">
+              <div class="key">Email</div>
+              <div class="val"><a href="mailto:biuro@samtrening.com">biuro@samtrening.com</a></div>
+            </div>
+            <div class="nap-row">
+              <div class="key">Godziny</div>
+              <div class="val">Pon–Niedz · 5:30 — 23:00</div>
+            </div>
+          </div>
+        </div>
+        <div class="location__map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.4!2d19.930!3d50.058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zUGxhYyBOYSBHcm9ibGFjaCAyMywgS3Jha8OzdyA!5e0!3m2!1spl!2spl!4v1"
+            width="100%" height="100%"
+            style="border:0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa lokalizacji studia SAMtrening — Plac Na Groblach 23, Kraków">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="section" aria-labelledby="blog-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">07 — Blog</div>
+          <h2 id="blog-title">Ostatnie<br><span class="accent">artykuły.</span></h2>
+        </div>
+        <p>
+          Konkretna wiedza z naszego studia. Bez teorii z internetu — piszemy
+          o tym, co widzimy codziennie w pracy z klientami.
+        </p>
+      </div>
+
+      <div class="blog-grid reveal">
+        <article class="post">
+          <a href="blog.html">
+            <div class="post__image">
+              <span class="placeholder">[ zdjęcie artykułu ]</span>
+            </div>
+            <div class="post__body">
+              <div class="post__meta">
+                <span class="tag">Zdrowa ciąża</span>
+                <span>13.04.2026</span>
+              </div>
+              <h3>Ćwiczenia w ciąży — mity, fakty i to, czego naprawdę się boisz</h3>
+              <p>Ćwiczenia w ciąży budzą ogromne emocje. Jedni mówią „leż i odpoczywaj", inni „ćwicz". Gdzieś pośrodku jest mama, która po prostu chce dobrze.</p>
+              <div class="post__readtime">Autorka: Kasia Samborska · 7 min czytania</div>
+            </div>
+          </a>
+        </article>
+        <article class="post">
+          <a href="blog.html">
+            <div class="post__image">
+              <span class="placeholder">[ zdjęcie artykułu ]</span>
+            </div>
+            <div class="post__body">
+              <div class="post__meta">
+                <span class="tag">Dieta</span>
+                <span>01.04.2026</span>
+              </div>
+              <h3>Jak nie przytyć w święta wielkanocne</h3>
+              <p>Święta mają swój klimat. Jajka, żurek, mazurek, dokładki od rodziny. Jak przejść przez ten czas bez wyrzutów sumienia — i bez suchej sałaty.</p>
+              <div class="post__readtime">Autor: Maciej Samborski · 5 min czytania</div>
+            </div>
+          </a>
+        </article>
+        <article class="post">
+          <a href="blog.html">
+            <div class="post__image">
+              <span class="placeholder">[ zdjęcie artykułu ]</span>
+            </div>
+            <div class="post__body">
+              <div class="post__meta">
+                <span class="tag">Zdrowie</span>
+                <span>18.03.2026</span>
+              </div>
+              <h3>Przesilenie wiosenne — co się dzieje z organizmem</h3>
+              <p>Mniej energii, gorszy sen, rozdrażnienie. To nie brak charakteru — to naturalna adaptacja organizmu do zmiany światła i rytmu dnia.</p>
+              <div class="post__readtime">Autor: Maciej Samborski · 6 min czytania</div>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <div style="text-align:center; margin-top:48px;" class="reveal">
+        <a href="blog.html" class="btn btn--ghost">Wszystkie wpisy <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-head reveal" style="grid-template-columns:1fr; text-align:center; max-width:800px; margin-left:auto; margin-right:auto;">
+        <div>
+          <div class="eyebrow" style="justify-content:center;">08 — FAQ</div>
+          <h2 id="faq-title">Najczęstsze<br><span class="accent">pytania.</span></h2>
+        </div>
+      </div>
+
+      <div class="faq reveal">
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-1">
+            <span>Ile kosztuje trening personalny?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="faq-1">
+            <p>Jedna sesja 1:1 kosztuje 200 zł za 60 minut. Nie sprzedajemy pakietów ani abonamentów — płacisz za odbyte sesje. Pierwsza 75-minutowa konsultacja (wywiad, pomiary, sesja testowa) jest bezpłatna. Szczegółowy cennik wszystkich usług znajdziesz na stronach poszczególnych ofert.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-2">
+            <span>Czy pierwsza konsultacja jest bezpłatna?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="faq-2">
+            <p>Tak. Przed pierwszym treningiem zawsze proponujemy bezpłatną 20-minutową konsultację — w studio lub telefonicznie. Sprawdzamy, czy nasz styl pracy pasuje do Twoich celów i czy jesteśmy dla Ciebie najlepszym wyborem. Bez zobowiązań.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-3">
+            <span>Czy mogę trenować rano przed pracą?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="faq-3">
+            <p>Tak. Studio otwarte jest codziennie od 5:30 do 23:00, również w weekendy. Najpopularniejsze sloty wśród przedsiębiorców to 6:00, 6:30 i 7:00 — jesteś po treningu zanim większość miasta zaczyna pracę. Prysznic w studio dostępny.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-4">
+            <span>Czy prowadzicie treningi w ciąży?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="faq-4">
+            <p>Tak. Kasia Samborska specjalizuje się w treningu kobiet w ciąży, po porodzie i w połogu. Ma 13 lat doświadczenia i wykształcenie fizjoterapeutyczne w zakresie dna miednicy. Szczegółowe informacje znajdziesz na stronie <a href="zdrowa-ciaza.html" style="color:var(--accent);">Zdrowa Ciąża</a>.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-5">
+            <span>Co jeśli muszę odwołać trening?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="faq-5">
+            <p>Bez problemu. Odwołanie na 12 godzin przed treningiem jest bezpłatne — wystarczy SMS lub telefon. Wiemy, że grafiki zapracowanych ludzi zmieniają się w ostatniej chwili, i tego nie karzemy. Jeśli odwołujesz później, prosimy o kontakt — zwykle przesuwamy sesję na inny termin.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-6">
+            <span>Czy trenujecie również dzieci?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="faq-6">
+            <p>Tak — od 10 roku życia. Pracujemy z młodymi sportowcami (piłka nożna, siatkówka, gimnastyka) oraz z dziećmi, dla których trening to podstawa ogólnej sprawności i zdrowej postawy. Zawsze w obecności rodzica lub po jego wyraźnej zgodzie.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT + FORM -->
+  <section class="section" id="kontakt" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact reveal">
+        <div class="contact__intro">
+          <h2 id="contact-title">Umów<br>bezpłatną<br><span class="accent">konsultację.</span></h2>
+          <p>
+            Wypełnij formularz albo zadzwoń. Odpowiadamy zwykle w ciągu 2–4 godzin
+            w dni robocze. Podczas konsultacji ustalimy Twoje cele i wybierzemy
+            program dopasowany do Twojego życia.
+          </p>
+
+          <div class="contact__direct">
+            <a href="tel:+48728385203">
+              <span class="icon" aria-hidden="true">📞</span>
+              +48 728 385 203
+            </a>
+            <a href="mailto:biuro@samtrening.com">
+              <span class="icon" aria-hidden="true">✉</span>
+              biuro@samtrening.com
+            </a>
+          </div>
+        </div>
+
+        <form class="form" aria-label="Formularz kontaktowy">
+          <div class="form__row">
+            <div class="form__field">
+              <label for="f-name">Imię</label>
+              <input type="text" id="f-name" name="name" required>
+            </div>
+            <div class="form__field">
+              <label for="f-phone">Telefon</label>
+              <input type="tel" id="f-phone" name="phone" required>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__field form__field--full">
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" name="email" required>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__field form__field--full">
+              <label for="f-service">Czym jesteś zainteresowany/a</label>
+              <select id="f-service" name="service">
+                <option>Treningi personalne</option>
+                <option>Zdrowa ciąża</option>
+                <option>E-trening online</option>
+                <option>Nie wiem jeszcze — chcę się skonsultować</option>
+              </select>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__field form__field--full">
+              <label for="f-msg">Twoja wiadomość</label>
+              <textarea id="f-msg" name="message" placeholder="Opcjonalnie — opisz cel lub sytuację..."></textarea>
+            </div>
+          </div>
+          <label class="form__consent">
+            <input type="checkbox" required>
+            <span>Wyrażam zgodę na przetwarzanie danych osobowych przez SAMTRENING Sp. z o.o. zgodnie z <a href="rodo.html" style="color:var(--accent);">polityką prywatności</a> w celu odpowiedzi na zapytanie.</span>
+          </label>
+          <button type="submit">Wyślij wiadomość →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ═════════════════════════════════════════════════════════════════
+     FOOTER
+     ═════════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__big">
+      <a href="#kontakt">
+        Zacznijmy <span class="accent">razem.</span>
+      </a>
+      <a href="#kontakt" aria-label="Przejdź do formularza kontaktowego"><span class="arrow">↗</span></a>
+    </div>
+
+    <div class="footer__grid">
+      <div class="footer__col">
+        <h4>SAMtrening</h4>
+        <p>
+          Kameralne studio treningu personalnego w centrum Krakowa.
+          Plac Na Groblach 23, 30-101 Kraków.
+        </p>
+        <div class="socials" aria-label="Media społecznościowe">
+          <a href="https://www.facebook.com/samtrening" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.3c0-1 .2-1.3 1.1-1.3H18V0h-3.2C11.2 0 9 1.5 9 4.5V8z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/samtrening" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://g.co/samtrening" target="_blank" rel="noopener" aria-label="Google Business">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 5c1.6 0 3 .5 4.2 1.5L19 3.7C17 1.9 14.6 1 12 1 7.4 1 3.4 3.6 1.4 7.4l3.3 2.6C5.7 7 8.6 5 12 5z M23 12.2c0-.8-.1-1.6-.2-2.4H12v4.5h6.2c-.3 1.4-1.1 2.6-2.3 3.4l3.5 2.7c2.1-1.9 3.6-4.8 3.6-8.2z M5 13c-.3-.9-.5-1.8-.5-2.8 0-1 .2-1.9.5-2.8L1.7 4.8C.6 6.9 0 9.3 0 12s.6 5.1 1.7 7.2l3.3-2.6c-.3-.9-.5-1.8-.5-2.8.2-.2 0-.5.5-.8z M12 23c3 0 5.6-1 7.4-2.7l-3.5-2.7c-1 .7-2.3 1.1-3.9 1.1-3.3 0-6.2-2-7.3-5l-3.3 2.6C3.4 20.4 7.4 23 12 23z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Oferta</h4>
+        <ul>
+          <li><a href="treningi-personalne.html">Treningi personalne</a></li>
+          <li><a href="zdrowa-ciaza.html">Zdrowa ciąża</a></li>
+          <li><a href="e-trening.html">E-trening online</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="zespol.html">Zespół</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="https://app.samtrening.com" target="_blank" rel="noopener">Platforma — zaloguj się</a></li>
+          <li><a href="rodo.html">Polityka prywatności</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+48728385203">+48 728 385 203</a></li>
+          <li><a href="mailto:biuro@samtrening.com">biuro@samtrening.com</a></li>
+          <li><span style="color:var(--ink-2);">Plac Na Groblach 23<br>30-101 Kraków</span></li>
+          <li><span style="color:var(--ink-2);">Pon–Niedz · 5:30–23:00</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div>© <span id="year">2026</span> SAMtrening Sp. z o.o. Wszelkie prawa zastrzeżone.</div>
+    <div>Stworzone z miłością do zdrowia.</div>
+  </div>
+</footer>
+
+<!-- ═════════════════════════════════════════════════════════════════
+     JAVASCRIPT (lekki, bez zewnętrznych bibliotek)
+     ═════════════════════════════════════════════════════════════════ -->
+<script>
+// Dynamiczny rok w stopce (audyt 3.7)
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Mobile menu toggle
+const burger = document.querySelector('.burger');
+const mobileMenu = document.getElementById('mobile-menu');
+burger.addEventListener('click', () => {
+  const open = burger.getAttribute('aria-expanded') === 'true';
+  burger.setAttribute('aria-expanded', !open);
+  mobileMenu.classList.toggle('is-open');
+  document.body.style.overflow = !open ? 'hidden' : '';
+});
+// Close mobile menu on link click
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  burger.setAttribute('aria-expanded', 'false');
+  mobileMenu.classList.remove('is-open');
+  document.body.style.overflow = '';
+}));
+
+// FAQ accordion
+document.querySelectorAll('.faq__item').forEach(item => {
+  const btn = item.querySelector('.faq__q');
+  btn.addEventListener('click', () => {
+    const open = item.getAttribute('aria-expanded') === 'true';
+    // Close all others
+    document.querySelectorAll('.faq__item').forEach(i => {
+      i.setAttribute('aria-expanded', 'false');
+      i.querySelector('.faq__q').setAttribute('aria-expanded', 'false');
+    });
+    // Toggle current
+    if (!open) {
+      item.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Scroll-triggered reveal (IntersectionObserver)
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Form — basic demo (w produkcji: integracja np. z Contact Form 7 w WordPressie)
+document.querySelector('.form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert('Demo prototypu — w docelowej wersji formularz integrujemy z WordPressem (Contact Form 7 lub WPForms).');
+});
+</script>
+
+</body>
+</html>

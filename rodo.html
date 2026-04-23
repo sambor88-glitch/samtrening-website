@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Polityka prywatności (RODO) — SAMtrening Kraków</title>
+<meta name="description" content="Polityka prywatności SAMtrening Kraków — jakie dane zbieramy, po co, jak je chronimy i jakie masz prawa. Zgodnie z RODO i Prawem komunikacji elektronicznej.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.samtrening.com/rodo/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="Polityka prywatności — SAMtrening Kraków">
+<meta property="og:description" content="Jakie dane zbieramy, po co i jak je chronimy. Zgodnie z RODO.">
+<meta property="og:url" content="https://www.samtrening.com/rodo/">
+
+<!-- Schema.org: WebPage + BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.samtrening.com/rodo/#page",
+      "name": "Polityka prywatności — SAMtrening Kraków",
+      "description": "Polityka prywatności SAMtrening — jakie dane zbieramy i jak je chronimy, zgodnie z RODO i Prawem komunikacji elektronicznej.",
+      "url": "https://www.samtrening.com/rodo/",
+      "inLanguage": "pl-PL",
+      "isPartOf": { "@id": "https://www.samtrening.com/#website" },
+      "about": { "@id": "https://www.samtrening.com/#business" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://www.samtrening.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Polityka prywatności", "item": "https://www.samtrening.com/rodo/" }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   DESIGN SYSTEM — Variant B
+   ═══════════════════════════════════════════════════════════════════ */
+:root {
+  --bg: #0A0908; --bg-2: #131210; --bg-3: #1C1A17;
+  --ink: #FAFAF7;
+  --ink-2: rgba(250,250,247,0.72);
+  --ink-3: rgba(250,250,247,0.45);
+  --line: rgba(250,250,247,0.12);
+  --line-2: rgba(250,250,247,0.22);
+  --accent: #E8FF3E;
+  --font-display: "Big Shoulders Display", Impact, sans-serif;
+  --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --container: 1400px;
+  --article-width: 820px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body); background: var(--bg); color: var(--ink);
+  line-height: 1.5; -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.skip-link { position: absolute; left: -9999px; top: 8px; z-index: 999; background: var(--accent); color: var(--bg); padding: 12px 20px; font-weight: 700; text-transform: uppercase; }
+.skip-link:focus { left: 16px; }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 40px; }
+@media (max-width: 700px) { .container { padding: 0 20px; } }
+
+.eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); }
+.eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+.eyebrow--accent { color: var(--accent); }
+
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 18px 28px; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: all 0.25s ease; border: 1px solid transparent; white-space: nowrap; }
+.btn--primary { background: var(--accent); color: var(--bg); }
+.btn--primary:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+.btn--ghost { border-color: var(--line-2); color: var(--ink); }
+.btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn .arrow { transition: transform 0.25s ease; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* Header / Announcement / Mobile menu — shared */
+.announce { background: var(--accent); color: var(--bg); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 20px; text-align: center; }
+.announce strong { font-weight: 800; }
+.announce .sep { margin: 0 12px; opacity: 0.5; }
+.header { position: sticky; top: 0; z-index: 50; background: rgba(10, 9, 8, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.header__inner { max-width: var(--container); margin: 0 auto; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; gap: 32px; }
+.logo { font-family: var(--font-display); font-size: 26px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; display: flex; align-items: center; gap: 2px; }
+.logo .dot { color: var(--accent); }
+.nav { display: flex; gap: 28px; list-style: none; }
+.nav a { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 0; position: relative; transition: color 0.2s; }
+.nav a:hover { color: var(--accent); }
+.nav a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }
+.nav a:hover::after { width: 100%; }
+.header__cta { display: flex; align-items: center; gap: 12px; }
+.header__phone { font-family: var(--font-mono); font-size: 13px; color: var(--ink-2); transition: color 0.2s; }
+.header__phone:hover { color: var(--accent); }
+.header__login { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-2); padding: 10px 14px; border: 1px solid var(--line-2); display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+.header__login:hover { border-color: var(--accent); color: var(--accent); }
+.header__login .icon { width: 12px; height: 12px; }
+@media (max-width: 1200px) { .header__login { display: none; } }
+.header__btn { background: var(--accent); color: var(--bg); padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s; }
+.header__btn:hover { background: var(--ink); }
+.burger { display: none; width: 40px; height: 40px; flex-direction: column; justify-content: center; gap: 5px; align-items: center; }
+.burger span { width: 22px; height: 2px; background: var(--ink); transition: transform 0.3s, opacity 0.3s; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.mobile-menu { display: none; position: fixed; inset: 0; background: var(--bg); z-index: 49; padding: 120px 40px 40px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.mobile-menu.is-open { opacity: 1; pointer-events: auto; }
+.mobile-menu ul { list-style: none; }
+.mobile-menu li { border-bottom: 1px solid var(--line); }
+.mobile-menu a { display: block; padding: 24px 0; font-family: var(--font-display); font-size: 32px; font-weight: 700; text-transform: uppercase; }
+@media (max-width: 1024px) { .nav { display: none; } .header__phone { display: none; } .burger { display: flex; } .mobile-menu { display: block; } }
+
+/* Breadcrumbs */
+.breadcrumbs { padding: 24px 0; border-bottom: 1px solid var(--line); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3); }
+.breadcrumbs__list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; max-width: var(--container); margin: 0 auto; padding: 0 40px; }
+.breadcrumbs__list a { transition: color 0.2s; }
+.breadcrumbs__list a:hover { color: var(--accent); }
+.breadcrumbs__list li:not(:last-child)::after { content: "/"; margin-left: 8px; color: var(--ink-3); opacity: 0.5; }
+.breadcrumbs__list li:last-child { color: var(--ink); }
+@media (max-width: 700px) { .breadcrumbs__list { padding: 0 20px; } }
+
+/* ═══════════════════════════════════════════════════════════════════
+   RODO HERO
+   ═══════════════════════════════════════════════════════════════════ */
+.rodo-hero {
+  padding: 72px 0 56px;
+  border-bottom: 1px solid var(--line);
+}
+.rodo-hero__inner {
+  max-width: var(--container); margin: 0 auto; padding: 0 40px;
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: end;
+}
+.rodo-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 9vw, 140px); line-height: 0.88;
+  font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase;
+  margin-top: 24px;
+}
+.rodo-hero h1 .accent { color: var(--accent); font-style: italic; }
+.rodo-hero h1 .outline { -webkit-text-stroke: 2px var(--ink); color: transparent; font-weight: 900; }
+.rodo-hero__sub {
+  margin-top: 32px; font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 56ch;
+}
+.rodo-hero__sub strong { color: var(--ink); }
+
+.rodo-hero__meta {
+  padding: 32px; border: 1px solid var(--line); background: var(--bg-2);
+  display: flex; flex-direction: column; gap: 20px;
+}
+.rodo-hero__meta-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 12px 0; border-bottom: 1px solid var(--line); gap: 16px;
+}
+.rodo-hero__meta-row:last-child { border-bottom: none; }
+.rodo-hero__meta-row .key {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3);
+}
+.rodo-hero__meta-row .val {
+  font-family: var(--font-display); font-size: 18px; font-weight: 700;
+  letter-spacing: -0.005em; text-transform: uppercase; text-align: right;
+}
+.rodo-hero__meta-row .val .accent { color: var(--accent); }
+
+@media (max-width: 900px) { .rodo-hero__inner { grid-template-columns: 1fr; gap: 40px; } }
+
+/* ═══════════════════════════════════════════════════════════════════
+   TL;DR BANNER — krótkie podsumowanie na początku
+   ═══════════════════════════════════════════════════════════════════ */
+.tldr {
+  max-width: 1200px; margin: 0 auto;
+  padding: 56px 40px;
+  border-bottom: 1px solid var(--line);
+}
+.tldr__inner {
+  background: linear-gradient(135deg, rgba(232, 255, 62, 0.06) 0%, rgba(232, 255, 62, 0.02) 100%);
+  border: 1px solid var(--accent);
+  padding: 40px;
+  display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: start;
+}
+.tldr__icon {
+  width: 64px; height: 64px;
+  border: 2px solid var(--accent);
+  display: grid; place-items: center;
+  color: var(--accent); flex-shrink: 0;
+}
+.tldr__icon svg { width: 32px; height: 32px; }
+.tldr h2 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 36px); line-height: 1.05;
+  font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.tldr h2 .accent { color: var(--accent); }
+.tldr p { font-size: 16px; line-height: 1.6; color: var(--ink-2); margin-bottom: 12px; }
+.tldr p:last-child { margin-bottom: 0; }
+.tldr p strong { color: var(--ink); }
+@media (max-width: 700px) {
+  .tldr { padding: 40px 20px; }
+  .tldr__inner { grid-template-columns: 1fr; gap: 20px; padding: 28px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ARTICLE WRAPPER — 2 columns (article + sidebar TOC)
+   ═══════════════════════════════════════════════════════════════════ */
+.article-wrapper { padding: 80px 0 128px; }
+.article-wrapper__inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 40px;
+  display: grid; grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 64px; align-items: start;
+}
+
+/* Article typography */
+.article { max-width: 100%; min-width: 0; }
+.article p {
+  font-size: 16px; line-height: 1.7; color: var(--ink-2);
+  margin-bottom: 20px; max-width: 72ch;
+}
+.article p strong { color: var(--ink); font-weight: 600; }
+.article p a {
+  color: var(--accent); border-bottom: 1px solid currentColor;
+  padding-bottom: 1px; transition: all 0.2s;
+}
+.article p a:hover { background: rgba(232, 255, 62, 0.1); }
+
+.article > section {
+  padding-top: 48px; margin-top: 48px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 100px;
+}
+.article > section:first-of-type { padding-top: 0; margin-top: 0; border-top: none; }
+
+.article h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 44px); line-height: 1.05;
+  font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex; align-items: baseline; gap: 16px;
+}
+.article h2 .num {
+  font-family: var(--font-mono); font-size: 14px; font-weight: 500;
+  color: var(--accent); letter-spacing: 0.15em;
+  flex-shrink: 0;
+}
+.article h2 .accent { color: var(--accent); }
+
+.article h3 {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2vw, 22px); line-height: 1.2;
+  font-weight: 700; letter-spacing: -0.005em; text-transform: uppercase;
+  margin: 32px 0 12px;
+}
+
+.article ul, .article ol {
+  margin: 0 0 20px 0; padding-left: 0; list-style: none;
+  max-width: 72ch;
+}
+.article ul li, .article ol li {
+  font-size: 15px; line-height: 1.7;
+  color: var(--ink-2); margin-bottom: 8px;
+  padding-left: 28px; position: relative;
+}
+.article ul li::before {
+  content: "→"; position: absolute; left: 0; top: 0;
+  color: var(--accent); font-weight: 700;
+  font-family: var(--font-display);
+}
+.article ol { counter-reset: list-counter; }
+.article ol li { counter-increment: list-counter; }
+.article ol li::before {
+  content: counter(list-counter, decimal-leading-zero);
+  position: absolute; left: 0; top: 2px;
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--accent); font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.article ul li strong { color: var(--ink); }
+
+/* Contact info boxes — dla danych administratora */
+.contact-box {
+  margin: 24px 0; padding: 24px 28px;
+  background: var(--bg-2); border: 1px solid var(--line);
+  display: grid; grid-template-columns: auto 1fr; gap: 24px;
+  align-items: start;
+  max-width: 72ch;
+}
+.contact-box__icon {
+  width: 44px; height: 44px;
+  background: var(--accent); color: var(--bg);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.contact-box__icon svg { width: 22px; height: 22px; }
+.contact-box h4 {
+  font-family: var(--font-display); font-size: 18px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: -0.005em;
+  margin-bottom: 12px;
+}
+.contact-box__rows {
+  display: grid; gap: 8px;
+  font-family: var(--font-mono); font-size: 13px; line-height: 1.5;
+}
+.contact-box__rows > div { display: grid; grid-template-columns: 90px 1fr; gap: 12px; align-items: baseline; }
+.contact-box__rows .key { color: var(--ink-3); letter-spacing: 0.1em; text-transform: uppercase; font-size: 10px; }
+.contact-box__rows .val { color: var(--ink); }
+.contact-box__rows .val a { color: var(--accent); border-bottom: 1px dotted; }
+.contact-box__rows .val a:hover { background: rgba(232, 255, 62, 0.1); }
+
+/* Purpose table — cel + podstawa prawna */
+.purpose-list {
+  margin: 24px 0; display: flex; flex-direction: column; gap: 12px;
+  max-width: 72ch;
+}
+.purpose-item {
+  border: 1px solid var(--line);
+  padding: 20px 24px;
+  display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start;
+  background: var(--bg-2);
+  transition: border-color 0.2s;
+}
+.purpose-item:hover { border-color: var(--line-2); }
+.purpose-item__body { display: flex; flex-direction: column; gap: 8px; }
+.purpose-item h4 {
+  font-family: var(--font-display); font-size: 16px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.purpose-item p {
+  font-size: 14px; line-height: 1.55; color: var(--ink-2); margin: 0;
+}
+.purpose-item__legal {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);
+  padding: 4px 10px; border: 1px solid var(--accent);
+  white-space: nowrap; align-self: flex-start;
+}
+@media (max-width: 600px) {
+  .purpose-item { grid-template-columns: 1fr; }
+}
+
+/* Rights cards (twoje prawa) */
+.rights-grid {
+  margin: 24px 0; display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+  max-width: 72ch;
+}
+.right-card {
+  background: var(--bg-2); padding: 24px;
+  display: flex; flex-direction: column; gap: 8px;
+  transition: background 0.3s;
+}
+.right-card:hover { background: var(--bg-3); }
+.right-card__icon {
+  width: 32px; height: 32px;
+  border: 1px solid var(--accent); color: var(--accent);
+  display: grid; place-items: center; margin-bottom: 4px;
+}
+.right-card__icon svg { width: 16px; height: 16px; }
+.right-card h4 {
+  font-family: var(--font-display); font-size: 16px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.right-card p {
+  font-size: 13px; line-height: 1.5; color: var(--ink-2); margin: 0;
+}
+@media (max-width: 600px) { .rights-grid { grid-template-columns: 1fr; } }
+
+/* Cookies table */
+.cookies-table {
+  margin: 24px 0; border: 1px solid var(--line);
+  max-width: 72ch;
+  overflow-x: auto;
+}
+.cookies-table table {
+  width: 100%; border-collapse: collapse; min-width: 560px;
+}
+.cookies-table th {
+  padding: 14px 20px; text-align: left;
+  background: var(--bg-3);
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3);
+  border-bottom: 1px solid var(--line);
+}
+.cookies-table td {
+  padding: 16px 20px; font-size: 14px; color: var(--ink-2);
+  border-bottom: 1px solid var(--line); vertical-align: top;
+  line-height: 1.5;
+}
+.cookies-table tr:last-child td { border-bottom: none; }
+.cookies-table td strong { color: var(--ink); font-weight: 600; }
+.cookies-table td code {
+  font-family: var(--font-mono); font-size: 12px;
+  background: var(--bg); padding: 2px 6px; color: var(--accent);
+  border: 1px solid var(--line);
+}
+
+/* Warning / callout box */
+.callout {
+  margin: 24px 0; padding: 24px 28px;
+  border: 1px solid var(--accent);
+  background: rgba(232, 255, 62, 0.04);
+  display: grid; grid-template-columns: 36px 1fr; gap: 20px; align-items: start;
+  max-width: 72ch;
+}
+.callout__icon {
+  width: 36px; height: 36px; border: 1px solid var(--accent);
+  display: grid; place-items: center; color: var(--accent);
+}
+.callout__icon svg { width: 18px; height: 18px; }
+.callout h4 {
+  font-family: var(--font-display); font-size: 17px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: -0.005em;
+  color: var(--ink); margin-bottom: 8px;
+}
+.callout p {
+  font-size: 14px; line-height: 1.55; color: var(--ink-2); margin-bottom: 0;
+  max-width: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SIDEBAR (sticky TOC)
+   ═══════════════════════════════════════════════════════════════════ */
+.sidebar {
+  position: sticky; top: 100px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.sidebar__section {
+  border: 1px solid var(--line);
+  padding: 24px; background: var(--bg-2);
+}
+.sidebar__section h4 {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink-3); margin-bottom: 16px;
+}
+
+.toc ol { list-style: none; counter-reset: toc-counter; }
+.toc li {
+  counter-increment: toc-counter;
+  padding: 8px 0 8px 32px; position: relative;
+  border-bottom: 1px solid var(--line);
+}
+.toc li:last-child { border-bottom: none; }
+.toc li::before {
+  content: counter(toc-counter, decimal-leading-zero);
+  position: absolute; left: 0; top: 10px;
+  font-family: var(--font-mono); font-size: 10px;
+  color: var(--ink-3); letter-spacing: 0.1em;
+}
+.toc a {
+  font-size: 13px; line-height: 1.4; color: var(--ink-2);
+  transition: color 0.2s; display: block;
+}
+.toc a:hover, .toc a.is-active { color: var(--accent); }
+
+.sidebar__cta {
+  background: var(--accent); color: var(--bg); padding: 24px;
+  border: 1px solid var(--accent);
+}
+.sidebar__cta h4 {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--bg); opacity: 0.6; margin-bottom: 12px;
+}
+.sidebar__cta p {
+  font-family: var(--font-display); font-size: 18px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: -0.005em; line-height: 1.15;
+  color: var(--bg); margin-bottom: 16px;
+}
+.sidebar__cta a {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 14px; background: var(--bg); color: var(--accent);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  transition: all 0.2s;
+}
+.sidebar__cta a:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--ink); }
+
+@media (max-width: 1024px) {
+  .article-wrapper__inner { grid-template-columns: 1fr; gap: 48px; }
+  .sidebar { position: static; }
+}
+@media (max-width: 700px) {
+  .article-wrapper { padding: 56px 0 96px; }
+  .article-wrapper__inner { padding: 0 20px; }
+}
+
+/* Footer shared */
+.footer { background: #000; padding: 80px 0 32px; border-top: 1px solid var(--line); }
+.footer__top { max-width: var(--container); margin: 0 auto; padding: 0 40px; }
+.footer__big { font-family: var(--font-display); font-size: clamp(64px, 16vw, 240px); line-height: 0.85; font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; margin-bottom: 64px; display: flex; justify-content: space-between; align-items: end; border-bottom: 1px solid var(--line); padding-bottom: 32px; gap: 32px; }
+.footer__big .accent { color: var(--accent); font-style: italic; }
+.footer__big .arrow { font-size: clamp(48px, 8vw, 120px); transition: transform 0.3s; }
+.footer__big a:hover .arrow { transform: translate(6px, -6px); }
+.footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 64px; }
+.footer__col h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 20px; }
+.footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer__col a { font-size: 14px; color: var(--ink-2); transition: color 0.2s; }
+.footer__col a:hover { color: var(--accent); }
+.footer__col p { font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+.socials { display: flex; gap: 12px; margin-top: 16px; }
+.socials a { width: 40px; height: 40px; border: 1px solid var(--line); display: grid; place-items: center; transition: all 0.25s; }
+.socials a:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.socials svg { width: 18px; height: 18px; }
+.footer__bottom { max-width: var(--container); margin: 0 auto; padding: 24px 40px 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3); }
+@media (max-width: 900px) { .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; } .footer__big { font-size: 72px; flex-direction: column; align-items: flex-start; } }
+@media (max-width: 500px) { .footer__grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Przejdź do treści</a>
+
+<div class="announce">
+  <strong>Studio otwarte</strong> · Codziennie 5:30 — 23:00
+  <span class="sep">●</span>
+  Plac Na Groblach 23, Kraków
+  <span class="sep">●</span>
+  <strong>+48 728 385 203</strong>
+</div>
+
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo" aria-label="SAMtrening — strona główna">SAM<span class="dot">·</span>TRENING</a>
+    <nav aria-label="Menu główne">
+      <ul class="nav">
+        <li><a href="treningi-personalne.html">Treningi</a></li>
+        <li><a href="zdrowa-ciaza.html">Ciąża</a></li>
+        <li><a href="e-trening.html">E-trening</a></li>
+        <li><a href="zespol.html">Zespół</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="header__cta">
+      <a href="tel:+48728385203" class="header__phone">+48 728 385 203</a>
+      <a href="https://app.samtrening.com" class="header__login" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+          <polyline points="10 17 15 12 10 7"/>
+          <line x1="15" y1="12" x2="3" y2="12"/>
+        </svg>
+        Zaloguj się
+      </a>
+      <a href="kontakt.html" class="header__btn">Konsultacja →</a>
+      <button class="burger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <nav aria-label="Menu mobilne">
+    <ul>
+      <li><a href="treningi-personalne.html">Treningi personalne</a></li>
+      <li><a href="zdrowa-ciaza.html">Zdrowa ciąża</a></li>
+      <li><a href="e-trening.html">E-trening</a></li>
+      <li><a href="zespol.html">Zespół</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+</div>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol class="breadcrumbs__list">
+    <li><a href="index.html">Strona główna</a></li>
+    <li>Polityka prywatności</li>
+  </ol>
+</nav>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="rodo-hero" aria-labelledby="page-title">
+    <div class="rodo-hero__inner">
+      <div>
+        <div class="eyebrow eyebrow--accent">RODO · Polityka prywatności</div>
+        <h1 id="page-title">
+          <span class="outline">Polityka</span><br>
+          <span class="accent">prywatności.</span>
+        </h1>
+        <p class="rodo-hero__sub">
+          Dokument przygotowany zgodnie z <strong>RODO</strong> (Rozporządzenie UE 2016/679)
+          oraz <strong>Prawem komunikacji elektronicznej</strong> z 12 lipca 2024 r.
+          Wyjaśniamy jasno i konkretnie: jakie dane zbieramy, po co, jak długo je
+          przechowujemy i jakie masz prawa. Bez prawniczego bełkotu.
+        </p>
+      </div>
+
+      <aside class="rodo-hero__meta" aria-label="Informacje o dokumencie">
+        <div class="rodo-hero__meta-row">
+          <div class="key">Administrator</div>
+          <div class="val"><span class="accent">SAMTRENING</span></div>
+        </div>
+        <div class="rodo-hero__meta-row">
+          <div class="key">Domena</div>
+          <div class="val">samtrening.com</div>
+        </div>
+        <div class="rodo-hero__meta-row">
+          <div class="key">Kontakt RODO</div>
+          <div class="val">biuro@<br>samtrening.com</div>
+        </div>
+        <div class="rodo-hero__meta-row">
+          <div class="key">Obowiązuje od</div>
+          <div class="val"><span class="accent">23.04.2026</span></div>
+        </div>
+        <div class="rodo-hero__meta-row">
+          <div class="key">Wersja</div>
+          <div class="val">3.0</div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- TL;DR -->
+  <section class="tldr" aria-label="Krótkie podsumowanie">
+    <div class="tldr__inner">
+      <div class="tldr__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+      </div>
+      <div>
+        <h2>W skrócie — co <span class="accent">powinieneś</span> wiedzieć</h2>
+        <p>
+          <strong>Zbieramy tylko to, czego naprawdę potrzebujemy</strong> — dane z formularzy kontaktowych,
+          adresy email newsletterów oraz dane klientów platformy. Nie sprzedajemy nikomu Twoich
+          danych, nie handlujemy nimi, nie udostępniamy stronom trzecim w celach marketingowych.
+        </p>
+        <p>
+          <strong>Masz pełną kontrolę.</strong> Możesz w każdej chwili zażądać dostępu do swoich danych,
+          ich poprawienia, usunięcia lub przeniesienia. Wystarczy napisać na
+          <a href="mailto:biuro@samtrening.com" style="color:var(--accent); border-bottom: 1px dotted;">biuro@samtrening.com</a>.
+          Odpowiadamy w ciągu 30 dni, zwykle szybciej.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE -->
+  <div class="article-wrapper">
+    <div class="article-wrapper__inner">
+
+      <article class="article">
+
+        <!-- SEKCJA 1: Administrator -->
+        <section id="sekcja-1">
+          <h2><span class="num">01</span>Kto jest <span class="accent">administratorem</span> danych</h2>
+
+          <p>Administratorem Twoich danych osobowych jest <strong>SAMTRENING Sp. z o.o.</strong>, prowadząca studio treningu personalnego pod adresem Plac Na Groblach 23, 30-101 Kraków. Odpowiadamy za to, w jaki sposób zbieramy, przechowujemy i wykorzystujemy Twoje dane, oraz za ich bezpieczeństwo.</p>
+
+          <div class="contact-box">
+            <div class="contact-box__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Dane administratora</h4>
+              <div class="contact-box__rows">
+                <div><span class="key">Firma</span><span class="val">SAMTRENING Sp. z o.o.</span></div>
+                <div><span class="key">Adres</span><span class="val">Plac Na Groblach 23, 30-101 Kraków</span></div>
+                <div><span class="key">Domena</span><span class="val"><a href="https://samtrening.com">samtrening.com</a></span></div>
+                <div><span class="key">Telefon</span><span class="val"><a href="tel:+48728385203">+48 728 385 203</a></span></div>
+                <div><span class="key">Email</span><span class="val"><a href="mailto:biuro@samtrening.com">biuro@samtrening.com</a></span></div>
+                <div><span class="key">Kontakt RODO</span><span class="val"><a href="mailto:biuro@samtrening.com">biuro@samtrening.com</a></span></div>
+              </div>
+            </div>
+          </div>
+
+          <p>W sprawach związanych z ochroną Twoich danych osobowych skontaktuj się z nami na adres <strong>biuro@samtrening.com</strong> — w temacie wiadomości wpisz „RODO", żebyśmy mogli szybko przekierować zapytanie do właściwej osoby. Nie wyznaczyliśmy Inspektora Ochrony Danych (IOD), ponieważ nie ciąży na nas obowiązek jego powołania zgodnie z art. 37 RODO.</p>
+        </section>
+
+        <!-- SEKCJA 2: Jakie dane zbieramy -->
+        <section id="sekcja-2">
+          <h2><span class="num">02</span>Jakie <span class="accent">dane</span> zbieramy</h2>
+
+          <p>Zbieramy tylko te dane, które są nam naprawdę potrzebne do świadczenia usług i komunikacji z Tobą. Poniżej pełna lista — w zależności od tego, w jaki sposób korzystasz z naszych usług, możesz podać nam tylko część z nich.</p>
+
+          <h3>Z formularzy kontaktowych i zapytań</h3>
+          <ul>
+            <li><strong>Imię</strong> — żebyśmy wiedzieli, jak się do Ciebie zwracać</li>
+            <li><strong>Adres email</strong> — do odpowiedzi na zapytanie</li>
+            <li><strong>Numer telefonu</strong> — jeśli wolisz kontakt telefoniczny</li>
+            <li><strong>Treść wiadomości</strong> — zawartość zapytania, preferencje dotyczące trenera, terminu, usługi</li>
+          </ul>
+
+          <h3>Od klientów platformy (app.samtrening.com)</h3>
+          <ul>
+            <li><strong>Dane identyfikacyjne</strong> — imię, nazwisko, email, telefon</li>
+            <li><strong>Dane treningowe</strong> — cele, historia treningów, pomiary ciała, postępy</li>
+            <li><strong>Dane zdrowotne istotne dla treningu</strong> — zgłoszone przez Ciebie kontuzje, przebyty poród, dolegliwości (zawsze z Twojej inicjatywy, nigdy wbrew woli)</li>
+            <li><strong>Dane rozliczeniowe</strong> — historia płatności, daty sesji</li>
+          </ul>
+
+          <h3>Od subskrybentów newslettera</h3>
+          <ul>
+            <li><strong>Adres email</strong> — jedyna wymagana dana</li>
+            <li><strong>Imię</strong> — opcjonalnie, jeśli chcesz otrzymywać personalizowane wiadomości</li>
+          </ul>
+
+          <h3>Automatycznie (podczas odwiedzania strony)</h3>
+          <ul>
+            <li><strong>Adres IP</strong> — z natury technicznej, zapisywany w logach serwera</li>
+            <li><strong>Informacje o przeglądarce i urządzeniu</strong> — typ przeglądarki, system operacyjny, rozdzielczość ekranu</li>
+            <li><strong>Dane z plików cookies</strong> — szczegóły w sekcji o ciasteczkach poniżej</li>
+            <li><strong>Dane analityczne</strong> — strony, które odwiedzasz, czas spędzony na stronie (jeśli wyrazisz zgodę)</li>
+          </ul>
+
+          <div class="callout">
+            <div class="callout__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Nigdy nie zbieramy</h4>
+              <p>Numerów PESEL, numerów dowodów osobistych, numerów kart płatniczych (te przetwarza operator płatności), ani szczegółowych danych medycznych wykraczających poza to, co jest niezbędne do bezpiecznego prowadzenia treningu.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SEKCJA 3: Cele przetwarzania -->
+        <section id="sekcja-3">
+          <h2><span class="num">03</span>Po co i na <span class="accent">jakiej podstawie</span></h2>
+
+          <p>RODO wymaga, żebyśmy jasno wskazali cel przetwarzania Twoich danych oraz podstawę prawną tego przetwarzania. Poniżej pełny rozpis — każde zastosowanie danych osobowych ma swój cel i swoją podstawę prawną (z art. 6 ust. 1 RODO).</p>
+
+          <div class="purpose-list">
+            <div class="purpose-item">
+              <div class="purpose-item__body">
+                <h4>Odpowiedź na zapytanie kontaktowe</h4>
+                <p>Kiedy wypełniasz formularz kontaktowy, dzwonisz lub piszesz email — używamy Twoich danych, żeby odpowiedzieć i ustalić szczegóły współpracy.</p>
+              </div>
+              <div class="purpose-item__legal">Art. 6 ust. 1 lit. b, f RODO</div>
+            </div>
+
+            <div class="purpose-item">
+              <div class="purpose-item__body">
+                <h4>Realizacja umowy o świadczenie treningów</h4>
+                <p>Prowadzenie sesji, układanie planu, monitorowanie postępów, rozliczanie — całość pracy z Tobą jako klientem.</p>
+              </div>
+              <div class="purpose-item__legal">Art. 6 ust. 1 lit. b RODO</div>
+            </div>
+
+            <div class="purpose-item">
+              <div class="purpose-item__body">
+                <h4>Obsługa platformy app.samtrening.com</h4>
+                <p>Logowanie, przechowywanie planu treningowego, chat z trenerem, pomiary ciała, historia sesji.</p>
+              </div>
+              <div class="purpose-item__legal">Art. 6 ust. 1 lit. b RODO</div>
+            </div>
+
+            <div class="purpose-item">
+              <div class="purpose-item__body">
+                <h4>Wysyłka newslettera</h4>
+                <p>Wysyłamy mailing dwa razy w miesiącu z nowościami blogowymi i poradami. Tylko po Twojej wyraźnej zgodzie — którą możesz wycofać w każdej chwili.</p>
+              </div>
+              <div class="purpose-item__legal">Art. 6 ust. 1 lit. a RODO</div>
+            </div>
+
+            <div class="purpose-item">
+              <div class="purpose-item__body">
+                <h4>Wystawianie faktur i księgowość</h4>
+                <p>Przechowywanie danych niezbędnych do rozliczeń podatkowych i księgowych, zgodnie z ustawą o rachunkowości i przepisami podatkowymi.</p>
+              </div>
+              <div class="purpose-item__legal">Art. 6 ust. 1 lit. c RODO</div>
+            </div>
+
+            <div class="purpose-item">
+              <div class="purpose-item__body">
+                <h4>Analityka strony i ulepszanie usług</h4>
+                <p>Anonimowe statystyki ruchu na stronie, liczba odwiedzin, najpopularniejsze treści. Używamy tych danych, żeby poprawiać stronę i bloga.</p>
+              </div>
+              <div class="purpose-item__legal">Art. 6 ust. 1 lit. a, f RODO</div>
+            </div>
+
+            <div class="purpose-item">
+              <div class="purpose-item__body">
+                <h4>Obrona przed roszczeniami</h4>
+                <p>W razie sporów lub reklamacji możemy przetwarzać Twoje dane do momentu przedawnienia potencjalnych roszczeń (standardowo 3–6 lat).</p>
+              </div>
+              <div class="purpose-item__legal">Art. 6 ust. 1 lit. f RODO</div>
+            </div>
+          </div>
+
+          <p style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-3); letter-spacing: 0.05em;"><strong style="color: var(--ink-2);">Legenda podstaw prawnych:</strong><br>
+          <strong style="color: var(--accent);">lit. a</strong> — zgoda osoby, której dane dotyczą<br>
+          <strong style="color: var(--accent);">lit. b</strong> — niezbędność do wykonania umowy<br>
+          <strong style="color: var(--accent);">lit. c</strong> — obowiązek prawny ciążący na administratorze<br>
+          <strong style="color: var(--accent);">lit. f</strong> — prawnie uzasadniony interes administratora</p>
+        </section>
+
+        <!-- SEKCJA 4: Komu przekazujemy dane -->
+        <section id="sekcja-4">
+          <h2><span class="num">04</span>Komu <span class="accent">przekazujemy</span> dane</h2>
+
+          <p>Twoje dane nie są nikomu sprzedawane ani udostępniane stronom trzecim w celach marketingowych. Korzystamy jednak z narzędzi i usług, które z natury wymagają dostępu do niektórych danych — oto pełna lista:</p>
+
+          <h3>Dostawcy usług IT i technicznych</h3>
+          <ul>
+            <li><strong>Dostawca hostingu</strong> — serwer, na którym działa strona samtrening.com oraz platforma app.samtrening.com</li>
+            <li><strong>Dostawca usług mailingowych</strong> — narzędzie do wysyłki newslettera (np. MailerLite, Mailchimp)</li>
+            <li><strong>Operator płatności</strong> — obsługa płatności na platformie (np. Przelewy24, Stripe); dane karty nigdy nie trafiają do nas</li>
+          </ul>
+
+          <h3>Usługi analityczne i marketingowe</h3>
+          <ul>
+            <li><strong>Google Analytics / Google Maps</strong> — analityka strony oraz mapa lokalizacji studia; tylko jeśli wyrazisz zgodę w cookie bannerze</li>
+            <li><strong>Meta (Facebook, Instagram)</strong> — jeśli klikniesz nasze media społecznościowe, Meta może zbierać dane zgodnie ze swoją polityką</li>
+          </ul>
+
+          <h3>Podmioty, którym przekazujemy dane z mocy prawa</h3>
+          <ul>
+            <li><strong>Biuro rachunkowe</strong> — obsługa księgowości i faktur (na podstawie umowy powierzenia)</li>
+            <li><strong>Organy państwowe</strong> — tylko w przypadku zgodnych z prawem żądań (np. postanowienie sądu)</li>
+          </ul>
+
+          <div class="callout">
+            <div class="callout__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Przekazywanie danych poza EOG</h4>
+              <p>Niektóre z używanych przez nas narzędzi (Google, Meta) mogą przekazywać dane do państw poza Europejskim Obszarem Gospodarczym (np. USA). Odbywa się to na podstawie standardowych klauzul umownych zatwierdzonych przez Komisję Europejską lub decyzji o adekwatności (np. EU–US Data Privacy Framework).</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SEKCJA 5: Okres przechowywania -->
+        <section id="sekcja-5">
+          <h2><span class="num">05</span>Jak <span class="accent">długo</span> przechowujemy dane</h2>
+
+          <p>Trzymamy dane tylko tyle, ile to niezbędne — a w wielu przypadkach nawet krócej, niż pozwala nam na to prawo. Poniżej konkretne okresy retencji:</p>
+
+          <ul>
+            <li><strong>Zapytania kontaktowe bez dalszej współpracy</strong> — do 12 miesięcy od ostatniego kontaktu, po czym usuwamy</li>
+            <li><strong>Dane klientów (historia treningów, rozliczeń)</strong> — przez cały okres współpracy plus 6 lat po jej zakończeniu (okres przedawnienia roszczeń cywilnoprawnych)</li>
+            <li><strong>Dokumenty księgowe (faktury, umowy)</strong> — 5 lat od końca roku podatkowego, w którym wystawiliśmy dokument (obowiązek ustawy o rachunkowości)</li>
+            <li><strong>Subskrypcja newslettera</strong> — do momentu wypisania się (1 klik w każdym mailu) lub 24 miesięcy od ostatniego otwarcia maila</li>
+            <li><strong>Dane z cookies i analityki</strong> — do 26 miesięcy (standard Google Analytics) lub do wycofania zgody</li>
+            <li><strong>Logi serwera</strong> — do 12 miesięcy, wyłącznie w celach bezpieczeństwa IT</li>
+          </ul>
+
+          <p>Po upływie wskazanych okresów dane są trwale usuwane lub anonimizowane — przestają być powiązane z Twoją osobą.</p>
+        </section>
+
+        <!-- SEKCJA 6: Twoje prawa -->
+        <section id="sekcja-6">
+          <h2><span class="num">06</span>Twoje <span class="accent">prawa</span></h2>
+
+          <p>RODO daje Ci konkretne, egzekwowalne prawa względem Twoich danych osobowych. Szanujemy je i ułatwiamy ich wykonanie — wystarczy wysłać mail na <strong>biuro@samtrening.com</strong>, a my odpowiemy w ciągu 30 dni (zwykle szybciej).</p>
+
+          <div class="rights-grid">
+            <div class="right-card">
+              <div class="right-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </div>
+              <h4>Dostęp do danych</h4>
+              <p>Prawo do uzyskania kopii wszystkich danych, jakie o Tobie przechowujemy, oraz informacji o sposobie ich przetwarzania.</p>
+            </div>
+            <div class="right-card">
+              <div class="right-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              </div>
+              <h4>Sprostowanie</h4>
+              <p>Prawo do poprawienia nieaktualnych lub niepoprawnych danych — np. zmiana numeru telefonu czy adresu email.</p>
+            </div>
+            <div class="right-card">
+              <div class="right-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              </div>
+              <h4>Usunięcie („prawo do bycia zapomnianym")</h4>
+              <p>Prawo do żądania usunięcia danych — jeśli tylko nie istnieją nadrzędne podstawy do ich przechowywania (np. obowiązek księgowy).</p>
+            </div>
+            <div class="right-card">
+              <div class="right-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              </div>
+              <h4>Ograniczenie przetwarzania</h4>
+              <p>Prawo do „zamrożenia" przetwarzania danych w konkretnych sytuacjach, np. gdy kwestionujesz ich prawidłowość.</p>
+            </div>
+            <div class="right-card">
+              <div class="right-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 8l4 4-4 4M3 12h18"/></svg>
+              </div>
+              <h4>Przenoszenie danych</h4>
+              <p>Prawo do otrzymania kopii danych w formacie nadającym się do odczytu maszynowego (np. JSON, CSV) i przekazania ich innemu administratorowi.</p>
+            </div>
+            <div class="right-card">
+              <div class="right-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+              </div>
+              <h4>Sprzeciw</h4>
+              <p>Prawo do wyrażenia sprzeciwu wobec przetwarzania danych w oparciu o nasz uzasadniony interes — np. analityki strony.</p>
+            </div>
+            <div class="right-card">
+              <div class="right-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9"/><polyline points="3 4 3 10 9 10"/></svg>
+              </div>
+              <h4>Wycofanie zgody</h4>
+              <p>Jeśli przetwarzamy dane na podstawie zgody (np. newsletter), możesz ją wycofać w każdej chwili — bez wpływu na zgodność z prawem wcześniejszego przetwarzania.</p>
+            </div>
+            <div class="right-card">
+              <div class="right-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+              </div>
+              <h4>Skarga do UODO</h4>
+              <p>Prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa), jeśli uznasz, że naruszyliśmy RODO.</p>
+            </div>
+          </div>
+
+          <p>Wykonanie Twoich praw jest <strong>bezpłatne</strong>. Jeśli żądanie jest oczywiście nieuzasadnione lub nadmierne (np. powtarzane wielokrotnie), możemy pobrać rozsądną opłatę lub odmówić realizacji — ale w praktyce się to u nas nie zdarza.</p>
+        </section>
+
+        <!-- SEKCJA 7: Cookies -->
+        <section id="sekcja-7">
+          <h2><span class="num">07</span>Pliki <span class="accent">cookies</span></h2>
+
+          <p>Pliki cookies (ciasteczka) to małe pliki tekstowe zapisywane w Twojej przeglądarce podczas odwiedzania strony. Używamy ich, żeby strona działała poprawnie, zapamiętywała Twoje preferencje i żebyśmy wiedzieli, co działa, a co nie. Zgodnie z Prawem komunikacji elektronicznej z 12 lipca 2024 r., <strong>prosimy Cię o zgodę na cookies inne niż niezbędne</strong> — przy pierwszej wizycie pojawia się baner, w którym możesz je zaakceptować, odrzucić lub skonfigurować indywidualnie.</p>
+
+          <div class="cookies-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Kategoria</th>
+                  <th>Cel</th>
+                  <th>Czas</th>
+                  <th>Zgoda?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Niezbędne</strong><br><code>session_id</code>, <code>csrf</code></td>
+                  <td>Podstawowe funkcjonowanie strony i platformy — sesja logowania, bezpieczeństwo formularzy.</td>
+                  <td>Sesja</td>
+                  <td>Nie wymaga</td>
+                </tr>
+                <tr>
+                  <td><strong>Preferencje</strong><br><code>cookie_consent</code></td>
+                  <td>Zapamiętywanie Twojej decyzji dotyczącej cookies, język przeglądarki.</td>
+                  <td>12 miesięcy</td>
+                  <td>Nie wymaga</td>
+                </tr>
+                <tr>
+                  <td><strong>Analityczne</strong><br><code>_ga</code>, <code>_gid</code></td>
+                  <td>Google Analytics — anonimowe statystyki ruchu na stronie.</td>
+                  <td>26 miesięcy</td>
+                  <td>Tak</td>
+                </tr>
+                <tr>
+                  <td><strong>Marketingowe</strong><br><code>_fbp</code>, <code>_fbc</code></td>
+                  <td>Meta Pixel — remarketing na Facebooku i Instagramie (jeśli prowadzimy kampanie).</td>
+                  <td>90 dni</td>
+                  <td>Tak</td>
+                </tr>
+                <tr>
+                  <td><strong>Mapy</strong><br>Google Maps</td>
+                  <td>Wyświetlanie interaktywnej mapy z lokalizacją studia.</td>
+                  <td>Sesja</td>
+                  <td>Tak</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Jak zarządzać cookies</h3>
+          <ul>
+            <li><strong>W bannerze na stronie</strong> — możesz zmienić ustawienia w każdej chwili klikając „Ustawienia cookies" w stopce</li>
+            <li><strong>W ustawieniach przeglądarki</strong> — każda przeglądarka (Chrome, Safari, Firefox, Edge) pozwala zablokować, usunąć lub ograniczyć cookies</li>
+            <li><strong>Tryb incognito</strong> — cookies zapisane w sesji prywatnej są usuwane po jej zamknięciu</li>
+          </ul>
+
+          <p>Zablokowanie cookies niezbędnych (technicznych) może uniemożliwić korzystanie z części strony — np. logowania na platformę app.samtrening.com. Cookies analityczne i marketingowe nie wpływają na działanie strony — spokojnie możesz je odrzucić.</p>
+        </section>
+
+        <!-- SEKCJA 8: Bezpieczeństwo -->
+        <section id="sekcja-8">
+          <h2><span class="num">08</span>Jak <span class="accent">chronimy</span> Twoje dane</h2>
+
+          <p>Bezpieczeństwo Twoich danych traktujemy poważnie. Stosujemy odpowiednie środki techniczne i organizacyjne, żeby zminimalizować ryzyko nieuprawnionego dostępu, utraty lub zniszczenia danych:</p>
+
+          <ul>
+            <li><strong>Szyfrowanie połączenia (HTTPS/SSL)</strong> — cała strona i platforma działają wyłącznie przez bezpieczne połączenie</li>
+            <li><strong>Szyfrowanie haseł</strong> — hasła do platformy są przechowywane w formie zhashowanej, nie widzimy ich nawet my</li>
+            <li><strong>Kontrola dostępu</strong> — tylko upoważnione osoby z zespołu mają dostęp do danych klientów, wyłącznie w zakresie niezbędnym do pracy</li>
+            <li><strong>Umowy powierzenia</strong> — z każdym podmiotem, któremu przekazujemy dane (np. biuro rachunkowe, hosting), mamy podpisaną umowę powierzenia zgodną z art. 28 RODO</li>
+            <li><strong>Regularne kopie zapasowe</strong> — backupy są przechowywane w sposób zaszyfrowany</li>
+            <li><strong>Monitoring bezpieczeństwa</strong> — logowanie i monitorowanie prób nieautoryzowanego dostępu</li>
+          </ul>
+
+          <p>W razie naruszenia ochrony danych, mogącego skutkować ryzykiem dla Twoich praw i wolności, powiadomimy Cię o tym bez zbędnej zwłoki, zgodnie z art. 34 RODO.</p>
+        </section>
+
+        <!-- SEKCJA 9: Zmiany polityki -->
+        <section id="sekcja-9">
+          <h2><span class="num">09</span><span class="accent">Zmiany</span> w polityce</h2>
+
+          <p>Zastrzegamy sobie prawo do zmian w tej polityce, np. w związku z wprowadzeniem nowych usług, narzędzi lub zmianą przepisów prawa. O istotnych zmianach poinformujemy Cię poprzez:</p>
+
+          <ul>
+            <li><strong>Baner na stronie</strong> — przez 14 dni od wprowadzenia zmiany</li>
+            <li><strong>Email</strong> — do subskrybentów newslettera oraz aktywnych klientów platformy</li>
+            <li><strong>Aktualizację numeru wersji i daty obowiązywania</strong> — u góry tej strony</li>
+          </ul>
+
+          <p>Archiwalne wersje polityki prywatności udostępniamy na żądanie — napisz na <strong>biuro@samtrening.com</strong>, jeśli potrzebujesz wcześniejszej wersji dokumentu.</p>
+
+          <p style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-3); margin-top: 24px; letter-spacing: 0.05em;">
+            <strong style="color: var(--ink-2);">Wersja 3.0</strong> — obowiązuje od 23 kwietnia 2026. Zastępuje poprzednie wersje polityki prywatności.
+          </p>
+        </section>
+
+        <!-- SEKCJA 10: Kontakt RODO -->
+        <section id="sekcja-10">
+          <h2><span class="num">10</span><span class="accent">Kontakt</span> w sprawach RODO</h2>
+
+          <p>Masz pytanie o to, jak przetwarzamy Twoje dane? Chcesz skorzystać z któregoś ze swoich praw? Napisz lub zadzwoń — odpowiadamy zwykle tego samego dnia roboczego.</p>
+
+          <div class="contact-box">
+            <div class="contact-box__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <h4>W sprawach ochrony danych</h4>
+              <div class="contact-box__rows">
+                <div><span class="key">Email</span><span class="val"><a href="mailto:biuro@samtrening.com?subject=RODO">biuro@samtrening.com</a></span></div>
+                <div><span class="key">Telefon</span><span class="val"><a href="tel:+48728385203">+48 728 385 203</a></span></div>
+                <div><span class="key">Adres</span><span class="val">Plac Na Groblach 23, 30-101 Kraków</span></div>
+                <div><span class="key">Temat maila</span><span class="val" style="font-family: var(--font-mono); font-size: 12px;">„RODO — [opis sprawy]"</span></div>
+              </div>
+            </div>
+          </div>
+
+          <p><strong>Skarga do organu nadzorczego.</strong> Jeśli uznasz, że przetwarzamy Twoje dane niezgodnie z prawem, masz prawo wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych:</p>
+
+          <div class="contact-box">
+            <div class="contact-box__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Prezes UODO</h4>
+              <div class="contact-box__rows">
+                <div><span class="key">Adres</span><span class="val">ul. Stawki 2, 00-193 Warszawa</span></div>
+                <div><span class="key">Telefon</span><span class="val">+48 22 531 03 00</span></div>
+                <div><span class="key">Strona</span><span class="val"><a href="https://uodo.gov.pl" target="_blank" rel="noopener">uodo.gov.pl</a></span></div>
+              </div>
+            </div>
+          </div>
+
+          <p>Zanim to zrobisz — spróbuj skontaktować się z nami. W 99% przypadków jesteśmy w stanie rozwiązać sprawę polubownie w ciągu kilku dni.</p>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR: TOC + CTA -->
+      <aside class="sidebar">
+        <div class="sidebar__section toc">
+          <h4>Spis treści</h4>
+          <ol>
+            <li><a href="#sekcja-1">Administrator danych</a></li>
+            <li><a href="#sekcja-2">Jakie dane zbieramy</a></li>
+            <li><a href="#sekcja-3">Po co i na jakiej podstawie</a></li>
+            <li><a href="#sekcja-4">Komu przekazujemy dane</a></li>
+            <li><a href="#sekcja-5">Okres przechowywania</a></li>
+            <li><a href="#sekcja-6">Twoje prawa</a></li>
+            <li><a href="#sekcja-7">Pliki cookies</a></li>
+            <li><a href="#sekcja-8">Bezpieczeństwo</a></li>
+            <li><a href="#sekcja-9">Zmiany w polityce</a></li>
+            <li><a href="#sekcja-10">Kontakt RODO</a></li>
+          </ol>
+        </div>
+
+        <div class="sidebar__cta">
+          <h4>Pytanie?</h4>
+          <p>Napisz do nas w sprawach RODO</p>
+          <a href="mailto:biuro@samtrening.com?subject=RODO">biuro@samtrening.com →</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__big">
+      <a href="kontakt.html">Zacznijmy <span class="accent">razem.</span></a>
+      <a href="kontakt.html" aria-label="Przejdź do kontaktu"><span class="arrow">↗</span></a>
+    </div>
+
+    <div class="footer__grid">
+      <div class="footer__col">
+        <h4>SAMtrening</h4>
+        <p>Kameralne studio treningu personalnego w centrum Krakowa. Plac Na Groblach 23, 30-101 Kraków.</p>
+        <div class="socials" aria-label="Media społecznościowe">
+          <a href="https://www.facebook.com/samtrening" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.3c0-1 .2-1.3 1.1-1.3H18V0h-3.2C11.2 0 9 1.5 9 4.5V8z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/samtrening" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://g.co/samtrening" target="_blank" rel="noopener" aria-label="Google Business">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 5c1.6 0 3 .5 4.2 1.5L19 3.7C17 1.9 14.6 1 12 1 7.4 1 3.4 3.6 1.4 7.4l3.3 2.6C5.7 7 8.6 5 12 5z M23 12.2c0-.8-.1-1.6-.2-2.4H12v4.5h6.2c-.3 1.4-1.1 2.6-2.3 3.4l3.5 2.7c2.1-1.9 3.6-4.8 3.6-8.2z M5 13c-.3-.9-.5-1.8-.5-2.8 0-1 .2-1.9.5-2.8L1.7 4.8C.6 6.9 0 9.3 0 12s.6 5.1 1.7 7.2l3.3-2.6c-.3-.9-.5-1.8-.5-2.8.2-.2 0-.5.5-.8z M12 23c3 0 5.6-1 7.4-2.7l-3.5-2.7c-1 .7-2.3 1.1-3.9 1.1-3.3 0-6.2-2-7.3-5l-3.3 2.6C3.4 20.4 7.4 23 12 23z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Oferta</h4>
+        <ul>
+          <li><a href="treningi-personalne.html">Treningi personalne</a></li>
+          <li><a href="zdrowa-ciaza.html">Zdrowa ciąża</a></li>
+          <li><a href="e-trening.html">E-trening online</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="zespol.html">Zespół</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="https://app.samtrening.com" target="_blank" rel="noopener">Platforma — zaloguj się</a></li>
+          <li><a href="rodo.html">Polityka prywatności</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+48728385203">+48 728 385 203</a></li>
+          <li><a href="mailto:biuro@samtrening.com">biuro@samtrening.com</a></li>
+          <li><span style="color:var(--ink-2);">Plac Na Groblach 23<br>30-101 Kraków</span></li>
+          <li><span style="color:var(--ink-2);">Pon–Niedz · 5:30–23:00</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div>© <span id="year">2026</span> SAMTRENING Sp. z o.o. Wszelkie prawa zastrzeżone.</div>
+    <div>Polityka prywatności · wersja 3.0 · 23.04.2026</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Mobile menu
+const burger = document.querySelector('.burger');
+const mobileMenu = document.getElementById('mobile-menu');
+burger.addEventListener('click', () => {
+  const open = burger.getAttribute('aria-expanded') === 'true';
+  burger.setAttribute('aria-expanded', !open);
+  mobileMenu.classList.toggle('is-open');
+  document.body.style.overflow = !open ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  burger.setAttribute('aria-expanded', 'false');
+  mobileMenu.classList.remove('is-open');
+  document.body.style.overflow = '';
+}));
+
+// TOC active highlighting
+const tocLinks = document.querySelectorAll('.toc a');
+const tocTargets = Array.from(tocLinks).map(a => document.querySelector(a.getAttribute('href')));
+function updateTocActive() {
+  let activeIdx = 0;
+  for (let i = 0; i < tocTargets.length; i++) {
+    if (tocTargets[i] && tocTargets[i].getBoundingClientRect().top < 120) activeIdx = i;
+  }
+  tocLinks.forEach((link, i) => link.classList.toggle('is-active', i === activeIdx));
+}
+window.addEventListener('scroll', updateTocActive, { passive: true });
+updateTocActive();
+</script>
+
+</body>
+</html>

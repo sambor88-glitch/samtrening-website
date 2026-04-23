@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>E-trening online z trenerem personalnym | SAMtrening Kraków</title>
+<meta name="description" content="E-trening personalny online z trenerem z Krakowa. Platforma, plan, chat z trenerem, pomiary i sesje 1:1. Od 200 zł. Bez pakietów.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.samtrening.com/e-trening/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="E-trening online z trenerem personalnym | SAMtrening Kraków">
+<meta property="og:description" content="Własna platforma. Plan, chat, pomiary, sesje 1:1. 200 zł/sesja, bez pakietów.">
+<meta property="og:url" content="https://www.samtrening.com/e-trening/">
+
+<!-- Schema.org: Service + BreadcrumbList + FAQPage + SoftwareApplication (platforma!) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.samtrening.com/e-trening/#service",
+      "name": "E-trening personalny online",
+      "description": "E-trening z trenerem personalnym z Krakowa. Własna platforma SAMtrening z planem, chatem, pomiarami i sesjami online.",
+      "provider": { "@type": "LocalBusiness", "@id": "https://www.samtrening.com/#business", "name": "SAMtrening" },
+      "areaServed": { "@type": "Country", "name": "Polska" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "PLN",
+        "price": "200",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "200", "priceCurrency": "PLN", "unitText": "sesja online 60 min" }
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://app.samtrening.com/#platform",
+      "name": "Platforma SAMtrening",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Web (przeglądarka)",
+      "url": "https://app.samtrening.com",
+      "publisher": { "@id": "https://www.samtrening.com/#business" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://www.samtrening.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Oferta", "item": "https://www.samtrening.com/oferta/" },
+        { "@type": "ListItem", "position": 3, "name": "E-trening", "item": "https://www.samtrening.com/e-trening/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Czy potrzebuję dużo sprzętu w domu, żeby zacząć e-trening?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nie. Większość naszych klientów ma: matę, gumy oporowe, parę hantli i krzesło. To wystarczy na pierwsze miesiące." } },
+        { "@type": "Question", "name": "Jak wygląda sesja online — krok po kroku?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Logujesz się na Zoom lub Google Meet w umówionym przez platformę terminie. Trener widzi Cię przez kamerę. Prowadzimy sesję jak stacjonarnie — rozgrzewka, część główna, wyciszenie. 60 minut." } },
+        { "@type": "Question", "name": "Czy e-trening jest dla mnie, jeśli nigdy wcześniej nie trenowałem?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Tak. Połowa naszych klientów e-treningu zaczyna od zera lub po wieloletniej przerwie. Plan rośnie razem z Tobą." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   DESIGN SYSTEM — Variant B (identyczny z pozostałymi stronami)
+   ═══════════════════════════════════════════════════════════════════ */
+:root {
+  --bg: #0A0908; --bg-2: #131210; --bg-3: #1C1A17;
+  --ink: #FAFAF7;
+  --ink-2: rgba(250,250,247,0.72);
+  --ink-3: rgba(250,250,247,0.45);
+  --line: rgba(250,250,247,0.12);
+  --line-2: rgba(250,250,247,0.22);
+  --accent: #E8FF3E; --accent-dim: #B8CC30;
+  --font-display: "Big Shoulders Display", Impact, sans-serif;
+  --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 32px;
+  --space-5: 48px; --space-6: 64px; --space-7: 96px; --space-8: 128px;
+  --container: 1400px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body); background: var(--bg); color: var(--ink);
+  line-height: 1.5; -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: 8px; z-index: 999;
+  background: var(--accent); color: var(--bg); padding: 12px 20px;
+  font-weight: 700; text-transform: uppercase;
+}
+.skip-link:focus { left: 16px; }
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 40px; }
+@media (max-width: 700px) { .container { padding: 0 20px; } }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3);
+}
+.eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+.eyebrow--accent { color: var(--accent); }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 18px 28px; font-size: 13px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  transition: all 0.25s ease; border: 1px solid transparent; white-space: nowrap;
+}
+.btn--primary { background: var(--accent); color: var(--bg); }
+.btn--primary:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+.btn--ghost { border-color: var(--line-2); color: var(--ink); }
+.btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn .arrow { transition: transform 0.25s ease; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   ANNOUNCEMENT + HEADER (with LOGIN button for existing clients)
+   ═══════════════════════════════════════════════════════════════════ */
+.announce {
+  background: var(--accent); color: var(--bg);
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 10px 20px; text-align: center;
+}
+.announce strong { font-weight: 800; }
+.announce .sep { margin: 0 12px; opacity: 0.5; }
+
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(10, 9, 8, 0.85);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.header__inner {
+  max-width: var(--container); margin: 0 auto; padding: 20px 40px;
+  display: flex; justify-content: space-between; align-items: center; gap: 32px;
+}
+.logo {
+  font-family: var(--font-display); font-size: 26px; font-weight: 800;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 2px;
+}
+.logo .dot { color: var(--accent); }
+
+.nav { display: flex; gap: 28px; list-style: none; }
+.nav a {
+  font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 8px 0; position: relative; transition: color 0.2s;
+}
+.nav a:hover, .nav a.is-active { color: var(--accent); }
+.nav a.is-active::after { width: 100%; }
+.nav a::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease;
+}
+.nav a:hover::after { width: 100%; }
+
+.header__cta { display: flex; align-items: center; gap: 12px; }
+.header__login {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-2);
+  padding: 10px 14px; border: 1px solid var(--line-2);
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.2s;
+}
+.header__login:hover { border-color: var(--accent); color: var(--accent); }
+.header__login .icon { width: 12px; height: 12px; }
+.header__btn {
+  background: var(--accent); color: var(--bg);
+  padding: 10px 18px; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s;
+}
+.header__btn:hover { background: var(--ink); }
+
+.burger {
+  display: none; width: 40px; height: 40px;
+  flex-direction: column; justify-content: center; gap: 5px; align-items: center;
+}
+.burger span { width: 22px; height: 2px; background: var(--ink); transition: transform 0.3s, opacity 0.3s; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+.mobile-menu {
+  display: none; position: fixed; inset: 0; background: var(--bg); z-index: 49;
+  padding: 120px 40px 40px; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.mobile-menu.is-open { opacity: 1; pointer-events: auto; }
+.mobile-menu ul { list-style: none; }
+.mobile-menu li { border-bottom: 1px solid var(--line); }
+.mobile-menu a {
+  display: block; padding: 24px 0;
+  font-family: var(--font-display); font-size: 32px; font-weight: 700; text-transform: uppercase;
+}
+.mobile-menu__login {
+  margin-top: 32px; padding: 16px 20px;
+  background: var(--accent); color: var(--bg) !important;
+  font-family: var(--font-mono) !important; font-size: 13px !important;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  font-weight: 700; text-align: center;
+  display: block;
+}
+
+@media (max-width: 1100px) { .header__login { display: none; } }
+@media (max-width: 1024px) {
+  .nav { display: none; }
+  .burger { display: flex; }
+  .mobile-menu { display: block; }
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  padding: 24px 0; border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3);
+}
+.breadcrumbs__list {
+  display: flex; flex-wrap: wrap; gap: 8px; list-style: none;
+  max-width: var(--container); margin: 0 auto; padding: 0 40px;
+}
+.breadcrumbs__list a { transition: color 0.2s; }
+.breadcrumbs__list a:hover { color: var(--accent); }
+.breadcrumbs__list li:not(:last-child)::after {
+  content: "/"; margin-left: 8px; color: var(--ink-3); opacity: 0.5;
+}
+.breadcrumbs__list li:last-child { color: var(--ink); }
+@media (max-width: 700px) { .breadcrumbs__list { padding: 0 20px; } }
+
+/* ═══════════════════════════════════════════════════════════════════
+   PAGE HERO
+   ═══════════════════════════════════════════════════════════════════ */
+.page-hero {
+  padding: 80px 0 64px;
+  border-bottom: 1px solid var(--line);
+  position: relative; overflow: hidden;
+}
+.page-hero__inner {
+  max-width: var(--container); margin: 0 auto; padding: 0 40px;
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 80px; align-items: end;
+}
+.page-hero__left { display: flex; flex-direction: column; gap: 32px; }
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 9vw, 140px); line-height: 0.88;
+  font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase;
+}
+.page-hero h1 .accent { color: var(--accent); font-style: italic; }
+.page-hero h1 .outline { -webkit-text-stroke: 2px var(--ink); color: transparent; font-weight: 900; }
+.page-hero__sub {
+  font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 52ch;
+}
+.page-hero__cta { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.page-hero__meta {
+  display: flex; flex-direction: column; gap: 16px;
+  padding: 32px; border: 1px solid var(--line); background: var(--bg-2);
+}
+.page-hero__meta-row {
+  display: grid; grid-template-columns: auto 1fr; gap: 20px;
+  padding: 12px 0; border-bottom: 1px solid var(--line); align-items: center;
+}
+.page-hero__meta-row:last-child { border-bottom: none; }
+.page-hero__meta-row .key {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3);
+}
+.page-hero__meta-row .val {
+  font-family: var(--font-display); font-size: 22px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: -0.01em;
+}
+.page-hero__meta-row .val .accent { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .page-hero__inner { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* Intro block */
+.intro-block {
+  max-width: 900px; margin: 0 auto;
+  padding: 80px 0;
+  border-bottom: 1px solid var(--line);
+}
+.intro-block p {
+  font-family: var(--font-body);
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.35; font-weight: 400; color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.intro-block p strong { color: var(--accent); font-weight: 600; font-style: italic; }
+
+/* Sections shared */
+.section { padding: var(--space-8) 0; }
+.section--alt { background: var(--bg-2); }
+.section-head {
+  display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px;
+  margin-bottom: 64px; align-items: end;
+}
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 6vw, 80px); line-height: 0.9;
+  font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase;
+}
+.section-head h2 .accent { color: var(--accent); }
+.section-head p { font-size: 16px; line-height: 1.55; color: var(--ink-2); max-width: 52ch; }
+@media (max-width: 900px) {
+  .section-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+  .section { padding: var(--space-7) 0; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   AUDIENCE (dla kogo — 4 cards)
+   ═══════════════════════════════════════════════════════════════════ */
+.audience-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  border: 1px solid var(--line);
+}
+.audience-card {
+  padding: 40px 32px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  position: relative; overflow: hidden;
+  transition: background 0.3s ease;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.audience-card:nth-child(2n) { border-right: none; }
+.audience-card:nth-last-child(-n+2) { border-bottom: none; }
+.audience-card::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--accent);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+}
+.audience-card:hover { background: rgba(232, 255, 62, 0.03); }
+.audience-card:hover::before { transform: scaleX(1); }
+.audience-card__num {
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--accent); letter-spacing: 0.2em;
+}
+.audience-card h3 {
+  font-family: var(--font-display);
+  font-size: 26px; font-weight: 700; line-height: 1.1;
+  text-transform: uppercase; letter-spacing: -0.01em;
+}
+.audience-card p { font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+
+@media (max-width: 700px) {
+  .audience-grid { grid-template-columns: 1fr; }
+  .audience-card { border-right: none; border-bottom: 1px solid var(--line); }
+  .audience-card:last-child { border-bottom: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PLATFORM SECTION — own platform (USP)
+   ═══════════════════════════════════════════════════════════════════ */
+.platform {
+  position: relative;
+  background: var(--bg-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.platform::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(232, 255, 62, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 60%, rgba(232, 255, 62, 0.04) 0%, transparent 45%);
+  pointer-events: none;
+}
+.platform__inner {
+  max-width: var(--container); margin: 0 auto;
+  padding: var(--space-8) 40px; position: relative;
+}
+
+/* Browser mockup — wizualna sugestia platformy */
+.browser-mockup {
+  max-width: 920px; margin: 48px auto 72px;
+  background: var(--bg-3); border: 1px solid var(--line-2);
+  border-radius: 8px; overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(232, 255, 62, 0.1);
+  transform: perspective(1200px) rotateX(1deg);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.browser-mockup:hover { transform: perspective(1200px) rotateX(0deg) translateY(-4px); }
+
+.browser-mockup__chrome {
+  background: #1A1918;
+  padding: 14px 16px;
+  display: grid; grid-template-columns: auto 1fr auto;
+  gap: 16px; align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+.browser-mockup__dots {
+  display: flex; gap: 6px;
+}
+.browser-mockup__dots span {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--line-2);
+}
+.browser-mockup__dots span:first-child { background: #FF5F56; }
+.browser-mockup__dots span:nth-child(2) { background: #FFBD2E; }
+.browser-mockup__dots span:nth-child(3) { background: #27C93F; }
+
+.browser-mockup__url {
+  background: var(--bg); padding: 8px 16px; border-radius: 4px;
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--ink-2); display: flex; align-items: center; gap: 10px;
+}
+.browser-mockup__url .lock { color: var(--accent); width: 12px; height: 12px; }
+.browser-mockup__url strong { color: var(--ink); }
+
+.browser-mockup__actions {
+  display: flex; gap: 8px;
+  font-family: var(--font-mono); font-size: 10px;
+  color: var(--ink-3); letter-spacing: 0.15em; text-transform: uppercase;
+}
+
+.browser-mockup__body {
+  background: linear-gradient(180deg, var(--bg-3) 0%, var(--bg-2) 100%);
+  padding: 32px;
+  display: grid; grid-template-columns: 1fr 2fr;
+  gap: 24px; min-height: 300px;
+}
+.browser-mockup__sidebar {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.browser-mockup__sidebar-item {
+  padding: 10px 14px; font-family: var(--font-mono); font-size: 11px;
+  color: var(--ink-2); letter-spacing: 0.1em; text-transform: uppercase;
+  border-left: 2px solid transparent;
+  transition: all 0.3s;
+}
+.browser-mockup__sidebar-item.is-active {
+  color: var(--accent); border-color: var(--accent);
+  background: rgba(232, 255, 62, 0.06);
+}
+.browser-mockup__main {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.browser-mockup__card {
+  background: var(--bg); border: 1px solid var(--line);
+  padding: 16px; display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--font-mono); font-size: 11px; color: var(--ink-2);
+  letter-spacing: 0.08em;
+}
+.browser-mockup__card .label { text-transform: uppercase; color: var(--ink-3); font-size: 10px; letter-spacing: 0.15em; }
+.browser-mockup__card .value {
+  font-family: var(--font-display); font-size: 20px; font-weight: 700;
+  color: var(--accent); letter-spacing: -0.01em; text-transform: uppercase;
+}
+.browser-mockup__bar {
+  height: 6px; background: var(--bg); border: 1px solid var(--line); position: relative;
+}
+.browser-mockup__bar::after {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 68%; background: var(--accent);
+}
+
+@media (max-width: 700px) {
+  .browser-mockup { margin: 32px auto 48px; }
+  .browser-mockup__chrome { grid-template-columns: auto 1fr; padding: 10px 12px; gap: 10px; }
+  .browser-mockup__actions { display: none; }
+  .browser-mockup__url { font-size: 10px; padding: 6px 12px; }
+  .browser-mockup__body { grid-template-columns: 1fr; padding: 20px; gap: 16px; min-height: auto; }
+  .browser-mockup__sidebar { flex-direction: row; overflow-x: auto; }
+  .browser-mockup__sidebar-item { white-space: nowrap; border-left: none; border-bottom: 2px solid transparent; }
+  .browser-mockup__sidebar-item.is-active { border-bottom-color: var(--accent); border-left: none; }
+}
+
+/* Platform features — 5 cards */
+.platform__features {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--line); border: 1px solid var(--line);
+}
+.feature-card {
+  background: var(--bg-2); padding: 40px 32px;
+  display: flex; flex-direction: column; gap: 16px;
+  transition: background 0.3s;
+  position: relative; overflow: hidden;
+}
+.feature-card:hover { background: var(--bg-3); }
+.feature-card__icon {
+  width: 48px; height: 48px;
+  border: 1px solid var(--accent);
+  display: grid; place-items: center;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.feature-card__icon svg { width: 22px; height: 22px; }
+.feature-card__num {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3);
+}
+.feature-card h3 {
+  font-family: var(--font-display);
+  font-size: 26px; font-weight: 700; line-height: 1.1;
+  text-transform: uppercase; letter-spacing: -0.01em;
+}
+.feature-card p { font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+.feature-card__tag {
+  margin-top: auto; padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);
+}
+
+/* 5 cards w 3-col grid: pierwsze 3 w pierwszym rzędzie, ostatnie 2 wyśrodkowane */
+.feature-card:nth-last-child(-n+2) {
+  /* zostaną automatycznie w drugim rzędzie */
+}
+.feature-card:nth-child(4) { grid-column: 1 / span 1; }
+
+@media (max-width: 1024px) {
+  .platform__features { grid-template-columns: repeat(2, 1fr); }
+  .feature-card:nth-child(4) { grid-column: auto; }
+}
+@media (max-width: 600px) {
+  .platform__features { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   COMPARISON (E-trening vs YouTube)
+   ═══════════════════════════════════════════════════════════════════ */
+.comparison {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border: 1px solid var(--line);
+}
+.comparison__col { padding: 40px 32px; display: flex; flex-direction: column; gap: 24px; }
+.comparison__col--bad {
+  border-right: 1px solid var(--line);
+  background: var(--bg-3);
+  color: var(--ink-3);
+}
+.comparison__col--good { background: var(--bg-2); }
+.comparison__label {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+}
+.comparison__col--bad .comparison__label { color: var(--ink-3); }
+.comparison__col--good .comparison__label { color: var(--accent); }
+.comparison__title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; line-height: 1;
+  letter-spacing: -0.01em; text-transform: uppercase;
+}
+.comparison__col--bad .comparison__title { color: var(--ink-2); }
+.comparison__list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.comparison__list li {
+  padding-left: 28px; position: relative;
+  font-size: 14px; line-height: 1.55;
+}
+.comparison__list li::before {
+  position: absolute; left: 0; top: 0;
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 800; line-height: 1.2;
+}
+.comparison__col--bad .comparison__list li::before { content: "×"; color: var(--ink-3); }
+.comparison__col--good .comparison__list li { color: var(--ink-2); }
+.comparison__col--good .comparison__list li::before { content: "✓"; color: var(--accent); }
+.comparison__price {
+  margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.comparison__col--bad .comparison__price { color: var(--ink-3); }
+.comparison__col--good .comparison__price { color: var(--ink); }
+.comparison__col--good .comparison__price .accent { color: var(--accent); }
+
+@media (max-width: 700px) {
+  .comparison { grid-template-columns: 1fr; }
+  .comparison__col--bad { border-right: none; border-bottom: 1px solid var(--line); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PRICING (reused z TP/ciąży)
+   ═══════════════════════════════════════════════════════════════════ */
+.pricing {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+}
+.price-list { border: 1px solid var(--line); background: var(--bg-2); }
+.price-row {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 24px; align-items: baseline;
+  padding: 28px 32px; border-bottom: 1px solid var(--line);
+  transition: background 0.3s;
+}
+.price-row:last-child { border-bottom: none; }
+.price-row:hover { background: var(--bg-3); }
+.price-row__name {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700; line-height: 1.15;
+  text-transform: uppercase; letter-spacing: -0.01em;
+}
+.price-row__name small {
+  display: block; font-family: var(--font-body);
+  font-size: 12px; font-weight: 400; text-transform: none;
+  letter-spacing: 0; color: var(--ink-3); margin-top: 4px; line-height: 1.4;
+}
+.price-row__price {
+  font-family: var(--font-display);
+  font-size: 40px; font-weight: 800; letter-spacing: -0.02em;
+  color: var(--accent); line-height: 1; text-align: right; white-space: nowrap;
+}
+.price-row__price small {
+  display: block; font-family: var(--font-mono);
+  font-size: 10px; font-weight: 500; letter-spacing: 0.15em;
+  color: var(--ink-3); margin-top: 6px;
+}
+
+.pricing__notes { display: flex; flex-direction: column; gap: 24px; padding-top: 16px; }
+.pricing__notes h3 {
+  font-family: var(--font-display);
+  font-size: 28px; font-weight: 700; line-height: 1.1;
+  text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 8px;
+}
+.pricing__notes h3 .accent { color: var(--accent); }
+.pricing__notes p { font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+
+.pricing__highlight {
+  background: var(--accent); color: var(--bg); padding: 24px;
+  display: flex; gap: 20px; align-items: center;
+}
+.pricing__highlight svg { flex-shrink: 0; width: 40px; height: 40px; }
+.pricing__highlight strong {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 800; text-transform: uppercase;
+  display: block; margin-bottom: 4px; letter-spacing: -0.01em;
+}
+.pricing__highlight small { font-size: 13px; line-height: 1.45; }
+
+@media (max-width: 900px) { .pricing { grid-template-columns: 1fr; gap: 32px; } }
+
+/* FAQ (reused) */
+.faq { max-width: 960px; margin: 0 auto; border-top: 1px solid var(--line); }
+.faq__item { border-bottom: 1px solid var(--line); }
+.faq__q {
+  width: 100%; padding: 28px 0;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 24px; text-align: left;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.5vw, 28px); font-weight: 700;
+  line-height: 1.15; letter-spacing: -0.01em; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.faq__q:hover { color: var(--accent); }
+.faq__icon {
+  flex-shrink: 0; width: 36px; height: 36px;
+  border: 1px solid var(--line); display: grid; place-items: center;
+  position: relative; transition: all 0.3s;
+}
+.faq__icon::before, .faq__icon::after {
+  content: ""; position: absolute; background: currentColor; transition: transform 0.3s;
+}
+.faq__icon::before { width: 14px; height: 2px; }
+.faq__icon::after { width: 2px; height: 14px; }
+.faq__item[aria-expanded="true"] .faq__icon::after { transform: scaleY(0); }
+.faq__item[aria-expanded="true"] .faq__icon { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.faq__a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+.faq__item[aria-expanded="true"] .faq__a { max-height: 600px; padding: 0 0 32px 0; }
+.faq__a p { font-size: 16px; line-height: 1.6; color: var(--ink-2); max-width: 72ch; }
+
+/* CTA Final */
+.cta-final {
+  padding: var(--space-8) 0; background: var(--bg);
+  border-top: 1px solid var(--line); text-align: center;
+}
+.cta-final__inner {
+  max-width: 900px; margin: 0 auto; padding: 0 40px;
+  display: flex; flex-direction: column; gap: 32px; align-items: center;
+}
+.cta-final h2 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 96px); line-height: 0.9;
+  font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase;
+}
+.cta-final h2 .accent { color: var(--accent); }
+.cta-final p { font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 52ch; }
+.cta-final__buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+.cta-final__direct {
+  margin-top: 24px; padding-top: 32px;
+  border-top: 1px solid var(--line); width: 100%;
+  display: flex; gap: 40px; justify-content: center; align-items: center; flex-wrap: wrap;
+}
+.cta-final__direct a {
+  font-family: var(--font-display);
+  font-size: 20px; text-transform: uppercase; letter-spacing: 0.02em;
+  display: inline-flex; align-items: center; gap: 12px; transition: color 0.2s;
+}
+.cta-final__direct a:hover { color: var(--accent); }
+.cta-final__direct .icon { color: var(--accent); }
+
+/* Footer */
+.footer { background: #000; padding: 80px 0 32px; border-top: 1px solid var(--line); }
+.footer__top { max-width: var(--container); margin: 0 auto; padding: 0 40px; }
+.footer__big {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 16vw, 240px); line-height: 0.85;
+  font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase;
+  margin-bottom: 64px;
+  display: flex; justify-content: space-between; align-items: end;
+  border-bottom: 1px solid var(--line); padding-bottom: 32px; gap: 32px;
+}
+.footer__big .accent { color: var(--accent); font-style: italic; }
+.footer__big .arrow { font-size: clamp(48px, 8vw, 120px); transition: transform 0.3s; }
+.footer__big a:hover .arrow { transform: translate(6px, -6px); }
+
+.footer__grid {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 64px;
+}
+.footer__col h4 {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ink-3); margin-bottom: 20px;
+}
+.footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer__col a { font-size: 14px; color: var(--ink-2); transition: color 0.2s; }
+.footer__col a:hover { color: var(--accent); }
+.footer__col p { font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+
+.socials { display: flex; gap: 12px; margin-top: 16px; }
+.socials a {
+  width: 40px; height: 40px; border: 1px solid var(--line);
+  display: grid; place-items: center; transition: all 0.25s;
+}
+.socials a:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.socials svg { width: 18px; height: 18px; }
+
+.footer__bottom {
+  max-width: var(--container); margin: 0 auto; padding: 24px 40px 0;
+  border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3);
+}
+
+@media (max-width: 900px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer__big { font-size: 72px; flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 500px) { .footer__grid { grid-template-columns: 1fr; } }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+  .browser-mockup { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Przejdź do treści</a>
+
+<!-- ANNOUNCEMENT -->
+<div class="announce">
+  <strong>Studio otwarte</strong> · Codziennie 5:30 — 23:00
+  <span class="sep">●</span>
+  Plac Na Groblach 23, Kraków
+  <span class="sep">●</span>
+  <strong>+48 728 385 203</strong>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo" aria-label="SAMtrening — strona główna">SAM<span class="dot">·</span>TRENING</a>
+    <nav aria-label="Menu główne">
+      <ul class="nav">
+        <li><a href="treningi-personalne.html">Treningi</a></li>
+        <li><a href="zdrowa-ciaza.html">Ciąża</a></li>
+        <li><a href="e-trening.html" class="is-active">E-trening</a></li>
+        <li><a href="zespol.html">Zespół</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="header__cta">
+      <a href="https://app.samtrening.com" class="header__login" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+          <polyline points="10 17 15 12 10 7"/>
+          <line x1="15" y1="12" x2="3" y2="12"/>
+        </svg>
+        Zaloguj się
+      </a>
+      <a href="#cta" class="header__btn">Konsultacja →</a>
+      <button class="burger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <nav aria-label="Menu mobilne">
+    <ul>
+      <li><a href="treningi-personalne.html">Treningi personalne</a></li>
+      <li><a href="zdrowa-ciaza.html">Zdrowa ciąża</a></li>
+      <li><a href="e-trening.html">E-trening</a></li>
+      <li><a href="zespol.html">Zespół</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a href="https://app.samtrening.com" class="mobile-menu__login" target="_blank" rel="noopener">
+      Zaloguj się do platformy →
+    </a>
+  </nav>
+</div>
+
+<!-- BREADCRUMBS -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol class="breadcrumbs__list">
+    <li><a href="index.html">Strona główna</a></li>
+    <li><a href="index.html#oferta">Oferta</a></li>
+    <li>E-trening</li>
+  </ol>
+</nav>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="page-hero__inner">
+      <div class="page-hero__left">
+        <div class="eyebrow eyebrow--accent">Oferta · 03 — Online</div>
+        <h1 id="page-title">
+          <span class="outline">E-trening</span><br>
+          <span class="accent">online.</span><br>
+          Z trenerem.
+        </h1>
+        <p class="page-hero__sub">
+          Pełnoprawny trening personalny prowadzony online — z tym samym trenerem,
+          który pracuje z klientami stacjonarnie w naszym studio pod Wawelem.
+          <strong>Własna platforma</strong> SAMtrening, nie generyczna aplikacja z marketplace'u.
+          Bez pakietów, bez zobowiązań. Dla klientów z całej Polski i zagranicy.
+        </p>
+        <div class="page-hero__cta">
+          <a href="#cta" class="btn btn--primary">
+            Umów bezpłatną konsultację <span class="arrow">→</span>
+          </a>
+          <a href="#platforma" class="btn btn--ghost">Zobacz platformę</a>
+        </div>
+      </div>
+
+      <div class="page-hero__meta">
+        <div class="page-hero__meta-row">
+          <div class="key">Format</div>
+          <div class="val">Sesja <span class="accent">1:1</span></div>
+        </div>
+        <div class="page-hero__meta-row">
+          <div class="key">Platforma</div>
+          <div class="val"><span class="accent">Własna</span></div>
+        </div>
+        <div class="page-hero__meta-row">
+          <div class="key">Czas</div>
+          <div class="val">60 minut</div>
+        </div>
+        <div class="page-hero__meta-row">
+          <div class="key">Od</div>
+          <div class="val"><span class="accent">200 zł</span> / sesja</div>
+        </div>
+        <div class="page-hero__meta-row">
+          <div class="key">Pierwsza konsultacja</div>
+          <div class="val"><span class="accent">Bezpłatna</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <div class="container">
+    <div class="intro-block reveal">
+      <p>
+        Nie każdy może co tydzień dojechać do naszego studia na Placu Na Groblach.
+        Pracujesz między Warszawą, Berlinem i Londynem. Mieszkasz w Rzeszowie,
+        Gdańsku albo Tarnowie. Jesteś na urlopie rodzicielskim, a wyjście z domu
+        na 90 minut jest w tej chwili nierealne. Albo po prostu wolisz ćwiczyć rano
+        we własnym salonie, <strong>zanim reszta domu się obudzi</strong>.
+      </p>
+    </div>
+  </div>
+
+  <!-- DLA KOGO -->
+  <section class="section" aria-labelledby="audience-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">01 — Dla kogo</div>
+          <h2 id="audience-title">Dla kogo<br>jest<br><span class="accent">e-trening.</span></h2>
+        </div>
+        <p>
+          Cztery grupy klientów, dla których e-trening to dokładnie to, czego
+          potrzebują. Jeśli nie rozpoznajesz się w żadnej z nich — bez problemu,
+          podczas konsultacji ustalimy czy to dobry wybór dla ciebie.
+        </p>
+      </div>
+
+      <div class="audience-grid reveal">
+        <article class="audience-card">
+          <div class="audience-card__num">01 / Zapracowani</div>
+          <h3>Zapracowani<br>z całej Polski</h3>
+          <p>Sesja o 6:30 przed lotem do Warszawy. Trening o 21:00 po powrocie z delegacji. E-trening dopasowuje się do twojego kalendarza — logujesz się z laptopa lub telefonu z dowolnego miejsca. Bez czasu na dojazd i parkowanie.</p>
+        </article>
+        <article class="audience-card">
+          <div class="audience-card__num">02 / Rodzice</div>
+          <h3>Rodzice<br>małych dzieci</h3>
+          <p>Dziecko śpi w pokoju obok, ty ćwiczysz w salonie pod okiem trenera przez kamerę. Bez dojazdu, bez opiekunki, bez poczucia winy. 45–60 minut, które naprawdę należą do ciebie.</p>
+        </article>
+        <article class="audience-card">
+          <div class="audience-card__num">03 / Spoza Krakowa</div>
+          <h3>Osoby<br>spoza Krakowa</h3>
+          <p>Mieszkasz w Rzeszowie, Tarnowie, Katowicach, Wrocławiu, Warszawie — gdziekolwiek w Polsce. Chcesz pracować z trenerami z doświadczeniem sportu wyczynowego, ale dojazd nie ma sensu. Poziom pracy identyczny jak w studio.</p>
+        </article>
+        <article class="audience-card">
+          <div class="audience-card__num">04 / W trasie</div>
+          <h3>Klienci<br>w ciągłej trasie</h3>
+          <p>Twoja praca wymaga ciągłych wyjazdów — hotele, konferencje, delegacje zagraniczne. Z e-treningiem kontynuujesz plan niezależnie od tego, czy piątek rano zastaje cię w hotelu w Berlinie, czy w salonie w Krakowie.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMA — kluczowa sekcja -->
+  <section class="platform" id="platforma" aria-labelledby="platform-title">
+    <div class="platform__inner">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow eyebrow--accent">02 — Platforma</div>
+          <h2 id="platform-title">Własna<br>platforma.<br><span class="accent">Nie marketplace.</span></h2>
+        </div>
+        <p>
+          Po pierwszej konsultacji dostajesz dostęp do platformy SAMtrening —
+          <strong>naszego autorskiego systemu</strong>, przez który prowadzimy cały proces online.
+          To narzędzie stworzone pod sposób, w jaki pracujemy z klientami stacjonarnie
+          — przeniesione do świata online.
+        </p>
+      </div>
+
+      <!-- Browser mockup z app.samtrening.com -->
+      <div class="browser-mockup reveal" aria-hidden="true">
+        <div class="browser-mockup__chrome">
+          <div class="browser-mockup__dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="browser-mockup__url">
+            <svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <span>app.<strong>samtrening.com</strong>/dashboard</span>
+          </div>
+          <div class="browser-mockup__actions">
+            <span>←</span><span>→</span><span>⟳</span>
+          </div>
+        </div>
+        <div class="browser-mockup__body">
+          <div class="browser-mockup__sidebar">
+            <div class="browser-mockup__sidebar-item is-active">Dashboard</div>
+            <div class="browser-mockup__sidebar-item">Plan treningowy</div>
+            <div class="browser-mockup__sidebar-item">Chat z trenerem</div>
+            <div class="browser-mockup__sidebar-item">Pomiary</div>
+            <div class="browser-mockup__sidebar-item">Sesje online</div>
+            <div class="browser-mockup__sidebar-item">Płatności</div>
+          </div>
+          <div class="browser-mockup__main">
+            <div class="browser-mockup__card">
+              <div>
+                <div class="label">Postęp tygodnia</div>
+                <div class="value">3 / 4 sesje</div>
+              </div>
+              <div style="width: 120px;">
+                <div class="browser-mockup__bar"></div>
+              </div>
+            </div>
+            <div class="browser-mockup__card">
+              <div>
+                <div class="label">Następna sesja</div>
+                <div class="value">Jutro · 06:30</div>
+              </div>
+              <div style="color: var(--accent); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em;">MACIEK</div>
+            </div>
+            <div class="browser-mockup__card">
+              <div>
+                <div class="label">Tkanka tłuszczowa</div>
+                <div class="value">−2,4%</div>
+              </div>
+              <div style="color: var(--accent); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em;">OSTATNIE 28 DNI</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 funkcjonalności -->
+      <div class="platform__features reveal">
+        <article class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="16" rx="2"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+              <line x1="8" y1="14" x2="16" y2="14"/>
+              <line x1="8" y1="17" x2="13" y2="17"/>
+            </svg>
+          </div>
+          <div class="feature-card__num">01 / Plan</div>
+          <h3>Indywidualny<br>plan treningowy</h3>
+          <p>Plan dopasowany do twoich celów, dostępnego sprzętu i tygodniowego grafiku. Każde ćwiczenie z opisem techniki i nagraniem wideo — w razie wątpliwości widzisz dokładnie, jak je wykonać.</p>
+          <div class="feature-card__tag">Aktualizowany co 4 tygodnie</div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <div class="feature-card__num">02 / Chat</div>
+          <h3>Chat<br>z trenerem</h3>
+          <p>Bezpośrednia, nieograniczona komunikacja z trenerem przez platformę — 7 dni w tygodniu. Wyślij nagranie ćwiczenia, zapytaj o technikę, zgłoś ból po bieganiu. Odpowiadamy w 2–3 godziny.</p>
+          <div class="feature-card__tag">5:30 — 23:00 · 7 dni / tydzień</div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M3 3v18h18"/>
+              <polyline points="7 15 11 10 14 13 20 6"/>
+            </svg>
+          </div>
+          <div class="feature-card__num">03 / Pomiary</div>
+          <h3>Pomiary<br>i postępy</h3>
+          <p>Co 4 tygodnie: skład ciała (jeśli masz wagę impedancyjną), obwody, zdjęcia kontrolne, testy siły i wydolności. Wprowadzasz na platformę, my analizujemy trend i dostosowujemy plan. Nie polegamy na „wrażeniach".</p>
+          <div class="feature-card__tag">Konkretne liczby, nie „wrażenia"</div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <polygon points="23 7 16 12 23 17"/>
+              <rect x="1" y="5" width="15" height="14" rx="2"/>
+            </svg>
+          </div>
+          <div class="feature-card__num">04 / Sesje</div>
+          <h3>Sesje<br>online 1:1</h3>
+          <p>Proponujesz termin przez platformę, my potwierdzamy w kilka godzin. Sesja 60 minut — trener prowadzi przez rozgrzewkę, część główną i wyciszenie, koryguje technikę przez kamerę. Zoom lub Google Meet.</p>
+          <div class="feature-card__tag">Rezerwacja przez platformę</div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <rect x="2" y="5" width="20" height="14" rx="2"/>
+              <line x1="2" y1="10" x2="22" y2="10"/>
+              <line x1="6" y1="15" x2="10" y2="15"/>
+            </svg>
+          </div>
+          <div class="feature-card__num">05 / Płatności</div>
+          <h3>Rozliczenia<br>online</h3>
+          <p>Płacisz po każdej odbytej sesji — szybki przelew przez platformę. Bez fakturowania zaległych sesji, bez gotówki, bez karnetów. W panelu widzisz historię wszystkich sesji, płatności i planów w jednym miejscu.</p>
+          <div class="feature-card__tag">Bez pakietów. Bez karnetów.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON: E-trening vs YouTube -->
+  <section class="section" aria-labelledby="compare-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">03 — Porównanie</div>
+          <h2 id="compare-title">E-trening<br>czy<br><span class="accent">YouTube?</span></h2>
+        </div>
+        <p>
+          YouTube jest świetny, kiedy masz już podstawy i znasz własne ciało.
+          Zawodzi w trzech sytuacjach — błędów technicznych, ograniczeń zdrowotnych
+          i braku systematyczności. Zobacz różnicę.
+        </p>
+      </div>
+
+      <div class="comparison reveal">
+        <div class="comparison__col comparison__col--bad">
+          <div class="comparison__label">YouTube / Instagram / darmowe aplikacje</div>
+          <div class="comparison__title">Filmy<br>z internetu</div>
+          <ul class="comparison__list">
+            <li>Nikt nie poprawia twojej techniki — utrwalasz błędy</li>
+            <li>Plan pod przeciętnego 35-latka w dobrej formie</li>
+            <li>Zero reakcji, kiedy znikasz na tydzień</li>
+            <li>Brak uwzględnienia kontuzji, postawy, ciąży</li>
+            <li>Żadnej odpowiedzialności za twój postęp</li>
+            <li>Kilka porzuconych programów w historii</li>
+          </ul>
+          <div class="comparison__price">0 zł</div>
+        </div>
+        <div class="comparison__col comparison__col--good">
+          <div class="comparison__label">E-trening SAMtrening</div>
+          <div class="comparison__title">Trener<br>personalny online</div>
+          <ul class="comparison__list">
+            <li>Trener widzi twoją technikę i koryguje w czasie rzeczywistym</li>
+            <li>Plan pisany pod ciebie — twój wiek, cele, sprzęt, grafik</li>
+            <li>Chat z trenerem i reakcja, gdy wypadasz z rytmu</li>
+            <li>Uwzględnienie kontuzji, postawy, ciąży, poziomu</li>
+            <li>Konkretny trener odpowiedzialny za twój postęp</li>
+            <li>Pomiary co 4 tygodnie — twarde dane</li>
+          </ul>
+          <div class="comparison__price"><span class="accent">200 zł</span> / sesja</div>
+        </div>
+      </div>
+
+      <p style="max-width: 760px; margin: 40px auto 0; text-align: center; font-size: 15px; line-height: 1.7; color: var(--ink-3);">
+        Filmik na YouTube kosztuje zero złotych. E-trening kosztuje 200 zł za sesję.
+        Ale jeśli masz za sobą kilka porzuconych programów z internetu —
+        <strong style="color: var(--ink-2);">wiesz już, że „za darmo" nie zawsze znaczy „tanio"</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- CENNIK -->
+  <section class="section section--alt" id="cennik" aria-labelledby="pricing-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">04 — Cennik</div>
+          <h2 id="pricing-title">Cennik.<br><span class="accent">Bez pakietów.</span><br>Bez zobowiązań.</h2>
+        </div>
+        <p>
+          Ta sama cena co za sesję stacjonarną — bo praca trenera jest ta sama,
+          niezależnie od tego, czy widzi cię przez szybę, czy przez kamerę.
+          Platforma w cenie każdej sesji.
+        </p>
+      </div>
+
+      <div class="pricing reveal">
+        <div class="price-list">
+          <div class="price-row">
+            <div class="price-row__name">
+              Sesja online 1:1
+              <small>60 minut · Zoom lub Google Meet, rezerwacja przez platformę</small>
+            </div>
+            <div class="price-row__price">
+              200 zł
+              <small>za sesję</small>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-row__name">
+              Platforma SAMtrening
+              <small>Plan + chat + pomiary + panel rozliczeń</small>
+            </div>
+            <div class="price-row__price">
+              W cenie
+              <small>każdej sesji</small>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-row__name">
+              Pierwsza konsultacja online
+              <small>45 minut · Zoom, rozmowa o celach, pokaz platformy</small>
+            </div>
+            <div class="price-row__price">
+              0 zł
+              <small>bezpłatnie</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing__notes">
+          <div>
+            <h3>Bez <span class="accent">karnetów.</span></h3>
+            <p>
+              Nie musisz wpłacać z góry za 10 czy 20 sesji, które „kiedyś" się odbędą.
+              Korzystasz elastycznie — jeśli w listopadzie masz delegacje i nie dasz rady
+              trenować, nic nie płacisz. W grudniu wracasz i robisz sześć sesji w miesiącu.
+            </p>
+          </div>
+
+          <div class="pricing__highlight">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M9 12l2 2 4-4"/>
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+            <div>
+              <strong>Pierwsza konsultacja — bezpłatna</strong>
+              <small>45 minut rozmowy, omówienie celów, pokaz platformy. Bez presji sprzedażowej.</small>
+            </div>
+          </div>
+
+          <p style="font-size: 14px; color: var(--ink-3);">
+            Klienci hybrydowi — łączący sesje stacjonarne z online — mają wszystko na
+            jednej platformie. Plan, historia, pomiary są spójne, prowadzone przez
+            tego samego trenera niezależnie od formatu.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-head reveal" style="grid-template-columns:1fr; text-align:center; max-width:800px; margin-left:auto; margin-right:auto;">
+        <div>
+          <div class="eyebrow" style="justify-content:center;">05 — FAQ</div>
+          <h2 id="faq-title">Najczęstsze<br><span class="accent">pytania.</span></h2>
+        </div>
+      </div>
+
+      <div class="faq reveal">
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="q-1">
+            <span>Czy potrzebuję dużo sprzętu w domu, żeby zacząć?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="q-1">
+            <p>Nie. Na pierwszej konsultacji pytamy, co masz pod ręką, i układamy plan pod twoje realne możliwości. Większość naszych klientów e-treningu ma: matę, gumy oporowe, parę hantli i krzesło. To wystarczy, żeby pracować systematycznie przez pierwsze miesiące. Jeśli masz w domu siłownię — tym lepiej, ale to nie jest warunek wejściowy.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="q-2">
+            <span>Jak wygląda sesja online — krok po kroku?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="q-2">
+            <p>Logujesz się na Zoom lub Google Meet w umówionym przez platformę terminie. Trener widzi cię przez kamerę z laptopa lub telefonu ustawionego na statywie. Prowadzimy sesję dokładnie jak stacjonarnie — rozgrzewka, część główna, wyciszenie — tylko komunikacja odbywa się przez kamerę i mikrofon. Pełna sesja trwa 60 minut.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="q-3">
+            <span>Ile razy w tygodniu trzeba trenować, żeby zobaczyć efekty?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="q-3">
+            <p>Polecamy 2–3 sesje personalnie online z trenerem plus 1–2 samodzielne według planu w platformie. Łącznie 3–5 jednostek treningowych tygodniowo — tyle wystarczy, żeby zobaczyć wymierne efekty w ciągu pierwszych 12 tygodni. Jedna sesja tygodniowo to zwykle za mało, żeby cokolwiek realnie się zmieniło.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="q-4">
+            <span>Czy można łączyć e-trening z treningiem stacjonarnym w studio?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="q-4">
+            <p>Tak — i wielu naszych klientów tak właśnie pracuje. Na przykład dwa razy stacjonarnie w tygodniach, kiedy są w Krakowie, i online, kiedy wyjeżdżają służbowo. Plan, historia treningowa i pomiary są spójne — wszystko prowadzone na jednej platformie, przez tego samego trenera.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="q-5">
+            <span>Co się stanie, jeśli internet zerwie się w trakcie sesji?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="q-5">
+            <p>Wrócisz do połączenia — jeśli nie uda się nawiązać go w sensownym czasie, trener przeniesie pozostały czas na następną sesję. Nie ma kary za problemy techniczne, które nie są twoją winą.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="q-6">
+            <span>Czy e-trening jest dla mnie, jeśli nigdy nie trenowałem systematycznie?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="q-6">
+            <p>Tak. Połowa naszych klientów e-treningu zaczyna od zera lub po wieloletniej przerwie. Na pierwszej sesji dostosowujemy intensywność do twojego aktualnego poziomu, a plan rośnie razem z tobą — krok po kroku. Paradoksalnie trening online bywa w takich sytuacjach wygodniejszy niż siłownia — nie krępuje cię obecność innych osób ani poczucie, że „wszyscy patrzą".</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="q-7">
+            <span>Czy rozliczenia naprawdę są w 100% online?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="q-7">
+            <p>Tak. Po każdej odbytej sesji płacisz szybkim przelewem bezpośrednio z poziomu platformy SAMtrening. Bez fakturowania zaległych sesji, bez gotówki, bez karnetów do przedłużania. W panelu masz widok wszystkich płatności, sesji i dokumentów.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final" id="cta" aria-labelledby="cta-title">
+    <div class="cta-final__inner">
+      <div class="eyebrow eyebrow--accent">Następny krok</div>
+      <h2 id="cta-title">Umów<br>konsultację<br><span class="accent">online.</span></h2>
+      <p>
+        45 minut przez Zoom — poznamy się, omówimy cele, sprawdzimy jaki sprzęt
+        masz pod ręką i pokażemy platformę. Bez zobowiązań, bez presji sprzedażowej.
+      </p>
+      <div class="cta-final__buttons">
+        <a href="kontakt.html#formularz" class="btn btn--primary">
+          Wypełnij formularz <span class="arrow">→</span>
+        </a>
+        <a href="tel:+48728385203" class="btn btn--ghost">Zadzwoń teraz</a>
+      </div>
+      <div class="cta-final__direct">
+        <a href="tel:+48728385203">
+          <span class="icon" aria-hidden="true">📞</span>
+          +48 728 385 203
+        </a>
+        <a href="mailto:biuro@samtrening.com">
+          <span class="icon" aria-hidden="true">✉</span>
+          biuro@samtrening.com
+        </a>
+        <a href="https://app.samtrening.com" target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true">→</span>
+          Jestem klientem → zaloguj się
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__big">
+      <a href="#cta">Zacznijmy <span class="accent">razem.</span></a>
+      <a href="#cta" aria-label="Przejdź do kontaktu"><span class="arrow">↗</span></a>
+    </div>
+
+    <div class="footer__grid">
+      <div class="footer__col">
+        <h4>SAMtrening</h4>
+        <p>Kameralne studio treningu personalnego w centrum Krakowa. Plac Na Groblach 23, 30-101 Kraków.</p>
+        <div class="socials" aria-label="Media społecznościowe">
+          <a href="https://www.facebook.com/samtrening" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.3c0-1 .2-1.3 1.1-1.3H18V0h-3.2C11.2 0 9 1.5 9 4.5V8z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/samtrening" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://g.co/samtrening" target="_blank" rel="noopener" aria-label="Google Business">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 5c1.6 0 3 .5 4.2 1.5L19 3.7C17 1.9 14.6 1 12 1 7.4 1 3.4 3.6 1.4 7.4l3.3 2.6C5.7 7 8.6 5 12 5z M23 12.2c0-.8-.1-1.6-.2-2.4H12v4.5h6.2c-.3 1.4-1.1 2.6-2.3 3.4l3.5 2.7c2.1-1.9 3.6-4.8 3.6-8.2z M5 13c-.3-.9-.5-1.8-.5-2.8 0-1 .2-1.9.5-2.8L1.7 4.8C.6 6.9 0 9.3 0 12s.6 5.1 1.7 7.2l3.3-2.6c-.3-.9-.5-1.8-.5-2.8.2-.2 0-.5.5-.8z M12 23c3 0 5.6-1 7.4-2.7l-3.5-2.7c-1 .7-2.3 1.1-3.9 1.1-3.3 0-6.2-2-7.3-5l-3.3 2.6C3.4 20.4 7.4 23 12 23z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Oferta</h4>
+        <ul>
+          <li><a href="treningi-personalne.html">Treningi personalne</a></li>
+          <li><a href="zdrowa-ciaza.html">Zdrowa ciąża</a></li>
+          <li><a href="e-trening.html">E-trening online</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="zespol.html">Zespół</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="https://app.samtrening.com" target="_blank" rel="noopener">Platforma — zaloguj się</a></li>
+          <li><a href="rodo.html">Polityka prywatności</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+48728385203">+48 728 385 203</a></li>
+          <li><a href="mailto:biuro@samtrening.com">biuro@samtrening.com</a></li>
+          <li><span style="color:var(--ink-2);">Plac Na Groblach 23<br>30-101 Kraków</span></li>
+          <li><span style="color:var(--ink-2);">Pon–Niedz · 5:30–23:00</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div>© <span id="year">2026</span> SAMtrening Sp. z o.o. Wszelkie prawa zastrzeżone.</div>
+    <div>Stworzone z miłością do zdrowia.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Mobile menu
+const burger = document.querySelector('.burger');
+const mobileMenu = document.getElementById('mobile-menu');
+burger.addEventListener('click', () => {
+  const open = burger.getAttribute('aria-expanded') === 'true';
+  burger.setAttribute('aria-expanded', !open);
+  mobileMenu.classList.toggle('is-open');
+  document.body.style.overflow = !open ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  burger.setAttribute('aria-expanded', 'false');
+  mobileMenu.classList.remove('is-open');
+  document.body.style.overflow = '';
+}));
+
+// FAQ accordion
+document.querySelectorAll('.faq__item').forEach(item => {
+  const btn = item.querySelector('.faq__q');
+  btn.addEventListener('click', () => {
+    const open = item.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.faq__item').forEach(i => {
+      i.setAttribute('aria-expanded', 'false');
+      i.querySelector('.faq__q').setAttribute('aria-expanded', 'false');
+    });
+    if (!open) {
+      item.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
