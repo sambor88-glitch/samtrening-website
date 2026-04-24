@@ -213,16 +213,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   transition: color 0.2s;
 }
 .header__phone:hover { color: var(--accent); }
-.header__login {
-  font-family: var(--font-mono); font-size: 11px;
-  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-2);
-  padding: 10px 14px; border: 1px solid var(--line-2);
-  display: inline-flex; align-items: center; gap: 8px;
-  transition: all 0.2s;
-}
-.header__login:hover { border-color: var(--accent); color: var(--accent); }
-.header__login .icon { width: 12px; height: 12px; }
-@media (max-width: 1200px) { .header__login { display: none; } }
 .header__btn {
   background: var(--accent); color: var(--bg);
   padding: 10px 18px; font-size: 12px; font-weight: 700;
@@ -496,7 +486,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
    6. OFFER (4 services)
    ═══════════════════════════════════════════════════════════════════ */
 .offer-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
+  display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 0; border: 1px solid var(--line);
 }
 .offer {
@@ -536,7 +526,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .offer:hover .offer__link .arrow { transform: translateX(4px); }
 .offer__link .arrow { transition: transform 0.2s; }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  .offer-grid { grid-template-columns: repeat(2, 1fr); }
+  .offer:nth-child(2) { border-right: none; }
+  .offer:nth-child(1), .offer:nth-child(2) { border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 600px) {
   .offer-grid { grid-template-columns: 1fr; }
   .offer { border-right: none; border-bottom: 1px solid var(--line); }
   .offer:last-child { border-bottom: none; }
@@ -546,7 +541,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
    7. WHY US (USP points — big numbers)
    ═══════════════════════════════════════════════════════════════════ */
 .why-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
   background: var(--line);
 }
 .why {
@@ -728,10 +723,27 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
 .location__map {
   background: var(--bg-3);
-  min-height: 480px;
+  min-height: 640px;
   position: relative; overflow: hidden;
 }
-.location__map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.5) contrast(1.1) invert(0.9); }
+.location__map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.4) contrast(1.1) invert(0.92) hue-rotate(180deg); }
+.location__map .map-cta {
+  position: absolute; bottom: 24px; left: 24px; right: 24px;
+  background: var(--bg); border: 1px solid var(--accent);
+  padding: 16px 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px; flex-wrap: wrap; z-index: 2;
+}
+.location__map .map-cta p {
+  font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); margin: 0;
+}
+.location__map .map-cta a {
+  font-family: var(--font-display); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.location__map .map-cta a:hover { color: var(--ink); }
 
 @media (max-width: 900px) {
   .location { grid-template-columns: 1fr; }
@@ -797,7 +809,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   max-width: 960px; margin: 0 auto;
   border-top: 1px solid var(--line);
 }
-.faq__item { border-bottom: 1px solid var(--line); }
+.faq__item { border-bottom: 1px solid var(--line); transition: background 0.3s; }
+.faq__item[aria-expanded="true"] {
+  background: linear-gradient(180deg, rgba(232, 255, 62, 0.04) 0%, transparent 100%);
+  border-bottom-color: var(--accent);
+}
 .faq__q {
   width: 100%; padding: 28px 0;
   display: flex; justify-content: space-between; align-items: center;
@@ -809,6 +825,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   transition: color 0.2s;
 }
 .faq__q:hover { color: var(--accent); }
+.faq__item[aria-expanded="true"] .faq__q { color: var(--accent); }
 .faq__icon {
   flex-shrink: 0; width: 36px; height: 36px;
   border: 1px solid var(--line); display: grid; place-items: center;
@@ -834,33 +851,54 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   max-width: 72ch;
 }
 
+
 /* ═══════════════════════════════════════════════════════════════════
-   13. CONTACT FORM
+   FORMULARZ — style skopiowane 1:1 z /kontakt/ (działająca wersja)
    ═══════════════════════════════════════════════════════════════════ */
-.contact {
-  display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px;
+.form-wrapper {
+  display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: start;
 }
-.contact__intro h2 {
+.form-wrapper__intro {
+  position: sticky; top: 120px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.form-wrapper__intro h2 {
   font-family: var(--font-display);
-  font-size: clamp(48px, 6vw, 88px); line-height: 0.9;
+  font-size: clamp(40px, 5vw, 72px); line-height: 0.92;
   font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase;
-  margin-bottom: 32px;
 }
-.contact__intro h2 .accent { color: var(--accent); }
-.contact__intro p { font-size: 16px; line-height: 1.55; color: var(--ink-2); margin-bottom: 32px; max-width: 42ch; }
-.contact__direct {
+.form-wrapper__intro h2 .accent { color: var(--accent); }
+.form-wrapper__intro p { font-size: 16px; line-height: 1.55; color: var(--ink-2); }
+.form-wrapper__intro .response-time {
+  margin-top: 16px; padding: 20px;
+  border: 1px solid var(--line); background: var(--bg-2);
+  display: flex; gap: 16px; align-items: start;
+}
+.form-wrapper__intro .response-time svg {
+  width: 24px; height: 24px; color: var(--accent); flex-shrink: 0;
+}
+.form-wrapper__intro .response-time strong {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: -0.005em; color: var(--ink);
+  display: block; margin-bottom: 4px;
+}
+.form-wrapper__intro .response-time small {
+  font-size: 13px; color: var(--ink-3); line-height: 1.5;
+}
+.form-wrapper__intro .direct-channels {
   border-top: 1px solid var(--line);
-  padding-top: 24px;
-  display: flex; flex-direction: column; gap: 14px;
+  padding-top: 20px; margin-top: 4px;
+  display: flex; flex-direction: column; gap: 12px;
 }
-.contact__direct a {
-  font-family: var(--font-display); font-size: 22px;
+.form-wrapper__intro .direct-channels a {
+  font-family: var(--font-display); font-size: 20px;
   text-transform: uppercase; letter-spacing: 0.02em;
   display: inline-flex; align-items: center; gap: 12px;
   transition: color 0.2s;
 }
-.contact__direct a:hover { color: var(--accent); }
-.contact__direct .icon { color: var(--accent); }
+.form-wrapper__intro .direct-channels a:hover { color: var(--accent); }
+.form-wrapper__intro .direct-channels .icon { color: var(--accent); }
 
 .form {
   background: var(--bg-2); padding: 40px;
@@ -877,6 +915,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   font-size: 11px; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--ink-3);
 }
+.form label .req { color: var(--accent); }
 .form input, .form textarea, .form select {
   background: var(--bg); color: var(--ink);
   border: 1px solid var(--line);
@@ -886,33 +925,56 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .form input:focus, .form textarea:focus, .form select:focus {
   outline: none; border-color: var(--accent);
 }
-.form textarea { min-height: 120px; resize: vertical; font-family: var(--font-body); }
+.form textarea { min-height: 140px; resize: vertical; font-family: var(--font-body); }
+.radio-group { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.radio-group label {
+  border: 1px solid var(--line);
+  padding: 14px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0; text-transform: none;
+  color: var(--ink-2);
+}
+.radio-group label:hover { border-color: var(--ink-2); color: var(--ink); }
+.radio-group input[type="radio"] { display: none; }
+.radio-group input[type="radio"]:checked + span { color: var(--bg); }
+.radio-group label:has(input:checked) {
+  background: var(--accent); color: var(--bg);
+  border-color: var(--accent); font-weight: 700;
+}
 .form__consent {
   font-size: 12px; color: var(--ink-3); line-height: 1.5;
   display: flex; gap: 12px; margin: 20px 0;
 }
 .form__consent input[type="checkbox"] {
   flex-shrink: 0; width: 18px; height: 18px;
-  accent-color: var(--accent);
-  margin-top: 2px;
+  accent-color: var(--accent); margin-top: 2px;
 }
+.form__consent a { color: var(--accent); border-bottom: 1px dotted; }
 .form button[type="submit"] {
   width: 100%;
   background: var(--accent); color: var(--bg);
-  padding: 20px; font-weight: 700;
+  padding: 22px; font-weight: 700;
   font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase;
   transition: all 0.2s;
+  display: inline-flex; justify-content: center; align-items: center; gap: 12px;
 }
-.form button[type="submit"]:hover {
-  background: var(--ink);
-}
+.form button[type="submit"]:hover { background: var(--ink); }
+.form button[type="submit"] .arrow { transition: transform 0.2s; }
+.form button[type="submit"]:hover .arrow { transform: translateX(4px); }
 
 @media (max-width: 900px) {
-  .contact { grid-template-columns: 1fr; gap: 40px; }
+  .form-wrapper { grid-template-columns: 1fr; gap: 40px; }
+  .form-wrapper__intro { position: static; }
   .form { padding: 24px; }
   .form__row { grid-template-columns: 1fr; }
   .form__field--full { grid-column: auto; }
+  .radio-group { grid-template-columns: 1fr 1fr; }
 }
+
 
 /* ═══════════════════════════════════════════════════════════════════
    14. FOOTER
@@ -948,20 +1010,23 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .footer__col h4 {
   font-family: var(--font-mono);
   font-size: 11px; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--ink-3);
-  margin-bottom: 20px;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(232, 255, 62, 0.2);
 }
 .footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .footer__col a {
   font-size: 14px; color: var(--ink-2);
-  transition: color 0.2s;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.footer__col a:hover { color: var(--accent); }
+.footer__col a:hover { color: var(--accent); transform: translateX(4px); }
 .footer__col p { font-size: 14px; line-height: 1.55; color: var(--ink-2); }
 
 .socials { display: flex; gap: 12px; margin-top: 16px; }
 .socials a {
-  width: 40px; height: 40px;
+  width: 44px; height: 44px;
   border: 1px solid var(--line);
   display: grid; place-items: center;
   transition: all 0.25s;
@@ -1043,14 +1108,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     </nav>
     <div class="header__cta">
       <a href="tel:+48728385203" class="header__phone">+48 728 385 203</a>
-      <a href="https://app.samtrening.com" class="header__login" target="_blank" rel="noopener">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
-          <polyline points="10 17 15 12 10 7"/>
-          <line x1="15" y1="12" x2="3" y2="12"/>
-        </svg>
-        Zaloguj się
-      </a>
       <a href="#kontakt" class="header__btn">Konsultacja →</a>
       <button class="burger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
@@ -1105,7 +1162,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
           młodzieżą od 10 r.ż. i sportowcami po kontuzjach. Płacisz za odbyte sesje — nic więcej.
         </p>
         <div class="hero__stat">
-          <div class="num">15+</div>
+          <div class="num">18+</div>
           <div class="lbl">Lat praktyki</div>
         </div>
         <div class="hero__stat">
@@ -1120,7 +1177,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <div class="hero__cta">
         <a href="#kontakt" class="btn btn--primary">
-          Umów bezpłatną konsultację <span class="arrow">→</span>
+          Umów konsultację <span class="arrow">→</span>
         </a>
         <a href="#oferta" class="btn btn--ghost">Sprawdź ofertę</a>
       </div>
@@ -1130,8 +1187,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   <!-- MARQUEE -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee__track">
-      <span>Trening personalny <span class="dot">●</span> Zdrowa ciąża <span class="dot">●</span> E-trening online <span class="dot">●</span> Studio 1:1 <span class="dot">●</span> Plac Na Groblach <span class="dot">●</span> 5:30 — 23:00 <span class="dot">●</span></span>
-      <span>Trening personalny <span class="dot">●</span> Zdrowa ciąża <span class="dot">●</span> E-trening online <span class="dot">●</span> Studio 1:1 <span class="dot">●</span> Plac Na Groblach <span class="dot">●</span> 5:30 — 23:00 <span class="dot">●</span></span>
+      <span>Trening personalny <span class="dot">●</span> Zdrowa ciąża <span class="dot">●</span> E-trening online <span class="dot">●</span> Studio 1:1 <span class="dot">●</span> Plac Na Groblach <span class="dot">●</span></span>
+      <span>Trening personalny <span class="dot">●</span> Zdrowa ciąża <span class="dot">●</span> E-trening online <span class="dot">●</span> Studio 1:1 <span class="dot">●</span> Plac Na Groblach <span class="dot">●</span></span>
     </div>
   </div>
 
@@ -1212,11 +1269,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
       <div class="section-head reveal">
         <div>
           <div class="eyebrow">02 — Oferta</div>
-          <h2 id="offer-title">Trzy<br>programy.<br><span class="accent">Jeden Ty.</span></h2>
+          <h2 id="offer-title">Cztery<br>programy.<br><span class="accent">Jeden Ty.</span></h2>
         </div>
         <p>
           Każdy program dopasowujemy do Twojego życia, doświadczenia i celów.
-          Wybierz punkt startu — podczas bezpłatnej konsultacji dobierzemy
+          Wybierz punkt startu — podczas pierwszej konsultacji dobierzemy
           dokładnie to, czego teraz potrzebujesz.
         </p>
       </div>
@@ -1266,9 +1323,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <div class="why-grid reveal">
         <div class="why">
-          <div class="big">15+</div>
-          <h3>Lat doświadczenia</h3>
-          <p>Maciek — Mistrzostwa Świata w sprintach. Kasia — 10 lat kadry Polski na 400m przez płotki. Praktyka ze sportu wyczynowego.</p>
+          <div class="big">18+</div>
+          <h3>Lat doświadczenia — Maciek</h3>
+          <p>Mistrzostwa Świata w sprintach, ponad 18 lat pracy z klientami. Praktyka ze sportu wyczynowego przekuta w konkretne metody treningowe.</p>
+        </div>
+        <div class="why">
+          <div class="big">13+</div>
+          <h3>Lat doświadczenia — Kasia</h3>
+          <p>10 lat w Kadrze Polski na 400m przez płotki, specjalizacja w treningu kobiet, ciąży, po porodzie i mięśniach dna miednicy.</p>
+        </div>
+        <div class="why">
+          <div class="big">17+</div>
+          <h3>Lat doświadczenia — Bartek</h3>
+          <p>Absolwent AWF i psychologii sportu UJ. 17+ lat w sztukach walki. Redukcja tkanki tłuszczowej, postawa, mobilność, sprawność funkcjonalna.</p>
         </div>
         <div class="why">
           <div class="big">1:1</div>
@@ -1403,9 +1470,14 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
             <div class="count">44 opinie w Google</div>
           </div>
         </div>
-        <a href="https://g.co/samtrening" class="btn btn--ghost" target="_blank" rel="noopener">
-          Zobacz wszystkie opinie <span class="arrow">→</span>
-        </a>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="https://www.google.com/maps/place/SAMtrening/@50.0566658,19.9305534,17z/data=!3m1!4b1!4m6!3m5!1s0x47165b394efed89d:0x4d2b788bb2ee7b53!8m2!3d50.0566658!4d19.9331337!16s%2Fg%2F11cp74y7zk" class="btn btn--ghost" target="_blank" rel="noopener">
+            Zobacz wszystkie opinie <span class="arrow">→</span>
+          </a>
+          <a href="https://search.google.com/local/writereview?placeid=ChIJnditTzlbFkcRU3vusotjK00" class="btn btn--primary" target="_blank" rel="noopener">
+            Zostaw opinię <span class="arrow">★</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -1420,7 +1492,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         </div>
         <p>
           Studio mieści się na Placu Na Groblach 23 — w ścisłym centrum Krakowa,
-          między Wawelem a Plantami. Dojazd autem, na piechotę lub MPK.
+          między Wawelem a Plantami. Dojazd autem lub na piechotę.
           Parking na Placu Na Groblach.
         </p>
       </div>
@@ -1432,10 +1504,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
           <div>
             <div class="eyebrow" style="margin-bottom:16px;">Jak dojechać</div>
             <p style="color:var(--ink-2); font-size:15px; line-height:1.6;">
-              <strong>Pieszo z Rynku Głównego:</strong> 10 minut ul. Grodzką, potem wzdłuż Wawelu.<br><br>
+              <strong>Pieszo z Rynku Głównego:</strong> 5 minut.<br><br>
               <strong>Z Dębnik pieszo:</strong> 8 minut od Ronda Grunwaldzkiego przez most.<br><br>
-              <strong>Autem:</strong> parking naziemny na Placu Na Groblach (pierwsza godzina bezpłatna dla klientów studia).<br><br>
-              <strong>MPK:</strong> przystanek Plac Na Groblach (linie 124, 194) lub Filharmonia (tramwaje 2, 13, 18, 20).
+              <strong>Autem:</strong> parking naziemny na Placu Na Groblach (płatny — opłata od razu przy wjeździe).
             </p>
           </div>
 
@@ -1468,6 +1539,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
             referrerpolicy="no-referrer-when-downgrade"
             title="Mapa lokalizacji studia SAMtrening — Plac Na Groblach 23, Kraków">
           </iframe>
+          <div class="map-cta">
+            <p>Plac Na Groblach 23, 30-101 Kraków</p>
+            <a href="https://www.google.com/maps/place/SAMtrening/@50.0566658,19.9305534,17z/data=!3m1!4b1!4m6!3m5!1s0x47165b394efed89d:0x4d2b788bb2ee7b53!8m2!3d50.0566658!4d19.9331337!16s%2Fg%2F11cp74y7zk" target="_blank" rel="noopener">
+              Otwórz w Google Maps <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -1561,19 +1638,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
             <span class="faq__icon" aria-hidden="true"></span>
           </button>
           <div class="faq__a" id="faq-1">
-            <p>Jedna sesja 1:1 kosztuje 200 zł za 60 minut. Nie sprzedajemy pakietów ani abonamentów — płacisz za odbyte sesje. Pierwsza 75-minutowa konsultacja (wywiad, pomiary, sesja testowa) jest bezpłatna. Szczegółowy cennik wszystkich usług znajdziesz na stronach poszczególnych ofert.</p>
+            <p>Jedna sesja 1:1 kosztuje 180 zł za 60 minut. Nie sprzedajemy pakietów ani abonamentów — płacisz za odbyte sesje. Szczegółowy cennik wszystkich usług znajdziesz na stronach poszczególnych ofert.</p>
           </div>
         </div>
 
-        <div class="faq__item">
-          <button class="faq__q" aria-expanded="false" aria-controls="faq-2">
-            <span>Czy pierwsza konsultacja jest bezpłatna?</span>
-            <span class="faq__icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq__a" id="faq-2">
-            <p>Tak. Przed pierwszym treningiem zawsze proponujemy bezpłatną 20-minutową konsultację — w studio lub telefonicznie. Sprawdzamy, czy nasz styl pracy pasuje do Twoich celów i czy jesteśmy dla Ciebie najlepszym wyborem. Bez zobowiązań.</p>
-          </div>
-        </div>
+        
 
         <div class="faq__item">
           <button class="faq__q" aria-expanded="false" aria-controls="faq-3">
@@ -1618,19 +1687,378 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     </div>
   </section>
 
-  <!-- CONTACT + FORM -->
+
+<!-- FORMULARZ STYLES (osobny blok - gwarancja załadowania) -->
+<style>
+.form-wrapper {
+  display: grid !important; grid-template-columns: 1fr 1.6fr !important; gap: 64px !important; align-items: start !important;
+}
+.form-wrapper__intro {
+  position: sticky; top: 120px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.form-wrapper__intro h2 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 72px); line-height: 0.92;
+  font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase;
+}
+.form-wrapper__intro h2 .accent { color: var(--accent); }
+.form-wrapper__intro p { font-size: 16px; line-height: 1.55; color: var(--ink-2); }
+.form-wrapper__intro .response-time {
+  margin-top: 16px; padding: 20px;
+  border: 1px solid var(--line); background: var(--bg-2);
+  display: flex; gap: 16px; align-items: start;
+}
+.form-wrapper__intro .response-time svg {
+  width: 24px; height: 24px; color: var(--accent); flex-shrink: 0;
+}
+.form-wrapper__intro .response-time strong {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: -0.005em; color: var(--ink);
+  display: block; margin-bottom: 4px;
+}
+.form-wrapper__intro .response-time small {
+  font-size: 13px; color: var(--ink-3); line-height: 1.5;
+}
+.form-wrapper__intro .direct-channels {
+  border-top: 1px solid var(--line);
+  padding-top: 20px; margin-top: 4px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.form-wrapper__intro .direct-channels a {
+  font-family: var(--font-display); font-size: 20px;
+  text-transform: uppercase; letter-spacing: 0.02em;
+  display: inline-flex; align-items: center; gap: 12px;
+  transition: color 0.2s;
+}
+.form-wrapper__intro .direct-channels a:hover { color: var(--accent); }
+.form-wrapper__intro .direct-channels .icon { color: var(--accent); }
+
+.form {
+  background: var(--bg-2) !important; padding: 40px !important;
+  border: 1px solid var(--line) !important;
+}
+.form__row {
+  display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 20px !important;
+  margin-bottom: 20px !important;
+}
+.form__field { display: flex !important; flex-direction: column !important; gap: 8px !important; }
+.form__field--full { grid-column: span 2 !important; }
+.form label {
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important; letter-spacing: 0.2em !important;
+  text-transform: uppercase !important; color: var(--ink-3) !important;
+}
+.form label .req { color: var(--accent) !important; }
+.form input, .form textarea, .form select {
+  background: var(--bg) !important; color: var(--ink) !important;
+  border: 1px solid var(--line) !important;
+  padding: 16px !important; font: inherit;
+  transition: border-color 0.2s;
+}
+.form input:focus, .form textarea:focus, .form select:focus {
+  outline: none; border-color: var(--accent) !important;
+}
+.form textarea { min-height: 140px !important; resize: vertical; font-family: var(--font-body); }
+.radio-group { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 8px !important; }
+.radio-group label {
+  border: 1px solid var(--line) !important;
+  padding: 14px 12px !important;
+  text-align: center !important;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body) !important;
+  font-size: 13px !important; font-weight: 500;
+  letter-spacing: 0 !important; text-transform: none !important;
+  color: var(--ink-2) !important;
+}
+.radio-group label:hover { border-color: var(--ink-2) !important; color: var(--ink) !important; }
+.radio-group input[type="radio"] { display: none !important; }
+.radio-group input[type="radio"]:checked + span { color: var(--bg) !important; }
+.radio-group label:has(input:checked) {
+  background: var(--accent) !important; color: var(--bg) !important;
+  border-color: var(--accent) !important; font-weight: 700 !important;
+}
+.form__consent {
+  font-size: 12px; color: var(--ink-3); line-height: 1.5;
+  display: flex !important; gap: 12px; margin: 20px 0;
+}
+.form__consent input[type="checkbox"] {
+  flex-shrink: 0; width: 18px !important; height: 18px !important;
+  accent-color: var(--accent); margin-top: 2px;
+}
+.form__consent a { color: var(--accent) !important; border-bottom: 1px dotted; }
+.form button[type="submit"] {
+  width: 100% !important;
+  background: var(--accent) !important; color: var(--bg) !important;
+  padding: 22px !important; font-weight: 700;
+  font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase;
+  transition: all 0.2s;
+  display: inline-flex !important; justify-content: center; align-items: center; gap: 12px;
+  border: none !important;
+}
+.form button[type="submit"]:hover { background: var(--ink) !important; }
+.form button[type="submit"] .arrow { transition: transform 0.2s; }
+.form button[type="submit"]:hover .arrow { transform: translateX(4px); }
+
+@media (max-width: 900px) {
+  .form-wrapper { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .form-wrapper__intro { position: static !important; }
+  .form { padding: 24px !important; }
+  .form__row { grid-template-columns: 1fr !important; }
+  .form__field--full { grid-column: auto !important; }
+  .radio-group { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* ═══ OPINIE ═══ */
+.testimonials {
+  display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1px !important;
+  background: var(--line) !important; border: 1px solid var(--line) !important;
+}
+.testimonial {
+  background: var(--bg) !important; padding: 40px !important;
+  display: flex !important; flex-direction: column !important; gap: 24px !important;
+}
+.testimonial__stars { display: flex !important; gap: 2px !important; color: var(--accent) !important; font-size: 18px !important; }
+.testimonial__text {
+  font-family: var(--font-display) !important; font-size: 26px !important; font-weight: 500 !important;
+  line-height: 1.2 !important; letter-spacing: -0.01em !important; flex: 1 !important;
+}
+.testimonial__author {
+  display: flex !important; justify-content: space-between !important; align-items: center !important;
+  padding-top: 20px !important; border-top: 1px solid var(--line) !important;
+}
+.testimonial__name { font-size: 14px !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: 0.06em !important; }
+.testimonial__source { font-family: var(--font-mono) !important; font-size: 11px !important; letter-spacing: 0.15em !important; color: var(--ink-3) !important; text-transform: uppercase !important; }
+.google-badge {
+  margin-top: 48px !important; padding: 32px !important; border: 1px solid var(--line) !important;
+  display: flex !important; justify-content: space-between !important; align-items: center !important;
+  gap: 32px !important; flex-wrap: wrap !important;
+}
+.google-badge__score { display: flex !important; align-items: center !important; gap: 24px !important; }
+.google-badge__score .num { font-family: var(--font-display) !important; font-size: 72px !important; line-height: 1 !important; font-weight: 800 !important; color: var(--accent) !important; }
+.google-badge__score .details .stars { color: var(--accent) !important; font-size: 22px !important; margin-bottom: 6px !important; }
+.google-badge__score .details .count { font-size: 13px !important; color: var(--ink-2) !important; text-transform: uppercase !important; letter-spacing: 0.1em !important; }
+@media (max-width: 800px) {
+  .testimonials { grid-template-columns: 1fr !important; }
+  .testimonial { padding: 28px !important; }
+  .testimonial__text { font-size: 22px !important; }
+}
+
+/* ═══ BLOG ═══ */
+.blog-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 32px !important; }
+.post {
+  display: flex !important; flex-direction: column !important;
+  border: 1px solid var(--line) !important; transition: border-color 0.3s, transform 0.3s;
+}
+.post:hover { border-color: var(--accent) !important; transform: translateY(-4px); }
+.post__image {
+  aspect-ratio: 3/2 !important; background: linear-gradient(135deg, var(--bg-3), var(--bg-2)) !important;
+  display: grid !important; place-items: center !important; position: relative !important;
+}
+.post__image .placeholder { font-family: var(--font-mono) !important; font-size: 11px !important; letter-spacing: 0.2em !important; color: var(--ink-3) !important; }
+.post__body { padding: 24px !important; flex: 1 !important; display: flex !important; flex-direction: column !important; gap: 12px !important; }
+.post__meta {
+  display: flex !important; justify-content: space-between !important; align-items: center !important;
+  font-family: var(--font-mono) !important; font-size: 11px !important;
+  letter-spacing: 0.15em !important; text-transform: uppercase !important; color: var(--ink-3) !important;
+}
+.post__meta .tag { color: var(--accent) !important; }
+.post h3 { font-family: var(--font-display) !important; font-size: 22px !important; font-weight: 700 !important; line-height: 1.15 !important; letter-spacing: -0.01em !important; }
+.post p { font-size: 14px !important; line-height: 1.55 !important; color: var(--ink-2) !important; }
+.post__readtime { margin-top: auto !important; padding-top: 16px !important; font-family: var(--font-mono) !important; font-size: 11px !important; letter-spacing: 0.15em !important; text-transform: uppercase !important; color: var(--ink-3) !important; }
+@media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr !important; } }
+@media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr !important; } }
+
+/* ═══ FAQ ═══ */
+.faq { max-width: 960px !important; margin: 0 auto !important; border-top: 1px solid var(--line) !important; }
+.faq__item { border-bottom: 1px solid var(--line) !important; transition: background 0.3s; }
+.faq__item[aria-expanded="true"] { background: linear-gradient(180deg, rgba(232, 255, 62, 0.04) 0%, transparent 100%) !important; border-bottom-color: var(--accent) !important; }
+.faq__q {
+  width: 100% !important; padding: 28px 0 !important;
+  display: flex !important; justify-content: space-between !important; align-items: center !important;
+  gap: 24px !important; text-align: left !important;
+  font-family: var(--font-display) !important; font-size: clamp(20px, 2.5vw, 28px) !important;
+  font-weight: 700 !important; line-height: 1.15 !important; letter-spacing: -0.01em !important;
+  text-transform: uppercase !important; transition: color 0.2s;
+}
+.faq__q:hover { color: var(--accent) !important; }
+.faq__item[aria-expanded="true"] .faq__q { color: var(--accent) !important; }
+.faq__icon {
+  flex-shrink: 0 !important; width: 36px !important; height: 36px !important;
+  border: 1px solid var(--line) !important; display: grid !important; place-items: center !important;
+  position: relative !important; transition: all 0.3s;
+}
+.faq__icon::before, .faq__icon::after { content: "" !important; position: absolute !important; background: currentColor !important; transition: transform 0.3s; }
+.faq__icon::before { width: 14px !important; height: 2px !important; }
+.faq__icon::after { width: 2px !important; height: 14px !important; }
+.faq__item[aria-expanded="true"] .faq__icon::after { transform: scaleY(0) !important; }
+.faq__item[aria-expanded="true"] .faq__icon { background: var(--accent) !important; color: var(--bg) !important; border-color: var(--accent) !important; }
+.faq__a { max-height: 0 !important; overflow: hidden !important; transition: max-height 0.4s ease, padding 0.4s ease; }
+.faq__item[aria-expanded="true"] .faq__a { max-height: 600px !important; padding: 0 0 32px 0 !important; }
+.faq__a p { font-size: 16px !important; line-height: 1.6 !important; color: var(--ink-2) !important; max-width: 72ch !important; }
+
+/* ═══ STOPKA ═══ */
+.footer {
+  background: #000 !important; padding: 80px 0 32px !important;
+  border-top: 1px solid var(--line) !important;
+}
+.footer__top {
+  max-width: var(--container) !important; margin: 0 auto !important; padding: 0 40px !important;
+}
+.footer__big {
+  font-family: var(--font-display) !important;
+  font-size: clamp(64px, 16vw, 240px) !important; line-height: 0.85 !important;
+  font-weight: 800 !important; letter-spacing: -0.03em !important; text-transform: uppercase !important;
+  margin-bottom: 64px !important;
+  display: flex !important; justify-content: space-between !important; align-items: end !important;
+  border-bottom: 1px solid var(--line) !important; padding-bottom: 32px !important; gap: 32px !important;
+}
+.footer__big .accent { color: var(--accent) !important; font-style: italic !important; }
+.footer__big .arrow { font-size: clamp(48px, 8vw, 120px) !important; transition: transform 0.3s; display: inline-block; }
+.footer__big a:hover .arrow { transform: translate(6px, -6px); }
+.footer__grid {
+  display: grid !important; grid-template-columns: 1.5fr 1fr 1fr 1fr !important;
+  gap: 48px !important; margin-bottom: 64px !important;
+}
+.footer__col h4 {
+  font-family: var(--font-mono) !important; font-size: 11px !important; letter-spacing: 0.2em !important;
+  text-transform: uppercase !important; color: var(--accent) !important; margin-bottom: 24px !important;
+  padding-bottom: 12px !important; border-bottom: 1px solid rgba(232, 255, 62, 0.2) !important;
+}
+.footer__col ul {
+  list-style: none !important; display: flex !important; flex-direction: column !important; gap: 12px !important;
+}
+.footer__col a, .footer__col ul a {
+  font-size: 14px !important; color: var(--ink-2) !important;
+  transition: color 0.2s, transform 0.2s !important; display: inline-block !important;
+}
+.footer__col a:hover, .footer__col ul a:hover {
+  color: var(--accent) !important; transform: translateX(4px);
+}
+.footer__col p { font-size: 14px !important; line-height: 1.55 !important; color: var(--ink-2) !important; }
+.socials {
+  display: flex !important; gap: 14px !important; margin-top: 20px !important;
+}
+.socials a {
+  width: 44px !important; height: 44px !important;
+  border: 1px solid var(--line) !important;
+  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  color: var(--ink-2) !important; transition: all 0.25s !important;
+}
+.socials a:hover {
+  background: var(--accent) !important; border-color: var(--accent) !important;
+  color: var(--bg) !important; transform: translateY(-2px);
+}
+.socials a svg, .socials svg { width: 18px !important; height: 18px !important; flex-shrink: 0 !important; }
+.footer__bottom {
+  max-width: var(--container) !important; margin: 0 auto !important; padding: 28px 40px 0 !important;
+  border-top: 1px solid var(--line) !important;
+  display: flex !important; justify-content: space-between !important; align-items: center !important;
+  flex-wrap: wrap !important; gap: 16px !important;
+  font-family: var(--font-mono) !important; font-size: 11px !important;
+  letter-spacing: 0.15em !important; text-transform: uppercase !important; color: var(--ink-3) !important;
+}
+.footer__bottom a { transition: color 0.2s; }
+.footer__bottom a:hover { color: var(--accent) !important; }
+@media (max-width: 900px) {
+  .footer__grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+  .footer__big { font-size: 72px !important; flex-direction: column !important; align-items: flex-start !important; }
+}
+@media (max-width: 500px) { .footer__grid { grid-template-columns: 1fr !important; } }
+
+/* ═══ LOKALIZACJA ═══ */
+.location {
+  display: grid !important; grid-template-columns: 1fr 1.2fr !important; gap: 0 !important;
+  border: 1px solid var(--line) !important;
+}
+.location__info {
+  padding: 48px !important; background: var(--bg-2) !important;
+  display: flex !important; flex-direction: column !important; gap: 32px !important;
+}
+.location__info h3 {
+  font-family: var(--font-display) !important;
+  font-size: clamp(36px, 4vw, 56px) !important; line-height: 0.95 !important;
+  font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: -0.02em !important;
+}
+.location__info h3 .accent { color: var(--accent) !important; }
+.nap-block {
+  border-top: 1px solid var(--line) !important;
+  padding-top: 24px !important;
+}
+.nap-row {
+  display: grid !important; grid-template-columns: 120px 1fr !important;
+  gap: 16px !important; padding: 14px 0 !important;
+  border-bottom: 1px solid var(--line) !important;
+  font-size: 14px !important; align-items: center !important;
+}
+.nap-row:last-child { border-bottom: none !important; }
+.nap-row .key {
+  font-family: var(--font-mono) !important; font-size: 11px !important;
+  letter-spacing: 0.2em !important; text-transform: uppercase !important; color: var(--ink-3) !important;
+}
+.nap-row .val { font-weight: 500 !important; }
+.nap-row .val a { border-bottom: 1px dotted var(--ink-3) !important; }
+.nap-row .val a:hover { color: var(--accent) !important; border-color: var(--accent) !important; }
+.location__map {
+  background: var(--bg-3) !important;
+  min-height: 640px !important;
+  position: relative !important; overflow: hidden !important;
+}
+.location__map iframe {
+  width: 100% !important; height: 100% !important; border: 0 !important;
+  filter: grayscale(0.4) contrast(1.1) invert(0.92) hue-rotate(180deg) !important;
+}
+.location__map .map-cta {
+  position: absolute !important; bottom: 24px !important; left: 24px !important; right: 24px !important;
+  background: var(--bg) !important; border: 1px solid var(--accent) !important;
+  padding: 16px 20px !important;
+  display: flex !important; justify-content: space-between !important; align-items: center !important;
+  gap: 16px !important; flex-wrap: wrap !important; z-index: 2 !important;
+}
+.location__map .map-cta p {
+  font-family: var(--font-mono) !important; font-size: 12px !important;
+  letter-spacing: 0.1em !important; text-transform: uppercase !important; color: var(--ink) !important; margin: 0 !important;
+}
+.location__map .map-cta a {
+  font-family: var(--font-display) !important; font-size: 13px !important; font-weight: 700 !important;
+  letter-spacing: 0.12em !important; text-transform: uppercase !important; color: var(--accent) !important;
+  display: inline-flex !important; align-items: center !important; gap: 8px !important;
+}
+.location__map .map-cta a:hover { color: var(--ink) !important; }
+@media (max-width: 900px) {
+  .location { grid-template-columns: 1fr !important; }
+  .location__info { padding: 32px !important; }
+  .location__map { min-height: 360px !important; }
+}
+</style>
+
+  <!-- CONTACT + FORM (identyczny z /kontakt/) -->
   <section class="section" id="kontakt" aria-labelledby="contact-title">
     <div class="container">
-      <div class="contact reveal">
-        <div class="contact__intro">
-          <h2 id="contact-title">Umów<br>bezpłatną<br><span class="accent">konsultację.</span></h2>
+      <div class="form-wrapper reveal">
+        <div class="form-wrapper__intro">
+          <div class="eyebrow eyebrow--accent">Kontakt</div>
+          <h2 id="contact-title">Umów<br><span class="accent">konsultację.</span></h2>
           <p>
-            Wypełnij formularz albo zadzwoń. Odpowiadamy zwykle w ciągu 2–4 godzin
-            w dni robocze. Podczas konsultacji ustalimy Twoje cele i wybierzemy
-            program dopasowany do Twojego życia.
+            Opisz swoją sytuację — cele, doświadczenie, preferowany trener,
+            dostępne terminy. Odezwiemy się zwykle tego samego dnia, żeby
+            ustalić szczegóły pierwszej wizyty.
           </p>
 
-          <div class="contact__direct">
+          <div class="response-time">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <div>
+              <strong>Odpowiadamy w 2–4 godziny</strong>
+              <small>w dni robocze (pon–pt, 8:00–20:00). Po godzinach i w weekendy — rano kolejnego dnia.</small>
+            </div>
+          </div>
+
+          <div class="direct-channels">
             <a href="tel:+48728385203">
               <span class="icon" aria-hidden="true">📞</span>
               +48 728 385 203
@@ -1645,42 +2073,69 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <form class="form" aria-label="Formularz kontaktowy">
           <div class="form__row">
             <div class="form__field">
-              <label for="f-name">Imię</label>
-              <input type="text" id="f-name" name="name" required>
+              <label for="f-name">Imię <span class="req">*</span></label>
+              <input type="text" id="f-name" name="name" required autocomplete="given-name">
             </div>
             <div class="form__field">
-              <label for="f-phone">Telefon</label>
-              <input type="tel" id="f-phone" name="phone" required>
+              <label for="f-phone">Telefon <span class="req">*</span></label>
+              <input type="tel" id="f-phone" name="phone" required autocomplete="tel">
             </div>
           </div>
+
           <div class="form__row">
             <div class="form__field form__field--full">
-              <label for="f-email">Email</label>
-              <input type="email" id="f-email" name="email" required>
+              <label for="f-email">Email <span class="req">*</span></label>
+              <input type="email" id="f-email" name="email" required autocomplete="email">
             </div>
           </div>
+
           <div class="form__row">
             <div class="form__field form__field--full">
               <label for="f-service">Czym jesteś zainteresowany/a</label>
               <select id="f-service" name="service">
-                <option>Treningi personalne</option>
-                <option>Zdrowa ciąża</option>
+                <option>Treningi personalne w studio</option>
+                <option>Zdrowa ciąża — trening okołoporodowy</option>
                 <option>E-trening online</option>
+                <option>Trening dzieci i młodzieży (od 10 r.ż.)</option>
                 <option>Nie wiem jeszcze — chcę się skonsultować</option>
               </select>
             </div>
           </div>
+
+          <div class="form__row">
+            <div class="form__field form__field--full">
+              <label>Preferowany trener (opcjonalnie)</label>
+              <div class="radio-group">
+                <label><input type="radio" name="trainer" value="kasia"><span>Kasia</span></label>
+                <label><input type="radio" name="trainer" value="maciek"><span>Maciek</span></label>
+                <label><input type="radio" name="trainer" value="bartek"><span>Bartek</span></label>
+                <label><input type="radio" name="trainer" value="dowolny" checked><span>Dowolny / doradźcie</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field form__field--full">
+              <label for="f-time">Preferowany termin / pora dnia (opcjonalnie)</label>
+              <input type="text" id="f-time" name="preferred-time" placeholder="np. ranki przed 8:00, weekend, elastycznie">
+            </div>
+          </div>
+
           <div class="form__row">
             <div class="form__field form__field--full">
               <label for="f-msg">Twoja wiadomość</label>
-              <textarea id="f-msg" name="message" placeholder="Opcjonalnie — opisz cel lub sytuację..."></textarea>
+              <textarea id="f-msg" name="message" placeholder="Opisz krótko swoją sytuację — cele, doświadczenie, obawy, pytania. Im więcej napiszesz, tym lepiej się przygotujemy."></textarea>
             </div>
           </div>
+
           <label class="form__consent">
             <input type="checkbox" required>
-            <span>Wyrażam zgodę na przetwarzanie danych osobowych przez SAMTRENING Sp. z o.o. zgodnie z <a href="rodo.html" style="color:var(--accent);">polityką prywatności</a> w celu odpowiedzi na zapytanie.</span>
+            <span>Wyrażam zgodę na przetwarzanie danych osobowych przez SAMTRENING Sp. z o.o. zgodnie z <a href="rodo.html">polityką prywatności</a> w celu odpowiedzi na moje zapytanie. <span class="req">*</span></span>
           </label>
-          <button type="submit">Wyślij wiadomość →</button>
+
+          <button type="submit">
+            Wyślij wiadomość <span class="arrow">→</span>
+          </button>
         </form>
       </div>
     </div>
@@ -1707,14 +2162,14 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
           Plac Na Groblach 23, 30-101 Kraków.
         </p>
         <div class="socials" aria-label="Media społecznościowe">
-          <a href="https://www.facebook.com/samtrening" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.3c0-1 .2-1.3 1.1-1.3H18V0h-3.2C11.2 0 9 1.5 9 4.5V8z"/></svg>
+          <a href="https://www.facebook.com/samtrening/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.3c0-1 .2-1.3 1.1-1.3H18V0h-3.2C11.2 0 9 1.5 9 4.5V8z"/></svg>
           </a>
-          <a href="https://www.instagram.com/samtrening" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          <a href="https://www.instagram.com/samtrening/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
           </a>
-          <a href="https://g.co/samtrening" target="_blank" rel="noopener" aria-label="Google Business">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 5c1.6 0 3 .5 4.2 1.5L19 3.7C17 1.9 14.6 1 12 1 7.4 1 3.4 3.6 1.4 7.4l3.3 2.6C5.7 7 8.6 5 12 5z M23 12.2c0-.8-.1-1.6-.2-2.4H12v4.5h6.2c-.3 1.4-1.1 2.6-2.3 3.4l3.5 2.7c2.1-1.9 3.6-4.8 3.6-8.2z M5 13c-.3-.9-.5-1.8-.5-2.8 0-1 .2-1.9.5-2.8L1.7 4.8C.6 6.9 0 9.3 0 12s.6 5.1 1.7 7.2l3.3-2.6c-.3-.9-.5-1.8-.5-2.8.2-.2 0-.5.5-.8z M12 23c3 0 5.6-1 7.4-2.7l-3.5-2.7c-1 .7-2.3 1.1-3.9 1.1-3.3 0-6.2-2-7.3-5l-3.3 2.6C3.4 20.4 7.4 23 12 23z"/></svg>
+          <a href="https://www.google.com/maps/place/SAMtrening/@50.0566658,19.9305534,17z/data=!3m1!4b1!4m6!3m5!1s0x47165b394efed89d:0x4d2b788bb2ee7b53!8m2!3d50.0566658!4d19.9331337!16s%2Fg%2F11cp74y7zk" target="_blank" rel="noopener" aria-label="Google Business">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5c1.6 0 3 .5 4.2 1.5L19 3.7C17 1.9 14.6 1 12 1 7.4 1 3.4 3.6 1.4 7.4l3.3 2.6C5.7 7 8.6 5 12 5z M23 12.2c0-.8-.1-1.6-.2-2.4H12v4.5h6.2c-.3 1.4-1.1 2.6-2.3 3.4l3.5 2.7c2.1-1.9 3.6-4.8 3.6-8.2z M5 13c-.3-.9-.5-1.8-.5-2.8 0-1 .2-1.9.5-2.8L1.7 4.8C.6 6.9 0 9.3 0 12s.6 5.1 1.7 7.2l3.3-2.6c-.3-.9-.5-1.8-.5-2.8.2-.2 0-.5.5-.8z M12 23c3 0 5.6-1 7.4-2.7l-3.5-2.7c-1 .7-2.3 1.1-3.9 1.1-3.3 0-6.2-2-7.3-5l-3.3 2.6C3.4 20.4 7.4 23 12 23z"/></svg>
           </a>
         </div>
       </div>
@@ -1725,7 +2180,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
           <li><a href="treningi-personalne.html">Treningi personalne</a></li>
           <li><a href="zdrowa-ciaza.html">Zdrowa ciąża</a></li>
           <li><a href="e-trening.html">E-trening online</a></li>
-        </ul>
+            </ul>
       </div>
 
       <div class="footer__col">
@@ -1734,7 +2189,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
           <li><a href="zespol.html">Zespół</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
-          <li><a href="https://app.samtrening.com" target="_blank" rel="noopener">Platforma — zaloguj się</a></li>
           <li><a href="rodo.html">Polityka prywatności</a></li>
         </ul>
       </div>
