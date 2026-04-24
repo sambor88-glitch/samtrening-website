@@ -545,6 +545,152 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 </style>
 </head>
+
+<!-- OVERRIDE STYLES (gwarancja załadowania) -->
+<style>
+.footer {
+  background: #000 !important; padding: 80px 0 32px !important;
+  border-top: 1px solid var(--line) !important;
+}
+.footer__top {
+  max-width: var(--container) !important; margin: 0 auto !important; padding: 0 40px !important;
+}
+.footer__big {
+  font-family: var(--font-display) !important;
+  font-size: clamp(64px, 16vw, 240px) !important; line-height: 0.85 !important;
+  font-weight: 800 !important; letter-spacing: -0.03em !important; text-transform: uppercase !important;
+  margin-bottom: 64px !important;
+  display: flex !important; justify-content: space-between !important; align-items: end !important;
+  border-bottom: 1px solid var(--line) !important; padding-bottom: 32px !important; gap: 32px !important;
+}
+.footer__big .accent { color: var(--accent) !important; font-style: italic !important; }
+.footer__big .arrow { font-size: clamp(48px, 8vw, 120px) !important; transition: transform 0.3s; display: inline-block; }
+.footer__big a:hover .arrow { transform: translate(6px, -6px); }
+.footer__grid {
+  display: grid !important; grid-template-columns: 1.5fr 1fr 1fr 1fr !important;
+  gap: 48px !important; margin-bottom: 64px !important;
+}
+.footer__col h4 {
+  font-family: var(--font-mono) !important; font-size: 11px !important; letter-spacing: 0.2em !important;
+  text-transform: uppercase !important; color: var(--accent) !important; margin-bottom: 24px !important;
+  padding-bottom: 12px !important; border-bottom: 1px solid rgba(232, 255, 62, 0.2) !important;
+}
+.footer__col ul {
+  list-style: none !important; display: flex !important; flex-direction: column !important; gap: 12px !important;
+}
+.footer__col a, .footer__col ul a {
+  font-size: 14px !important; color: var(--ink-2) !important;
+  transition: color 0.2s, transform 0.2s !important; display: inline-block !important;
+}
+.footer__col a:hover, .footer__col ul a:hover {
+  color: var(--accent) !important; transform: translateX(4px);
+}
+.footer__col p { font-size: 14px !important; line-height: 1.55 !important; color: var(--ink-2) !important; }
+.socials {
+  display: flex !important; gap: 14px !important; margin-top: 20px !important;
+}
+.socials a {
+  width: 44px !important; height: 44px !important;
+  border: 1px solid var(--line) !important;
+  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  color: var(--ink-2) !important; transition: all 0.25s !important;
+}
+.socials a:hover {
+  background: var(--accent) !important; border-color: var(--accent) !important;
+  color: var(--bg) !important; transform: translateY(-2px);
+}
+.socials a svg, .socials svg { width: 18px !important; height: 18px !important; flex-shrink: 0 !important; }
+.footer__bottom {
+  max-width: var(--container) !important; margin: 0 auto !important; padding: 28px 40px 0 !important;
+  border-top: 1px solid var(--line) !important;
+  display: flex !important; justify-content: space-between !important; align-items: center !important;
+  flex-wrap: wrap !important; gap: 16px !important;
+  font-family: var(--font-mono) !important; font-size: 11px !important;
+  letter-spacing: 0.15em !important; text-transform: uppercase !important; color: var(--ink-3) !important;
+}
+.footer__bottom a { transition: color 0.2s; }
+.footer__bottom a:hover { color: var(--accent) !important; }
+
+/* CTA FINAL */
+.cta-final {
+  background: var(--bg) !important; padding: 120px 0 !important; text-align: center !important;
+}
+.cta-final__inner {
+  max-width: 720px !important; margin: 0 auto !important; padding: 0 40px !important;
+  display: flex !important; flex-direction: column !important; align-items: center !important; gap: 32px !important;
+}
+.cta-final h2 {
+  font-family: var(--font-display) !important;
+  font-size: clamp(48px, 6vw, 88px) !important; line-height: 0.9 !important;
+  font-weight: 700 !important; letter-spacing: -0.02em !important; text-transform: uppercase !important;
+}
+.cta-final h2 .accent { color: var(--accent) !important; }
+.cta-final p { font-size: 17px !important; line-height: 1.55 !important; color: var(--ink-2) !important; max-width: 56ch !important; }
+.cta-final__buttons { display: flex !important; gap: 16px !important; flex-wrap: wrap !important; justify-content: center !important; }
+.cta-final__direct {
+  margin-top: 24px !important; padding-top: 24px !important;
+  border-top: 1px solid var(--line) !important;
+  display: flex !important; flex-direction: column !important; gap: 12px !important; align-items: center !important;
+}
+.cta-final__direct a {
+  font-family: var(--font-display) !important; font-size: 20px !important;
+  text-transform: uppercase !important; letter-spacing: 0.02em !important;
+  display: inline-flex !important; align-items: center !important; gap: 12px !important;
+  transition: color 0.2s !important;
+}
+.cta-final__direct a:hover { color: var(--accent) !important; }
+.cta-final__direct .icon { color: var(--accent) !important; }
+
+@media (max-width: 900px) {
+  .footer__grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+  .footer__big { font-size: 72px !important; flex-direction: column !important; align-items: flex-start !important; }
+}
+@media (max-width: 500px) { .footer__grid { grid-template-columns: 1fr !important; } }
+
+/* ═══ LOKALIZACJA STRIP ═══ */
+.location-strip {
+  display: grid !important; grid-template-columns: 1fr 1.2fr !important;
+  border: 1px solid var(--line) !important;
+}
+.location-strip__info {
+  padding: 48px !important; background: var(--bg-2) !important;
+  display: flex !important; flex-direction: column !important; gap: 32px !important;
+}
+.location-strip__info h3 {
+  font-family: var(--font-display) !important;
+  font-size: clamp(32px, 3.5vw, 48px) !important; line-height: 0.95 !important;
+  font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: -0.02em !important;
+}
+.location-strip__info h3 .accent { color: var(--accent) !important; }
+.nap-block { border-top: 1px solid var(--line) !important; padding-top: 24px !important; }
+.nap-row {
+  display: grid !important; grid-template-columns: 100px 1fr !important;
+  gap: 16px !important; padding: 12px 0 !important; border-bottom: 1px solid var(--line) !important;
+  font-size: 14px !important; align-items: center !important;
+}
+.nap-row:last-child { border-bottom: none !important; }
+.nap-row .key {
+  font-family: var(--font-mono) !important; font-size: 10px !important;
+  letter-spacing: 0.2em !important; text-transform: uppercase !important; color: var(--ink-3) !important;
+}
+.nap-row .val { font-weight: 500 !important; }
+.nap-row .val a { border-bottom: 1px dotted var(--ink-3) !important; }
+.nap-row .val a:hover { color: var(--accent) !important; border-color: var(--accent) !important; }
+.location-strip__map {
+  background: var(--bg-3) !important; min-height: 420px !important; position: relative !important;
+}
+.location-strip__map iframe {
+  width: 100% !important; height: 100% !important; border: 0 !important;
+  filter: grayscale(0.4) contrast(1.1) invert(0.92) hue-rotate(180deg) !important;
+}
+@media (max-width: 900px) {
+  .location-strip { grid-template-columns: 1fr !important; }
+  .location-strip__info { padding: 32px 24px !important; }
+  .location-strip__map { min-height: 320px !important; }
+}
+
+</style>
+
 <body>
 
 <a href="#main" class="skip-link">Przejdź do treści</a>
@@ -889,7 +1035,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
             </div>
             <div class="nap-row">
               <div class="key">Parking</div>
-              <div class="val">Na Placu Na Groblach (1h gratis dla klientów)</div>
+              <div class="val">Na Placu Na Groblach (płatny dla klientów)</div>
             </div>
             <div class="nap-row">
               <div class="key">MPK</div>
@@ -921,7 +1067,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
       <div class="eyebrow eyebrow--accent">Następny krok</div>
       <h2 id="cta-title">Umów<br>trening<br>w <span class="accent">Centrum.</span></h2>
       <p>
-        Bezpłatna 75-minutowa konsultacja. Wywiad, pomiary, sesja testowa,
+        Pierwsza konsultacja to 75 minut. Wywiad, pomiary, sesja testowa,
         plan na pierwsze 4 tygodnie. Bez zobowiązań.
       </p>
       <div class="cta-final__buttons">
@@ -968,9 +1114,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
       <div class="footer__col">
         <h4>Lokalizacje</h4>
         <ul>
-          <li><a href="krakow-centrum.html">Kraków Centrum</a></li>
-          <li><a href="stare-miasto-krakow.html">Stare Miasto</a></li>
-          <li><a href="krakow-debniki.html">Dębniki</a></li>
+          <li><a href="samtrening-landing-centrum.html">Kraków Centrum</a></li>
+          <li><a href="samtrening-landing-stare-miasto.html">Stare Miasto</a></li>
+          <li><a href="samtrening-landing-debniki.html">Dębniki</a></li>
         </ul>
       </div>
       <div class="footer__col">
