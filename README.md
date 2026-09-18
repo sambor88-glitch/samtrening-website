@@ -36,7 +36,11 @@ samtrening-website/
 └── docs/
     ├── plan-contentowy.md                  # 30 tematów wpisów blogowych (kwi-sie 2026)
     ├── todo-przed-wdrozeniem.md            # Lista rzeczy do zrobienia
-    └── audyt-seo-kwiecien-2026.md          # Podsumowanie audytu SEO
+    ├── audyt-seo-kwiecien-2026.md          # Podsumowanie audytu SEO
+    └── wdrozenie-blog-listing.md           # Runbook: dynamiczna lista wpisów na /blog/
+│
+└── wordpress/
+    └── sw-blog-listing.php                 # Kod do motywu samtrening-2026 — lista wpisów
 ```
 
 ## 🚀 Jak uruchomić
@@ -115,7 +119,7 @@ Najważniejsze:
 - [ ] Newsletter — Mailchimp / MailerLite
 - [ ] Podmiana placeholderów na prawdziwe zdjęcia (zespół, studio, wpisy blogowe)
 - [ ] Weryfikacja iframe Google Maps (klucz API)
-- [ ] Migracja do WordPress theme
+- [ ] Migracja do WordPress theme — lista wpisów na /blog/ gotowa, patrz [`docs/wdrozenie-blog-listing.md`](docs/wdrozenie-blog-listing.md)
 - [ ] Cookie banner (Complianz po migracji na WP)
 - [ ] Pozostałe 29 wpisów blogowych wg planu contentowego
 
