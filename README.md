@@ -113,7 +113,8 @@ Pełna lista: [`docs/todo-przed-wdrozeniem.md`](docs/todo-przed-wdrozeniem.md)
 Najważniejsze:
 - [ ] Integracja formularzy z backendem (Contact Form 7 lub mailer)
 - [ ] Newsletter — Mailchimp / MailerLite
-- [ ] Podmiana placeholderów na prawdziwe zdjęcia (zespół, studio, wpisy blogowe)
+- [ ] Podmiana placeholderów na prawdziwe zdjęcia (studio, lokalizacje)
+- [ ] Generator OG 1200×630 z szablonu (blog nie ma obrazków wyróżnionych)
 - [ ] Weryfikacja iframe Google Maps (klucz API)
 - [ ] Migracja do WordPress theme
 - [ ] Cookie banner (Complianz po migracji na WP)

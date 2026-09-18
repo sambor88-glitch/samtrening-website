@@ -87,7 +87,27 @@
 
   --container: 1400px;
   --radius: 0px; /* brak zaokrągleń = industrialny vibe */
+
+  /* Kolory kategorii bloga — używane WYŁĄCZNIE w linii 3 px i w etykiecie.
+     Nigdy jako tło. Domyślny = SAMtrening. */
+  --cat-accent: var(--ink);
 }
+[data-category="treningi"]    { --cat-accent: var(--accent); }
+[data-category="zdrowa-ciaza"]{ --cat-accent: #F5A3B4; }
+[data-category="dieta"]       { --cat-accent: #5CD6B8; }
+[data-category="e-trening"]   { --cat-accent: #6EBBFF; }
+[data-category="sport"]       { --cat-accent: #FF9A3D; }
+[data-category="zdrowie"]     { --cat-accent: var(--ink); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   ZNAK AUTORA — jedyne pliki graficzne na blogu (3D, 480×480)
+   ═══════════════════════════════════════════════════════════════════ */
+.znak {
+  display: block; flex: none;
+  border-radius: 50%; overflow: hidden;
+  background: var(--bg-3); object-fit: cover;
+}
+.znak--28 { width: 28px; height: 28px; }
 
 /* Reset */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -756,52 +776,55 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
    11. BLOG
    ═══════════════════════════════════════════════════════════════════ */
 .blog-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px;
 }
+
+/* KARTA WPISU — tytuł jest okładką. Zero zdjęć.
+   Jedyny kolor kategorii: linia 3 px u góry + etykieta. */
 .post {
   display: flex; flex-direction: column;
   border: 1px solid var(--line);
-  transition: border-color 0.3s, transform 0.3s;
+  background: var(--bg-2);
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
-.post:hover { border-color: var(--accent); transform: translateY(-4px); }
-.post__image {
-  aspect-ratio: 3/2;
-  background: linear-gradient(135deg, var(--bg-3), var(--bg-2));
-  display: grid; place-items: center;
-  position: relative;
+.post::before {
+  content: ""; display: block; height: 3px; flex: none;
+  background: var(--cat-accent);
 }
-.post__image::after {
-  content: ""; position: absolute; inset: 0;
-  background: radial-gradient(circle at 30% 40%, rgba(232, 255, 62, 0.08), transparent 60%);
-}
-.post__image .placeholder {
-  font-family: var(--font-mono); font-size: 11px;
-  letter-spacing: 0.2em; color: var(--ink-3);
-}
-.post__body {
-  padding: 24px; flex: 1;
-  display: flex; flex-direction: column; gap: 12px;
+.post:hover { background: var(--bg-3); border-color: var(--line-2); }
+.post > a { display: flex; flex-direction: column; flex: 1; }
+.post__cover {
+  flex: 1; min-height: 210px; padding: 22px;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
 }
 .post__meta {
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
   font-family: var(--font-mono); font-size: 11px;
-  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3);
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3);
 }
-.post__meta .tag { color: var(--accent); }
+.post__meta .tag { color: var(--cat-accent); }
 .post h3 {
   font-family: var(--font-display);
-  font-size: 22px; font-weight: 700; line-height: 1.15;
-  letter-spacing: -0.01em;
+  font-size: clamp(34px, 2.9vw, 40px); font-weight: 800; line-height: 0.95;
+  letter-spacing: 0; text-transform: uppercase; text-wrap: pretty; color: var(--ink);
+  /* line-clamp + line-height < 1 przycina polskie diakrytyki (Ó, Ś, Ć)
+     w pierwszym wierszu — padding daje im zapas nad wersalikami */
+  padding-top: 0.14em;
+  display: -webkit-box; -webkit-line-clamp: 4; line-clamp: 4;
+  -webkit-box-orient: vertical; overflow: hidden;
 }
-.post p { font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+.post__body {
+  padding: 0 22px 20px; display: flex; flex-direction: column; gap: 16px;
+  flex: none;
+}
+.post p { font-size: 15px; line-height: 1.55; color: var(--ink-2); }
 .post__readtime {
-  margin-top: auto; padding-top: 16px;
+  margin-top: 0; padding-top: 14px; border-top: 1px solid var(--line);
+  display: flex; align-items: center; gap: 10px;
   font-family: var(--font-mono); font-size: 11px;
-  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3);
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2);
 }
 
-@media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
 
 /* ═══════════════════════════════════════════════════════════════════
    12. FAQ (accordion)
@@ -1566,51 +1589,54 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
       </div>
 
       <div class="blog-grid reveal">
-        <article class="post">
+        <article class="post" data-category="zdrowa-ciaza">
           <a href="blog.html">
-            <div class="post__image">
-              <span class="placeholder">[ zdjęcie artykułu ]</span>
-            </div>
-            <div class="post__body">
+            <div class="post__cover">
               <div class="post__meta">
                 <span class="tag">Zdrowa ciąża</span>
                 <span>13.04.2026</span>
               </div>
               <h3>Ćwiczenia w ciąży — mity, fakty i to, czego naprawdę się boisz</h3>
+            </div>
+            <div class="post__body">
               <p>Ćwiczenia w ciąży budzą ogromne emocje. Jedni mówią „leż i odpoczywaj", inni „ćwicz". Gdzieś pośrodku jest mama, która po prostu chce dobrze.</p>
-              <div class="post__readtime">Autorka: Kasia Samborska · 7 min czytania</div>
+              <div class="post__readtime">
+                <img class="znak znak--28" src="images/znaki/kasia.png" alt="" width="28" height="28" loading="lazy" decoding="async">Kasia Samborska · 7 min
+              </div>
             </div>
           </a>
         </article>
-        <article class="post">
+        <article class="post" data-category="dieta">
           <a href="blog.html">
-            <div class="post__image">
-              <span class="placeholder">[ zdjęcie artykułu ]</span>
-            </div>
-            <div class="post__body">
+            <div class="post__cover">
               <div class="post__meta">
                 <span class="tag">Dieta</span>
                 <span>01.04.2026</span>
               </div>
               <h3>Jak nie przytyć w święta wielkanocne</h3>
+            </div>
+            <div class="post__body">
               <p>Święta mają swój klimat. Jajka, żurek, mazurek, dokładki od rodziny. Jak przejść przez ten czas bez wyrzutów sumienia — i bez suchej sałaty.</p>
-              <div class="post__readtime">Autor: Maciej Samborski · 5 min czytania</div>
+              <div class="post__readtime">
+                <img class="znak znak--28" src="images/znaki/maciek.png" alt="" width="28" height="28" loading="lazy" decoding="async">Maciej Samborski · 5 min
+              </div>
             </div>
           </a>
         </article>
-        <article class="post">
+        <article class="post" data-category="zdrowie">
           <a href="blog.html">
-            <div class="post__image">
-              <span class="placeholder">[ zdjęcie artykułu ]</span>
-            </div>
-            <div class="post__body">
+            <div class="post__cover">
               <div class="post__meta">
                 <span class="tag">Zdrowie</span>
                 <span>18.03.2026</span>
               </div>
               <h3>Przesilenie wiosenne — co się dzieje z organizmem</h3>
+            </div>
+            <div class="post__body">
               <p>Mniej energii, gorszy sen, rozdrażnienie. To nie brak charakteru — to naturalna adaptacja organizmu do zmiany światła i rytmu dnia.</p>
-              <div class="post__readtime">Autor: Maciej Samborski · 6 min czytania</div>
+              <div class="post__readtime">
+                <img class="znak znak--28" src="images/znaki/maciek.png" alt="" width="28" height="28" loading="lazy" decoding="async">Maciej Samborski · 6 min
+              </div>
             </div>
           </a>
         </article>
@@ -1848,29 +1874,56 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 
 /* ═══ BLOG ═══ */
-.blog-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 32px !important; }
+.blog-grid {
+  display: grid !important; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px;
+}
+
+/* KARTA WPISU — tytuł jest okładką. Zero zdjęć.
+   Jedyny kolor kategorii: linia 3 px u góry + etykieta. */
 .post {
-  display: flex !important; flex-direction: column !important;
-  border: 1px solid var(--line) !important; transition: border-color 0.3s, transform 0.3s;
+  display: flex; flex-direction: column;
+  border: 1px solid var(--line) !important;
+  background: var(--bg-2) !important;
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
-.post:hover { border-color: var(--accent) !important; transform: translateY(-4px); }
-.post__image {
-  aspect-ratio: 3/2 !important; background: linear-gradient(135deg, var(--bg-3), var(--bg-2)) !important;
-  display: grid !important; place-items: center !important; position: relative !important;
+.post::before {
+  content: ""; display: block; height: 3px; flex: none;
+  background: var(--cat-accent);
 }
-.post__image .placeholder { font-family: var(--font-mono) !important; font-size: 11px !important; letter-spacing: 0.2em !important; color: var(--ink-3) !important; }
-.post__body { padding: 24px !important; flex: 1 !important; display: flex !important; flex-direction: column !important; gap: 12px !important; }
+.post:hover { background: var(--bg-3) !important; border-color: var(--line-2) !important; }
+.post > a { display: flex; flex-direction: column; flex: 1; }
+.post__cover {
+  flex: 1; min-height: 210px; padding: 22px;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
+}
 .post__meta {
-  display: flex !important; justify-content: space-between !important; align-items: center !important;
+  display: flex !important; justify-content: space-between !important; align-items: baseline !important; gap: 12px;
   font-family: var(--font-mono) !important; font-size: 11px !important;
-  letter-spacing: 0.15em !important; text-transform: uppercase !important; color: var(--ink-3) !important;
+  letter-spacing: 0.1em !important; text-transform: uppercase !important; color: var(--ink-3) !important;
 }
-.post__meta .tag { color: var(--accent) !important; }
-.post h3 { font-family: var(--font-display) !important; font-size: 22px !important; font-weight: 700 !important; line-height: 1.15 !important; letter-spacing: -0.01em !important; }
-.post p { font-size: 14px !important; line-height: 1.55 !important; color: var(--ink-2) !important; }
-.post__readtime { margin-top: auto !important; padding-top: 16px !important; font-family: var(--font-mono) !important; font-size: 11px !important; letter-spacing: 0.15em !important; text-transform: uppercase !important; color: var(--ink-3) !important; }
-@media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr !important; } }
-@media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr !important; } }
+.post__meta .tag { color: var(--cat-accent) !important; }
+.post h3 {
+  font-family: var(--font-display) !important;
+  font-size: clamp(34px, 2.9vw, 40px) !important; font-weight: 800 !important; line-height: 0.95 !important;
+  letter-spacing: 0 !important; text-transform: uppercase; text-wrap: pretty; color: var(--ink);
+  /* line-clamp + line-height < 1 przycina polskie diakrytyki (Ó, Ś, Ć)
+     w pierwszym wierszu — padding daje im zapas nad wersalikami */
+  padding-top: 0.14em;
+  display: -webkit-box; -webkit-line-clamp: 4; line-clamp: 4;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+.post__body {
+  padding: 0 22px 20px !important; display: flex !important; flex-direction: column !important; gap: 16px !important;
+  flex: none !important;
+}
+.post p { font-size: 15px !important; line-height: 1.55 !important; color: var(--ink-2) !important; }
+.post__readtime {
+  margin-top: 0 !important; padding-top: 14px !important; border-top: 1px solid var(--line);
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono) !important; font-size: 11px !important;
+  letter-spacing: 0.1em !important; text-transform: uppercase !important; color: var(--ink-2) !important;
+}
+
 
 /* ═══ FAQ ═══ */
 .faq { max-width: 960px !important; margin: 0 auto !important; border-top: 1px solid var(--line) !important; }

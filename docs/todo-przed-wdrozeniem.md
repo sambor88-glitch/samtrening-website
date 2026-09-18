@@ -18,9 +18,12 @@ Lista rzeczy do zrobienia, zanim projekt pójdzie na produkcję (samtrening.com)
 - [ ] **Zaktualizować także:** Google Business Profile, stopki w mailach, wizytówki, materiały marketingowe
 
 ### Zdjęcia
-- [ ] Zdjęcia zespołu (Kasia, Maciek, Bartek) — obecnie avatary literowe
+- [x] Zdjęcia zespołu (Kasia, Maciek, Bartek)
 - [ ] Zdjęcia studia (sekcja Kontakt, Lokalizacja, landingi)
-- [ ] Zdjęcia wpisów blogowych (featured image + hero)
+- [x] ~~Zdjęcia wpisów blogowych (featured image + hero)~~ — nieaktualne.
+  Blog nie używa zdjęć: okładką karty i nagłówkiem wpisu jest tytuł,
+  jedyne pliki graficzne to trzy znaki autorów (`images/znaki/`).
+- [ ] Znaki autorów do WebP (`cwebp -q 82`) — teraz są PNG 480×480
 - [ ] Prawdziwe opinie klientów (obecnie są wzorcowe) — import z Google Business
 
 ### Google Maps
