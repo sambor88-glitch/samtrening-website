@@ -43,10 +43,24 @@ w szablonie inc/content/content-blog.php:
 Wtyczka rozpoznaje, że szablon już renderuje listę, i sama się wycofuje —
 można zostawić ją włączoną.
 
+CTA Z QUIZU -> REZERWACJA
+Przycisk "Zacznij od 3 sesji za 200 zl" w wyniku quizu prowadzi do
+/rezerwacja/. Wtyczka rozpoznaje go po tresci przycisku, nie po adresie,
+i podmienia sam href - klasy i reszta atrybutow zostaja bez zmian.
+
+Dziala na tresci stron i wpisow (filtr the_content). Jesli quiz siedzi
+w szablonie motywu, a nie w tresci strony, podmiana nie zadziala -
+wtedy potrzebny jest kod motywu.
+
+Po udanej podmianie w kokpicie pojawia sie zielony komunikat z liczba
+podmienionych linkow.
+
 FILTRY DLA PROGRAMISTY
   samtrening_blog_autoswap          (bool)  wyłącza podmianę przez bufor
   samtrening_blog_is_listing_page   (bool)  własne wykrywanie strony /blog/
   sw_blog_fallback_image            (string) zdjęcie zastępcze; '' = placeholder
+  samtrening_quiz_cta_url           (string) adres docelowy CTA z quizu
+  samtrening_quiz_cta_labels        (array)  teksty przycisków do rozpoznania
 TXTEOF
 
 ( cd "$HERE/dist" && zip -qr "$SLUG.zip" "$SLUG" )
