@@ -3,7 +3,7 @@
  * Plugin Name:       SAMtrening — lista wpisów na /blog/
  * Plugin URI:        https://github.com/sambor88-glitch/samtrening-website
  * Description:       Podmienia statyczne sekcje filtrów, wyróżnionego wpisu i siatki na /blog/ na wpisy pobierane z WordPressa. Nie modyfikuje żadnego pliku motywu — dezaktywacja wtyczki przywraca poprzedni wygląd strony.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 5.9
  * Requires PHP:      7.4
  * Author:            SAMTRENING
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SAMTRENING_BLOG_VERSION', '1.0.0' );
+define( 'SAMTRENING_BLOG_VERSION', '1.1.0' );
 define( 'SAMTRENING_BLOG_MARKER', '<!-- samtrening-blog-listing -->' );
 
 require_once __DIR__ . '/inc/sw-blog-listing.php';
@@ -135,14 +135,18 @@ function samtrening_blog_swap_sections( $html ) {
 			}
 		}
 
+		// Motyw mógł trzymać <script> albo <style> wewnątrz usuwanych
+		// sekcji — przenosimy je, zamiast po cichu wyrzucić razem z sekcją.
+		$carried = samtrening_blog_carry_assets( $html, $patterns );
+
 		$out = preg_replace( $patterns['featured'], '', $html, 1 );
 		$out = preg_replace( $patterns['posts'], '', (string) $out, 1 );
 
 		// preg_replace_callback, bo wstawiany HTML może zawierać \ albo $1.
 		$out = preg_replace_callback(
 			$patterns['filters'],
-			static function () use ( $listing ) {
-				return $listing;
+			static function () use ( $listing, $carried ) {
+				return $listing . $carried;
 			},
 			(string) $out,
 			1
@@ -160,6 +164,24 @@ function samtrening_blog_swap_sections( $html ) {
 
 		return $html;
 	}
+}
+
+/**
+ * Zbiera <script> i <style> z sekcji, które za chwilę usuniemy.
+ */
+function samtrening_blog_carry_assets( $html, $patterns ) {
+	$carried = '';
+
+	foreach ( $patterns as $re ) {
+		if ( ! preg_match( $re, $html, $section ) ) {
+			continue;
+		}
+		if ( preg_match_all( '~<(script|style)\b[^>]*>.*?</\1>~is', $section[0], $found ) ) {
+			$carried .= "\n" . implode( "\n", $found[0] );
+		}
+	}
+
+	return $carried;
 }
 
 /**

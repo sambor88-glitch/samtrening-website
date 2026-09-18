@@ -132,10 +132,16 @@ if ( ! function_exists( 'samtrening_blog_listing' ) ) {
 			}
 		}
 
-		if ( $total > 0 ) :
+		// Pigułka z jedyną kategorią niczego nie filtruje („Wszystkie 23”
+		// obok „Samtrening 23”), więc grupę pokazujemy dopiero od dwóch.
+		$show_cats    = count( $cats ) > 1;
+		$show_authors = count( $authors ) > 1;
+
+		if ( $total > 0 && ( $show_cats || $show_authors ) ) :
 			?>
   <section class="filters" aria-label="Filtry wpisów">
     <div class="filters__inner">
+      <?php if ( $show_cats ) : ?>
       <div class="filter-group">
         <div class="filter-group__label">Kategoria</div>
         <div class="filter-pills" role="tablist" aria-label="Filtruj po kategorii">
@@ -149,7 +155,8 @@ if ( ! function_exists( 'samtrening_blog_listing' ) ) {
           <?php endforeach; ?>
         </div>
       </div>
-      <?php if ( count( $authors ) > 1 ) : ?>
+      <?php endif; ?>
+      <?php if ( $show_authors ) : ?>
       <div class="filter-group">
         <div class="filter-group__label">Autor</div>
         <div class="filter-pills" role="tablist" aria-label="Filtruj po autorze">
@@ -237,6 +244,94 @@ if ( ! function_exists( 'samtrening_blog_listing' ) ) {
       <button class="btn btn--ghost" id="reset-filters">Zresetuj filtry <span class="arrow">→</span></button>
     </div>
   </section>
+		<?php
+		samtrening_blog_assets();
+	}
+
+	/**
+	 * Filtry działają same z siebie.
+	 *
+	 * Skrypt z makiety siedzi w blog.html i w motywie może go nie być —
+	 * wtedy pigułki renderują się, ale nic nie robią po kliknięciu.
+	 * Skoro to my generujemy ten markup, dowozimy też jego zachowanie.
+	 * Gdy motyw ma własny skrypt, oba ustawiają te same klasy, więc
+	 * podwójne podpięcie niczego nie psuje.
+	 */
+	function samtrening_blog_assets() {
+		?>
+  <style>.post.is-hidden{display:none}.posts-empty.is-visible{display:block}</style>
+  <script>
+  (function () {
+    if ( window.__samtreningBlogFilters ) { return; }
+    window.__samtreningBlogFilters = true;
+
+    function init() {
+      var posts = document.querySelectorAll( '#posts-grid .post' );
+      if ( ! posts.length ) { return; }
+
+      var empty       = document.getElementById( 'posts-empty' );
+      var catPills    = document.querySelectorAll( '[data-filter-category]' );
+      var authorPills = document.querySelectorAll( '[data-filter-author]' );
+      var activeCat = 'all', activeAuthor = 'all';
+
+      function apply() {
+        var visible = 0;
+        for ( var i = 0; i < posts.length; i++ ) {
+          var post = posts[ i ];
+          var okCat    = activeCat === 'all' || post.getAttribute( 'data-category' ) === activeCat;
+          var okAuthor = activeAuthor === 'all' || post.getAttribute( 'data-author' ) === activeAuthor;
+          if ( okCat && okAuthor ) { post.classList.remove( 'is-hidden' ); visible++; }
+          else { post.classList.add( 'is-hidden' ); }
+        }
+        if ( empty ) { empty.classList.toggle( 'is-visible', visible === 0 ); }
+      }
+
+      function mark( pills, active ) {
+        for ( var i = 0; i < pills.length; i++ ) {
+          var on = pills[ i ] === active;
+          pills[ i ].classList.toggle( 'is-active', on );
+          pills[ i ].setAttribute( 'aria-selected', on ? 'true' : 'false' );
+        }
+      }
+
+      function bind( pills, attr, assign ) {
+        for ( var i = 0; i < pills.length; i++ ) {
+          ( function ( pill ) {
+            pill.addEventListener( 'click', function ( event ) {
+              event.preventDefault();
+              assign( pill.getAttribute( attr ) );
+              mark( pills, pill );
+              apply();
+            } );
+          } )( pills[ i ] );
+        }
+      }
+
+      bind( catPills, 'data-filter-category', function ( value ) { activeCat = value; } );
+      bind( authorPills, 'data-filter-author', function ( value ) { activeAuthor = value; } );
+
+      var reset = document.getElementById( 'reset-filters' );
+      if ( reset ) {
+        reset.addEventListener( 'click', function ( event ) {
+          event.preventDefault();
+          activeCat = 'all';
+          activeAuthor = 'all';
+          mark( catPills, document.querySelector( '[data-filter-category="all"]' ) );
+          mark( authorPills, document.querySelector( '[data-filter-author="all"]' ) );
+          apply();
+        } );
+      }
+
+      apply();
+    }
+
+    if ( document.readyState === 'loading' ) {
+      document.addEventListener( 'DOMContentLoaded', init );
+    } else {
+      init();
+    }
+  })();
+  </script>
 		<?php
 	}
 }
