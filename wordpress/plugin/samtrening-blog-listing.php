@@ -2,8 +2,8 @@
 /**
  * Plugin Name:       SAMtrening — lista wpisów na /blog/
  * Plugin URI:        https://github.com/sambor88-glitch/samtrening-website
- * Description:       Podmienia statyczne sekcje filtrów, wyróżnionego wpisu i siatki na /blog/ na wpisy pobierane z WordPressa. Nie modyfikuje żadnego pliku motywu — dezaktywacja wtyczki przywraca poprzedni wygląd strony.
- * Version:           1.1.0
+ * Description:       Dynamiczna lista wpisów na /blog/ oraz przycisk z wyniku quizu prowadzący do kalendarza rezerwacji. Nie modyfikuje żadnego pliku motywu — dezaktywacja wtyczki przywraca poprzedni stan.
+ * Version:           1.2.0
  * Requires at least: 5.9
  * Requires PHP:      7.4
  * Author:            SAMTRENING
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SAMTRENING_BLOG_VERSION', '1.1.0' );
+define( 'SAMTRENING_BLOG_VERSION', '1.2.0' );
 define( 'SAMTRENING_BLOG_MARKER', '<!-- samtrening-blog-listing -->' );
 
 require_once __DIR__ . '/inc/sw-blog-listing.php';
@@ -184,6 +184,94 @@ function samtrening_blog_carry_assets( $html, $patterns ) {
 	return $carried;
 }
 
+/* ---------------------------------------------------------------------
+ * CTA z quizu → kalendarz rezerwacji (SW112233-91)
+ *
+ * Wynik quizu kończy się trzema przyciskami i żaden nie prowadzi do
+ * rezerwacji. Nie mamy kodu motywu, więc link rozpoznajemy po treści
+ * przycisku i podmieniamy sam href — reszta znacznika zostaje bez zmian.
+ * ------------------------------------------------------------------ */
+
+/**
+ * Dokąd kierujemy główny przycisk z wyniku quizu.
+ */
+function samtrening_quiz_cta_url() {
+	return (string) apply_filters( 'samtrening_quiz_cta_url', home_url( '/rezerwacja/' ) );
+}
+
+/**
+ * Fragmenty treści przycisku, po których go rozpoznajemy.
+ */
+function samtrening_quiz_cta_labels() {
+	return (array) apply_filters( 'samtrening_quiz_cta_labels', array( 'zacznij od 3 sesji' ) );
+}
+
+/**
+ * Upraszcza tekst do porównania: bez znaczników, encji, wielkości liter
+ * i polskich znaków — żeby „ZACZNIJ OD 3 SESJI ZA 200 ZŁ" pasowało
+ * niezależnie od tego, jak jest zapisane w szablonie.
+ */
+function samtrening_quiz_simplify( $text ) {
+	$text = html_entity_decode( wp_strip_all_tags( (string) $text ), ENT_QUOTES, 'UTF-8' );
+	$text = function_exists( 'mb_strtolower' ) ? mb_strtolower( $text, 'UTF-8' ) : strtolower( $text );
+	$text = str_replace(
+		array( 'ą', 'ć', 'ę', 'ł', 'ń', 'ó', 'ś', 'ź', 'ż' ),
+		array( 'a', 'c', 'e', 'l', 'n', 'o', 's', 'z', 'z' ),
+		$text
+	);
+
+	return trim( (string) preg_replace( '/\s+/u', ' ', $text ) );
+}
+
+/**
+ * Podmienia href w linkach, których treść pasuje do CTA quizu.
+ */
+function samtrening_quiz_rewrite_cta( $html ) {
+	if ( ! is_string( $html ) || false === stripos( $html, '<a' ) ) {
+		return $html;
+	}
+
+	$labels = array_filter( array_map( 'samtrening_quiz_simplify', samtrening_quiz_cta_labels() ) );
+	if ( ! $labels ) {
+		return $html;
+	}
+
+	$url  = samtrening_quiz_cta_url();
+	$hits = 0;
+
+	$out = preg_replace_callback(
+		'~<a\b([^>]*)>(.*?)</a>~is',
+		static function ( $match ) use ( $labels, $url, &$hits ) {
+			$text = samtrening_quiz_simplify( $match[2] );
+
+			foreach ( $labels as $label ) {
+				if ( false === strpos( $text, $label ) ) {
+					continue;
+				}
+				// Zdejmujemy stary href, resztę atrybutów (klasy, aria) zostawiamy.
+				$attrs = (string) preg_replace( '~\shref\s*=\s*("[^"]*"|\x27[^\x27]*\x27|[^\s>]+)~i', '', $match[1] );
+				$hits++;
+
+				return '<a href="' . esc_url( $url ) . '"' . $attrs . '>' . $match[2] . '</a>';
+			}
+
+			return $match[0];
+		},
+		$html
+	);
+
+	if ( null === $out ) {
+		return $html;
+	}
+
+	if ( $hits > 0 ) {
+		set_transient( 'samtrening_quiz_cta_hits', $hits, WEEK_IN_SECONDS );
+	}
+
+	return $out;
+}
+add_filter( 'the_content', 'samtrening_quiz_rewrite_cta', 20 );
+
 /**
  * Zapisuje powód nieudanej podmiany, żeby pokazać go w kokpicie.
  */
@@ -206,6 +294,11 @@ function samtrening_blog_admin_notice() {
 		return;
 	}
 
+	$hits = get_transient( 'samtrening_quiz_cta_hits' );
+	if ( $hits ) {
+		echo '<div class="notice notice-success is-dismissible"><p><strong>SAMtrening:</strong> przycisk z wyniku quizu prowadzi do <code>' . esc_html( samtrening_quiz_cta_url() ) . '</code> (podmienionych linków: ' . (int) $hits . ').</p></div>';
+	}
+
 	$reason = get_transient( 'samtrening_blog_swap_miss' );
 	if ( ! $reason ) {
 		return;
@@ -220,5 +313,6 @@ add_action( 'admin_notices', 'samtrening_blog_admin_notice' );
  */
 function samtrening_blog_deactivate() {
 	delete_transient( 'samtrening_blog_swap_miss' );
+	delete_transient( 'samtrening_quiz_cta_hits' );
 }
 register_deactivation_hook( __FILE__, 'samtrening_blog_deactivate' );
