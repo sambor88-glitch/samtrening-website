@@ -6,7 +6,71 @@ na dynamiczne wpisy z WordPressa. Kod: [`wordpress/sw-blog-listing.php`](../word
 Klasy CSS i atrybuty `data-*` są identyczne jak w makiecie, więc **JS filtrów
 w motywie działa bez zmian** — nie ruszamy `blog.html` ani skryptów.
 
+Są dwie drogi wdrożenia:
+
+| | Droga A — wtyczka | Droga B — edycja motywu |
+|---|---|---|
+| Co robisz | wgrywasz 1 plik ZIP w WP-adminie | edytujesz 2 pliki PHP motywu |
+| Edycja kodu | brak | `functions.php` + `content-blog.php` |
+| Cofnięcie | Wtyczki → Wyłącz | przywrócenie plików z backupu |
+| Ryzyko białego ekranu | brak (wtyczka nie aktywuje się z błędem) | jest, przy błędzie składni |
+| Czystość rozwiązania | podmiana przez bufor wyjścia | wywołanie wprost w szablonie |
+
+**Droga A jest zalecana na start** — działa bez dotykania motywu i cofa się
+jednym kliknięciem. Drogę B można zrobić później na spokojnie; wtyczka sama
+się wtedy wycofa (rozpoznaje, że szablon już renderuje listę).
+
 ---
+
+# Droga A — wtyczka (bez edycji plików)
+
+## A1 — zbuduj paczkę
+
+```bash
+./wordpress/build-plugin.sh
+# → wordpress/dist/samtrening-blog-listing.zip
+```
+
+## A2 — wgraj w WP-adminie
+
+1. **Wtyczki → Dodaj wtyczkę → Wyślij wtyczkę na serwer**
+2. Wybierz `samtrening-blog-listing.zip` → **Zainstaluj teraz** → **Włącz wtyczkę**
+3. Wyczyść cache (Cache Enabler / WP Super Cache, plus CDN jeśli jest)
+4. Otwórz `/blog/`
+
+## A3 — co się stanie
+
+Wtyczka na stronie `/blog/` podmienia trzy statyczne sekcje makiety na wpisy
+z WordPressa. Zasada **wszystko albo nic**: jeśli nie rozpozna markupu, zostawia
+stronę bez najmniejszej zmiany i wypisuje żółty komunikat w kokpicie z powodem.
+Nie modyfikuje plików motywu ani bazy danych — **wyłączenie wtyczki przywraca
+poprzedni stan w 100%**.
+
+Wykrywanie strony listy: `is_home()`, strona o slugu `blog`, albo ścieżka `/blog`.
+Pojedyncze wpisy są pomijane. Gdyby trafiło źle:
+
+```php
+add_filter( 'samtrening_blog_is_listing_page', function () {
+    return is_page( 'aktualnosci' );   // własny warunek
+} );
+```
+
+Wyłączenie samej podmiany (gdy przechodzisz na drogę B):
+
+```php
+add_filter( 'samtrening_blog_autoswap', '__return_false' );
+```
+
+## A4 — ograniczenie tej drogi
+
+Podmiana opiera się na markupie sekcji (`<section class="filters">`,
+`class="featured"`, `class="posts-section"`). Jeśli w motywie te sekcje mają
+inne klasy, wtyczka nic nie zrobi i powie o tym w kokpicie — wtedy trzeba
+podesłać `inc/content/content-blog.php` i dostroję wzorce.
+
+---
+
+# Droga B — edycja motywu
 
 ## Krok 1 — kopia zapasowa
 
@@ -98,6 +162,20 @@ dodać paginację albo doładowywanie — dziś wszystko idzie w jednym zapytani
 WP_Query przestawia sticky tylko w zapytaniu głównym, a to jest zapytanie poboczne.
 
 ---
+
+## Testy
+
+Renderer i podmiana są testowane lokalnie, bez WordPressa — funkcje WP są
+podmienione na atrapy, a podmiana uruchamiana na prawdziwym `blog.html`:
+
+- `php -l` na obu plikach PHP — bez błędów składni
+- liczniki pigułek zgodne z liczbą kart `.post` w każdej kategorii
+- po podmianie `#posts-grid`, `#posts-empty` i `#reset-filters` występują
+  dokładnie raz (JS makiety woła je przez `getElementById`)
+- bloki `<style>` i `<script>` bajt w bajt identyczne jak przed podmianą
+- liczba `<section>` równa liczbie `</section>`
+- walidacja parserem DOM: 28 ostrzeżeń przed podmianą, 28 po — zero nowych
+- brak którejkolwiek z trzech sekcji → zwracany jest nietknięty HTML wejściowy
 
 ## Poprawki wprowadzone względem pierwszej wersji snippetu
 
