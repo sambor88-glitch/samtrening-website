@@ -61,7 +61,29 @@
   --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --container: 1400px;
+
+  /* Kolory kategorii — używane WYŁĄCZNIE w linii 3 px i w etykiecie.
+     Nigdy jako tło. Domyślny = SAMtrening. */
+  --cat-accent: var(--ink);
 }
+[data-category="treningi"],     [data-filter-category="treningi"]     { --cat-accent: var(--accent); }
+[data-category="zdrowa-ciaza"], [data-filter-category="zdrowa-ciaza"] { --cat-accent: #F5A3B4; }
+[data-category="dieta"],        [data-filter-category="dieta"]        { --cat-accent: #5CD6B8; }
+[data-category="e-trening"],    [data-filter-category="e-trening"]    { --cat-accent: #6EBBFF; }
+[data-category="sport"],        [data-filter-category="sport"]        { --cat-accent: #FF9A3D; }
+[data-category="zdrowie"]                                             { --cat-accent: var(--ink); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   ZNAK AUTORA — jedyne pliki graficzne na blogu (3D, 480×480)
+   ═══════════════════════════════════════════════════════════════════ */
+.znak {
+  display: block; flex: none;
+  border-radius: 50%; overflow: hidden;
+  background: var(--bg-3); object-fit: cover;
+}
+.znak--28 { width: 28px; height: 28px; }
+.znak--48 { width: 48px; height: 48px; }
+.znak--96 { width: 96px; height: 96px; }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
@@ -244,6 +266,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   display: inline-flex; align-items: center; gap: 8px;
 }
 .pill:hover { border-color: var(--ink-2); color: var(--ink); }
+/* etykieta filtru w kolorze kategorii — kolor nigdy nie idzie na tło */
+.pill[data-filter-category]:not(.is-active) { color: var(--cat-accent); }
+.pill[data-filter-category]:not(.is-active):hover { border-color: var(--cat-accent); }
 .pill.is-active {
   background: var(--accent); color: var(--bg);
   border-color: var(--accent); font-weight: 700;
@@ -267,64 +292,41 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   max-width: var(--container); margin: 0 auto; padding: 0 40px;
 }
 .featured-post {
-  display: grid; grid-template-columns: 1.1fr 1fr;
+  display: flex; flex-direction: column;
   border: 1px solid var(--line);
-  transition: border-color 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-.featured-post:hover { border-color: var(--accent); }
-.featured-post__image {
-  background: linear-gradient(135deg, var(--bg-3) 0%, var(--bg-2) 50%, #0f2030 100%);
-  min-height: 480px; position: relative; overflow: hidden;
-  display: grid; place-items: center;
-}
-.featured-post__image::before {
-  content: ""; position: absolute; inset: 0;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(232, 255, 62, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 70% 70%, rgba(232, 255, 62, 0.05) 0%, transparent 40%);
-  transition: opacity 0.6s;
-}
-.featured-post:hover .featured-post__image::before { opacity: 1.5; }
-.featured-post__image .placeholder {
-  position: relative; z-index: 1;
-  font-family: var(--font-mono); font-size: 11px;
-  letter-spacing: 0.2em; color: var(--ink-3); text-transform: uppercase;
-  text-align: center; line-height: 1.6;
-  padding: 24px;
-}
-.featured-post__image .featured-badge {
-  position: absolute; top: 24px; left: 24px;
-  background: var(--accent); color: var(--bg);
-  padding: 8px 14px; font-family: var(--font-mono);
-  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
-  text-transform: uppercase; z-index: 2;
-}
-.featured-post__body {
-  padding: 56px; display: flex; flex-direction: column; gap: 20px;
   background: var(--bg-2);
+  transition: background 0.15s ease, border-color 0.15s ease;
+  position: relative;
+}
+/* linia kategorii — 6 px na wyróżnionym, 3 px na zwykłej karcie */
+.featured-post::before {
+  content: ""; display: block; height: 6px; flex: none;
+  background: var(--cat-accent);
+}
+.featured-post:hover { background: var(--bg-3); border-color: var(--line-2); }
+
+.featured-post__body {
+  padding: 56px; display: flex; flex-direction: column; gap: 24px;
 }
 .featured-post__meta {
-  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
   font-family: var(--font-mono); font-size: 11px;
-  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3);
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3);
 }
-.featured-post__meta .tag {
-  background: rgba(232, 255, 62, 0.1); color: var(--accent);
-  padding: 4px 10px; letter-spacing: 0.2em;
-}
+.featured-post__meta .tag { color: var(--cat-accent); letter-spacing: 0.1em; }
+.featured-post__meta .badge { color: var(--ink); }
 .featured-post__meta .dot { color: var(--ink-3); opacity: 0.5; }
 
 .featured-post h2 {
   font-family: var(--font-display);
-  font-size: clamp(32px, 4vw, 52px); line-height: 0.95;
-  font-weight: 700; letter-spacing: -0.02em;
-  text-transform: uppercase;
+  font-size: clamp(34px, 6.2vw, 88px); line-height: 0.92;
+  font-weight: 800; letter-spacing: -0.01em;
+  text-transform: uppercase; text-wrap: pretty;
+  max-width: 18ch;
 }
-.featured-post h2 .accent { color: var(--accent); }
 .featured-post__excerpt {
-  font-size: 16px; line-height: 1.6; color: var(--ink-2);
+  font-size: 18px; line-height: 1.55; color: var(--ink-2);
+  max-width: 62ch;
 }
 .featured-post__footer {
   margin-top: auto; padding-top: 24px;
@@ -332,36 +334,28 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
 }
 .featured-post__author {
-  display: flex; align-items: center; gap: 12px;
-}
-.featured-post__avatar {
-  width: 40px; height: 40px;
-  background: var(--bg-3); border: 1px solid var(--line-2);
-  display: grid; place-items: center;
-  font-family: var(--font-display); font-size: 16px; font-weight: 800;
-  color: var(--accent);
+  display: flex; align-items: center; gap: 14px;
 }
 .featured-post__author-name {
-  font-family: var(--font-display);
-  font-size: 16px; font-weight: 700; letter-spacing: -0.005em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 15px; font-weight: 500;
 }
 .featured-post__author-role {
-  font-family: var(--font-mono); font-size: 10px;
-  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3);
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3);
+  margin-top: 2px;
 }
 .featured-post__read {
-  font-family: var(--font-mono); font-size: 12px;
-  letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);
   display: inline-flex; align-items: center; gap: 8px;
-  transition: gap 0.2s;
+  transition: color 0.15s ease;
 }
-.featured-post:hover .featured-post__read { gap: 12px; }
+.featured-post:hover .featured-post__read { color: var(--ink); }
 
 @media (max-width: 900px) {
-  .featured-post { grid-template-columns: 1fr; }
-  .featured-post__image { min-height: 280px; }
-  .featured-post__body { padding: 32px 24px; }
+  .featured-post__body { padding: 32px 24px; gap: 20px; }
+  .featured-post__excerpt { font-size: 16px; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -370,97 +364,71 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .posts-section { padding: 32px 0 128px; }
 .posts-grid {
   max-width: var(--container); margin: 0 auto; padding: 0 40px;
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
 }
+
+/* KARTA WPISU — tytuł jest okładką. Zero zdjęć.
+   Jedyny kolor kategorii: linia 3 px u góry + etykieta. */
 .post {
   display: flex; flex-direction: column;
   border: 1px solid var(--line);
-  transition: border-color 0.3s, transform 0.3s;
   background: var(--bg-2);
+  transition: background 0.15s ease, border-color 0.15s ease;
   cursor: pointer;
 }
-.post:hover {
-  border-color: var(--accent);
-  transform: translateY(-4px);
+.post::before {
+  content: ""; display: block; height: 3px; flex: none;
+  background: var(--cat-accent);
 }
+.post:hover { background: var(--bg-3); border-color: var(--line-2); }
+.post:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .post.is-hidden { display: none; }
 
-.post__image {
-  aspect-ratio: 16/10;
-  background: linear-gradient(135deg, var(--bg-3) 0%, var(--bg-2) 100%);
-  position: relative; overflow: hidden;
-  display: grid; place-items: center;
-  border-bottom: 1px solid var(--line);
-}
-.post__image::before {
-  content: ""; position: absolute; inset: 0;
-  background: radial-gradient(circle at 40% 40%, rgba(232, 255, 62, 0.06) 0%, transparent 60%);
-  transition: opacity 0.4s;
-}
-.post:hover .post__image::before { background: radial-gradient(circle at 40% 40%, rgba(232, 255, 62, 0.12) 0%, transparent 60%); }
-.post__image .placeholder {
-  position: relative; z-index: 1;
-  font-family: var(--font-mono); font-size: 10px;
-  letter-spacing: 0.15em; color: var(--ink-3); text-transform: uppercase;
-}
-
-/* Różne kolory subtle dla kategorii */
-.post[data-category="zdrowa-ciaza"] .post__image { background: linear-gradient(135deg, #1a1620 0%, var(--bg-2) 100%); }
-.post[data-category="treningi"] .post__image { background: linear-gradient(135deg, #1c1a0f 0%, var(--bg-2) 100%); }
-.post[data-category="dieta"] .post__image { background: linear-gradient(135deg, #0f1c14 0%, var(--bg-2) 100%); }
-.post[data-category="e-trening"] .post__image { background: linear-gradient(135deg, #0f1a1c 0%, var(--bg-2) 100%); }
-.post[data-category="zdrowie"] .post__image { background: linear-gradient(135deg, #1c160f 0%, var(--bg-2) 100%); }
-.post[data-category="sport"] .post__image { background: linear-gradient(135deg, #1a0f1c 0%, var(--bg-2) 100%); }
-
-.post__body {
-  padding: 28px; display: flex; flex-direction: column; gap: 12px; flex: 1;
+.post__cover {
+  flex: 1;
+  min-height: 210px; padding: 22px;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
 }
 .post__meta {
-  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-  font-family: var(--font-mono); font-size: 10px;
-  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3);
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase;
 }
-.post__tag {
-  background: rgba(232, 255, 62, 0.1); color: var(--accent);
-  padding: 3px 8px; letter-spacing: 0.2em;
-}
+.post__tag { color: var(--cat-accent); }
+.post__date { color: var(--ink-3); }
 .post h3 {
   font-family: var(--font-display);
-  font-size: 22px; font-weight: 700; line-height: 1.1;
-  letter-spacing: -0.01em; text-transform: uppercase;
-}
-.post__excerpt {
-  font-size: 14px; line-height: 1.55; color: var(--ink-2);
-  margin-bottom: auto;
-}
-.post__footer {
-  padding-top: 16px; margin-top: 16px;
-  border-top: 1px solid var(--line);
-  display: flex; justify-content: space-between; align-items: center; gap: 12px;
-}
-.post__author {
-  font-family: var(--font-mono); font-size: 10px;
-  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3);
-  display: flex; align-items: center; gap: 8px;
-}
-.post__author .avatar {
-  width: 24px; height: 24px; background: var(--bg-3);
-  border: 1px solid var(--line-2);
-  display: grid; place-items: center;
-  font-family: var(--font-display); font-size: 11px; font-weight: 800;
-  color: var(--accent);
-}
-.post__read {
-  font-family: var(--font-mono); font-size: 10px;
-  letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);
+  font-size: clamp(34px, 2.9vw, 40px); font-weight: 800; line-height: 0.95;
+  letter-spacing: 0; text-transform: uppercase; text-wrap: pretty;
+  color: var(--ink);
+  /* line-clamp + line-height < 1 przycina polskie diakrytyki (Ó, Ś, Ć)
+     w pierwszym wierszu — padding daje im zapas nad wersalikami */
+  padding-top: 0.14em;
+  display: -webkit-box; -webkit-line-clamp: 4; line-clamp: 4;
+  -webkit-box-orient: vertical; overflow: hidden;
 }
 
-@media (max-width: 1024px) {
-  .posts-grid { grid-template-columns: 1fr 1fr; }
+.post__body {
+  padding: 0 22px 20px;
+  display: flex; flex-direction: column; gap: 16px;
 }
+.post__excerpt { font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.post__footer {
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.post__author {
+  display: flex; align-items: center; gap: 10px; color: var(--ink-2);
+}
+.post__read { color: var(--accent); transition: color 0.15s ease; }
+.post:hover .post__read { color: var(--ink); }
+
 @media (max-width: 700px) {
-  .posts-grid { grid-template-columns: 1fr; padding: 0 20px; }
+  .posts-grid { padding: 0 20px; }
 }
 
 /* Empty state */
@@ -513,21 +481,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 .author-card:last-child { border-right: none; }
 .author-card:hover { background: var(--bg-3); }
-.author-card__photo {
-  aspect-ratio: 1/1;
-  background: linear-gradient(180deg, var(--bg-3) 0%, var(--bg) 100%);
-  border: 1px solid var(--line);
-  display: grid; place-items: center;
-  margin-bottom: 12px;
-  font-family: var(--font-display);
-  font-size: 80px; font-weight: 800;
-  color: var(--accent);
-  position: relative; overflow: hidden;
-}
-.author-card__photo::after {
-  content: ""; position: absolute; inset: 0;
-  background: radial-gradient(circle at 50% 30%, rgba(232, 255, 62, 0.08), transparent 60%);
-}
+/* Znak autora zamiast zdjęcia — 96 px, koło robi CSS */
+.author-card__photo { margin-bottom: 4px; }
 .author-card h3 {
   font-family: var(--font-display);
   font-size: 28px; font-weight: 700; line-height: 1;
@@ -811,19 +766,17 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <div class="eyebrow eyebrow--accent">Wyróżnione</div>
       </div>
       <a href="blog/cwiczenia-w-ciazy-mity-fakty.html" class="featured-post" data-category="zdrowa-ciaza" data-author="kasia">
-        <div class="featured-post__image">
-          <div class="featured-badge">Najnowszy</div>
-          <div class="placeholder">[ Zdjęcie wyróżnione<br>wpisu blogowego ]</div>
-        </div>
         <div class="featured-post__body">
           <div class="featured-post__meta">
             <span class="tag">Zdrowa ciąża</span>
+            <span class="badge">Najnowszy</span>
+            <span class="dot">●</span>
             <span>13.04.2026</span>
             <span class="dot">●</span>
             <span>7 min czytania</span>
           </div>
           <h2 id="featured-title">
-            Ćwiczenia w ciąży — <span class="accent">mity, fakty</span> i to, czego naprawdę się boisz.
+            Ćwiczenia w ciąży — mity, fakty i to, czego naprawdę się boisz
           </h2>
           <p class="featured-post__excerpt">
             Ćwiczenia w ciąży budzą ogromne emocje. Jedni mówią „leż i odpoczywaj", inni „ćwicz,
@@ -833,7 +786,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
           </p>
           <div class="featured-post__footer">
             <div class="featured-post__author">
-              <div class="featured-post__avatar">K</div>
+              <img class="znak znak--48" src="images/znaki/kasia.png" alt="Znak autorki: Kasia Samborska — płotek" width="48" height="48" decoding="async">
               <div>
                 <div class="featured-post__author-name">Kasia Samborska</div>
                 <div class="featured-post__author-role">Trenerka · Zdrowa ciąża</div>
@@ -854,19 +807,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <!-- POST 1 -->
       <a href="blog/trener-personalny-krakow-doswiadczenie-sportowe.html" class="post" data-category="sport" data-author="maciek">
-        <div class="post__image"><span class="placeholder">[ Zdjęcie ]</span></div>
-        <div class="post__body">
+        <div class="post__cover">
           <div class="post__meta">
             <span class="post__tag">Sport wyczynowy</span>
-            <span>20.04.2026</span>
+            <span class="post__date">20.04.2026</span>
           </div>
           <h3>Czego nauczyły mnie Mistrzostwa Świata w sprintach</h3>
+        </div>
+        <div class="post__body">
           <p class="post__excerpt">Miałem 23 lata, bloki startowe i ciśnienie, które naprawdę ciśnie. 3 lekcje ze sportu wyczynowego, które dziś stosuję z klientami w Krakowie.</p>
           <div class="post__footer">
-            <div class="post__author">
-              <span class="avatar">M</span>
-              Maciek · 8 min
-            </div>
+            <span class="post__author">
+              <img class="znak znak--28" src="images/znaki/maciek.png" alt="" width="28" height="28" loading="lazy" decoding="async">Maciek · 8 min
+            </span>
             <span class="post__read">Czytaj →</span>
           </div>
         </div>
@@ -874,19 +827,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <!-- POST 2 -->
       <a href="blog/trening-po-porodzie-krakow.html" class="post" data-category="zdrowa-ciaza" data-author="kasia">
-        <div class="post__image"><span class="placeholder">[ Zdjęcie ]</span></div>
-        <div class="post__body">
+        <div class="post__cover">
           <div class="post__meta">
             <span class="post__tag">Zdrowa ciąża</span>
-            <span>24.04.2026</span>
+            <span class="post__date">24.04.2026</span>
           </div>
           <h3>Powrót do formy po porodzie — kiedy zacząć</h3>
+        </div>
+        <div class="post__body">
           <p class="post__excerpt">Sześć tygodni po porodzie. Ciało inne niż przed ciążą. Wszyscy mówią „daj sobie czas", ale nikt nie mówi jaki. Konkretnie — kiedy, co i jak.</p>
           <div class="post__footer">
-            <div class="post__author">
-              <span class="avatar">K</span>
-              Kasia · 9 min
-            </div>
+            <span class="post__author">
+              <img class="znak znak--28" src="images/znaki/kasia.png" alt="" width="28" height="28" loading="lazy" decoding="async">Kasia · 9 min
+            </span>
             <span class="post__read">Czytaj →</span>
           </div>
         </div>
@@ -894,19 +847,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <!-- POST 3 -->
       <a href="blog/trening-personalny-dla-zapracowanych-krakow.html" class="post" data-category="treningi" data-author="maciek">
-        <div class="post__image"><span class="placeholder">[ Zdjęcie ]</span></div>
-        <div class="post__body">
+        <div class="post__cover">
           <div class="post__meta">
             <span class="post__tag">Treningi</span>
-            <span>28.04.2026</span>
+            <span class="post__date">28.04.2026</span>
           </div>
           <h3>Dlaczego lekarze i prawnicy tak trudno wracają do formy</h3>
+        </div>
+        <div class="post__body">
           <p class="post__excerpt">Lekarz. Prawnik. Przedsiębiorca. Trzy zawody. Ten sam problem. Dlaczego dokładnie te osoby trudno wracają do formy — i co zmienia sytuację w 8 tygodni.</p>
           <div class="post__footer">
-            <div class="post__author">
-              <span class="avatar">M</span>
-              Maciek · 7 min
-            </div>
+            <span class="post__author">
+              <img class="znak znak--28" src="images/znaki/maciek.png" alt="" width="28" height="28" loading="lazy" decoding="async">Maciek · 7 min
+            </span>
             <span class="post__read">Czytaj →</span>
           </div>
         </div>
@@ -914,19 +867,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <!-- POST 4 -->
       <a href="blog/stretching-vs-mobilnosc.html" class="post" data-category="treningi" data-author="kasia">
-        <div class="post__image"><span class="placeholder">[ Zdjęcie ]</span></div>
-        <div class="post__body">
+        <div class="post__cover">
           <div class="post__meta">
             <span class="post__tag">Treningi</span>
-            <span>04.05.2026</span>
+            <span class="post__date">04.05.2026</span>
           </div>
           <h3>Stretching vs. mobilność — co naprawdę działa</h3>
+        </div>
+        <div class="post__body">
           <p class="post__excerpt">Dwa słowa, które wrzucamy do jednego worka. A różnią się jak biegi 100 m od maratonu. Wyjaśniam na konkretnych przykładach z Waszych treningów.</p>
           <div class="post__footer">
-            <div class="post__author">
-              <span class="avatar">K</span>
-              Kasia · 6 min
-            </div>
+            <span class="post__author">
+              <img class="znak znak--28" src="images/znaki/kasia.png" alt="" width="28" height="28" loading="lazy" decoding="async">Kasia · 6 min
+            </span>
             <span class="post__read">Czytaj →</span>
           </div>
         </div>
@@ -934,19 +887,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <!-- POST 5 -->
       <a href="blog/trening-silowy-po-40.html" class="post" data-category="treningi" data-author="maciek">
-        <div class="post__image"><span class="placeholder">[ Zdjęcie ]</span></div>
-        <div class="post__body">
+        <div class="post__cover">
           <div class="post__meta">
             <span class="post__tag">Treningi</span>
-            <span>08.05.2026</span>
+            <span class="post__date">08.05.2026</span>
           </div>
           <h3>Trening siłowy po 40-tce — mniej znaczy więcej</h3>
+        </div>
+        <div class="post__body">
           <p class="post__excerpt">Sam przekroczyłem 40-tkę dwa lata temu. Co zmieniłem w swoim treningu i co radzę klientom z tej grupy wiekowej. Konkretnie.</p>
           <div class="post__footer">
-            <div class="post__author">
-              <span class="avatar">M</span>
-              Maciek · 8 min
-            </div>
+            <span class="post__author">
+              <img class="znak znak--28" src="images/znaki/maciek.png" alt="" width="28" height="28" loading="lazy" decoding="async">Maciek · 8 min
+            </span>
             <span class="post__read">Czytaj →</span>
           </div>
         </div>
@@ -954,19 +907,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <!-- POST 6 -->
       <a href="blog/cwiczenia-trzeci-trymestr-ciazy.html" class="post" data-category="zdrowa-ciaza" data-author="kasia">
-        <div class="post__image"><span class="placeholder">[ Zdjęcie ]</span></div>
-        <div class="post__body">
+        <div class="post__cover">
           <div class="post__meta">
             <span class="post__tag">Zdrowa ciąża</span>
-            <span>12.05.2026</span>
+            <span class="post__date">12.05.2026</span>
           </div>
           <h3>Trzeci trymestr — 4 ćwiczenia, które naprawdę pomagają</h3>
+        </div>
+        <div class="post__body">
           <p class="post__excerpt">Moje doświadczenia z setek sesji w trzecim trymestrze. Cztery ruchy, które mogę w ciemno polecić każdej mamie w ostatnich tygodniach ciąży.</p>
           <div class="post__footer">
-            <div class="post__author">
-              <span class="avatar">K</span>
-              Kasia · 7 min
-            </div>
+            <span class="post__author">
+              <img class="znak znak--28" src="images/znaki/kasia.png" alt="" width="28" height="28" loading="lazy" decoding="async">Kasia · 7 min
+            </span>
             <span class="post__read">Czytaj →</span>
           </div>
         </div>
@@ -974,19 +927,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <!-- POST 7 -->
       <a href="blog/trx-kettlebell-wolne-ciezary.html" class="post" data-category="treningi" data-author="maciek">
-        <div class="post__image"><span class="placeholder">[ Zdjęcie ]</span></div>
-        <div class="post__body">
+        <div class="post__cover">
           <div class="post__meta">
             <span class="post__tag">Treningi</span>
-            <span>18.05.2026</span>
+            <span class="post__date">18.05.2026</span>
           </div>
           <h3>TRX, kettlebell czy wolne ciężary — co wybrać</h3>
+        </div>
+        <div class="post__body">
           <p class="post__excerpt">Cztery razy w tygodniu słyszę to pytanie w studio. Prosto: każde ma miejsce, zależy od celu. Poradnik praktyczny bez marketingowej ściemy.</p>
           <div class="post__footer">
-            <div class="post__author">
-              <span class="avatar">M</span>
-              Maciek · 6 min
-            </div>
+            <span class="post__author">
+              <img class="znak znak--28" src="images/znaki/maciek.png" alt="" width="28" height="28" loading="lazy" decoding="async">Maciek · 6 min
+            </span>
             <span class="post__read">Czytaj →</span>
           </div>
         </div>
@@ -994,19 +947,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <!-- POST 8 -->
       <a href="blog/redukcja-tkanki-tluszczowej-krakow.html" class="post" data-category="treningi" data-author="bartek">
-        <div class="post__image"><span class="placeholder">[ Zdjęcie ]</span></div>
-        <div class="post__body">
+        <div class="post__cover">
           <div class="post__meta">
             <span class="post__tag">Treningi</span>
-            <span>22.05.2026</span>
+            <span class="post__date">22.05.2026</span>
           </div>
           <h3>Redukcja tkanki tłuszczowej — system, nie cuda</h3>
+        </div>
+        <div class="post__body">
           <p class="post__excerpt">„Spalacz tłuszczu w 10 dni" — nie. Ale za to: jasny system oparty na precyzji i świadomości ruchu, który realnie działa w perspektywie 3-6 miesięcy.</p>
           <div class="post__footer">
-            <div class="post__author">
-              <span class="avatar">B</span>
-              Bartek · 7 min
-            </div>
+            <span class="post__author">
+              <img class="znak znak--28" src="images/znaki/bartek.png" alt="" width="28" height="28" loading="lazy" decoding="async">Bartek · 7 min
+            </span>
             <span class="post__read">Czytaj →</span>
           </div>
         </div>
@@ -1014,19 +967,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <!-- POST 9 -->
       <a href="blog/dieta-przed-i-po-treningu.html" class="post" data-category="dieta" data-author="kasia">
-        <div class="post__image"><span class="placeholder">[ Zdjęcie ]</span></div>
-        <div class="post__body">
+        <div class="post__cover">
           <div class="post__meta">
             <span class="post__tag">Dieta</span>
-            <span>28.07.2026</span>
+            <span class="post__date">28.07.2026</span>
           </div>
           <h3>Co jeść przed i po treningu — poradnik od trenerki</h3>
+        </div>
+        <div class="post__body">
           <p class="post__excerpt">Nie jestem dietetyczką i nie udaję. Ale po 13 latach pracy z klientami wiem, co działa w praktyce, a co to tylko marketing suplementów.</p>
           <div class="post__footer">
-            <div class="post__author">
-              <span class="avatar">K</span>
-              Kasia · 6 min
-            </div>
+            <span class="post__author">
+              <img class="znak znak--28" src="images/znaki/kasia.png" alt="" width="28" height="28" loading="lazy" decoding="async">Kasia · 6 min
+            </span>
             <span class="post__read">Czytaj →</span>
           </div>
         </div>
@@ -1034,19 +987,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <!-- POST 10 -->
       <a href="blog/cwiczenia-w-pracy-krotki-trening.html" class="post" data-category="e-trening" data-author="kasia">
-        <div class="post__image"><span class="placeholder">[ Zdjęcie ]</span></div>
-        <div class="post__body">
+        <div class="post__cover">
           <div class="post__meta">
             <span class="post__tag">E-trening</span>
-            <span>04.08.2026</span>
+            <span class="post__date">04.08.2026</span>
           </div>
           <h3>10 minut dziennie — ćwiczenia nawet w biurze</h3>
+        </div>
+        <div class="post__body">
           <p class="post__excerpt">Dla zapracowanych klientów, którzy naprawdę nie mają czasu. Sekwencja, którą można zrobić w biurze w obecności szefa — wygląda jak „ja tu tylko wstałem".</p>
           <div class="post__footer">
-            <div class="post__author">
-              <span class="avatar">K</span>
-              Kasia · 5 min
-            </div>
+            <span class="post__author">
+              <img class="znak znak--28" src="images/znaki/kasia.png" alt="" width="28" height="28" loading="lazy" decoding="async">Kasia · 5 min
+            </span>
             <span class="post__read">Czytaj →</span>
           </div>
         </div>
@@ -1054,19 +1007,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <!-- POST 11 -->
       <a href="blog/jak-nie-przytyc-w-swieta.html" class="post" data-category="dieta" data-author="maciek">
-        <div class="post__image"><span class="placeholder">[ Zdjęcie ]</span></div>
-        <div class="post__body">
+        <div class="post__cover">
           <div class="post__meta">
             <span class="post__tag">Dieta</span>
-            <span>01.04.2026</span>
+            <span class="post__date">01.04.2026</span>
           </div>
           <h3>Jak nie przytyć w święta wielkanocne</h3>
+        </div>
+        <div class="post__body">
           <p class="post__excerpt">Święta mają swój klimat. Jajka, żurek, mazurek, dokładki od rodziny. Jak przejść przez ten czas bez wyrzutów sumienia — i bez suchej sałaty na talerzu.</p>
           <div class="post__footer">
-            <div class="post__author">
-              <span class="avatar">M</span>
-              Maciek · 5 min
-            </div>
+            <span class="post__author">
+              <img class="znak znak--28" src="images/znaki/maciek.png" alt="" width="28" height="28" loading="lazy" decoding="async">Maciek · 5 min
+            </span>
             <span class="post__read">Czytaj →</span>
           </div>
         </div>
@@ -1074,19 +1027,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <!-- POST 12 -->
       <a href="blog/stabilnosc-barkow-sztuki-walki.html" class="post" data-category="treningi" data-author="bartek">
-        <div class="post__image"><span class="placeholder">[ Zdjęcie ]</span></div>
-        <div class="post__body">
+        <div class="post__cover">
           <div class="post__meta">
             <span class="post__tag">Treningi</span>
-            <span>10.06.2026</span>
+            <span class="post__date">10.06.2026</span>
           </div>
           <h3>Stabilność barków — lekcja ze sztuk walki</h3>
+        </div>
+        <div class="post__body">
           <p class="post__excerpt">17 lat w sztukach walki nauczyło mnie jednego: bark jest jak precyzyjny mechanizm, nie jak siłownia. Konkretne ćwiczenia z perspektywy mojego doświadczenia.</p>
           <div class="post__footer">
-            <div class="post__author">
-              <span class="avatar">B</span>
-              Bartek · 6 min
-            </div>
+            <span class="post__author">
+              <img class="znak znak--28" src="images/znaki/bartek.png" alt="" width="28" height="28" loading="lazy" decoding="async">Bartek · 6 min
+            </span>
             <span class="post__read">Czytaj →</span>
           </div>
         </div>
@@ -1120,7 +1073,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
       <div class="authors-grid reveal">
         <a href="zespol.html#kasia" class="author-card">
-          <div class="author-card__photo"><img src="images/kasia-samborska.jpg" alt="Kasia" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+          <div class="author-card__photo"><img class="znak znak--96" src="images/znaki/kasia.png" alt="Znak autorki: Kasia Samborska — płotek" width="96" height="96" loading="lazy" decoding="async"></div>
           <div class="author-card__role">Zdrowa ciąża · Trening kobiet</div>
           <h3>Kasia<br><span class="accent">Samborska</span></h3>
           <p class="author-card__bio">
@@ -1135,7 +1088,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         </a>
 
         <a href="zespol.html#maciek" class="author-card">
-          <div class="author-card__photo"><img src="images/maciej-samborski.jpg" alt="Maciek" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+          <div class="author-card__photo"><img class="znak znak--96" src="images/znaki/maciek.png" alt="Znak autora: Maciej Samborski — bloki startowe" width="96" height="96" loading="lazy" decoding="async"></div>
           <div class="author-card__role">Treningi personalne · Sport wyczynowy</div>
           <h3>Maciej<br><span class="accent">Samborski</span></h3>
           <p class="author-card__bio">
@@ -1150,7 +1103,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         </a>
 
         <a href="zespol.html#bartek" class="author-card">
-          <div class="author-card__photo"><img src="images/bartosz-swierk.jpg" alt="Bartek" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+          <div class="author-card__photo"><img class="znak znak--96" src="images/znaki/bartek.png" alt="Znak autora: Bartosz Świerk — rękawice bokserskie" width="96" height="96" loading="lazy" decoding="async"></div>
           <div class="author-card__role">Sztuki walki · Mobilność · Postawa</div>
           <h3>Bartosz<br><span class="accent">Świerk</span></h3>
           <p class="author-card__bio">
