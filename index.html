@@ -21,33 +21,102 @@
 <meta property="og:site_name" content="SAMtrening">
 
 <!-- ═════════════════════════════════════════════════════════════════
-     SCHEMA.ORG – LocalBusiness (audit sec. 3.8)
+     SCHEMA.ORG – ExerciseGym + FAQPage (audyt sec. 3.8, SW112233-71)
      ═════════════════════════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HealthAndBeautyBusiness",
-  "@id": "https://www.samtrening.com/#business",
-  "name": "SAMtrening",
-  "image": "https://www.samtrening.com/wp-content/themes/sam/img/sam-logo1.png",
-  "url": "https://www.samtrening.com/",
-  "telephone": "+48 728 385 203",
-  "email": "biuro@samtrening.com",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Plac Na Groblach 23",
-    "addressLocality": "Kraków",
-    "postalCode": "30-101",
-    "addressCountry": "PL"
-  },
-  "geo": { "@type": "GeoCoordinates", "latitude": 50.0589, "longitude": 19.9322 },
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "05:30", "closes": "23:00"
-  }],
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "44" }
+  "@graph": [
+    {
+      "@type": "ExerciseGym",
+      "@id": "https://www.samtrening.com/#business",
+      "name": "SAMtrening",
+      "url": "https://www.samtrening.com/",
+      "telephone": "+48 728 385 203",
+      "email": "biuro@samtrening.com",
+      "priceRange": "od 200 zł",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plac Na Groblach 23",
+        "addressLocality": "Kraków",
+        "postalCode": "31-101",
+        "addressCountry": "PL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.0589,
+        "longitude": 19.9322
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "05:30",
+          "closes": "23:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/samtrening",
+        "https://www.instagram.com/samtrening",
+        "https://www.google.com/maps/place/SAMtrening/@50.0566658,19.9305534,17z"
+      ],
+      "image": "https://www.samtrening.com/wp-content/themes/sam/img/sam-logo1.png"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.samtrening.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ile kosztuje trening personalny?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jedna sesja 1:1 kosztuje od 200 zł za 60 minut. Nie sprzedajemy pakietów ani abonamentów — płacisz za odbyte sesje. Szczegółowy cennik wszystkich usług znajdziesz na stronach poszczególnych ofert."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy mogę trenować rano przed pracą?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Studio otwarte jest codziennie od 5:30 do 23:00, również w weekendy. Najpopularniejsze sloty wśród przedsiębiorców to 6:00, 6:30 i 7:00 — jesteś po treningu zanim większość miasta zaczyna pracę. Prysznic w studio dostępny."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy prowadzicie treningi w ciąży?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Kasia Samborska specjalizuje się w treningu kobiet w ciąży, po porodzie i w połogu. Ma 13 lat doświadczenia i wykształcenie fizjoterapeutyczne w zakresie dna miednicy. Szczegółowe informacje znajdziesz na stronie Zdrowa Ciąża."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co jeśli muszę odwołać trening?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bez problemu. Odwołanie na 24 godziny przed usługą jest bezpłatne — wystarczy SMS lub telefon. Wiemy, że grafiki zapracowanych ludzi zmieniają się w ostatniej chwili, i tego nie karzemy. Jeśli odwołujesz później, prosimy o kontakt — zwykle przesuwamy sesję na inny termin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy trenujecie również dzieci?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak — od 10 roku życia. Pracujemy z młodymi sportowcami (piłka nożna, siatkówka, gimnastyka) oraz z dziećmi, dla których trening to podstawa ogólnej sprawności i zdrowej postawy. Zawsze w obecności rodzica lub po jego wyraźnej zgodzie."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -1537,7 +1606,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
           <div class="nap-block">
             <div class="nap-row">
               <div class="key">Adres</div>
-              <div class="val">Plac Na Groblach 23, 30-101 Kraków</div>
+              <div class="val">Plac Na Groblach 23, 31-101 Kraków</div>
             </div>
             <div class="nap-row">
               <div class="key">Telefon</div>
@@ -1564,7 +1633,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
             title="Mapa lokalizacji studia SAMtrening — Plac Na Groblach 23, Kraków">
           </iframe>
           <div class="map-cta">
-            <p>Plac Na Groblach 23, 30-101 Kraków</p>
+            <p>Plac Na Groblach 23, 31-101 Kraków</p>
             <a href="https://www.google.com/maps/place/SAMtrening/@50.0566658,19.9305534,17z/data=!3m1!4b1!4m6!3m5!1s0x47165b394efed89d:0x4d2b788bb2ee7b53!8m2!3d50.0566658!4d19.9331337!16s%2Fg%2F11cp74y7zk" target="_blank" rel="noopener">
               Otwórz w Google Maps <span aria-hidden="true">↗</span>
             </a>
@@ -2213,7 +2282,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <h4>SAMtrening</h4>
         <p>
           Kameralne studio treningu personalnego w centrum Krakowa.
-          Plac Na Groblach 23, 30-101 Kraków.
+          Plac Na Groblach 23, 31-101 Kraków.
         </p>
         <div class="socials" aria-label="Media społecznościowe">
           <a href="https://www.facebook.com/samtrening/" target="_blank" rel="noopener" aria-label="Facebook">
@@ -2252,7 +2321,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <ul>
           <li><a href="tel:+48728385203">+48 728 385 203</a></li>
           <li><a href="mailto:biuro@samtrening.com">biuro@samtrening.com</a></li>
-          <li><span style="color:var(--ink-2);">Plac Na Groblach 23<br>30-101 Kraków</span></li>
+          <li><span style="color:var(--ink-2);">Plac Na Groblach 23<br>31-101 Kraków</span></li>
           <li><span style="color:var(--ink-2);">Pon–Niedz · 5:30–23:00</span></li>
         </ul>
       </div>

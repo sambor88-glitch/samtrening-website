@@ -16,7 +16,7 @@
 <meta property="og:description" content="Kameralne studio pod Wawelem. Zadzwoń, napisz lub przyjdź. Czynne 5:30—23:00.">
 <meta property="og:url" content="https://www.samtrening.com/kontakt/">
 
-<!-- Schema.org: ContactPage + LocalBusiness + BreadcrumbList -->
+<!-- Schema.org: ContactPage + ExerciseGym + BreadcrumbList + FAQPage (SW112233-71) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -26,29 +26,49 @@
       "@id": "https://www.samtrening.com/kontakt/#contact",
       "name": "Kontakt — SAMtrening Kraków",
       "url": "https://www.samtrening.com/kontakt/",
-      "about": { "@id": "https://www.samtrening.com/#business" }
+      "about": {
+        "@id": "https://www.samtrening.com/#business"
+      },
+      "mainEntity": {
+        "@id": "https://www.samtrening.com/#business"
+      }
     },
     {
-      "@type": "HealthAndBeautyBusiness",
+      "@type": "ExerciseGym",
       "@id": "https://www.samtrening.com/#business",
       "name": "SAMtrening",
       "url": "https://www.samtrening.com/",
       "telephone": "+48 728 385 203",
       "email": "biuro@samtrening.com",
-      "priceRange": "$$",
+      "priceRange": "od 200 zł",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Plac Na Groblach 23",
         "addressLocality": "Kraków",
-        "postalCode": "30-101",
+        "postalCode": "31-101",
         "addressCountry": "PL"
       },
-      "geo": { "@type": "GeoCoordinates", "latitude": 50.0589, "longitude": 19.9322 },
-      "openingHoursSpecification": [{
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "05:30", "closes": "23:00"
-      }],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.0589,
+        "longitude": 19.9322
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "05:30",
+          "closes": "23:00"
+        }
+      ],
       "sameAs": [
         "https://www.facebook.com/samtrening",
         "https://www.instagram.com/samtrening",
@@ -58,8 +78,72 @@
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://www.samtrening.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Kontakt", "item": "https://www.samtrening.com/kontakt/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://www.samtrening.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kontakt",
+          "item": "https://www.samtrening.com/kontakt/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.samtrening.com/kontakt/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Jak szybko odpowiadacie na formularze i maile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "W dni robocze (pon–pt, 8:00–20:00) odpowiadamy zwykle w ciągu 2–4 godzin. Wiadomości wysłane wieczorem, w nocy lub w weekendy — obsługujemy następnego ranka. Jeśli temat jest pilny, zadzwoń bezpośrednio na +48 728 385 203 — w godzinach pracy studia (5:30–23:00) prawie zawsze ktoś odbiera."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy mogę przyjść do studia bez umawiania się?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, ale warto wcześniej zadzwonić. W studio w danym momencie zwykle trwa sesja 1:1, więc trenerzy są zajęci. Jeśli chcesz po prostu zobaczyć przestrzeń — napisz lub zadzwoń, umówimy się w oknie między sesjami. Pierwsza konsultacja (75 minut) i tak powinna być umówiona z wyprzedzeniem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy można dzwonić bardzo wcześnie rano lub późno wieczorem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Studio pracuje od 5:30 do 23:00, więc w tych godzinach telefon zwykle odbieramy. Najlepsze okno na spokojną rozmowę: między 10:00 a 12:00 lub między 15:00 a 17:00 — wtedy rotacja klientów jest najmniejsza. Ranne i wieczorne godziny są najbardziej zajęte treningami."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co dalej po wysłaniu formularza?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oddzwaniamy lub piszemy w 2–4 godziny. W pierwszej wiadomości prosimy zwykle o doprecyzowanie kilku szczegółów (godziny dogodne do treningów, czy już kiedyś trenowałeś, czy masz konkretne dolegliwości). Potem umawiamy konsultację — w studio lub online. Bez zobowiązań."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jestem już Waszym klientem — gdzie się zalogować do platformy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Do platformy SAMtrening logujesz się pod adresem app.samtrening.com — tam znajdziesz swój plan, chat z trenerem, pomiary i historię sesji. Link widoczny też w górnym menu każdej strony (przycisk „Zaloguj się\"). Jeśli zapomniałeś/aś hasła lub masz problem z dostępem — napisz na biuro@samtrening.com."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy dzwoniąc dostanę od razu odpowiedź o cenach?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Ceny startują od 200 zł/h z trenerem za sesję 1:1, od 280 zł za sesję 2:1, sztywno 200 zł za sesję online. Kwota zależy od godziny treningu, częstotliwości oraz trenera, z którym chcesz trenować."
+          }
+        }
       ]
     }
   ]
@@ -915,7 +999,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
             Groblach <span class="accent">23</span><br>
             Kraków
           </div>
-          <div class="address-meta">30-101 · 5 min od Wawelu</div>
+          <div class="address-meta">31-101 · 5 min od Wawelu</div>
         </div>
         <div class="hours">
           <span class="pulse" aria-hidden="true"></span>
@@ -1047,7 +1131,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
           <div class="nap-block">
             <div class="nap-row">
               <div class="key">Adres</div>
-              <div class="val">Plac Na Groblach 23, 30-101 Kraków</div>
+              <div class="val">Plac Na Groblach 23, 31-101 Kraków</div>
             </div>
             <div class="nap-row">
               <div class="key">Telefon</div>
@@ -1409,7 +1493,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     <div class="footer__grid">
       <div class="footer__col">
         <h4>SAMtrening</h4>
-        <p>Kameralne studio treningu personalnego w centrum Krakowa. Plac Na Groblach 23, 30-101 Kraków.</p>
+        <p>Kameralne studio treningu personalnego w centrum Krakowa. Plac Na Groblach 23, 31-101 Kraków.</p>
         <div class="socials" aria-label="Media społecznościowe">
           <a href="https://www.facebook.com/samtrening/" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.3c0-1 .2-1.3 1.1-1.3H18V0h-3.2C11.2 0 9 1.5 9 4.5V8z"/></svg>
@@ -1445,7 +1529,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <ul>
           <li><a href="tel:+48728385203">+48 728 385 203</a></li>
           <li><a href="mailto:biuro@samtrening.com">biuro@samtrening.com</a></li>
-          <li><span style="color:var(--ink-2);">Plac Na Groblach 23<br>30-101 Kraków</span></li>
+          <li><span style="color:var(--ink-2);">Plac Na Groblach 23<br>31-101 Kraków</span></li>
           <li><span style="color:var(--ink-2);">Pon–Niedz · 5:30–23:00</span></li>
         </ul>
       </div>

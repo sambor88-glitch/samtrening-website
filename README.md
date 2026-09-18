@@ -36,7 +36,8 @@ samtrening-website/
 └── docs/
     ├── plan-contentowy.md                  # 30 tematów wpisów blogowych (kwi-sie 2026)
     ├── todo-przed-wdrozeniem.md            # Lista rzeczy do zrobienia
-    └── audyt-seo-kwiecien-2026.md          # Podsumowanie audytu SEO
+    ├── audyt-seo-kwiecien-2026.md          # Podsumowanie audytu SEO
+    └── schema-json-ld.md                   # Bloki JSON-LD do wdrożenia na produkcji (WordPress)
 ```
 
 ## 🚀 Jak uruchomić
@@ -74,7 +75,7 @@ Po wrzuceniu na GitHub można włączyć darmowy hosting:
 
 ## 🛠 Technologie
 
-- **HTML5** — semantyczny markup, Schema.org (LocalBusiness, Service, Person, BlogPosting, FAQPage, BreadcrumbList)
+- **HTML5** — semantyczny markup, Schema.org (ExerciseGym, Service, ContactPage, Person, BlogPosting, FAQPage, BreadcrumbList)
 - **CSS3** — custom properties, CSS Grid, Flexbox, clamp() dla fluid typography
 - **Vanilla JS** — zero bibliotek, tylko `IntersectionObserver` i podstawowy DOM
 - **Fonty:** Big Shoulders Display, DM Sans, Fraunces (tylko na wpisach blogowych), JetBrains Mono — ładowane z Google Fonts
@@ -123,7 +124,7 @@ Najważniejsze:
 ## 📞 Kontakt
 
 **SAMTRENING Sp. z o.o.**
-Plac Na Groblach 23, 30-101 Kraków
+Plac Na Groblach 23, 31-101 Kraków
 📞 +48 728 385 203
 ✉️ biuro@samtrening.com
 🌐 samtrening.com
