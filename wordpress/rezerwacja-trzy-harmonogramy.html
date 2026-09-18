@@ -1,0 +1,142 @@
+<!--
+  SAMtrening — strona /rezerwacja/ z harmonogramami trzech trenerów.
+
+  Wklej jako blok „HTML" w edytorze WordPressa na stronie /rezerwacja/.
+  Podmień trzy adresy oznaczone WKLEJ_LINK_... na linki z Zapisów
+  na spotkanie (Kalendarz Google → harmonogram → „Udostępnij" →
+  „Umieść na stronie" / „Embed"). Link kończy się na ?gv=true.
+
+  Kotwice pozwalają quizowi wejść od razu na właściwego trenera:
+      /rezerwacja/#kasia    /rezerwacja/#maciek    /rezerwacja/#bartek
+-->
+
+<style>
+  .sw-booking {
+    --sw-accent: var(--accent, #E8FF3E);
+    --sw-ink:    var(--ink, #FAFAF7);
+    --sw-ink-2:  var(--ink-2, rgba(250,250,247,0.72));
+    --sw-ink-3:  var(--ink-3, rgba(250,250,247,0.45));
+    --sw-line:   var(--line, rgba(250,250,247,0.12));
+    --sw-bg-2:   var(--bg-2, #131210);
+    display: grid;
+    gap: 64px;
+    max-width: var(--container, 1400px);
+    margin-inline: auto;
+  }
+
+  .sw-booking__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 8px;
+  }
+  .sw-booking__nav a {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--sw-ink-2);
+    border: 1px solid var(--sw-line);
+    padding: 10px 18px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .sw-booking__nav a:hover,
+  .sw-booking__nav a:focus-visible {
+    color: var(--sw-accent);
+    border-color: var(--sw-accent);
+  }
+
+  .sw-trainer {
+    /* Żeby kotwica nie chowała się pod sticky headerem. */
+    scroll-margin-top: 120px;
+    display: grid;
+    gap: 20px;
+    border-top: 1px solid var(--sw-line);
+    padding-top: 40px;
+  }
+  .sw-trainer__role {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sw-accent);
+  }
+  .sw-trainer h2 {
+    font-family: var(--font-display, Impact, sans-serif);
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--sw-ink);
+    margin: 0;
+  }
+  .sw-trainer p {
+    color: var(--sw-ink-2);
+    max-width: 62ch;
+    margin: 0;
+  }
+  .sw-trainer__frame {
+    border: 1px solid var(--sw-line);
+    background: var(--sw-bg-2);
+    overflow: hidden;
+  }
+  .sw-trainer__frame iframe {
+    display: block;
+    width: 100%;
+    min-height: 620px;
+    border: 0;
+  }
+  .sw-trainer__note {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sw-ink-3);
+  }
+
+  @media (max-width: 700px) {
+    .sw-booking { gap: 48px; }
+    .sw-trainer__frame iframe { min-height: 700px; }
+  }
+</style>
+
+<div class="sw-booking">
+
+  <nav class="sw-booking__nav" aria-label="Wybierz trenera">
+    <a href="#kasia">Kasia</a>
+    <a href="#maciek">Maciek</a>
+    <a href="#bartek">Bartek</a>
+  </nav>
+
+  <section class="sw-trainer" id="kasia" aria-labelledby="kasia-title">
+    <div class="sw-trainer__role">Zdrowa ciąża · trening okołoporodowy</div>
+    <h2 id="kasia-title">Kasia Samborska</h2>
+    <p>Trening w ciąży i powrót do formy po porodzie. Praca z dnem miednicy, mobilność, bezpieczne obciążenia na każdym trymestrze.</p>
+    <div class="sw-trainer__frame">
+      <iframe src="WKLEJ_LINK_KASI?gv=true" title="Rezerwacja terminu — Kasia Samborska" loading="lazy"></iframe>
+    </div>
+    <div class="sw-trainer__note">Pierwsza sesja 75 minut · płatność w studiu</div>
+  </section>
+
+  <section class="sw-trainer" id="maciek" aria-labelledby="maciek-title">
+    <div class="sw-trainer__role">Trening po czterdziestce · sport wyczynowy</div>
+    <h2 id="maciek-title">Maciej Samborski</h2>
+    <p>Siła i technika dla osób wracających do ruchu po latach przerwy. Doświadczenie ze sportu wyczynowego przełożone na trening dla zapracowanych.</p>
+    <div class="sw-trainer__frame">
+      <iframe src="WKLEJ_LINK_MACKA?gv=true" title="Rezerwacja terminu — Maciej Samborski" loading="lazy"></iframe>
+    </div>
+    <div class="sw-trainer__note">Pierwsza sesja 75 minut · płatność w studiu</div>
+  </section>
+
+  <section class="sw-trainer" id="bartek" aria-labelledby="bartek-title">
+    <div class="sw-trainer__role">Redukcja · stabilność · sztuki walki</div>
+    <h2 id="bartek-title">Bartosz Świerk</h2>
+    <p>Redukcja tkanki tłuszczowej bez głodówek, praca nad stabilnością barków i bioder, przygotowanie ogólnorozwojowe.</p>
+    <div class="sw-trainer__frame">
+      <iframe src="WKLEJ_LINK_BARTKA?gv=true" title="Rezerwacja terminu — Bartosz Świerk" loading="lazy"></iframe>
+    </div>
+    <div class="sw-trainer__note">Pierwsza sesja 75 minut · płatność w studiu</div>
+  </section>
+
+</div>
