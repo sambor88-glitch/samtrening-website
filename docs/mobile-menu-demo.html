@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu mobilne — CTA zawsze widoczne (wzorzec do motywu samtrening-2026)</title>
+<meta name="robots" content="noindex, nofollow">
+<!--
+  Wzorzec rozwiązania do zadania: CTA „Zacznij od 3 sesji za 200 zł" ginie na dole
+  przewijanego menu mobilnego na produkcji.
+
+  Istota poprawki: panel menu to kolumna flex o wysokości 100dvh. Przewija się
+  wyłącznie lista linków, a przycisk siedzi poza obszarem przewijania i jest
+  widoczny zawsze, niezależnie od liczby pozycji w menu.
+
+  Przełącznik „stare / nowe" u dołu pokazuje różnicę. Do skopiowania jest wersja NOWA.
+-->
+<style>
+  :root {
+    --bg: #0A0908;
+    --ink: #FAFAF7;
+    --ink-2: #9A9A93;
+    --accent: #E8FF3E;
+    --line: rgba(250, 250, 247, 0.12);
+    --font-display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+    --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font-body); overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+
+  /* ─────────────────────────────────────────────────────────────
+     PANEL MENU — sedno poprawki
+     ───────────────────────────────────────────────────────────── */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 49;
+    background: var(--bg);
+
+    /* 100dvh, nie 100vh: na iOS Safari jednostka vh liczy się do wysokości
+       okna BEZ paska adresu, więc panel bywa wyższy niż widoczny ekran
+       i jego dolna część — czyli właśnie CTA — wypada poza widok.
+       Pierwsza deklaracja to zapas dla przeglądarek bez obsługi dvh. */
+    height: 100vh;
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+
+    /* przewijanie menu nie przenosi się na stronę pod spodem */
+    overscroll-behavior: contain;
+  }
+
+  .mobile-menu__header {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* Przewija się TYLKO ta część */
+  .mobile-menu__scroll {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 20px 16px;
+  }
+
+  /* CTA poza obszarem przewijania — zawsze na ekranie */
+  .mobile-menu__cta {
+    flex: 0 0 auto;
+    padding: 12px 20px;
+    /* margines na pasek gestów iPhone'a; bez tego przycisk chowa się pod nim */
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid var(--line);
+    background: var(--bg);
+  }
+
+  .btn-cta {
+    display: block;
+    width: 100%;
+    padding: 18px 12px;
+    background: var(--accent);
+    color: var(--bg);
+    font-family: var(--font-display);
+    /* skaluje się z szerokością ekranu; na wąskich ekranach napis może zawinąć się
+       do dwóch linii i to jest w porządku — przycisk zostaje widoczny tak czy inaczej */
+    font-size: clamp(15px, 4.4vw, 20px);
+    line-height: 1.15;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.02em;
+    border: none;
+    border-radius: 2px;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     POZYCJE MENU
+     ───────────────────────────────────────────────────────────── */
+  .menu-item > a,
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /* 16px zamiast 24px: przy 13 pozycjach to 200 px różnicy,
+       a cel dotykowy nadal ma ponad 44 px wysokości */
+    padding: 16px 0;
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    text-align: left;
+  }
+  .menu-item { border-bottom: 1px solid var(--line); }
+
+  .menu-toggle__icon { font-size: 18px; color: var(--accent); transition: transform 0.2s; }
+  .menu-toggle[aria-expanded="true"] .menu-toggle__icon { transform: rotate(45deg); }
+
+  /* Podmenu domyślnie zwinięte — na produkcji jest rozwinięte i samo zajmuje pół ekranu */
+  .submenu { display: none; padding: 0 0 8px 16px; border-left: 2px solid var(--accent); }
+  .menu-toggle[aria-expanded="true"] + .submenu { display: block; }
+  .submenu a {
+    display: block;
+    padding: 12px 0;
+    font-size: 17px;
+    color: var(--ink-2);
+  }
+
+  .menu-phone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 0;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     WARIANT „STARY" — do porównania, NIE kopiuj tego
+     ───────────────────────────────────────────────────────────── */
+  body.old .mobile-menu {
+    display: block;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  body.old .mobile-menu__scroll { overflow: visible; padding-bottom: 0; }
+  body.old .mobile-menu__cta { border-top: none; padding-top: 24px; }
+
+  /* ─────────────────────────────────────────────────────────────
+     PRZEŁĄCZNIK DEMO — element pomocniczy, nie przenoś go do motywu
+     ───────────────────────────────────────────────────────────── */
+  .demo-switch {
+    position: fixed;
+    z-index: 60;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: 11px;
+  }
+  .demo-switch button {
+    padding: 6px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(10, 9, 8, 0.85);
+    color: var(--ink-2);
+    cursor: pointer;
+  }
+  .demo-switch button[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
+
+  .logo { display: flex; align-items: center; gap: 10px; min-width: 0; overflow: hidden; font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: 0.02em; }
+  .logo__mark { display: grid; place-items: center; width: 34px; height: 34px; background: var(--accent); color: var(--bg); font-size: 13px; }
+  .close { background: none; border: none; color: var(--ink); font-size: 26px; line-height: 1; cursor: pointer; padding: 4px 8px; }
+</style>
+</head>
+<body>
+
+<div class="demo-switch" role="group" aria-label="Wariant menu">
+  <button type="button" data-variant="new" aria-pressed="true">nowe</button>
+  <button type="button" data-variant="old" aria-pressed="false">stare</button>
+</div>
+
+<div class="mobile-menu" id="mobile-menu">
+
+  <div class="mobile-menu__header">
+    <span class="logo"><span class="logo__mark">SAM</span><span>SAM<span style="font-weight:400">TRENING</span></span></span>
+    <button class="close" type="button" aria-label="Zamknij menu">&times;</button>
+  </div>
+
+  <div class="mobile-menu__scroll">
+    <nav aria-label="Menu mobilne">
+      <ul>
+        <li class="menu-item">
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="sub-treningi">
+            Treningi <span class="menu-toggle__icon" aria-hidden="true">+</span>
+          </button>
+          <ul class="submenu" id="sub-treningi">
+            <li><a href="#">Trening personalny</a></li>
+            <li><a href="#">Trening medyczny</a></li>
+            <li><a href="#">Trening w parze</a></li>
+            <li><a href="#">Trening dla kobiet</a></li>
+            <li><a href="#">Trening 40+</a></li>
+            <li><a href="#">Jaki trening dla mnie?</a></li>
+          </ul>
+        </li>
+        <li class="menu-item"><a href="#">Ciąża</a></li>
+        <li class="menu-item"><a href="#">E-trening</a></li>
+        <li class="menu-item"><a href="#">Zespół</a></li>
+        <li class="menu-item"><a href="#">Rezerwacja</a></li>
+        <li class="menu-item"><a href="#">Blog</a></li>
+        <li class="menu-item"><a href="#">Kontakt</a></li>
+        <li class="menu-item">
+          <a class="menu-phone" href="tel:+48728385203">📞 +48 728 385 203</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="mobile-menu__cta">
+    <a class="btn-cta" href="#">Zacznij od 3 sesji za 200 zł →</a>
+  </div>
+
+</div>
+
+<script>
+  // Podmenu — rozwijane na żądanie, domyślnie zwinięte
+  document.querySelectorAll('.menu-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+  });
+
+  // Przełącznik wariantów — tylko na potrzeby tego demo
+  var buttons = document.querySelectorAll('.demo-switch button');
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var variant = btn.dataset.variant;
+      document.body.classList.toggle('old', variant === 'old');
+      buttons.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b === btn));
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

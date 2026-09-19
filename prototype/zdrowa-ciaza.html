@@ -16,7 +16,7 @@
 <meta property="og:description" content="13 lat doświadczenia, 1:1 w kameralnym studio pod Wawelem. Bezpieczny trening w każdym trymestrze.">
 <meta property="og:url" content="https://www.samtrening.com/zdrowa-ciaza/">
 
-<!-- Schema.org: Service, Person (Kasia), BreadcrumbList, FAQPage -->
+<!-- Schema.org: Service, Person (Kasia), BreadcrumbList, FAQPage (SW112233-71) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -25,42 +25,130 @@
       "@type": "Service",
       "@id": "https://www.samtrening.com/zdrowa-ciaza/#service",
       "name": "Trening w ciąży i po porodzie w Krakowie",
+      "serviceType": "Trening okołoporodowy 1:1",
       "description": "Bezpieczny trening personalny dla kobiet w ciąży, po porodzie i planujących ciążę. Studio 1:1 na Placu Na Groblach w centrum Krakowa.",
-      "provider": { "@type": "LocalBusiness", "@id": "https://www.samtrening.com/#business", "name": "SAMtrening" },
-      "areaServed": { "@type": "City", "name": "Kraków" },
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "PLN",
-        "price": "200",
-        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "200", "priceCurrency": "PLN", "unitText": "sesja 60 min" }
-      }
+      "url": "https://www.samtrening.com/zdrowa-ciaza/",
+      "provider": {
+        "@type": "ExerciseGym",
+        "@id": "https://www.samtrening.com/#business",
+        "name": "SAMtrening",
+        "url": "https://www.samtrening.com/"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Kraków"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Sesja treningu okołoporodowego 1:1",
+          "priceCurrency": "PLN",
+          "price": "200",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "priceCurrency": "PLN",
+            "price": "200",
+            "unitText": "sesja 60 min",
+            "minPrice": "200"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Sesja 2:1 — z partnerem lub koleżanką",
+          "priceCurrency": "PLN",
+          "price": "280",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "priceCurrency": "PLN",
+            "price": "280",
+            "unitText": "sesja 60 min dla dwóch osób",
+            "minPrice": "280"
+          }
+        }
+      ]
     },
     {
       "@type": "Person",
       "@id": "https://www.samtrening.com/zespol/#kasia",
       "name": "Katarzyna Samborska",
       "jobTitle": "Trenerka personalna, specjalistka treningu okołoporodowego",
-      "worksFor": { "@id": "https://www.samtrening.com/#business" },
+      "worksFor": {
+        "@id": "https://www.samtrening.com/#business"
+      },
       "alumniOf": "Akademia Wychowania Fizycznego w Krakowie",
       "description": "Absolwentka AWF Kraków, reprezentantka Kadry Polski na 400 m przez płotki, 13+ lat jako trenerka specjalizująca się w treningu kobiet w ciąży, po porodzie i pracy z mięśniami dna miednicy."
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://www.samtrening.com/" },
-        
-        { "@type": "ListItem", "position": 2, "name": "Zdrowa ciąża", "item": "https://www.samtrening.com/zdrowa-ciaza/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://www.samtrening.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Zdrowa ciąża",
+          "item": "https://www.samtrening.com/zdrowa-ciaza/"
+        }
       ]
     },
     {
       "@type": "FAQPage",
+      "@id": "https://www.samtrening.com/zdrowa-ciaza/#faq",
       "mainEntity": [
-        { "@type": "Question", "name": "Czy można ćwiczyć w 8. miesiącu ciąży?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Tak, pod warunkiem braku przeciwwskazań lekarskich. W 8. miesiącu pracujemy nad komfortem, mobilnością bioder i oddechem przygotowującym do porodu. Trening trwa krócej, w pozycjach odciążających kręgosłup." } },
-        { "@type": "Question", "name": "Kiedy można wrócić do ćwiczeń po porodzie?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Standardowo po 6-tygodniowej kontroli po porodzie naturalnym i po 12 tygodniach po cesarskim cięciu — zawsze po konsultacji z ginekologiem." } },
-        { "@type": "Question", "name": "Czy mogę ćwiczyć, jeśli nigdy wcześniej nie trenowałam?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Tak. Wiele kobiet zaczyna regularną aktywność dopiero w ciąży. Dostosowujemy intensywność do aktualnego stanu — nie ma za słabego startu." } }
+        {
+          "@type": "Question",
+          "name": "Czy można ćwiczyć w 8. miesiącu ciąży?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, pod warunkiem braku przeciwwskazań lekarskich i przy odpowiednio dobranej intensywności. W 8. miesiącu pracujemy głównie nad komfortem, mobilnością bioder i oddechem przygotowującym do porodu. Trening trwa krócej, ma charakter łagodny, a wiele ćwiczeń wykonujemy w pozycjach odciążających kręgosłup — na piłce, w klęku podpartym, w staniu z podparciem. Część moich klientek trenuje ze mną do samego porodu — ostatnia sesja na 3 dni przed porodem zdarzyła się już kilka razy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kiedy można wrócić do ćwiczeń po porodzie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standardowo po 6-tygodniowej kontroli po porodzie naturalnym i po 12 tygodniach po cesarskim cięciu — zawsze po konsultacji z ginekologiem lub położną. Pierwsze sesje to ocena stanu mięśni dna miednicy, rozstępu prostego brzucha i pracy oddechu. Nie zaczynamy od biegania, pompek czy brzuszków — to droga do kontuzji. Pełna odbudowa trwa zwykle 12 tygodni od startu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy mogę ćwiczyć, jeśli nigdy wcześniej nie trenowałam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Wiele kobiet w SAMtrening zaczyna regularną aktywność dopiero w ciąży. Dostosowujemy intensywność do twojego aktualnego stanu — nie ma „za słabego\" startu. Ważne tylko, żeby lekarz prowadzący nie miał przeciwwskazań. Drugi trymestr jest idealnym momentem, żeby zacząć, jeśli wcześniej nie ćwiczyłaś systematycznie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy pracujesz z kobietami po cesarskim cięciu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, to jedna z większych grup moich klientek w Krakowie. Po cesarskim cięciu pracujemy wolniej — zaczynamy od oddechu, delikatnej aktywacji mięśni głębokich i mobilizacji blizny. Powrót do pełnej aktywności zajmuje zwykle 4–6 miesięcy, czasem dłużej. Nie ścigamy się z kalendarzem — priorytetem jest bezpieczne, trwałe zdrowie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy sesja jest bezpieczna przy ciąży zagrożonej?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Przy ciąży z zaleceniem leżenia, łożysku przodującym, niewydolności szyjki lub innych przeciwwskazaniach medycznych treningu nie prowadzę — w takich sytuacjach zawsze przekierowuję do fizjoterapeutki uroginekologicznej lub proponuję łagodne ćwiczenia oddechowe pod kontrolą lekarza prowadzącego. Bezpieczeństwo twoje i dziecka jest zawsze priorytetem, nawet jeśli oznacza to wstrzymanie treningu na kilka miesięcy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gdzie dokładnie znajduje się studio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plac Na Groblach 23 w Krakowie — pięć minut pieszo od Wawelu, dziesięć minut od Rynku Głównego, siedem minut pieszo z Dębnik przez most Grunwaldzki. Najbliższy przystanek MPK: „Filharmonia\". W pobliżu kilka parkingów (Plac Na Groblach, Powiśle, parking podziemny pod ICE Kraków) — co bywa ważne w zaawansowanej ciąży."
+          }
+        }
       ]
     }
   ]
@@ -1502,7 +1590,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     <div class="footer__grid">
       <div class="footer__col">
         <h4>SAMtrening</h4>
-        <p>Kameralne studio treningu personalnego w centrum Krakowa. Plac Na Groblach 23, 30-101 Kraków.</p>
+        <p>Kameralne studio treningu personalnego w centrum Krakowa. Plac Na Groblach 23, 31-101 Kraków.</p>
         <div class="socials" aria-label="Media społecznościowe">
           <a href="https://www.facebook.com/samtrening/" target="_blank" rel="noopener" aria-label="Facebook">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.3c0-1 .2-1.3 1.1-1.3H18V0h-3.2C11.2 0 9 1.5 9 4.5V8z"/></svg>
@@ -1538,7 +1626,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <ul>
           <li><a href="tel:+48728385203">+48 728 385 203</a></li>
           <li><a href="mailto:biuro@samtrening.com">biuro@samtrening.com</a></li>
-          <li><span style="color:var(--ink-2);">Plac Na Groblach 23<br>30-101 Kraków</span></li>
+          <li><span style="color:var(--ink-2);">Plac Na Groblach 23<br>31-101 Kraków</span></li>
           <li><span style="color:var(--ink-2);">Pon–Niedz · 5:30–23:00</span></li>
         </ul>
       </div>

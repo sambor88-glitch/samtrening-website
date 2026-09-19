@@ -1,15 +1,14 @@
-# Konfiguracja GitLab CI/CD dla GitLab Pages
-# Ten plik mówi GitLabowi: "opublikuj wszystkie pliki jako statyczną stronę"
+# GitLab Pages — publikuje statyczny prototyp z katalogu prototype/.
+#
+# Prototyp jest archiwum designu z kwietnia 2026, nie kodem produkcyjnym.
+# Strona produkcyjna to WordPress z motywem z theme/ — patrz docs/wdrozenie-motywu.md.
 
 pages:
   stage: deploy
   script:
     - mkdir -p public
-    - cp -r *.html public/ 2>/dev/null || true
-    - cp -r blog public/ 2>/dev/null || true
-    - cp -r lokalizacje public/ 2>/dev/null || true
-    - cp -r docs public/ 2>/dev/null || true
-    - echo "Pliki skopiowane. Strona bedzie dostepna po zakonczeniu pipeline."
+    - cp -r prototype/. public/
+    - echo "Prototyp skopiowany do public/. Strona bedzie dostepna po zakonczeniu pipeline."
   artifacts:
     paths:
       - public

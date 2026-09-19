@@ -4,39 +4,90 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Trener Personalny Stare Miasto Kraków — SAMtrening | 5 min od Rynku</title>
-<meta name="description" content="Trener personalny na Starym Mieście w Krakowie. Studio 1:1 pięć minut od Wawelu, dziesięć od Rynku Głównego. Dla mieszkańców i gości hoteli.">
+<title>Trener Personalny Kraków Dębniki — SAMtrening | 7 min przez most</title>
+<meta name="description" content="Trener personalny dla mieszkańców Dębnik. Studio 1:1 siedem minut pieszo przez most Grunwaldzki. Kameralnie, od 5:30 do 23:00. Sprawdź ofertę.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.samtrening.com/trener-personalny-stare-miasto-krakow/">
+<link rel="canonical" href="https://www.samtrening.com/trener-personalny-krakow-debniki/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
-<meta property="og:title" content="Trener Personalny Stare Miasto Kraków — SAMtrening">
-<meta property="og:description" content="Studio 1:1 na Placu Na Groblach — w sercu Starego Miasta.">
-<meta property="og:url" content="https://www.samtrening.com/trener-personalny-stare-miasto-krakow/">
+<meta property="og:title" content="Trener Personalny Kraków Dębniki — SAMtrening">
+<meta property="og:description" content="Studio 1:1 dla mieszkańców Dębnik. 7 minut pieszo przez most Grunwaldzki.">
+<meta property="og:url" content="https://www.samtrening.com/trener-personalny-krakow-debniki/">
 
+<!-- Schema.org: Service (Dębniki) + BreadcrumbList — SW112233-71.
+     Bez FAQPage: strona nie ma widocznej sekcji FAQ. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://www.samtrening.com/trener-personalny-stare-miasto-krakow/#service",
-      "name": "Trener personalny Stare Miasto Kraków",
-      "description": "Studio treningu personalnego na Starym Mieście w Krakowie. 1:1 sesje na Placu Na Groblach, pięć minut od Wawelu.",
-      "provider": { "@type": "LocalBusiness", "@id": "https://www.samtrening.com/#business", "name": "SAMtrening" },
+      "@id": "https://www.samtrening.com/trener-personalny-krakow-debniki/#service",
+      "name": "Trener personalny Kraków Dębniki",
+      "serviceType": "Trening personalny 1:1",
+      "description": "Studio treningu personalnego dla mieszkańców Dębnik. Pieszo lub rowerem przez most Grunwaldzki w 7 minut.",
+      "url": "https://www.samtrening.com/trener-personalny-krakow-debniki/",
+      "provider": {
+        "@type": "ExerciseGym",
+        "@id": "https://www.samtrening.com/#business",
+        "name": "SAMtrening",
+        "url": "https://www.samtrening.com/"
+      },
       "areaServed": {
         "@type": "Place",
-        "name": "Stare Miasto, Kraków",
-        "containedInPlace": { "@type": "City", "name": "Kraków" }
+        "name": "Dębniki, Kraków",
+        "containedInPlace": {
+          "@type": "City",
+          "name": "Kraków"
+        }
       },
-      "offers": { "@type": "Offer", "priceCurrency": "PLN", "price": "200" }
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Programy dostępne dla mieszkańców Dębnik",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://www.samtrening.com/treningi-personalne/#service",
+              "name": "Trening personalny 1:1"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://www.samtrening.com/zdrowa-ciaza/#service",
+              "name": "Trening w ciąży i po porodzie"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://www.samtrening.com/e-trening/#service",
+              "name": "E-trening personalny online"
+            }
+          }
+        ]
+      }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://www.samtrening.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Stare Miasto Kraków", "item": "https://www.samtrening.com/trener-personalny-stare-miasto-krakow/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://www.samtrening.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Dębniki Kraków",
+          "item": "https://www.samtrening.com/trener-personalny-krakow-debniki/"
+        }
       ]
     }
   ]
@@ -48,7 +99,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
 
 <style>
-/* ═══ DESIGN SYSTEM — identyczny z landingiem Centrum ═══ */
+/* Design system — identyczny */
 :root {
   --bg: #0A0908; --bg-2: #131210; --bg-3: #1C1A17;
   --ink: #FAFAF7;
@@ -99,7 +150,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .btn .arrow { transition: transform 0.25s ease; }
 .btn:hover .arrow { transform: translateX(4px); }
 
-/* Header + Announcement (shared) */
 .announce {
   background: var(--accent); color: var(--bg);
   font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
@@ -116,22 +166,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   max-width: var(--container); margin: 0 auto; padding: 20px 40px;
   display: flex; justify-content: space-between; align-items: center; gap: 32px;
 }
-.logo {
-  font-family: var(--font-display); font-size: 26px; font-weight: 800;
-  letter-spacing: 0.04em; text-transform: uppercase;
-  display: flex; align-items: center; gap: 2px;
-}
+.logo { font-family: var(--font-display); font-size: 26px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; display: flex; align-items: center; gap: 2px; }
 .logo .dot { color: var(--accent); }
 .nav { display: flex; gap: 28px; list-style: none; }
-.nav a {
-  font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 8px 0; position: relative; transition: color 0.2s;
-}
+.nav a { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 0; position: relative; transition: color 0.2s; }
 .nav a:hover { color: var(--accent); }
-.nav a::after {
-  content: ""; position: absolute; left: 0; bottom: 0;
-  width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease;
-}
+.nav a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }
 .nav a:hover::after { width: 100%; }
 .header__cta { display: flex; align-items: center; gap: 12px; }
 .header__phone { font-family: var(--font-mono); font-size: 13px; color: var(--ink-2); transition: color 0.2s; }
@@ -151,53 +191,31 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s;
 }
 .header__btn:hover { background: var(--ink); }
-.burger {
-  display: none; width: 40px; height: 40px;
-  flex-direction: column; justify-content: center; gap: 5px; align-items: center;
-}
+.burger { display: none; width: 40px; height: 40px; flex-direction: column; justify-content: center; gap: 5px; align-items: center; }
 .burger span { width: 22px; height: 2px; background: var(--ink); transition: transform 0.3s, opacity 0.3s; }
 .burger[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .burger[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-.mobile-menu {
-  display: none; position: fixed; inset: 0; background: var(--bg); z-index: 49;
-  padding: 120px 40px 40px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
-}
+.mobile-menu { display: none; position: fixed; inset: 0; background: var(--bg); z-index: 49; padding: 120px 40px 40px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
 .mobile-menu.is-open { opacity: 1; pointer-events: auto; }
 .mobile-menu ul { list-style: none; }
 .mobile-menu li { border-bottom: 1px solid var(--line); }
-.mobile-menu a {
-  display: block; padding: 24px 0;
-  font-family: var(--font-display); font-size: 32px; font-weight: 700; text-transform: uppercase;
-}
-@media (max-width: 1024px) {
-  .nav { display: none; }
-  .header__phone { display: none; }
-  .burger { display: flex; }
-  .mobile-menu { display: block; }
-}
+.mobile-menu a { display: block; padding: 24px 0; font-family: var(--font-display); font-size: 32px; font-weight: 700; text-transform: uppercase; }
+@media (max-width: 1024px) { .nav { display: none; } .header__phone { display: none; } .burger { display: flex; } .mobile-menu { display: block; } }
 
 .breadcrumbs {
   padding: 24px 0; border-bottom: 1px solid var(--line);
   font-family: var(--font-mono); font-size: 11px;
   letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3);
 }
-.breadcrumbs__list {
-  display: flex; flex-wrap: wrap; gap: 8px; list-style: none;
-  max-width: var(--container); margin: 0 auto; padding: 0 40px;
-}
+.breadcrumbs__list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; max-width: var(--container); margin: 0 auto; padding: 0 40px; }
 .breadcrumbs__list a { transition: color 0.2s; }
 .breadcrumbs__list a:hover { color: var(--accent); }
-.breadcrumbs__list li:not(:last-child)::after {
-  content: "/"; margin-left: 8px; color: var(--ink-3); opacity: 0.5;
-}
+.breadcrumbs__list li:not(:last-child)::after { content: "/"; margin-left: 8px; color: var(--ink-3); opacity: 0.5; }
 .breadcrumbs__list li:last-child { color: var(--ink); }
 @media (max-width: 700px) { .breadcrumbs__list { padding: 0 20px; } }
 
-/* Landing Hero */
-.landing-hero {
-  padding: 80px 0 60px; border-bottom: 1px solid var(--line);
-}
+.landing-hero { padding: 80px 0 60px; border-bottom: 1px solid var(--line); }
 .landing-hero__inner {
   max-width: var(--container); margin: 0 auto; padding: 0 40px;
   display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px; align-items: end;
@@ -225,14 +243,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .landing-hero__stat .val .accent { color: var(--accent); }
 @media (max-width: 900px) { .landing-hero__inner { grid-template-columns: 1fr; gap: 40px; } }
 
-.intro-block {
-  max-width: 900px; margin: 0 auto;
-  padding: 80px 40px; border-bottom: 1px solid var(--line);
-}
-.intro-block p {
-  font-size: clamp(19px, 2.2vw, 26px); line-height: 1.4;
-  color: var(--ink); letter-spacing: -0.005em;
-}
+.intro-block { max-width: 900px; margin: 0 auto; padding: 80px 40px; border-bottom: 1px solid var(--line); }
+.intro-block p { font-size: clamp(19px, 2.2vw, 26px); line-height: 1.4; color: var(--ink); letter-spacing: -0.005em; }
 .intro-block p strong { color: var(--accent); font-weight: 600; font-style: italic; }
 .intro-block p a { color: var(--accent); border-bottom: 1px dotted; }
 
@@ -254,57 +266,51 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   .section { padding: 96px 0; }
 }
 
-/* ═══ UNIKALNE DLA STAREGO MIASTA: WALKING ROUTES (trasy spacerem) ═══ */
-.routes-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
-  background: var(--line); border: 1px solid var(--line);
+/* ═══ UNIKALNE DLA DĘBNIK: BRIDGE JOURNEY (3-step journey przez most) ═══ */
+.bridge-journey {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--line);
+  position: relative;
 }
-.route {
-  background: var(--bg); padding: 40px 32px;
-  display: flex; flex-direction: column; gap: 16px;
+.bridge-step {
+  padding: 48px 32px;
+  border-right: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 20px;
+  position: relative; overflow: hidden;
   transition: background 0.3s;
 }
-.route:hover { background: var(--bg-3); }
-.route__header {
-  display: flex; justify-content: space-between; align-items: start;
-  gap: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--line);
+.bridge-step:last-child { border-right: none; }
+.bridge-step:hover { background: var(--bg-3); }
+.bridge-step::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--accent);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
 }
-.route__time {
-  font-family: var(--font-display);
-  font-size: 48px; line-height: 0.9; font-weight: 800;
-  color: var(--accent); letter-spacing: -0.02em;
+.bridge-step:hover::before { transform: scaleX(1); }
+.bridge-step__num {
+  font-family: var(--font-display); font-size: 80px; line-height: 0.85;
+  font-weight: 800; letter-spacing: -0.03em;
+  -webkit-text-stroke: 2px var(--accent); color: transparent;
 }
-.route__time small {
-  display: block; font-family: var(--font-mono);
-  font-size: 10px; font-weight: 500; letter-spacing: 0.2em;
-  color: var(--ink-3); margin-top: 4px; text-transform: uppercase;
+.bridge-step h3 {
+  font-family: var(--font-display); font-size: 26px; font-weight: 700;
+  line-height: 1.1; text-transform: uppercase; letter-spacing: -0.01em;
 }
-.route h3 {
-  font-family: var(--font-display);
-  font-size: 26px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: -0.01em; line-height: 1.05;
-}
-.route__path {
-  font-family: var(--font-mono); font-size: 13px;
-  color: var(--ink-2); line-height: 1.7; letter-spacing: 0.02em;
-}
-.route__path .step {
-  display: flex; align-items: start; gap: 12px;
-  padding: 6px 0;
-}
-.route__path .step::before {
-  content: ""; width: 6px; height: 6px; background: var(--accent);
-  flex-shrink: 0; margin-top: 6px;
-}
-.route__path .step:last-child::before {
-  background: transparent; border: 2px solid var(--accent);
+.bridge-step h3 .accent { color: var(--accent); }
+.bridge-step p { font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+.bridge-step .time {
+  margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line);
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);
 }
 
-@media (max-width: 700px) {
-  .routes-grid { grid-template-columns: 1fr; }
+@media (max-width: 900px) {
+  .bridge-journey { grid-template-columns: 1fr; }
+  .bridge-step { border-right: none; border-bottom: 1px solid var(--line); }
+  .bridge-step:last-child { border-bottom: none; }
 }
 
-/* Reasons (3 columns) */
+/* Reasons */
 .reasons-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
   background: var(--line); border: 1px solid var(--line);
@@ -316,45 +322,31 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 .reason:hover { background: var(--bg-3); }
 .reason__num {
-  font-family: var(--font-display);
-  font-size: clamp(72px, 9vw, 128px); line-height: 0.85;
-  font-weight: 800; letter-spacing: -0.03em; color: var(--accent);
+  font-family: var(--font-display); font-size: clamp(72px, 9vw, 128px);
+  line-height: 0.85; font-weight: 800; letter-spacing: -0.03em; color: var(--accent);
 }
 .reason h3 {
-  font-family: var(--font-display);
-  font-size: 22px; font-weight: 700; line-height: 1.1;
-  text-transform: uppercase; letter-spacing: -0.01em;
+  font-family: var(--font-display); font-size: 22px; font-weight: 700;
+  line-height: 1.1; text-transform: uppercase; letter-spacing: -0.01em;
 }
 .reason p { font-size: 15px; line-height: 1.55; color: var(--ink-2); }
 @media (max-width: 900px) { .reasons-grid { grid-template-columns: 1fr; } }
 
-/* Services (3 columns) */
-.services-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  border: 1px solid var(--line);
-}
+/* Services */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); }
 .service {
-  padding: 40px 32px;
-  border-right: 1px solid var(--line);
+  padding: 40px 32px; border-right: 1px solid var(--line);
   display: flex; flex-direction: column; gap: 16px;
   transition: background 0.3s; min-height: 260px;
 }
 .service:last-child { border-right: none; }
 .service:hover { background: var(--bg-3); }
-.service__badge {
-  font-family: var(--font-mono); font-size: 11px;
-  letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);
-}
-.service h3 {
-  font-family: var(--font-display);
-  font-size: 28px; font-weight: 700; line-height: 0.95;
-  text-transform: uppercase; letter-spacing: -0.01em;
-}
+.service__badge { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+.service h3 { font-family: var(--font-display); font-size: 28px; font-weight: 700; line-height: 0.95; text-transform: uppercase; letter-spacing: -0.01em; }
 .service p { font-size: 14px; line-height: 1.55; color: var(--ink-2); margin-bottom: auto; }
 .service__link {
   margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line);
-  font-size: 12px; font-weight: 700;
-  letter-spacing: 0.15em; text-transform: uppercase;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
   display: inline-flex; align-items: center; gap: 8px; transition: color 0.2s;
 }
 .service:hover .service__link { color: var(--accent); }
@@ -366,106 +358,50 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   .service:last-child { border-bottom: none; }
 }
 
-.testimonials-strip {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
-  background: var(--line); border: 1px solid var(--line);
-}
-.testimonial {
-  background: var(--bg); padding: 40px;
-  display: flex; flex-direction: column; gap: 20px;
-}
+.testimonials-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.testimonial { background: var(--bg); padding: 40px; display: flex; flex-direction: column; gap: 20px; }
 .testimonial__stars { display: flex; gap: 2px; color: var(--accent); font-size: 18px; }
-.testimonial__text {
-  font-family: var(--font-display);
-  font-size: 22px; font-weight: 500; line-height: 1.25;
-  letter-spacing: -0.005em; flex: 1;
-}
+.testimonial__text { font-family: var(--font-display); font-size: 22px; font-weight: 500; line-height: 1.25; letter-spacing: -0.005em; flex: 1; }
 .testimonial__text::before { content: "„"; color: var(--accent); }
 .testimonial__text::after { content: """; color: var(--accent); }
-.testimonial__author {
-  display: flex; justify-content: space-between; align-items: center;
-  padding-top: 16px; border-top: 1px solid var(--line);
-}
-.testimonial__name {
-  font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
-}
-.testimonial__role {
-  font-family: var(--font-mono); font-size: 10px;
-  letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase;
-}
+.testimonial__author { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid var(--line); }
+.testimonial__name { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.testimonial__role { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase; }
 @media (max-width: 700px) { .testimonials-strip { grid-template-columns: 1fr; } }
 
-.location-strip {
-  display: grid; grid-template-columns: 1fr 1.2fr;
-  border: 1px solid var(--line);
-}
-.location-strip__info {
-  padding: 48px; background: var(--bg-2);
-  display: flex; flex-direction: column; gap: 32px;
-}
-.location-strip__info h3 {
-  font-family: var(--font-display);
-  font-size: clamp(32px, 3.5vw, 48px); line-height: 0.95;
-  font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em;
-}
+.location-strip { display: grid; grid-template-columns: 1fr 1.2fr; border: 1px solid var(--line); }
+.location-strip__info { padding: 48px; background: var(--bg-2); display: flex; flex-direction: column; gap: 32px; }
+.location-strip__info h3 { font-family: var(--font-display); font-size: clamp(32px, 3.5vw, 48px); line-height: 0.95; font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; }
 .location-strip__info h3 .accent { color: var(--accent); }
 .nap-block { border-top: 1px solid var(--line); padding-top: 24px; }
-.nap-row {
-  display: grid; grid-template-columns: 100px 1fr;
-  gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line);
-  font-size: 14px; align-items: center;
-}
+.nap-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 14px; align-items: center; }
 .nap-row:last-child { border-bottom: none; }
 .nap-row .key { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); }
 .nap-row .val { font-weight: 500; }
 .nap-row .val a { border-bottom: 1px dotted var(--ink-3); }
 .nap-row .val a:hover { color: var(--accent); border-color: var(--accent); }
-.location-strip__map {
-  background: var(--bg-3); min-height: 420px; position: relative;
-}
-.location-strip__map iframe {
-  width: 100%; height: 100%; border: 0;
-  filter: grayscale(0.4) contrast(1.1) invert(0.92) hue-rotate(180deg);
-}
+.location-strip__map { background: var(--bg-3); min-height: 420px; position: relative; }
+.location-strip__map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.4) contrast(1.1) invert(0.92) hue-rotate(180deg); }
 @media (max-width: 900px) {
   .location-strip { grid-template-columns: 1fr; }
   .location-strip__info { padding: 32px 24px; }
   .location-strip__map { min-height: 320px; }
 }
 
-.cta-final {
-  padding: 128px 0; text-align: center;
-  border-top: 1px solid var(--line);
-}
-.cta-final__inner {
-  max-width: 900px; margin: 0 auto; padding: 0 40px;
-  display: flex; flex-direction: column; gap: 32px; align-items: center;
-}
-.cta-final h2 {
-  font-family: var(--font-display);
-  font-size: clamp(48px, 7vw, 96px); line-height: 0.9;
-  font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase;
-}
+.cta-final { padding: 128px 0; text-align: center; border-top: 1px solid var(--line); }
+.cta-final__inner { max-width: 900px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 32px; align-items: center; }
+.cta-final h2 { font-family: var(--font-display); font-size: clamp(48px, 7vw, 96px); line-height: 0.9; font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; }
 .cta-final h2 .accent { color: var(--accent); }
 .cta-final p { font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 52ch; }
 .cta-final__buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
 
 .footer { background: #000; padding: 80px 0 32px; border-top: 1px solid var(--line); }
 .footer__top { max-width: var(--container); margin: 0 auto; padding: 0 40px; }
-.footer__big {
-  font-family: var(--font-display);
-  font-size: clamp(64px, 16vw, 240px); line-height: 0.85;
-  font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase;
-  margin-bottom: 64px;
-  display: flex; justify-content: space-between; align-items: end;
-  border-bottom: 1px solid var(--line); padding-bottom: 32px; gap: 32px;
-}
+.footer__big { font-family: var(--font-display); font-size: clamp(64px, 16vw, 240px); line-height: 0.85; font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; margin-bottom: 64px; display: flex; justify-content: space-between; align-items: end; border-bottom: 1px solid var(--line); padding-bottom: 32px; gap: 32px; }
 .footer__big .accent { color: var(--accent); font-style: italic; }
 .footer__big .arrow { font-size: clamp(48px, 8vw, 120px); transition: transform 0.3s; }
 .footer__big a:hover .arrow { transform: translate(6px, -6px); }
-.footer__grid {
-  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 64px;
-}
+.footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 64px; }
 .footer__col h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 20px; }
 .footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .footer__col a { font-size: 14px; color: var(--ink-2); transition: color 0.2s; }
@@ -475,23 +411,13 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .socials a { width: 40px; height: 40px; border: 1px solid var(--line); display: grid; place-items: center; transition: all 0.25s; }
 .socials a:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
 .socials svg { width: 18px; height: 18px; }
-.footer__bottom {
-  max-width: var(--container); margin: 0 auto; padding: 24px 40px 0;
-  border-top: 1px solid var(--line);
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 16px;
-  font-family: var(--font-mono); font-size: 11px;
-  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3);
-}
+.footer__bottom { max-width: var(--container); margin: 0 auto; padding: 24px 40px 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3); }
 @media (max-width: 900px) { .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; } .footer__big { font-size: 72px; flex-direction: column; align-items: flex-start; } }
 @media (max-width: 500px) { .footer__grid { grid-template-columns: 1fr; } }
 
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-  .reveal { opacity: 1; transform: none; }
-}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } .reveal { opacity: 1; transform: none; } }
 </style>
 </head>
 
@@ -597,8 +523,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 @media (max-width: 500px) { .footer__grid { grid-template-columns: 1fr !important; } }
 
 /* ═══ LOKALIZACJA STRIP ═══ */
-.route p { font-size: 13px !important; line-height: 1.5 !important; color: var(--ink-2) !important; padding: 0 24px 24px !important; }
-
 .location-strip {
   display: grid !important; grid-template-columns: 1fr 1.2fr !important;
   border: 1px solid var(--line) !important;
@@ -649,7 +573,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 <div class="announce">
   <strong>Studio otwarte</strong> · Codziennie 5:30 — 23:00
   <span class="sep">●</span>
-  Plac Na Groblach 23, Stare Miasto
+  Plac Na Groblach 23 · 7 min z Dębnik przez most
   <span class="sep">●</span>
   <strong>+48 728 385 203</strong>
 </div>
@@ -702,7 +626,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   <ol class="breadcrumbs__list">
     <li><a href="../index.html">Strona główna</a></li>
     <li><a href="../kontakt.html">Lokalizacje</a></li>
-    <li>Stare Miasto</li>
+    <li>Dębniki</li>
   </ol>
 </nav>
 
@@ -712,176 +636,132 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   <section class="landing-hero" aria-labelledby="page-title">
     <div class="landing-hero__inner">
       <div>
-        <div class="eyebrow eyebrow--accent">Lokalizacja · Stare Miasto</div>
+        <div class="eyebrow eyebrow--accent">Lokalizacja · Dębniki</div>
         <h1 id="page-title" style="margin-top: 24px;">
-          <span class="outline">Trener</span><br>
-          <span class="outline">personalny</span><br>
-          Stare <span class="accent">Miasto.</span>
+          <span class="outline">Z Dębnik</span><br>
+          przez <span class="accent">most.</span><br>
+          <span class="outline">Siedem minut.</span>
         </h1>
         <p class="landing-hero__sub">
-          Jeśli mieszkasz na Starym Mieście, jesteś tu służbowo, albo po prostu
-          cenisz sobie cichą, kameralną przestrzeń w sercu Krakowa — nasze
-          studio jest dokładnie dla ciebie. Plac Na Groblach 23, tuż pod Wawelem.
-          Pieszo z Rynku, Floriańskiej, Grodzkiej, Kazimierza — wszędzie w kwadrans.
+          Mieszkasz w Dębnikach? Nasze studio jest bliżej niż się wydaje.
+          Siedem minut pieszo przez most Grunwaldzki, pięć rowerem.
+          Tuż pod Wawelem, w kameralnej przestrzeni 1:1 — bez tłumów,
+          bez czekania, bez spiny. Od 5:30 do 23:00, także w weekendy.
         </p>
         <div class="landing-hero__cta">
           <a href="#cta" class="btn btn--primary">
             Umów konsultację <span class="arrow">→</span>
           </a>
-          <a href="#trasy" class="btn btn--ghost">Zobacz trasy dojścia</a>
+          <a href="#droga" class="btn btn--ghost">Zobacz drogę przez most</a>
         </div>
       </div>
 
       <aside class="landing-hero__stats">
         <div class="landing-hero__stat">
-          <div class="key">Adres</div>
-          <div class="val">Plac Na <span class="accent">Groblach 23</span></div>
+          <div class="key">Odległość</div>
+          <div class="val"><span class="accent">7 min</span> pieszo</div>
         </div>
         <div class="landing-hero__stat">
-          <div class="key">Od Rynku</div>
-          <div class="val">10 min pieszo</div>
+          <div class="key">Rowerem</div>
+          <div class="val">5 min</div>
         </div>
         <div class="landing-hero__stat">
-          <div class="key">Od Floriańskiej</div>
-          <div class="val">13 min</div>
+          <div class="key">Autem</div>
+          <div class="val">8 min + parking</div>
         </div>
         <div class="landing-hero__stat">
-          <div class="key">Od Kazimierza</div>
-          <div class="val">15 min</div>
+          <div class="key">Most</div>
+          <div class="val"><span class="accent">Grunwaldzki</span></div>
         </div>
         <div class="landing-hero__stat">
-          <div class="key">Format</div>
-          <div class="val"><span class="accent">1:1</span> · dyskretnie</div>
+          <div class="key">Godziny</div>
+          <div class="val">5:30 — 23:00</div>
         </div>
       </aside>
     </div>
   </section>
 
-  <!-- INTRO specyficzny dla STAREGO MIASTA -->
+  <!-- INTRO specyficzny dla DĘBNIK -->
   <div class="intro-block reveal">
     <p>
-      Stare Miasto Krakowa to nie tylko pocztówka z fotografiami. Tu mieszka kilkanaście
-      tysięcy osób, tu stacjonują goście hoteli butikowych, tu prowadzą praktykę lekarze
-      z zabiegowych klinik prywatnych i prawnicy z najstarszych kancelarii w mieście.
-      <strong>SAMtrening to jedyne studio treningu personalnego 1:1</strong>
-      w tej okolicy — nie siłownia, nie klub fitness, tylko prywatne studio
-      z kameralną atmosferą, pięć minut pieszo od Wawelu.
+      Wielu mieszkańców Dębnik patrzy na drugi brzeg Wisły jak na osobny świat —
+      „tam Stare Miasto, tutaj dom". Prawda jest taka, że <strong>SAMtrening
+      jest bliżej niż jakakolwiek siłownia w Dębnikach</strong>. Siedem minut
+      przez most Grunwaldzki, pięć rowerem bulwarami. Jeśli mieszkasz przy
+      Rondzie Grunwaldzkim, Zielnym, albo w okolicach Salwatora — jesteśmy
+      twoim najbliższym studio personalnym 1:1 w Krakowie.
     </p>
   </div>
 
-  <!-- TRASY DOJŚCIA — unikalne dla Starego Miasta -->
-  <section class="section" id="trasy" aria-labelledby="routes-title">
+  <!-- UNIKALNA SEKCJA: BRIDGE JOURNEY — droga przez most -->
+  <section class="section" id="droga" aria-labelledby="journey-title">
     <div class="container">
       <div class="section-head reveal">
         <div>
-          <div class="eyebrow">01 — Odległości</div>
-          <h2 id="routes-title">Od <span class="accent">5</span><br>do 18 minut.<br>Pieszo.</h2>
+          <div class="eyebrow">01 — Droga</div>
+          <h2 id="journey-title">Z Dębnik<br>do studia.<br><span class="accent">Trzy kroki.</span></h2>
         </div>
         <p>
-          Mieszkasz na Starym Mieście, pracujesz w centrum lub zatrzymałeś się
-          w hotelu — jesteśmy w zasięgu krótkiego spaceru. Plac Na Groblach 23,
-          budynek stadionu, wejście na wysokości Nowodworka.
+          Najpopularniejsza trasa z Dębnik przez most Grunwaldzki. Idealna pod
+          rozgrzewkę przed treningiem i dekompresję w drodze powrotnej.
+          Widok na Wawel po drodze — gratis.
         </p>
       </div>
 
-      <div class="routes-grid reveal">
-        <article class="route">
-          <div class="route__header">
-            <div><h3>Wawel</h3></div>
-            <div class="route__time">5<small>minut</small></div>
-          </div>
-          <p>Tuż pod wzgórzem wawelskim. Schodząc od Smoka Wawelskiego — prosto do studia.</p>
+      <div class="bridge-journey reveal">
+        <article class="bridge-step">
+          <div class="bridge-step__num">01</div>
+          <h3>Rondo<br>Grunwaldzkie</h3>
+          <p>Start z okolic Ronda Grunwaldzkiego. Jeśli mieszkasz w okolicy Kapelanki, Barskiej lub Zielnej — tu jest twoja baza wypadowa. Skieruj się na most Grunwaldzki.</p>
+          <div class="time">Start · 0 min</div>
         </article>
-
-        <article class="route">
-          <div class="route__header">
-            <div><h3>Rynek<br>Główny</h3></div>
-            <div class="route__time">10<small>minut</small></div>
-          </div>
-          <p>Bracką, Franciszkańską, Straszewskiego. Kancelarie, biura, Sukiennice — wszystko w zasięgu spaceru.</p>
+        <article class="bridge-step">
+          <div class="bridge-step__num">02</div>
+          <h3>Most<br><span class="accent">Grunwaldzki</span></h3>
+          <p>Przejście przez most zajmuje 3 minuty spokojnego kroku. Z mostu masz widok na Wawel z perspektywy, którą zna tylko mały procent mieszkańców Krakowa. Najlepsza rozgrzewka w mieście.</p>
+          <div class="time">Most · 3 min</div>
         </article>
-
-        <article class="route">
-          <div class="route__header">
-            <div><h3>Plac<br>Szczepański</h3></div>
-            <div class="route__time">12<small>minut</small></div>
-          </div>
-          <p>Jagiellońską do Straszewskiego. Agencje, kancelarie, niezależne firmy doradcze.</p>
-        </article>
-
-        <article class="route">
-          <div class="route__header">
-            <div><h3>Floriańska<br>/ Pijarska</h3></div>
-            <div class="route__time">15<small>minut</small></div>
-          </div>
-          <p>Przez Rynek i Bracką. Hotele, biura korporacyjne, siedziby banków w Starym Mieście.</p>
-        </article>
-
-        <article class="route">
-          <div class="route__header">
-            <div><h3>Karmelicka<br>/ Długa</h3></div>
-            <div class="route__time">17<small>minut</small></div>
-          </div>
-          <p>Dunajewskiego i Straszewskiego. Gabinety lekarskie, uczelnie, mniejsze biura.</p>
-        </article>
-
-        <article class="route">
-          <div class="route__header">
-            <div><h3>Kazimierz<br>(Plac Nowy)</h3></div>
-            <div class="route__time">18<small>minut</small></div>
-          </div>
-          <p>Krakowską i Stradomską wzdłuż I obwodnicy. Mieszkańcy Kazimierza, biura kreatywne.</p>
-        </article>
-
-        <article class="route">
-          <div class="route__header">
-            <div><h3>ICE<br>Kraków</h3></div>
-            <div class="route__time">10<small>minut</small></div>
-          </div>
-          <p>Centrum kongresowe, biura przy Konopnickiej. Bulwarami wiślanymi do Placu Na Groblach.</p>
-        </article>
-
-        <article class="route">
-          <div class="route__header">
-            <div><h3>Dworzec<br>Główny</h3></div>
-            <div class="route__time">20<small>minut</small></div>
-          </div>
-          <p>Pieszo przez Planty lub tramwajem do przystanku Filharmonia (4 min pieszo od studia).</p>
+        <article class="bridge-step">
+          <div class="bridge-step__num">03</div>
+          <h3>Plac Na<br><span class="accent">Groblach 23</span></h3>
+          <p>Po zejściu z mostu kierujesz się w lewo, wzdłuż Wisły, potem ul. Zwierzyniecką do Placu Na Groblach. Studio jest po prawej — pod adresem 23. Jesteś na miejscu.</p>
+          <div class="time">Meta · 7 min</div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- 3 POWODY (różne niż Centrum) -->
+  <!-- 3 POWODY (różne niż Centrum i Stare Miasto) -->
   <section class="section section--alt" aria-labelledby="reasons-title">
     <div class="container">
       <div class="section-head reveal">
         <div>
-          <div class="eyebrow">02 — Dlaczego tu</div>
-          <h2 id="reasons-title">Prywatność<br>bez<br><span class="accent">tłumów.</span></h2>
+          <div class="eyebrow">02 — Dlaczego przejść most</div>
+          <h2 id="reasons-title">Warto<br>przejść<br>na <span class="accent">drugą stronę.</span></h2>
         </div>
         <p>
-          Stare Miasto to ścisk, tłumy turystów, trudny parking. Ale nasze studio
-          jest na bocznym Placu Na Groblach — w ciszy, z widokiem na Wawel i parkiem
-          naprzeciwko. Trzy rzeczy, które doceniają mieszkańcy Starego Miasta.
+          Jest kilka siłowni w Dębnikach. Są kluby fitness. Ale studio
+          treningu personalnego 1:1, z trenerami po sporcie wyczynowym —
+          na tym brzegu nie ma. Trzy konkretne powody, dla których mieszkańcy
+          Dębnik wybierają nas.
         </p>
       </div>
 
       <div class="reasons-grid reveal">
         <div class="reason">
           <div class="reason__num">01</div>
-          <h3>Cicha okolica<br>w centrum</h3>
-          <p>Plac Na Groblach jest na uboczu turystycznego ruchu. Po zamknięciu bram Wawelu o 17:00 okolica robi się wyjątkowo spokojna — idealnie pod wieczorne treningi.</p>
+          <h3>1:1 — czego<br>nie znajdziesz w Dębnikach</h3>
+          <p>W Dębnikach masz siłownie z masówką i kluby fitness z grupówkami. My jesteśmy jedynym studio 1:1 w zasięgu 15 minut pieszo. Trener tylko twój, przez pełne 60 minut. Żadnych „chwileczkę, kończę z panią obok".</p>
         </div>
         <div class="reason">
           <div class="reason__num">02</div>
-          <h3>Dyskrecja dla<br>rozpoznawalnych</h3>
-          <p>Stare Miasto to miejsce, gdzie wielu naszych klientów — lekarze, prawnicy, osoby publiczne — zna się z widzenia. Studio 1:1 oznacza, że nie spotkasz znajomego z kancelarii w szatni. Wchodzisz, trenujesz, wychodzisz. Bez towarzystwa.</p>
+          <h3>Most jako<br>część treningu</h3>
+          <p>Przejście mostem Grunwaldzkim tam i z powrotem to 14 minut spaceru — idealna rozgrzewka i dekompresja. Mieszkańcy Dębnik używają tego jak naturalnego elementu rutyny. Zero straconego czasu na dojazd.</p>
         </div>
         <div class="reason">
           <div class="reason__num">03</div>
-          <h3>Goście hoteli<br>mile widziani</h3>
-          <p>Część naszych klientów e-treningu zatrzymuje się w Krakowie kilka razy w roku służbowo. Wpadają do studio na sesję stacjonarną — większość hoteli Starego Miasta jest w 10-15 min pieszo. Plan się utrzymuje niezależnie od podróży.</p>
+          <h3>Bliżej niż<br>wiele miejsc w Dębnikach</h3>
+          <p>Jeśli mieszkasz przy Rondzie Grunwaldzkim lub Salwatorze — jesteś do nas bliżej niż do siłowni na Kapelance albo na Zielnej. Sprawdź na mapie: 7 minut to realnie mniej niż dojazd do większości klubów w Dębnikach.</p>
         </div>
       </div>
     </div>
@@ -893,7 +773,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
       <div class="section-head reveal">
         <div>
           <div class="eyebrow">03 — Oferta</div>
-          <h2 id="services-title">Trzy<br>programy.<br><span class="accent">Na Starym Mieście.</span></h2>
+          <h2 id="services-title">Trzy<br>programy.<br><span class="accent">Siedem minut stąd.</span></h2>
         </div>
         <p>
           Wszystkie programy dostępne w studio na Placu Na Groblach. Podczas
@@ -906,7 +786,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <article class="service">
           <div class="service__badge">01 / Studio</div>
           <h3>Trening<br>personalny</h3>
-          <p>1:1 w kameralnym studio. Dla mieszkańców Starego Miasta, gości hoteli, osób na delegacji. Dyskretnie i konkretnie.</p>
+          <p>1:1 w studio. Dla mieszkańców Dębnik, Salwatora, Ludwinowa. 7 minut pieszo przez most, zero korków, zero parkingu.</p>
           <a href="../treningi-personalne.html" class="service__link">
             Sprawdź ofertę <span class="arrow">→</span>
           </a>
@@ -914,7 +794,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <article class="service">
           <div class="service__badge">02 / Ciąża</div>
           <h3>Zdrowa<br>ciąża</h3>
-          <p>Trening okołoporodowy z Kasią Samborską. Dla mam ze Starego Miasta — nie musisz jechać na Wzgórza Krzesławickie.</p>
+          <p>Trening okołoporodowy z Kasią Samborską. Dla mam z Dębnik — 7 minut pieszo z Ronda Grunwaldzkiego, zamiast 30 minut na Ruczaj.</p>
           <a href="../zdrowa-ciaza.html" class="service__link">
             Sprawdź ofertę <span class="arrow">→</span>
           </a>
@@ -922,7 +802,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <article class="service">
           <div class="service__badge">03 / Online</div>
           <h3>E-<br>trening</h3>
-          <p>Dla osób, które dużo podróżują, ale mają bazę w Krakowie. Plan działa niezależnie od tego, czy dziś jesteś w Krakowie, czy nie.</p>
+          <p>Dla mieszkańców Dębnik, którzy pracują z domu lub dużo podróżują. Plan, chat z trenerem i sesje online — wszystko przez platformę.</p>
           <a href="../e-trening.html" class="service__link">
             Sprawdź ofertę <span class="arrow">→</span>
           </a>
@@ -931,36 +811,35 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     </div>
   </section>
 
-  <!-- OPINIE — klienci ze Starego Miasta -->
+  <!-- OPINIE — klienci z Dębnik -->
   <section class="section section--alt" aria-labelledby="reviews-title">
     <div class="container">
       <div class="section-head reveal">
         <div>
           <div class="eyebrow eyebrow--accent">04 — Opinie</div>
-          <h2 id="reviews-title">Klienci ze<br><span class="accent">Starego Miasta.</span></h2>
+          <h2 id="reviews-title">Klienci<br>z <span class="accent">Dębnik.</span></h2>
         </div>
         <p>
-          Dwie opinie osób, które mieszkają lub pracują na Starym Mieście.
-          Pełna lista opinii (44 recenzje, ocena 4,9/5) na naszym profilu
-          Google Business.
+          Dwie opinie osób mieszkających po drugiej stronie Wisły. Pełna lista
+          opinii (44 recenzje, ocena 4,9/5) na naszym profilu Google Business.
         </p>
       </div>
 
       <div class="testimonials-strip reveal">
         <div class="testimonial">
           <div class="testimonial__stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
-          <p class="testimonial__text">Mieszkam przy ul. Grodzkiej. SAMtrening to dla mnie 8 minut pieszo — idealnie po pracy. W studio jest spokojnie, profesjonalnie i po ludzku. Trenuję już ponad 2 lata.</p>
+          <p class="testimonial__text">Mieszkam w Dębnikach blisko Ronda Grunwaldzkiego. Chodziłam na siłownię 25 minut w drugą stronę, przypadkowo odkryłam SAMtrening 7 minut przez most. Zmiana życia.</p>
           <div class="testimonial__author">
-            <div class="testimonial__name">Aleksander G.</div>
-            <div class="testimonial__role">Mieszkaniec · Grodzka</div>
+            <div class="testimonial__name">Asia W.</div>
+            <div class="testimonial__role">Dębniki · Rondo Grunwaldzkie</div>
           </div>
         </div>
         <div class="testimonial">
           <div class="testimonial__stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
-          <p class="testimonial__text">Jako lekarz prowadzący praktykę na Starym Mieście doceniam dyskrecję. Zero sąsiadów z kliniki na bieżni obok. Kasia jest świetną trenerką, Maciek — zawodowiec starej daty.</p>
+          <p class="testimonial__text">Jako mieszkaniec Salwatora doceniam, że to dla mnie najbliższe studio personalne. Jeżdżę rowerem 6 minut, zostawiam na stojaku przy wejściu. Po treningu prysznic, potem prosto do pracy.</p>
           <div class="testimonial__author">
-            <div class="testimonial__name">Tomasz W.</div>
-            <div class="testimonial__role">Lekarz · Stare Miasto</div>
+            <div class="testimonial__name">Bartosz K.</div>
+            <div class="testimonial__role">Salwator · rower</div>
           </div>
         </div>
       </div>
@@ -976,9 +855,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
           <h2 id="location-title">Plac Na<br>Groblach <span class="accent">23.</span></h2>
         </div>
         <p>
-          Miejsce na uboczu turystycznego ruchu, ale w samym sercu Starego Miasta.
-          Pod murami Wawelu, obok Plant, 10 minut od Rynku. Parking na miejscu,
-          MPK pod studiem, każdy punkt Starego Miasta w zasięgu spaceru.
+          Druga strona Wisły niż Dębniki, ale w zasięgu spaceru. Między Wawelem
+          a bulwarami wiślanymi, obok Plant. Jeśli już znasz most Grunwaldzki —
+          znasz też drogę do nas.
         </p>
       </div>
 
@@ -988,11 +867,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
           <div class="nap-block">
             <div class="nap-row">
               <div class="key">Adres</div>
-              <div class="val">Plac Na Groblach 23, 30-101 Kraków</div>
+              <div class="val">Plac Na Groblach 23, 31-101 Kraków</div>
             </div>
             <div class="nap-row">
-              <div class="key">Dzielnica</div>
-              <div class="val">Stare Miasto · Kraków Centrum</div>
+              <div class="key">Z Dębnik</div>
+              <div class="val">7 min pieszo / 5 min rowerem</div>
             </div>
             <div class="nap-row">
               <div class="key">Telefon</div>
@@ -1007,12 +886,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
               <div class="val">Pon–Niedz · 5:30 — 23:00</div>
             </div>
             <div class="nap-row">
-              <div class="key">Parking</div>
-              <div class="val">Plac Na Groblach (płatny dla klientów)</div>
+              <div class="key">Rower</div>
+              <div class="val">Stojak przy wejściu / Veturilo</div>
             </div>
             <div class="nap-row">
-              <div class="key">MPK</div>
-              <div class="val">Autobus 124, 194 · Tramwaj 2, 13, 18, 20 (Filharmonia)</div>
+              <div class="key">Parking</div>
+              <div class="val">Plac Na Groblach (płatny dla klientów)</div>
             </div>
           </div>
           <a href="../kontakt.html" class="btn btn--ghost" style="align-self: flex-start;">
@@ -1027,7 +906,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Mapa SAMtrening — Plac Na Groblach 23, Stare Miasto Kraków">
+            title="Mapa SAMtrening — 7 minut pieszo z Dębnik przez most Grunwaldzki">
           </iframe>
         </div>
       </div>
@@ -1038,10 +917,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   <section class="cta-final" id="cta" aria-labelledby="cta-title">
     <div class="cta-final__inner">
       <div class="eyebrow eyebrow--accent">Następny krok</div>
-      <h2 id="cta-title">Trenuj<br>na <span class="accent">Starym</span><br>Mieście.</h2>
+      <h2 id="cta-title">Przejdź<br>przez <span class="accent">most.</span><br>Zacznij trening.</h2>
       <p>
-        Pierwsza konsultacja to 75 minut. Przyjdź z Rynku, Floriańskiej
-        albo Kazimierza — dojście w kwadrans. Bez zobowiązań, bez presji.
+        Pierwsza konsultacja to 75 minut. Z Dębnik dojście w 7 minut pieszo
+        albo 5 rowerem. Żadnej wymówki.
       </p>
       <div class="cta-final__buttons">
         <a href="../index.html#kontakt" class="btn btn--primary">
@@ -1062,7 +941,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     <div class="footer__grid">
       <div class="footer__col">
         <h4>SAMtrening</h4>
-        <p>Kameralne studio treningu personalnego w centrum Krakowa. Plac Na Groblach 23, 30-101 Kraków.</p>
+        <p>Kameralne studio treningu personalnego w centrum Krakowa. Plac Na Groblach 23, 31-101 Kraków.</p>
         <div class="socials" aria-label="Media społecznościowe">
           <a href="https://www.facebook.com/samtrening/" target="_blank" rel="noopener" aria-label="Facebook">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.3c0-1 .2-1.3 1.1-1.3H18V0h-3.2C11.2 0 9 1.5 9 4.5V8z"/></svg>
@@ -1096,7 +975,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
         <ul>
           <li><a href="tel:+48728385203">+48 728 385 203</a></li>
           <li><a href="mailto:biuro@samtrening.com">biuro@samtrening.com</a></li>
-          <li><span style="color:var(--ink-2);">Plac Na Groblach 23<br>30-101 Kraków</span></li>
+          <li><span style="color:var(--ink-2);">Plac Na Groblach 23<br>31-101 Kraków</span></li>
           <li><span style="color:var(--ink-2);">Pon–Niedz · 5:30–23:00</span></li>
         </ul>
       </div>

@@ -1,0 +1,42 @@
+# GitHub Pages — publikuje statyczny prototyp z katalogu prototype/.
+#
+# Domyślnie NIE ROBI NIC. Żeby włączyć:
+#   1. Settings → Pages → Source: „GitHub Actions"
+#   2. Settings → Secrets and variables → Actions → Variables → nowa zmienna
+#      PAGES_ENABLED = true
+#
+# Bez tej zmiennej workflow kończy się od razu, więc nie zapala CI na czerwono
+# w repozytorium, które Pages ma wyłączone.
+
+name: Pages (prototyp)
+
+on:
+  push:
+    branches: [main]
+    paths: ['prototype/**', '.github/workflows/pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: vars.PAGES_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: prototype
+      - id: deployment
+        uses: actions/deploy-pages@v4
