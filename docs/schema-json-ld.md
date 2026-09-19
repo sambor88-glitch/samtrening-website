@@ -3,8 +3,9 @@
 Materiał do zadania **[SW112233-71](https://maciej-samborski.atlassian.net/browse/SW112233-71)**
 — „Schema Service (+ FAQPage gdzie jest FAQ) na stronach usługowych".
 
-Bloki poniżej są tym samym, co wdrożone w tym repozytorium (prototyp statyczny),
-przepisanym na **slugi produkcyjne** i okrojonym o to, co na produkcji generuje już Yoast.
+Bloki poniżej to dokładnie to, co wdrożone w tym repozytorium (prototyp statyczny),
+przepisane na **slugi produkcyjne** i okrojone o to, co na produkcji generuje już Yoast.
+Dokument jest generowany z plików HTML w repozytorium — jeśli zmieniasz schema, zmieniaj ją w HTML.
 
 ## Zasady przyjęte w zadaniu
 
@@ -16,15 +17,19 @@ przepisanym na **slugi produkcyjne** i okrojonym o to, co na produkcji generuje 
 | FAQPage tylko tam, gdzie FAQ jest widoczne | Stare Miasto i Dębniki **nie mają** sekcji FAQ → tylko `Service` |
 | bez `AggregateRating` | usunięty ze strony głównej (samowystawiona ocena 4,9/44) |
 
-## Zanim wkleisz — trzy rzeczy do sprawdzenia na produkcji
+## Zanim wkleisz — cztery rzeczy do sprawdzenia na produkcji
 
 1. **`@id` węzła firmy.** Snippety odwołują się do `https://www.samtrening.com/#business`.
    Sprawdź w źródle strony głównej, jakie `@id` ma tam realnie blok `ExerciseGym` — jeśli inne,
-   podmień je we wszystkich `provider` i `about`. Zły `@id` = wisząca referencja.
+   podmień je we wszystkich `provider`, `about` i `worksFor`. Zły `@id` = wisząca referencja.
 2. **Duplikaty z Yoast.** Yoast wysyła na każdej stronie `WebPage`, `WebSite`, `Organization`
    i `BreadcrumbList`. Dlatego snippety poniżej **nie zawierają `BreadcrumbList`** — nie dubluj go.
 3. **Kod pocztowy.** Produkcja ma `31-101` i to jest wartość poprawna
-   (Plac Na Groblach). W prototypie było `30-101` — poprawione w tym samym commicie.
+   (Plac Na Groblach). W prototypie było `30-101` — poprawione.
+4. **Pole `image` na stronie głównej.** W prototypie wskazuje na
+   `wp-content/themes/sam/img/sam-logo1.png` — to ścieżka **starego** motywu („sam"),
+   a produkcja działa na `samtrening-2026`. Sprawdź, czy ten plik nadal się otwiera;
+   jeśli nie, podmień na logo z aktualnego motywu. Martwy `image` w danych firmy to realny błąd.
 
 ## Jak wdrożyć
 
@@ -546,10 +551,140 @@ Slug do potwierdzenia — ticket dopuszcza, że na produkcji jest inny.
 }
 ```
 
-## Bonus: strona główna — FAQPage (5 pytań)
+---
 
-Poza zakresem SW112233-71, wchodzi w [SW112233-29](https://maciej-samborski.atlassian.net/browse/SW112233-29).
-Strona główna ma widoczne FAQ i nie miała dla niego schema.
+## Poza listą z SW112233-71
+
+Trzy rzeczy zrobione przy okazji, bo strony miały widoczną treść bez odpowiadającej jej schemy.
+
+### `/zdrowa-ciaza/` — Service + Person + FAQPage (6 pytań)
+
+Trzecia strona ofertowa. Miała 3 z 6 widocznych pytań w schema.
+
+```json
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.samtrening.com/zdrowa-ciaza/#service",
+      "name": "Trening w ciąży i po porodzie w Krakowie",
+      "serviceType": "Trening okołoporodowy 1:1",
+      "description": "Bezpieczny trening personalny dla kobiet w ciąży, po porodzie i planujących ciążę. Studio 1:1 na Placu Na Groblach w centrum Krakowa.",
+      "url": "https://www.samtrening.com/zdrowa-ciaza/",
+      "provider": {
+        "@type": "ExerciseGym",
+        "@id": "https://www.samtrening.com/#business",
+        "name": "SAMtrening",
+        "url": "https://www.samtrening.com/"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Kraków"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Sesja treningu okołoporodowego 1:1",
+          "priceCurrency": "PLN",
+          "price": "200",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "priceCurrency": "PLN",
+            "price": "200",
+            "unitText": "sesja 60 min",
+            "minPrice": "200"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Sesja 2:1 — z partnerem lub koleżanką",
+          "priceCurrency": "PLN",
+          "price": "280",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "priceCurrency": "PLN",
+            "price": "280",
+            "unitText": "sesja 60 min dla dwóch osób",
+            "minPrice": "280"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.samtrening.com/zespol/#kasia",
+      "name": "Katarzyna Samborska",
+      "jobTitle": "Trenerka personalna, specjalistka treningu okołoporodowego",
+      "worksFor": {
+        "@id": "https://www.samtrening.com/#business"
+      },
+      "alumniOf": "Akademia Wychowania Fizycznego w Krakowie",
+      "description": "Absolwentka AWF Kraków, reprezentantka Kadry Polski na 400 m przez płotki, 13+ lat jako trenerka specjalizująca się w treningu kobiet w ciąży, po porodzie i pracy z mięśniami dna miednicy."
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.samtrening.com/zdrowa-ciaza/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Czy można ćwiczyć w 8. miesiącu ciąży?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, pod warunkiem braku przeciwwskazań lekarskich i przy odpowiednio dobranej intensywności. W 8. miesiącu pracujemy głównie nad komfortem, mobilnością bioder i oddechem przygotowującym do porodu. Trening trwa krócej, ma charakter łagodny, a wiele ćwiczeń wykonujemy w pozycjach odciążających kręgosłup — na piłce, w klęku podpartym, w staniu z podparciem. Część moich klientek trenuje ze mną do samego porodu — ostatnia sesja na 3 dni przed porodem zdarzyła się już kilka razy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kiedy można wrócić do ćwiczeń po porodzie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standardowo po 6-tygodniowej kontroli po porodzie naturalnym i po 12 tygodniach po cesarskim cięciu — zawsze po konsultacji z ginekologiem lub położną. Pierwsze sesje to ocena stanu mięśni dna miednicy, rozstępu prostego brzucha i pracy oddechu. Nie zaczynamy od biegania, pompek czy brzuszków — to droga do kontuzji. Pełna odbudowa trwa zwykle 12 tygodni od startu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy mogę ćwiczyć, jeśli nigdy wcześniej nie trenowałam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Wiele kobiet w SAMtrening zaczyna regularną aktywność dopiero w ciąży. Dostosowujemy intensywność do twojego aktualnego stanu — nie ma „za słabego\" startu. Ważne tylko, żeby lekarz prowadzący nie miał przeciwwskazań. Drugi trymestr jest idealnym momentem, żeby zacząć, jeśli wcześniej nie ćwiczyłaś systematycznie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy pracujesz z kobietami po cesarskim cięciu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, to jedna z większych grup moich klientek w Krakowie. Po cesarskim cięciu pracujemy wolniej — zaczynamy od oddechu, delikatnej aktywacji mięśni głębokich i mobilizacji blizny. Powrót do pełnej aktywności zajmuje zwykle 4–6 miesięcy, czasem dłużej. Nie ścigamy się z kalendarzem — priorytetem jest bezpieczne, trwałe zdrowie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy sesja jest bezpieczna przy ciąży zagrożonej?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Przy ciąży z zaleceniem leżenia, łożysku przodującym, niewydolności szyjki lub innych przeciwwskazaniach medycznych treningu nie prowadzę — w takich sytuacjach zawsze przekierowuję do fizjoterapeutki uroginekologicznej lub proponuję łagodne ćwiczenia oddechowe pod kontrolą lekarza prowadzącego. Bezpieczeństwo twoje i dziecka jest zawsze priorytetem, nawet jeśli oznacza to wstrzymanie treningu na kilka miesięcy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gdzie dokładnie znajduje się studio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plac Na Groblach 23 w Krakowie — pięć minut pieszo od Wawelu, dziesięć minut od Rynku Głównego, siedem minut pieszo z Dębnik przez most Grunwaldzki. Najbliższy przystanek MPK: „Filharmonia\". W pobliżu kilka parkingów (Plac Na Groblach, Powiśle, parking podziemny pod ICE Kraków) — co bywa ważne w zaawansowanej ciąży."
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Strona główna — FAQPage (5 pytań)
+
+Wchodzi w [SW112233-29](https://maciej-samborski.atlassian.net/browse/SW112233-29).
 
 ```json
 {
@@ -598,6 +733,45 @@ Strona główna ma widoczne FAQ i nie miała dla niego schema.
       }
     }
   ]
+}
+```
+
+### Strona główna — katalog trzech programów
+
+Do dopisania do istniejącego bloku `ExerciseGym` na produkcji (nie wklejaj całego węzła, tylko to pole):
+
+```json
+{
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Programy SAMtrening",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "@id": "https://www.samtrening.com/treningi-personalne/#service",
+          "name": "Trening personalny 1:1"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "@id": "https://www.samtrening.com/zdrowa-ciaza/#service",
+          "name": "Trening w ciąży i po porodzie"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "@id": "https://www.samtrening.com/e-trening/#service",
+          "name": "E-trening personalny online"
+        }
+      }
+    ]
+  }
 }
 ```
 
