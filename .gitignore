@@ -45,3 +45,15 @@ logs/
 tmp/
 temp/
 *.tmp
+
+# WordPress (po wciągnięciu motywu do theme/ — patrz docs/wdrozenie-motywu.md)
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+*.sql
+*.sql.gz
+# Kopie zapasowe plików motywu, które lubią zostawać po ręcznych poprawkach na serwerze
+*.bak
+*-old.php
+*.orig
