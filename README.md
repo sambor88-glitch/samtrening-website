@@ -68,6 +68,7 @@ na produkcji: [`docs/schema-json-ld.md`](docs/schema-json-ld.md).
 | [`audyt-seo-kwiecien-2026.md`](docs/audyt-seo-kwiecien-2026.md) | podsumowanie audytu SEO |
 | [`plan-contentowy.md`](docs/plan-contentowy.md) | 30 tematów wpisów blogowych |
 | [`todo-przed-wdrozeniem.md`](docs/todo-przed-wdrozeniem.md) | lista rzeczy do zrobienia (częściowo nieaktualna po migracji na WP) |
+| [`mobile-menu-demo.html`](docs/mobile-menu-demo.html) | wzorzec menu mobilnego z CTA zawsze widocznym — do przeniesienia do motywu (SW112233-99) |
 
 ### `tools/` — skrypty
 
