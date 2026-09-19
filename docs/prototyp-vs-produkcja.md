@@ -71,8 +71,17 @@ na produkcję, co przy stronie zbierającej leady jest niepotrzebnym ryzykiem. N
 to druga instancja Lightsail w eu-central-1 z kopią bazy — rząd wielkości 10–20 USD miesięcznie
 przy najmniejszym planie, do policzenia osobno.
 
-## Do decyzji
+## Decyzja (19.09.2026)
 
-- [ ] Wybór opcji: A / B / C
-- [ ] Jeśli A lub B: kto i kiedy wyciąga motyw z Lightsail do gita
-- [ ] Czy robimy staging, czy świadomie zostajemy przy wdrożeniach prosto na produkcję
+**Maciek wybrał opcję A: jedno repozytorium.** Struktura katalogów jest już gotowa
+— `theme/` czeka na motyw, prototyp przeniesiony do `prototype/`, publikowanie poprawione.
+Procedura wciągnięcia motywu: [`wdrozenie-motywu.md`](wdrozenie-motywu.md).
+
+Sprawdzone przy okazji: prywatne repozytorium `sambor88-glitch/samtrening.com` jest puste,
+więc kodu motywu nie ma dziś nigdzie w gicie.
+
+Do rozstrzygnięcia zostaje:
+
+- [ ] Kto i kiedy wyciąga motyw z Lightsaila (wymaga dostępu do serwera — SW112233-10)
+- [ ] Czy robimy środowisko testowe, czy świadomie zostajemy przy wdrożeniach prosto na produkcję
+- [ ] Czy repozytorium ma pozostać publiczne, gdy trafi do niego kod produkcyjny

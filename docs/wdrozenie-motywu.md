@@ -54,7 +54,8 @@ git remote add origin https://github.com/sambor88-glitch/samtrening-website.git
 
 ## Krok 2 — sprawdź paczkę, zanim trafi do repozytorium
 
-**To jest moment, w którym najłatwiej wypchnąć sekret do gita.** Przed commitem:
+**To jest moment, w którym najłatwiej wypchnąć sekret do gita — a to repozytorium jest
+publiczne.** Przed commitem:
 
 ```bash
 tar -xzf samtrening-2026.tar.gz
@@ -64,28 +65,30 @@ grep -rniE "api[_-]?key|secret|password|token|smtp|AKIA" samtrening-2026/ | head
 Jeśli cokolwiek wyjdzie — klucz API map, dane SMTP, token — **nie commituj tego**.
 Takie wartości przenosi się do `wp-config.php` (poza repozytorium) i czyta przez
 `defined('NAZWA') ? NAZWA : ''`. Sekret raz wypchnięty do gita zostaje w historii,
-nawet po usunięciu z bieżącej wersji.
+nawet po usunięciu z bieżącej wersji — a przy repozytorium publicznym trzeba go
+**wymienić**, nie tylko skasować. Jeśli nie masz pewności, przyślij listę trafień
+z `grep` zamiast samych plików — ocenię, co jest sekretem, a co nie.
 
 Wyrzuć też to, co nie jest kodem: `node_modules/`, `.cache/`, pliki `.map`, kopie zapasowe
 (`*.bak`, `*-old.php`), katalogi cache wtyczek.
 
 ## Krok 3 — struktura repozytorium
 
+**Zrobione 19.09.2026.** Repozytorium ma już docelowy układ:
+
 ```
 samtrening-website/
 ├── theme/
-│   └── samtrening-2026/     # kod, który działa na stronie
-├── prototype/               # statyczny prototyp z kwietnia 2026 (dziś pliki leżą w katalogu głównym)
+│   └── samtrening-2026/     # ← tu wgrywasz motyw (katalog czeka pusty)
+├── prototype/               # statyczny prototyp z kwietnia 2026
 └── docs/                    # dokumentacja, notatki decyzyjne, bloki schema
 ```
 
-Przeniesienie prototypu do `prototype/` robimy **razem** z wrzuceniem motywu, nie wcześniej —
-pliki HTML z katalogu głównego publikuje dziś GitLab Pages (`.gitlab-ci.yml`) i prawdopodobnie
-GitHub Pages. Przenosiny bez jednoczesnej poprawki CI zepsują podgląd prototypu, a bez motywu
-w repozytorium nic za to nie dają.
+Przy okazji poprawione zostało publikowanie prototypu: `.gitlab-ci.yml` kopiuje teraz
+`prototype/`, a `.github/workflows/pages.yml` publikuje ten sam katalog na GitHub Pages
+(domyślnie wyłączony — włącza go zmienna `PAGES_ENABLED`, szczegóły w README).
 
-Przy tych przenosinach trzeba poprawić `.gitlab-ci.yml`: zamiast `cp -r *.html public/`
-ma być `cp -r prototype/* public/`.
+Wgranie motywu sprowadza się więc do wrzucenia zawartości paczki do `theme/samtrening-2026/`.
 
 ## Krok 4 — wdrażanie ze zmian w gicie
 
@@ -142,8 +145,11 @@ trafia wyłącznie kod motywu.
 
 ## Stan
 
-- [ ] Krok 1 — motyw wyciągnięty z serwera (potrzebny dostęp, po stronie Maćka)
+- [ ] Krok 1 — motyw wyciągnięty z serwera (potrzebny dostęp do Lightsaila, po stronie Maćka)
 - [ ] Krok 2 — paczka sprawdzona pod kątem sekretów
-- [ ] Krok 3 — motyw w `theme/`, prototyp w `prototype/`, poprawione CI
-- [ ] Krok 4 — wdrażanie z CI (wymaga sekretów)
+- [x] Krok 3 — struktura katalogów gotowa, prototyp w `prototype/`, CI poprawione (19.09.2026)
+- [ ] Krok 4 — wdrażanie z CI (wymaga sekretów `LIGHTSAIL_HOST` i `LIGHTSAIL_SSH_KEY`)
 - [ ] Krok 5 — decyzja o środowisku testowym
+
+Sprawdzone po drodze: prywatne repozytorium `sambor88-glitch/samtrening.com` jest puste,
+więc motywu nie ma nigdzie w gicie — trzeba go wyciągnąć z serwera.
